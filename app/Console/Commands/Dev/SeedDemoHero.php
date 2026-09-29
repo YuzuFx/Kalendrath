@@ -6,6 +6,7 @@ use Illuminate\Console\Attributes\Description;
 use Illuminate\Console\Attributes\Signature;
 use Illuminate\Console\Command;
 use OGame\Enums\EquipmentRarity;
+use OGame\Enums\TalentEffectScope;
 use OGame\Models\EquipmentItem;
 use OGame\Models\Hero;
 use OGame\Models\HeroEquipment;
@@ -57,7 +58,7 @@ class SeedDemoHero extends Command
             'archetype' => self::ARCHETYPE,
             'level' => 12,
             'xp' => 1200,
-            'talent_points_spent' => 6,
+            'talent_points_spent' => 12,
             'status' => 'available',
             // Demo values for a level 12 hero — not derived from a formula
             // yet (see GDD 5.5, stats system still TBD for Phase 6 balancing).
@@ -70,15 +71,21 @@ class SeedDemoHero extends Command
             'life' => 1840,
         ]);
 
-        // 6 points spent: rank 2 in the tier-1 "Voie de la Lame" node,
-        // rank 1 in a handful of others across branches — enough to show
-        // a partially-filled tree without maxing anything out.
+        // 12 points spent: rank 2 in the tier-1 "Voie de la Lame" node,
+        // rank 1 in a handful of others across branches. The "Voie du
+        // Serment" path shows the branching graph in action: root -> left
+        // fork -> the "any-of" merge node (reachable via either fork) ->
+        // one side of the T4 exclusive choice, leaving the other side (and
+        // the final merge node) unallocated to show both mechanics at once.
         $allocations = [
             'lame_t1' => 2,
             'lame_t2' => 1,
             'bastion_t1' => 1,
             'bastion_t2' => 1,
             'serment_t1' => 1,
+            'serment_t2_left' => 1,
+            'serment_t3_mid' => 1,
+            'serment_t4_right' => 1,
         ];
 
         foreach ($allocations as $key => $rank) {
@@ -118,13 +125,20 @@ class SeedDemoHero extends Command
      * archetype. Point costs rise with tier so the 29-point career budget
      * (level cap 30) cannot fill more than a fraction of the full tree.
      *
+     * "Voie de la Lame" and "Voie du Bastion" stay linear (one node per
+     * tier) to show that shape is still valid. "Voie du Serment" branches
+     * and re-merges (GDD 5.5, requested 2026-09-22): a node becomes
+     * reachable once ANY ONE of its prerequisites has rank > 0, not all of
+     * them — and it doubles as the "royaume" branch for this archetype
+     * (city-scoped effects), plus one WoW-style exclusive choice pair.
+     *
      * @return array<string, TalentNode>
      */
     private function seedTalentTree(): array
     {
         TalentNode::where('archetype', self::ARCHETYPE)->delete();
 
-        $branches = [
+        $linearBranches = [
             'lame' => [
                 'label' => 'Voie de la Lame',
                 'nodes' => [
@@ -145,22 +159,12 @@ class SeedDemoHero extends Command
                     ['name' => 'Dernier souffle', 'description' => 'Survit à un coup fatal, une fois par mission.', 'cost' => 3, 'max_rank' => 1],
                 ],
             ],
-            'serment' => [
-                'label' => 'Voie du Serment',
-                'nodes' => [
-                    ['name' => 'Écho du serment', 'description' => 'Augmente la résistance aux effets d\'altération.', 'cost' => 1, 'max_rank' => 3],
-                    ['name' => 'Pas de l\'ombre', 'description' => 'Réduit le temps de trajet en mission.', 'cost' => 1, 'max_rank' => 1],
-                    ['name' => 'Vigilance ancestrale', 'description' => 'Révèle la garnison adverse avant l\'engagement.', 'cost' => 2, 'max_rank' => 1],
-                    ['name' => 'Résonance des Straumar', 'description' => 'Accélère la régénération de la jauge de prestige.', 'cost' => 2, 'max_rank' => 1],
-                    ['name' => 'Marque du gardien', 'description' => 'Réduit la durée d\'indisponibilité en cas d\'échec.', 'cost' => 3, 'max_rank' => 1],
-                ],
-            ],
         ];
 
         $created = [];
         $lastLameNode = null;
 
-        foreach ($branches as $branchKey => $branch) {
+        foreach ($linearBranches as $branchKey => $branch) {
             $previousNode = null;
 
             foreach ($branch['nodes'] as $tierIndex => $nodeData) {
@@ -174,8 +178,11 @@ class SeedDemoHero extends Command
                     'tier' => $tier,
                     'point_cost' => $nodeData['cost'],
                     'max_rank' => $nodeData['max_rank'],
-                    'prerequisite_talent_node_id' => $previousNode?->id,
                 ]);
+
+                if ($previousNode !== null) {
+                    $node->prerequisites()->attach($previousNode->id);
+                }
 
                 $created[$branchKey . '_t' . $tier] = $node;
                 $previousNode = $node;
@@ -186,10 +193,12 @@ class SeedDemoHero extends Command
             }
         }
 
+        $created += $this->seedSermentBranch();
+
         // Capstone: branch = null renders it spanning all columns at the
         // bottom of the tree. Gated behind the top of "Voie de la Lame"
         // as a simple demo prerequisite.
-        $created['capstone'] = TalentNode::create([
+        $capstone = TalentNode::create([
             'archetype' => self::ARCHETYPE,
             'branch' => null,
             'name' => 'Colère du Gouffre',
@@ -197,10 +206,114 @@ class SeedDemoHero extends Command
             'tier' => 6,
             'point_cost' => 5,
             'max_rank' => 1,
-            'prerequisite_talent_node_id' => $lastLameNode?->id,
         ]);
+        if ($lastLameNode !== null) {
+            $capstone->prerequisites()->attach($lastLameNode->id);
+        }
+        $created['capstone'] = $capstone;
 
         return $created;
+    }
+
+    /**
+     * "Voie du Serment" — the branching/merging demo branch (GDD 5.5).
+     * Shape: 1 root -> splits into 2 -> splits into 3 -> merges into 2
+     * (one exclusive-choice pair) -> merges into 1. Doubles as the
+     * archetype's "royaume" branch: most nodes here are CITY-scoped
+     * (boost the colony the hero governs) rather than HERO-scoped.
+     *
+     * @return array<string, TalentNode>
+     */
+    private function seedSermentBranch(): array
+    {
+        $label = 'Voie du Serment';
+        $hero = TalentEffectScope::HERO->value;
+        $city = TalentEffectScope::CITY->value;
+
+        $t1 = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Écho du serment',
+            'description' => 'Augmente la résistance aux effets d\'altération.',
+            'effect_type' => 'status_effect_resistance_percent', 'effect_value' => 10, 'effect_scope' => $hero,
+            'tier' => 1, 'position' => 0, 'point_cost' => 1, 'max_rank' => 3,
+        ]);
+
+        $t2Left = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Pas de l\'ombre',
+            'description' => 'Réduit le temps de trajet en mission.',
+            'effect_type' => 'mission_travel_time_reduction_percent', 'effect_value' => 10, 'effect_scope' => $hero,
+            'tier' => 2, 'position' => -1, 'point_cost' => 1, 'max_rank' => 1,
+        ]);
+        $t2Right = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Vigilance ancestrale',
+            'description' => 'Révèle la garnison adverse avant l\'engagement.',
+            'effect_type' => 'reveal_enemy_before_engagement', 'effect_value' => 1, 'effect_scope' => $city,
+            'tier' => 2, 'position' => 1, 'point_cost' => 1, 'max_rank' => 1,
+        ]);
+        $t2Left->prerequisites()->attach($t1->id);
+        $t2Right->prerequisites()->attach($t1->id);
+
+        $t3Left = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Serment du Vent',
+            'description' => 'Réduit encore le temps de trajet en mission.',
+            'effect_type' => 'mission_travel_time_reduction_percent', 'effect_value' => 15, 'effect_scope' => $hero,
+            'tier' => 3, 'position' => -1, 'point_cost' => 2, 'max_rank' => 1,
+        ]);
+        $t3Mid = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Résonance des Straumar',
+            'description' => 'Accélère la régénération de la jauge de prestige.',
+            'effect_type' => 'prestige_regen_bonus_percent', 'effect_value' => 15, 'effect_scope' => $hero,
+            'tier' => 3, 'position' => 0, 'point_cost' => 2, 'max_rank' => 1,
+        ]);
+        $t3Right = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Œil du Gardien',
+            'description' => 'Renforce la garnison de la ville gouvernée.',
+            'effect_type' => 'garrison_defense_bonus_percent', 'effect_value' => 8, 'effect_scope' => $city,
+            'tier' => 3, 'position' => 1, 'point_cost' => 2, 'max_rank' => 1,
+        ]);
+        $t3Left->prerequisites()->attach($t2Left->id);
+        // Résonance des Straumar demonstrates "any-of": reachable from
+        // either T2 node, not just one specific parent.
+        $t3Mid->prerequisites()->attach([$t2Left->id, $t2Right->id]);
+        $t3Right->prerequisites()->attach($t2Right->id);
+
+        // Exclusive choice pair (WoW-style split talent, requested
+        // 2026-09-23): pick recruitment (royaume) OR personal resilience,
+        // not both.
+        $choiceGroup = 'serment_t4_choice';
+        $t4Left = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Chaîne du Serment',
+            'description' => 'Accélère le recrutement de troupes martiales dans la ville gouvernée.',
+            'effect_type' => 'troop_recruitment_speed_bonus_percent', 'effect_value' => 12, 'effect_scope' => $city,
+            'tier' => 4, 'position' => -1, 'point_cost' => 3, 'max_rank' => 1, 'choice_group' => $choiceGroup,
+        ]);
+        $t4Right = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Marque du gardien',
+            'description' => 'Réduit la durée d\'indisponibilité en cas d\'échec.',
+            'effect_type' => 'unavailability_duration_reduction_percent', 'effect_value' => 20, 'effect_scope' => $hero,
+            'tier' => 4, 'position' => 1, 'point_cost' => 3, 'max_rank' => 1, 'choice_group' => $choiceGroup,
+        ]);
+        $t4Left->prerequisites()->attach([$t3Left->id, $t3Mid->id]);
+        $t4Right->prerequisites()->attach([$t3Mid->id, $t3Right->id]);
+
+        $t5 = TalentNode::create([
+            'archetype' => self::ARCHETYPE, 'branch' => $label, 'name' => 'Serment Inébranlable',
+            'description' => 'Renforce durablement la garnison de la ville gouvernée.',
+            'effect_type' => 'garrison_defense_bonus_percent', 'effect_value' => 20, 'effect_scope' => $city,
+            'tier' => 5, 'position' => 0, 'point_cost' => 3, 'max_rank' => 1,
+        ]);
+        $t5->prerequisites()->attach([$t4Left->id, $t4Right->id]);
+
+        return [
+            'serment_t1' => $t1,
+            'serment_t2_left' => $t2Left,
+            'serment_t2_right' => $t2Right,
+            'serment_t3_left' => $t3Left,
+            'serment_t3_mid' => $t3Mid,
+            'serment_t3_right' => $t3Right,
+            'serment_t4_left' => $t4Left,
+            'serment_t4_right' => $t4Right,
+            'serment_t5' => $t5,
+        ];
     }
 
     /**

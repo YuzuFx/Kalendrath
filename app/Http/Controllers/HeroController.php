@@ -2,6 +2,7 @@
 
 namespace OGame\Http\Controllers;
 
+use Illuminate\Support\Collection;
 use Illuminate\View\View;
 use OGame\Models\Hero;
 use OGame\Models\TalentNode;
@@ -53,23 +54,26 @@ class HeroController extends OGameController
         $inventory = $hero->equipment->where('equipped', false);
 
         // Full tree for this hero's archetype, with the hero's allocated
-        // rank (0 if not yet invested) attached to each node. Grouped by
-        // branch (column) then tier (row) for the WoW-style vertical
-        // layout; a null branch is a capstone spanning every column.
+        // rank (0 if not yet invested) attached to each node. A null branch
+        // is a capstone spanning every column; every other node is laid out
+        // in a pixel graph (see buildTalentGraph()) since a branch can now
+        // split into several parallel nodes per tier with multiple
+        // "any-of" prerequisites, not just a single linear chain.
         $allocatedRanks = $hero->talents->pluck('rank', 'talent_node_id');
         $nodesWithRank = TalentNode::where('archetype', $hero->archetype)
+            ->with('prerequisites')
             ->orderBy('tier')
+            ->orderBy('position')
             ->orderBy('id')
             ->get()
             ->map(fn (TalentNode $node) => [
                 'node' => $node,
-                'rank' => $allocatedRanks->get($node->id, 0),
+                'rank' => (int) $allocatedRanks->get($node->id, 0),
             ]);
 
-        $talentBranches = $nodesWithRank
-            ->filter(fn (array $entry) => $entry['node']->branch !== null)
-            ->groupBy(fn (array $entry) => (string) $entry['node']->branch)
-            ->map(fn ($entries) => $entries->groupBy(fn (array $entry) => $entry['node']->tier));
+        $talentBranches = $this->buildTalentGraph(
+            $nodesWithRank->filter(fn (array $entry) => $entry['node']->branch !== null)
+        );
 
         $talentCapstones = $nodesWithRank->filter(fn (array $entry) => $entry['node']->branch === null);
 
@@ -80,6 +84,83 @@ class HeroController extends OGameController
             'talentBranches' => $talentBranches,
             'talentCapstones' => $talentCapstones,
         ]);
+    }
+
+    private const int NODE_WIDTH = 150;
+    private const int NODE_HEIGHT = 100;
+    private const int COLUMN_SPACING = 174; // NODE_WIDTH + 24px horizontal gap
+    private const int ROW_HEIGHT = 140; // NODE_HEIGHT + 40px vertical gap for connector lines
+
+    /**
+     * Lays out one archetype's non-capstone talent nodes as a pixel-positioned
+     * graph per branch: node coordinates come from (tier, position), and an
+     * edge is drawn for every prerequisite relationship. A child is only
+     * reachable once ANY ONE of its prerequisites has rank > 0 (WoW-style
+     * branching/merging), so an edge is "lit" only once both of its ends are
+     * actually invested — a coarse but sufficient visual approximation for
+     * this mockup stage.
+     *
+     * @param Collection<int, array{node: TalentNode, rank: int}> $nodesWithRank
+     * @return array<string, array{nodes: array<int, array{node: TalentNode, rank: int, x: int, y: int}>, edges: array<int, array{x1: int, y1: int, x2: int, y2: int, lit: bool}>, width: int, height: int}>
+     */
+    private function buildTalentGraph(Collection $nodesWithRank): array
+    {
+        $rankById = $nodesWithRank->pluck('rank', 'node.id');
+
+        $graphs = [];
+
+        foreach ($nodesWithRank->groupBy(fn (array $entry) => (string) $entry['node']->branch) as $branchLabel => $entries) {
+            $minPosition = (int) $entries->min(fn (array $entry) => $entry['node']->position);
+            $maxPosition = (int) $entries->max(fn (array $entry) => $entry['node']->position);
+            $maxTier = (int) $entries->max(fn (array $entry) => $entry['node']->tier);
+
+            $nodes = [];
+            $coordsById = [];
+
+            foreach ($entries as $entry) {
+                $node = $entry['node'];
+                $x = ($node->position - $minPosition) * self::COLUMN_SPACING;
+                $y = ($node->tier - 1) * self::ROW_HEIGHT;
+
+                $coordsById[$node->id] = ['x' => $x, 'y' => $y];
+                $nodes[] = ['node' => $node, 'rank' => $entry['rank'], 'x' => $x, 'y' => $y];
+            }
+
+            $edges = [];
+            foreach ($entries as $entry) {
+                $node = $entry['node'];
+                $childCoords = $coordsById[$node->id];
+                $childRank = $rankById->get($node->id, 0);
+
+                foreach ($node->prerequisites as $prerequisite) {
+                    if (!isset($coordsById[$prerequisite->id])) {
+                        // Prerequisite lives in another branch (or is a
+                        // capstone) — not drawable within this branch graph.
+                        continue;
+                    }
+
+                    $prereqCoords = $coordsById[$prerequisite->id];
+                    $prereqRank = $rankById->get($prerequisite->id, 0);
+
+                    $edges[] = [
+                        'x1' => $prereqCoords['x'] + (int) (self::NODE_WIDTH / 2),
+                        'y1' => $prereqCoords['y'] + self::NODE_HEIGHT,
+                        'x2' => $childCoords['x'] + (int) (self::NODE_WIDTH / 2),
+                        'y2' => $childCoords['y'],
+                        'lit' => $prereqRank > 0 && $childRank > 0,
+                    ];
+                }
+            }
+
+            $graphs[$branchLabel] = [
+                'nodes' => $nodes,
+                'edges' => $edges,
+                'width' => ($maxPosition - $minPosition) * self::COLUMN_SPACING + self::NODE_WIDTH,
+                'height' => ($maxTier - 1) * self::ROW_HEIGHT + self::NODE_HEIGHT,
+            ];
+        }
+
+        return $graphs;
     }
 
     /**
