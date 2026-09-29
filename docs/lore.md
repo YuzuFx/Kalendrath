@@ -1,4 +1,4 @@
-# Lore — [Nom du monde à finaliser — cf. section 9]
+# Lore — Kalendrath
 
 *Document vivant. Statut : deuxième révision, intègre la fondation naine/elfique, la chronologie 3000 PR, et la structure cartographique concentrique.*
 
@@ -150,28 +150,14 @@ Cette logique donne un sens narratif clair à la progression individuelle : un j
 
 ### 9.3 Nom du monde / du jeu
 
-*Statut : Elyndor écarté (trop marqué "elfique" pour un monde où les elfes ont presque disparu). Finalistes en discussion : Vaelithra et Kaldrath/Kaledrath.*
-
-**Variantes autour de Kaldrath (registre plus sombre/anguleux) :**
-- **Kaledrath** (déjà proposée, adoucit la prononciation)
-- **Kaldreth** — encore plus courte, garde la dureté
-- **Kalendrath** — rallonge légèrement, plus mélodieux
-- **Kaldrenn** — finale plus douce que "-rath"
-
-**Variantes autour de Vaelithra (registre plus mystique) :**
-- **Vaelira** — nettement plus court et facile à prononcer, garde le préfixe mystique
-- **Vaelora** — sonorité douce, proche de "aura"
-- **Vaeloria** — légère extension, très fluide à l'oral
-- **Vaelthara** — garde davantage la sonorité originale tout en simplifiant l'attaque du mot
-
-*Recommandation : si la prononciation est le critère décisif pour ton sondage, **Vaelira** et **Kaledrath** sont probablement les deux plus accessibles à l'oral tout en conservant l'identité sonore des originaux.*
+**Tranché le 2026-09-29 : Kalendrath.** Retenu parmi les variantes du registre sombre/anguleux autour de Kaldrath (Elyndor et les variantes de Vaelithra écartés).
 
 ---
 
 ## 10. Points encore ouverts
 
 - [ ] Nom définitif de la cité-nation naine-elfique (section 9.1)
-- [ ] Nom définitif du monde/jeu (section 9.3)
+- [x] Nom définitif du monde/jeu (section 9.3) — **Kalendrath**, tranché le 2026-09-29
 - [ ] Direction de numérotation des Régions (externe→interne ou inverse)
 - [ ] Structure exacte des events hebdomadaires
 - [ ] Factions ennemies supplémentaires éventuelles (section 5)

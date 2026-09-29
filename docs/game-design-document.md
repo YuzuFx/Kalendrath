@@ -1,4 +1,4 @@
-# Game Design Document — [Nom du jeu à définir]
+# Game Design Document — Kalendrath
 
 *Statut : document vivant, en cours de construction (Phase 0). Les sections marquées **[TBD]** restent à trancher ensemble.*
 
@@ -61,7 +61,7 @@ La mécanique centrale qui fait tenir cet ensemble, c'est le **héros** : il con
 
 ---
 
-## 4. Lexique de conversion — Ogame/OGameX → [Nom du jeu]
+## 4. Lexique de conversion — Ogame/OGameX → Kalendrath
 
 Base de traduction thématique. Les mécaniques sous-jacentes (formules, comportements) restent héritées d'Ogame/OGameX en V1 ; seul l'habillage change ici.
 
@@ -69,7 +69,7 @@ Base de traduction thématique. Les mécaniques sous-jacentes (formules, comport
 
 *Choix assumé de s'écarter du calque direct d'Ogame vers un modèle à 4 ressources stockées façon Travian — voir note technique ci-dessous.*
 
-| Ogame/OGameX | [Nom du jeu] | Rôle |
+| Ogame/OGameX | Kalendrath | Rôle |
 |---|---|---|
 | Métal | **Bois** | Ressource de construction de base |
 | Cristal | **Fer** | Ressource de construction avancée |
@@ -102,7 +102,7 @@ Ce principe corrige directement l'incohérence repérée chez Embercraft (bâtim
 
 **Décidé le 2026-09-19** : la distinction technique `Building`/`Station` d'OGameX (cf. audit du 2026-09-18) n'existe pas côté joueur — tout reste "bâtiment" à l'écran, aucun impact sur le lexique. Le Terraformeur est déplacé en section 4.3 (devient une recherche, pas un bâtiment — voir détail là-bas).
 
-| Ogame/OGameX | [Nom du jeu] | Notes |
+| Ogame/OGameX | Kalendrath | Notes |
 |---|---|---|
 | Mine de métal (`metal_mine`) | **Scierie** | Production de bois (Métal → Bois) |
 | Mine de cristal (`crystal_mine`) | **Mine de fer** | Production de fer (Cristal → Fer) |
@@ -128,7 +128,7 @@ Ce principe corrige directement l'incohérence repérée chez Embercraft (bâtim
 
 **Catalogue complet vérifié le 2026-09-18** (`app/GameObjects/ResearchObjects.php`, 16 technologies). Décisions tranchées le 2026-09-19 :
 
-| Ogame/OGameX | [Nom du jeu] | Notes |
+| Ogame/OGameX | Kalendrath | Notes |
 |---|---|---|
 | Technologie énergétique (`energy_technology`) | **Abondance** | Repositionnée comme techno de production de Nourriture |
 | Propulsion à combustion (`combustion_drive`) | **Endurance du Fantassin** | **Décidé le 2026-09-20** : les 3 propulsions sont remappées sur un triptyque **unités à pied / à cheval / engins de siège** plutôt que sur les paliers de vaisseaux d'Ogame — combustion = le palier le plus bas/rapide à obtenir → **unités à pied** |
@@ -151,7 +151,7 @@ Ce principe corrige directement l'incohérence repérée chez Embercraft (bâtim
 
 Rappel du constat du 2026-09-18 : OGameX n'a qu'une seule technologie de bonus d'attaque (`weapon_technology`, +10 %/niveau) ; `laser_technology`/`ion_technology`/`plasma_technology` ne sont que des prérequis de déblocage sans bonus direct, et "Systèmes d'Armement" n'existe pas. Décision : on construit quand même la progression à 4 paliers d'ATK inspirée d'Aleryos, thématisée physique → magique (Affûtage → Alliage de Guerre → Runes de Combat → Bénédiction des Armes), **comme une vraie nouvelle chaîne de recherches sans équivalent direct dans OGameX**. Effort *élevé* (nouvelle mécanique de recherche à concevoir — formule de bonus par palier, prérequis entre paliers), assumé consciemment.
 
-| Palier | [Nom du jeu] |
+| Palier | Kalendrath |
 |---|---|
 | 1 | **Affûtage** |
 | 2 | **Alliage de Guerre** |
@@ -172,7 +172,7 @@ Rappel du constat du 2026-09-18 : OGameX n'a qu'une seule technologie de bonus d
 
 *Unités au sol (6) :*
 
-| Ogame/OGameX | [Nom du jeu] | Rôle gameplay | Description (prompt image) | Effort |
+| Ogame/OGameX | Kalendrath | Rôle gameplay | Description (prompt image) | Effort |
 |---|---|---|---|---|
 | Chasseur léger (`light_fighter`) | **Soldat** | Chair à canon — bon marché, nombreux, fragile | Soldat humain en armure légère de cuir clouté et cotte de mailles partielle, bouclier rond en bois cerclé de fer, épée courte ou lance simple, tenue austère et fonctionnelle, posture de ligne de fantassin bon marché, nombreux plutôt qu'individuellement impressionnant | reskin |
 | Chasseur lourd (`heavy_fighter`) | **Garde** | Tank de ligne — encaisse en première ligne | Fantassin humain robuste en armure de plates lourde, grand bouclier tour métallique, hallebarde ou épée large, casque fermé, silhouette massive et statique, conçu pour absorber les coups en première ligne | reskin |
@@ -183,7 +183,7 @@ Rappel du constat du 2026-09-18 : OGameX n'a qu'une seule technologie de bonus d
 
 *Unités montées (4) :*
 
-| Ogame/OGameX | [Nom du jeu] | Rôle gameplay | Description (prompt image) | Effort |
+| Ogame/OGameX | Kalendrath | Rôle gameplay | Description (prompt image) | Effort |
 |---|---|---|---|---|
 | Croiseur (`cruiser`) | **Cavalier** | Mobile/anti-unités — hérite d'un fort rapidfire anti-piétaille et anti-défenses légères | Cavalier humain en armure moyenne monté sur un cheval de guerre rapide, lance ou épée à une main, bouclier léger, silhouette dynamique en pleine charge, bannière/tabard aux couleurs du royaume | reskin |
 | Vaisseau de bataille (`battle_ship`) | **Paladin** | Tank d'élite — pilier défensif d'une charge montée | Chevalier lourdement blindé en armure de plates complète ornée de symboles sacrés/dorés, monté sur un destrier caparaçonné massif, grand bouclier héraldique, épée ou masse d'arme lourde, aura de lumière protectrice, silhouette imposante et noble | reskin |
@@ -192,7 +192,7 @@ Rappel du constat du 2026-09-18 : OGameX n'a qu'une seule technologie de bonus d
 
 *Engins de siège (2) :*
 
-| Ogame/OGameX | [Nom du jeu] | Rôle gameplay | Description (prompt image) | Effort |
+| Ogame/OGameX | Kalendrath | Rôle gameplay | Description (prompt image) | Effort |
 |---|---|---|---|---|
 | Bombardier (`bomber`) | **Brise-Rempart** | Anti-défenses — hérite du rapidfire massif déjà présent contre toutes les tourelles/canons | Immense machine de siège tractée, renforcée de plaques métalliques, montée sur roues massives, bras de catapulte ou canon à mana orienté vers des fortifications, équipage réduit visible, lente et imposante, clairement conçue pour détruire des structures fixes plutôt que des troupes | reskin |
 | *(aucun)* | **Catapulte de Rupture** | Anti-fortification — percer portes et remparts plutôt que combattre des troupes | Grande catapulte/bélier de siège renforcé de runes arcaniques gravées dans le bois et le métal, tête frappante ou bras de lancement massif à l'avant, structure tractée par plusieurs bêtes de trait, conçue pour percer portes et remparts fortifiés | **neuf** |
@@ -205,7 +205,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 
 **Civils :**
 
-| Ogame/OGameX | [Nom du jeu] | Notes |
+| Ogame/OGameX | Kalendrath | Notes |
 |---|---|---|
 | Recycleur (`recycler`) | **Récupérateur** | Collecte les ressources sur un champ de ruines après bataille |
 | Petit transporteur (`small_cargo`) | **Caravane** | |
@@ -218,7 +218,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 
 ### 4.5 Concepts de structure
 
-| Ogame/OGameX | [Nom du jeu] | Notes |
+| Ogame/OGameX | Kalendrath | Notes |
 |---|---|---|
 | Position (case de carte) | **Éclat** | Déjà établi (lore section 8) |
 | Planète (une fois colonisée) | **Ville** | Ce qui est bâti sur un Éclat colonisé |
@@ -463,7 +463,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 **Correction 2026-09-18** : cette section était marquée "pas encore abordé", ce qui n'est plus exact — l'univers est développé séparément dans **[docs/lore.md](lore.md)** (cosmologie des Straumar/Neuf Sphères, chronologie de la Rupture, les Vahrun, races jouables, structure Région/Contrée/Éclat), déjà référencé abondamment dans ce document (sections 4.2, 4.5, 5.8, etc.). Voir ce fichier plutôt que cette section.
 
 - Ambiance retenue pour l'UI (arcane mystique sombre, cf. 5.5) cohérente avec ce lore — à confirmer que c'est aussi la direction voulue pour l'univers narratif dans son ensemble, pas seulement l'interface héros.
-- **[TBD]** — Nom du monde encore en discussion (cf. lore.md section 9)
+- **Nom du monde/jeu tranché le 2026-09-29 : Kalendrath** (cf. lore.md section 9.3).
 
 ---
 
