@@ -72,7 +72,7 @@ Objectif : vérifier que l'ancre s'applique correctement sur des sujets différe
 
 **Essai 2 — `--sw 500`, 2026-10-01 :** nette amélioration sur l'icône (fond sombre et dramatique, cohérent avec l'ancre). Sur le Soldat, la lueur arcanique apparaît enfin (éclat sur l'arme/la main, marque runique sur l'épaule) — confirme que `--sw` est le bon levier. **Mais** effet de bord : le visage du Soldat dérive vers "aventurier héroïque confiant" au lieu de "conscrit fatigué et quelconque" explicitement demandé dans son brief — risque de gommer la hiérarchie visuelle voulue entre unités de base et unités d'élite (Paladin, etc.) si on généralise ce réglage à tout le roster.
 
-**Essai 3 — `--sw 275`, lancé le 2026-10-01, résultat pas encore reçu.** Objectif : trouver le point d'équilibre entre "trop faible" (essai 1) et "trop fort / écrase la caractérisation" (essai 2). Prompts exacts utilisés (mêmes que les essais précédents, seul `--sw` change) :
+**Essai 3 — `--sw 275`, lancé le 2026-10-01, résultat reçu.** Objectif : trouver le point d'équilibre entre "trop faible" (essai 1) et "trop fort / écrase la caractérisation" (essai 2). Prompts exacts utilisés (mêmes que les essais précédents, seul `--sw` change) :
 
 ```
 … (prompt Soldat complet, cf. direction-artistique-unites.md) --ar 2:3 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
@@ -81,11 +81,36 @@ Objectif : vérifier que l'ancre s'applique correctement sur des sujets différe
 … (prompt icône v3 complet, cf. section 3 ci-dessus) --ar 1:1 --stylize 150 --no photography, orange, red, fire, reflection, floating, ring, jewelry, wearable, gemstone jewelry, engagement ring, band, claw setting, prongs, metal band --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
 ```
 
-**Prochaine étape dès reprise :** regarder le résultat de l'essai 3 — en particulier si le visage du Soldat redevient quelconque/fatigué tout en gardant une trace de lueur arcanique. Si oui, figer `--sw 275` (ou proche) comme réglage standard pour tout le roster et le documenter plus haut dans "Image ancre retenue". Si le compromis n'est toujours pas bon, tester une valeur encore entre 100 et 275, ou accepter de moduler le `--sw` unité par unité selon son tier (plus fort pour les unités d'élite proches de l'archétype "commandant" de l'ancre, plus faible pour les unités communes/déclassées).
+**Résultat :**
+- **Icône :** bon résultat sur les 4 variations — cristal de mana brut bleu-violet net, encastré dans roche/minerai, aucune dérive vers bijou/anneau, aucune dérive orange/rouge/feu. Le style ancre (sombre, dramatique) tient bien à `--sw 275`. **Prompt figé tel quel.**
+- **Soldat :** mitigé. Sur les 4 variations, 3 visages restent plutôt jeunes/confiants (pas assez "conscrit quelconque"), 1 seule s'en approche. Surtout : la lueur arcanique reste **quasi invisible sur les 4**, contrairement à l'essai 2 (`--sw 500`) où elle apparaissait nettement. Donc `--sw 275` n'a pas récupéré le défaut de l'essai 1 (lueur absente) tout en gardant partiellement celui qu'on cherchait à corriger (visage pas assez quelconque) — pire des deux compromis plutôt que bon milieu.
+
+**Hypothèse sur la cause :** le préambule utilisait encore "a faint violet-blue arcane mana glow" au moment de cet essai (correction du point ouvert ci-dessous pas encore appliquée) — c'est probablement ce mot "faint" dans le *texte* qui étouffe la lueur à `--sw` modéré, et seul un `--sw` très fort (500) arrivait à la forcer malgré le texte, au prix de la dérive du visage. Le vrai levier pour la lueur serait donc le texte du prompt, pas `--sw` — cranker `--sw` ne serait qu'un palliatif qui abîme la caractérisation en même temps.
+
+Correctif appliqué le 2026-10-01 sur [direction-artistique-unites.md](direction-artistique-unites.md) : "faint" → "clearly visible" dans le préambule commun.
+
+**Essai 4 à lancer (prochaine étape) :** reprendre le prompt Soldat avec le préambule corrigé, en gardant `--sw 275` (qui préserve mieux la caractérisation que 500) :
+
+```
+Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed, Common human foot soldier, cheap conscript-tier infantry, light padded leather armor with a partial rusted mail vest, round wooden shield banded in iron, short sword or simple spear, plain unremarkable tabard, tired weary expression, meant to look replaceable and numerous rather than heroic, dirt and travel-worn gear --ar 2:3 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+À vérifier sur le résultat : la lueur apparaît-elle enfin nettement sans faire dériver le visage vers "héros confiant" ? Si oui → `--sw 275` + préambule corrigé devient le réglage standard pour tout le roster (icône déjà validée dessus). Si la lueur reste absente malgré le mot corrigé → le levier est bien `--sw` et non le texte ; remonter progressivement entre 275 et 500 (ex. 350–400) en acceptant un compromis, ou moduler `--sw` par tier d'unité (plus fort pour les élites proches de l'archétype "commandant" de l'ancre, plus faible pour les communes). Si la lueur apparaît mais le visage dérive quand même → le problème est ailleurs dans le prompt Soldat lui-même (reformuler "tired weary expression" en des termes plus résistants au tirage du `--sref`).
+
+**Résultat de l'essai 4, reçu le 2026-10-01 :** net progrès — confirme que le texte était bien la cause principale (cf. hypothèse ci-dessus).
+- Variation 1 (éclair) : lueur très marquée mais effet "foudre de mage" trop démonstratif pour un conscrit, fond désertique hors-brief — écartée.
+- **Variation 2 (retenue) :** jeune, traits fatigués/inexpérimentés, silhouette "remplaçable" bien lue — correspond au brief mieux que les essais précédents. Pas de lueur nettement visible dessus, mais c'est cohérent avec le lore du Soldat (conscrit non-équipé, déjà noté comme un résultat acceptable dès l'essai 1) plutôt qu'un défaut à corriger.
+- Variation 3 : bien exécutée mais dérive vers "vétéran grisonnant", plus proche d'une unité d'élite — écartée pour ce rôle.
+- Variation 4 : lueur discrète et visible (petite marque bleue sur l'épaulière) sans dérive de visage — bonne option de repli si on veut une trace de magie sur ce conscrit.
+
+**Décision : `--sw 275` + préambule corrigé ("clearly visible") est figé comme réglage standard pour tout le roster** (icône et unité tous deux validés dessus). La prévalence variable de la lueur d'une variation à l'autre est normale et acceptable : elle doit de toute façon varier selon le tier de l'unité (quasi absente sur un conscrit, nette sur une unité d'élite/magique) plutôt qu'être uniforme.
+
+**Référence retenue pour l'archétype Soldat :** variation 2 de l'essai 4 (jeune conscrit inexpérimenté) — à upscale et à utiliser comme référence de cohérence si d'autres générations du Soldat sont nécessaires plus tard (portrait, variantes d'équipement, etc.).
 
 ## Points encore ouverts
 
 - [x] Image ancre choisie et URL du `--sref` figé — voir "Image ancre retenue"
-- [ ] Réglage du `--sw` à figer (essai 3 à `--sw 275` en attente de résultat, cf. section ci-dessus) — bloquant avant de lancer tout le roster
-- [ ] Reporter la correction "faint glow" → "clearly visible glow" sur le préambule de [direction-artistique-unites.md](direction-artistique-unites.md)
+- [x] Reporter la correction "faint glow" → "clearly visible glow" sur le préambule de [direction-artistique-unites.md](direction-artistique-unites.md) — fait le 2026-10-01
+- [x] Réglage du `--sw` figé à **275** (préambule corrigé) — validé sur icône et Soldat (essai 4, 2026-10-01)
 - [ ] Palette de couleurs définitive validée sur rendu réel (cf. point ouvert similaire dans [direction-artistique-unites.md](direction-artistique-unites.md))
+- [ ] Lancer la génération du reste du roster d'unités (cf. [direction-artistique-unites.md](direction-artistique-unites.md)) avec le réglage désormais figé : préambule corrigé + `--sref` + `--sw 275`, en acceptant une lueur plus ou moins marquée selon le tier de chaque unité

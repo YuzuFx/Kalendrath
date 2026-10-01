@@ -9,10 +9,12 @@
 À coller en tête de chaque prompt pour garder une cohérence visuelle sur l'ensemble du roster (ambiance déjà établie pour le système héros : "arcane mystique sombre") :
 
 ```
-Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a faint violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed
+Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed
 ```
 
-*Traduction (vérification) :* Art conceptuel de personnage/véhicule en pied, heroic fantasy sombre, royaume humain assiégé par des hordes d'orcs résurgentes, équipement pratique et usé en plaques et cuir avec des imperfections de forge artisanale, palette terreuse sourde (gris fer, rouge sang séché, bronze vieilli) rehaussée d'une faible lueur arcanique violet-bleu sur les runes et les armes, illustration numérique façon peinture, éclairage dramatique à source unique de côté, fond de studio neutre, silhouette nette et lisible, très détaillé
+*Traduction (vérification) :* Art conceptuel de personnage/véhicule en pied, heroic fantasy sombre, royaume humain assiégé par des hordes d'orcs résurgentes, équipement pratique et usé en plaques et cuir avec des imperfections de forge artisanale, palette terreuse sourde (gris fer, rouge sang séché, bronze vieilli) rehaussée d'une lueur arcanique violet-bleu nettement visible sur les runes et les armes, illustration numérique façon peinture, éclairage dramatique à source unique de côté, fond de studio neutre, silhouette nette et lisible, très détaillé
+
+*Correctif du 2026-10-01 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), essai 3 du réglage `--sw`) : "faint" → "clearly visible" — le mot "faint" semblait étouffer la lueur même à `--sw` modéré, forçant à monter `--sw` très haut pour l'obtenir (au prix de la caractérisation des visages). À repasser sur toutes les unités déjà briefées si l'essai 4 confirme que ce correctif suffit à faire apparaître la lueur sans `--sw` élevé.*
 
 **Notes pratiques :**
 - Une fois un premier rendu qui te plaît obtenu, utilise `--sref` (Midjourney) sur cette image pour figer le style et le réutiliser sur toutes les unités suivantes — c'est justement l'usage prévu en Phase 3 de la roadmap.
