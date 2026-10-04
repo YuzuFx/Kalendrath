@@ -191,13 +191,49 @@ Deux dérives identifiées à corriger pour la suite (déjà reportées dans le 
 
 **Prochaine étape :** reprendre les 4 autres unités déjà validées en fond studio (Soldat, Garde, Rôdeur des ombres, Mage de Combat) avec une mise en situation propre à chacune, sur le modèle du Franc-Archer.
 
+## Suite du roster — mise en situation (Soldat, Garde, Rôdeur des ombres, Mage de Combat)
+
+**Soldat — essai 1, reçu le 2026-10-04 : à reprendre.** Bonne énergie de charge sur les 4 variations (mouvement, boue, poussière, autres soldats flous en arrière-plan — le côté "nombreux" du brief est bien lu), mais l'arme pose problème sur les meilleurs candidats : variation 2 (bon visage) montre l'épée à mi-dégainage dans le dos plutôt qu'en main prête à combattre ; variation 3 a une lame disproportionnée, plus courte qu'une épée courte (proche du couteau).
+
+Correctif appliqué le 2026-10-04 sur [direction-artistique-unites.md](direction-artistique-unites.md) : arme explicitement déjà dégainée et tenue en prise de combat (pas en train d'être dégainée), longueur de lame proportionnée précisée.
+
+**Essai 2 à lancer :**
+```
+Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle scene, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source lighting consistent with the scene, atmospheric battle environment supporting the action without overwhelming the character, sharp readable silhouette with the character as the clear focal point, highly detailed, Common human foot soldier, cheap conscript-tier infantry, light padded leather armor with a partial rusted mail vest, round wooden shield banded in iron, short sword or simple spear, sword or spear already drawn and gripped firmly in a ready grip — not being unsheathed or drawn from behind the back, blade a proportionate readable short-sword length, plain unremarkable tabard, tired weary expression, meant to look replaceable and numerous rather than heroic, dirt and travel-worn gear, charging forward mid-stride across a muddy battlefield, more human soldiers charging alongside in the hazy background, the orc horde visible ahead in the distance across the field --ar 3:2 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+**Résultat, reçu le 2026-10-04 : validé.** Les deux défauts de l'essai 1 sont corrigés sur les 4 variations — arme bien en main, taille de lame cohérente. **Référence retenue : variation 4** — expression plus inquiète/peu assurée que les autres (notamment la 2, également solide), ce qui sert mieux le "conscrit quelconque, pas un héros" du brief.
+
+**Garde — mise en situation, reçu le 2026-10-04 : validé. Référence retenue : variation 3.** La seule des 4 variations vraiment "en plein combat" — bouclier levé en train de stopper un orc qui percute juste au moment du rendu, dynamique et lisible.
+
+**Rôdeur des ombres — mise en situation, reçu le 2026-10-04 : validé avec un bémol. Référence retenue : variation 4.** La variation 2 était visuellement la plus aboutie (posture, ambiance) mais montrait la dague fusionnée dans l'avant-bras plutôt que tenue en main — erreur d'anatomie. La variation 4 n'a pas ce défaut : prise crédible, lueur bien visible sur la lame, main au sol, bonne posture d'assassin.
+
+**Mage de Combat — mise en situation, reçu le 2026-10-04 : rejeté, manque d'impact.** Le cercle runique au sol reste trop discret ("a glowing rune circle forming" — même défaut de sous-pondération que le "faint" qu'on avait dû corriger ailleurs dans le préambule), et l'éclair partant d'une seule main en ligne fine manque de présence. Demande explicite : plus d'impact visuel, en gardant la palette bleu-violet du roster plutôt que de basculer sur du feu/orange (qu'on a justement exclu ailleurs pour la cohérence de palette).
+
+**Essai 2 à lancer — deux pistes en parallèle :**
+
+*Variante A — deux mains :*
+```
+Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle scene, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source lighting consistent with the scene, atmospheric battle environment supporting the action without overwhelming the character, sharp readable silhouette with the character as the clear focal point, highly detailed, Human battle mage, lightly armored robes reinforced with glowing rune-etched plates, both arms outstretched with violet-blue arcane lightning erupting from both hands at once, a large glowing rune circle radiating brightly beneath their feet and casting light upward across the character and surroundings, dynamic wide spellcasting stance, slender frame engulfed by an intense magical aura, wind-swept robes and cloak, standing atop a ruined stone battlement, unleashing twin bolts of violet-blue arcane lightning toward an orc warband charging across the valley below, a clear unobstructed line of sight between the mage and the target --ar 3:2 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+*Variante B — bâton arcanique :*
+```
+Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle scene, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source lighting consistent with the scene, atmospheric battle environment supporting the action without overwhelming the character, sharp readable silhouette with the character as the clear focal point, highly detailed, Human battle mage, lightly armored robes reinforced with glowing rune-etched plates, both hands gripping a tall arcane staff topped with a glowing crystal, a massive bolt of violet-blue arcane lightning erupting from the staff's crystal toward the enemy, a large glowing rune circle radiating brightly beneath their feet and casting light upward across the character and surroundings, dynamic wide spellcasting stance, slender frame engulfed by an intense magical aura, wind-swept robes and cloak, standing atop a ruined stone battlement, unleashing the bolt toward an orc warband charging across the valley below, a clear unobstructed line of sight between the mage and the target --ar 3:2 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+**Résultat, reçu le 2026-10-04 : validé, tranché en faveur de la variante bâton.** Les deux variantes gagnent nettement en impact par rapport à l'essai 1 — cercle runique enfin bien visible sur les deux, éclairs beaucoup plus présents. La variante "deux mains" est impressionnante en pure énergie mais dilue la lisibilité (pas de point focal d'arme, silhouette moins nette en petite icône). **Référence retenue : variante bâton, variation 2** (haut-droite) — pose dynamique de face, cercle runique net, éclair qui part clairement du cristal vers la horde en contrebas. Brief figé dans [direction-artistique-unites.md](direction-artistique-unites.md) sur la version bâton.
+
 ## Points encore ouverts
 
 - [x] Image ancre choisie et URL du `--sref` figé — voir "Image ancre retenue"
 - [x] Reporter la correction "faint glow" → "clearly visible glow" sur le préambule de [direction-artistique-unites.md](direction-artistique-unites.md) — fait le 2026-10-01
 - [x] Réglage du `--sw` figé à **275** (préambule corrigé) — validé sur icône et Soldat (essai 4, 2026-10-01)
 - [x] Pivot "mise en situation" (décor propre à chaque unité plutôt que fond studio) validé sur le Franc-Archer — 2026-10-04
-- [ ] Reprendre Soldat, Garde, Rôdeur des ombres et Mage de Combat avec leur propre mise en situation (format validé sur le Franc-Archer)
-- [ ] Reprendre le Piquier des Marches (en pause depuis l'essai 5, cf. section dédiée) avec le nouveau format une fois les autres unités validées
+- [x] Soldat repris en mise en situation — validé (essai 2), référence : variation 4 — 2026-10-04
+- [x] Garde repris en mise en situation — validé, référence : variation 3 — 2026-10-04
+- [x] Rôdeur des ombres repris en mise en situation — validé, référence : variation 4 — 2026-10-04
+- [x] Mage de Combat repris en mise en situation — validé (essai 2, variante bâton), référence : variation 2 — 2026-10-04
+- [ ] Reprendre le Piquier des Marches (en pause depuis l'essai 5, cf. section dédiée) avec le nouveau format
 - [ ] Palette de couleurs définitive validée sur rendu réel (cf. point ouvert similaire dans [direction-artistique-unites.md](direction-artistique-unites.md))
 - [ ] Lancer la génération du reste du roster d'unités (cf. [direction-artistique-unites.md](direction-artistique-unites.md)) avec le réglage désormais figé : préambule corrigé + mise en situation + `--sref` + `--sw 275`, en acceptant une lueur plus ou moins marquée selon le tier de chaque unité

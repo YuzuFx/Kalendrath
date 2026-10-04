@@ -29,23 +29,29 @@ Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle 
 
 ### Soldat *(chair à canon)*
 ```
-Common human foot soldier, cheap conscript-tier infantry, light padded leather armor with a partial rusted mail vest, round wooden shield banded in iron, short sword or simple spear, plain unremarkable tabard, tired weary expression, meant to look replaceable and numerous rather than heroic, dirt and travel-worn gear
+Common human foot soldier, cheap conscript-tier infantry, light padded leather armor with a partial rusted mail vest, round wooden shield banded in iron, short sword or simple spear, sword or spear already drawn and gripped firmly in a ready grip — not being unsheathed or drawn from behind the back, blade a proportionate readable short-sword length, plain unremarkable tabard, tired weary expression, meant to look replaceable and numerous rather than heroic, dirt and travel-worn gear, charging forward mid-stride across a muddy battlefield, more human soldiers charging alongside in the hazy background, the orc horde visible ahead in the distance across the field
 ```
+
+**Référence retenue : variation 4** de l'essai 2 "mise en situation" du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md)) — expression plus inquiète/peu assurée que les autres candidats, ce qui sert mieux le "conscrit quelconque, pas un héros" visé depuis le premier essai en studio.
 *Traduction :* Simple fantassin humain, infanterie de conscription bon marché, armure de cuir légère matelassée avec une cotte de mailles partielle rouillée, bouclier rond en bois cerclé de fer, épée courte ou lance simple, tabard quelconque sans distinction, expression fatiguée, doit paraître remplaçable et nombreux plutôt qu'héroïque, équipement sale et usé par la route
 
 ### Garde *(tank de ligne)*
 ```
-Heavily armored human line infantry, thick full plate armor plating, large tower shield held in one hand, a single-handed broadsword clearly visible and drawn in the other hand, closed great helm hiding the face, wide stable battle stance, visibly dented, scratched and battle-worn plate armor with chipped edges and old repairs — no pristine or polished surfaces, implying countless frontline clashes, imposing bulky silhouette
+Heavily armored human line infantry, thick full plate armor plating, large tower shield held in one hand, a single-handed broadsword clearly visible and drawn in the other hand, closed great helm hiding the face, visibly dented, scratched and battle-worn plate armor with chipped edges and old repairs — no pristine or polished surfaces, imposing bulky silhouette, braced in a defensive shield wall stance with the tower shield raised forward to absorb an incoming blow, an orc warrior charging directly at him about to collide with the shield, dust and debris kicked up by the impact
 ```
-*Traduction :* Infanterie de ligne humaine lourdement blindée, épaisse armure de plates complète, grand bouclier tour tenu dans une main, épée large à une main clairement visible et dégainée dans l'autre main, grand heaume fermé cachant le visage, posture de combat large et stable, armure visiblement cabossée, griffée et usée par la bataille avec des éclats et de vieilles réparations — aucune surface pristine ou polie, suggérant d'innombrables affrontements en première ligne, silhouette imposante et massive
+*Traduction :* Infanterie de ligne humaine lourdement blindée, épaisse armure de plates complète, grand bouclier tour tenu dans une main, épée large à une main clairement visible et dégainée dans l'autre main, grand heaume fermé cachant le visage, armure visiblement cabossée, griffée et usée par la bataille avec des éclats et de vieilles réparations — aucune surface pristine ou polie, silhouette imposante et massive, posture de défense en mur de boucliers avec le bouclier tour levé pour absorber un coup entrant, un guerrier orc chargeant directement sur lui sur le point de percuter le bouclier, poussière et débris soulevés par l'impact
 
 *Correctif du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), essai 5) : le "halberd or broadsword" laissait Midjourney choisir et l'épée finissait souvent cachée derrière le bouclier ou remplacée par une arme ambiguë — reformulé pour forcer une épée à une main clairement visible. L'usure ("dented and battle-scarred") était aussi sous-pondérée face au rendu par défaut assez propre/poli de l'ancre — renforcée explicitement.*
 
+**Référence retenue : variation 3** de l'essai "mise en situation" du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md)) — remplace la référence studio précédente (variation 4 de l'essai 5). Seule variation vraiment "en plein combat", en train de stopper la créature orc avec son bouclier.
+
 ### Rôdeur des ombres *(puissant mais mono-cible)*
 ```
-Elite human assassin-warrior, fitted dark leather-and-blackened-steel armor, tattered dark cloak, dual curved blades or one massive two-handed sword, lower face hidden by a wrapped mask, faint dark violet magical energy wisping off the weapon edge, crouched predatory stance, singled out for a decisive killing strike rather than fighting a crowd
+Elite human assassin-warrior, fitted dark leather-and-blackened-steel armor, tattered dark cloak, dual curved blades, lower face hidden by a wrapped mask, faint dark violet magical energy wisping off the weapon edge, crouched in the shadows of a ruined alley or rocky outcrop at night, about to strike down upon an unaware orc sentry standing just below, moonlight catching the blade's edge
 ```
-*Traduction :* Guerrier-assassin humain d'élite, armure ajustée de cuir et d'acier noirci, cape sombre en lambeaux, deux lames courbes ou une immense épée à deux mains, bas du visage caché par un tissu enroulé, faible énergie magique violet sombre s'échappant du tranchant de l'arme, posture accroupie et prédatrice, ciblé pour un coup fatal décisif plutôt que pour combattre une foule
+*Traduction :* Guerrier-assassin humain d'élite, armure ajustée de cuir et d'acier noirci, cape sombre en lambeaux, deux lames courbes, bas du visage caché par un tissu enroulé, faible énergie magique violet sombre s'échappant du tranchant de l'arme, accroupi dans l'ombre d'une ruelle en ruine ou d'un éperon rocheux de nuit, sur le point de frapper une sentinelle orc qui ne l'a pas vu juste en contrebas, clair de lune accrochant le fil de la lame
+
+**Référence retenue : variation 4** de l'essai "mise en situation" du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md)) — remplace la référence studio précédente (variation 4 de l'essai initial). La variation 2 était visuellement la meilleure mais montrait une dague fusionnée dans l'avant-bras plutôt que tenue en main (erreur d'anatomie) ; la 4 a une prise crédible, la lueur sur la lame et une bonne posture d'assassin.
 
 ### Piquier des Marches *(anti-monté)*
 ```
@@ -57,9 +63,13 @@ Border-guard human pikeman, visibly riveted banded metal armor plates layered ov
 
 ### Mage de Combat *(anti-unités légères)*
 ```
-Human battle mage, lightly armored robes reinforced with glowing rune-etched plates, arcane staff or floating orb channeling violet-blue mana energy, a glowing rune circle forming at their feet, dynamic spellcasting pose with one arm outstretched, slender frame contrasted by an intense magical aura, wind-swept robes
+Human battle mage, lightly armored robes reinforced with glowing rune-etched plates, both hands gripping a tall arcane staff topped with a glowing crystal, a massive bolt of violet-blue arcane lightning erupting from the staff's crystal toward the enemy, a large glowing rune circle radiating brightly beneath their feet and casting light upward across the character and surroundings, dynamic wide spellcasting stance, slender frame engulfed by an intense magical aura, wind-swept robes and cloak, standing atop a ruined stone battlement, unleashing the bolt toward an orc warband charging across the valley below, a clear unobstructed line of sight between the mage and the target
 ```
-*Traduction :* Mage de combat humain, robes légèrement blindées renforcées de plaques gravées de runes lumineuses, bâton arcanique ou orbe flottant canalisant une énergie mana violet-bleu, un cercle runique lumineux se formant à ses pieds, posture dynamique de lancement de sort avec un bras tendu, silhouette fine contrastant avec une aura magique intense, robes soulevées par le vent
+*Traduction :* Mage de combat humain, robes légèrement blindées renforcées de plaques gravées de runes lumineuses, les deux mains tenant un grand bâton arcanique surmonté d'un cristal lumineux, un puissant éclair arcanique bleu-violet jaillissant du cristal du bâton vers l'ennemi, un large cercle runique rayonnant brillamment sous ses pieds et éclairant le personnage et les alentours, large posture dynamique de lancement de sort, silhouette fine engloutie par une aura magique intense, robes et cape soulevées par le vent, debout sur un rempart de pierre en ruine, libérant l'éclair vers une horde d'orcs chargeant dans la vallée en contrebas, une ligne de mire dégagée entre le mage et la cible
+
+**Référence retenue : variante bâton, variation 2** de l'essai 2 "mise en situation" du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md)) — pose dynamique de face, cercle runique enfin bien visible, éclair qui part clairement du cristal vers la cible. Préférée à la variante "deux mains" testée en parallèle (plus impressionnante en pure énergie mais moins lisible en petite icône, sans point focal d'arme).
+
+*Historique : l'essai 1 (un seul bras tendu, pas de bâton, cercle runique "se formant") avait été rejeté pour manque d'impact — cercle et éclair trop discrets. Palette conservée en bleu-violet arcanique (cohérent avec le reste du roster) plutôt qu'une variante feu/orange, qui casserait la signature couleur déjà posée sur toutes les unités.*
 
 ### Franc-Archer *(anti-mobilité)*
 ```
