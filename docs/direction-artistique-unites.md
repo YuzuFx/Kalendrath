@@ -9,17 +9,19 @@
 À coller en tête de chaque prompt pour garder une cohérence visuelle sur l'ensemble du roster (ambiance déjà établie pour le système héros : "arcane mystique sombre") :
 
 ```
-Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed
+Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle scene, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source lighting consistent with the scene, atmospheric battle environment supporting the action without overwhelming the character, sharp readable silhouette with the character as the clear focal point, highly detailed
 ```
 
-*Traduction (vérification) :* Art conceptuel de personnage/véhicule en pied, heroic fantasy sombre, royaume humain assiégé par des hordes d'orcs résurgentes, équipement pratique et usé en plaques et cuir avec des imperfections de forge artisanale, palette terreuse sourde (gris fer, rouge sang séché, bronze vieilli) rehaussée d'une lueur arcanique violet-bleu nettement visible sur les runes et les armes, illustration numérique façon peinture, éclairage dramatique à source unique de côté, fond de studio neutre, silhouette nette et lisible, très détaillé
+*Traduction (vérification) :* Art conceptuel de personnage/véhicule en pied, heroic fantasy sombre, dans une scène de bataille dynamique, royaume humain assiégé par des hordes d'orcs résurgentes, équipement pratique et usé en plaques et cuir avec des imperfections de forge artisanale, palette terreuse sourde (gris fer, rouge sang séché, bronze vieilli) rehaussée d'une lueur arcanique violet-bleu nettement visible sur les runes et les armes, illustration numérique façon peinture, éclairage dramatique à source unique cohérent avec la scène, environnement de bataille atmosphérique qui soutient l'action sans écraser le personnage, silhouette nette et lisible avec le personnage comme point focal clair, très détaillé
 
-*Correctif du 2026-10-01 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), essai 3 du réglage `--sw`) : "faint" → "clearly visible" — le mot "faint" semblait étouffer la lueur même à `--sw` modéré, forçant à monter `--sw` très haut pour l'obtenir (au prix de la caractérisation des visages). À repasser sur toutes les unités déjà briefées si l'essai 4 confirme que ce correctif suffit à faire apparaître la lueur sans `--sw` élevé.*
+*Correctif du 2026-10-01 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), essai 3 du réglage `--sw`) : "faint" → "clearly visible" — le mot "faint" semblait étouffer la lueur même à `--sw` modéré, forçant à monter `--sw` très haut pour l'obtenir (au prix de la caractérisation des visages).*
+
+*Correctif structurant du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), pivot "mise en situation") : "clean neutral studio background" → mise en scène dynamique propre à chaque unité. Décision : plutôt qu'un fond studio neutre partagé, chaque unité est montrée dans une action et un micro-décor qui lui sont propres (l'archer en hauteur qui décoche, le garde qui encaisse une charge, le mage en pleine incantation) — cohérent avec le fait que les unités du roster ont des rôles tactiques très différents qu'un décor générique ne peut pas tous représenter de façon crédible. **Toutes les unités déjà briefées/validées en fond studio (Soldat, Garde, Rôdeur des ombres, Mage de Combat, Franc-Archer) sont à reprendre avec une clause d'action/décor propre une fois ce nouveau format validé** — chaque section ci-dessous précise sa propre mise en situation en plus de la description du personnage.*
 
 **Notes pratiques :**
 - Une fois un premier rendu qui te plaît obtenu, utilise `--sref` (Midjourney) sur cette image pour figer le style et le réutiliser sur toutes les unités suivantes — c'est justement l'usage prévu en Phase 3 de la roadmap.
-- Ces unités doivent rester lisibles **en petite icône** (listes de construction façon Ogame, pas seulement en grand artwork) — privilégie une silhouette distincte et un point focal clair (arme, posture) par unité plutôt que des détails fins qui disparaîtront à petite taille.
-- Ajoute tes propres paramètres techniques (`--ar 1:1` ou `16:9`, `--v`, `--stylize`, etc.) selon l'outil utilisé.
+- Chaque unité doit rester lisible **en petite icône** (listes de construction façon Ogame, pas seulement en grand artwork) — même avec un décor, le personnage doit rester le point focal net et la silhouette lisible ; le décor soutient l'action sans noyer le sujet.
+- Ajoute tes propres paramètres techniques (`--ar`, `--v`, `--stylize`, etc.) selon l'outil utilisé — pour les scènes avec décor, un format plus large (`--ar 3:2` par exemple) peut mieux convenir qu'un format portrait serré.
 
 ---
 
@@ -47,9 +49,11 @@ Elite human assassin-warrior, fitted dark leather-and-blackened-steel armor, tat
 
 ### Piquier des Marches *(anti-monté)*
 ```
-Border-guard human pikeman, medium banded armor, very long hooked pike/halberd designed to unhorse cavalry, small round buckler, planted wide defensive stance angled forward, rugged frontier gear in earthy browns and greens, weathered cloak
+Border-guard human pikeman, visibly riveted banded metal armor plates layered over a padded gambeson on the torso and forearms, a worn dark-green surcoat with a faded regional insignia over the armor, no hood or heavy fur cloak, short practical hair with the face clearly visible, a single very long hooked pike held firmly in both hands with a clear anatomically correct two-handed grip, the shaft resting against the shoulder and the hooked head pointing forward, not clipping through the body, small round buckler strapped to the forearm, planted wide defensive stance angled forward
 ```
-*Traduction :* Piquier humain de garde-frontière, armure moyenne à bandes de métal, très longue pique/hallebarde crochetée conçue pour désarçonner la cavalerie, petit bouclier rond (targe), posture défensive large et plantée, orientée vers l'avant, équipement rustique de frontière dans des tons terreux bruns et verts, cape usée
+*Traduction :* Piquier humain de garde-frontière, plaques d'armure métallique à bandes visiblement rivetées, portées par-dessus un gambison matelassé sur le torse et les avant-bras, surcot vert sombre usé avec un insigne régional délavé par-dessus l'armure, sans capuche ni grande cape en fourrure, cheveux courts et pratiques avec le visage clairement visible, une seule très longue pique crochetée tenue fermement à deux mains avec une prise anatomiquement correcte et lisible, la hampe reposant contre l'épaule et la tête crochetée pointant vers l'avant, sans traverser le corps, petit bouclier rond (targe) sanglé à l'avant-bras, posture défensive large et plantée, orientée vers l'avant
+
+*Correctif du 2026-10-04, v2 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), essais 1 et 2 du Piquier) : v1 avait corrigé l'arme (prise à deux mains explicite, "pike/halberd" ambigu supprimé), ce qui a réglé les erreurs d'anatomie. Mais le résultat restait trop proche en silhouette du Soldat et du Franc-Archer (même base cape/capuche en fourrure et cuir brut, armure à bandes peu lisible, teinte verte du brief absente du rendu). v2 retire la capuche/cape partagée avec les autres unités, rend l'armure à bandes explicitement visible, et ajoute un surcot vert sombre distinctif pour casser la ressemblance.*
 
 ### Mage de Combat *(anti-unités légères)*
 ```
@@ -59,9 +63,13 @@ Human battle mage, lightly armored robes reinforced with glowing rune-etched pla
 
 ### Franc-Archer *(anti-mobilité)*
 ```
-Human ranger archer, light leather scout gear with a hooded cloak, longbow or crossbow drawn, quiver full of rune-tipped arrows, alert crouched aiming stance, muted forest-camouflage tones, agile and lightly equipped
+Human ranger archer (human ears, not elven), light leather scout gear with a hooded cloak, quiver full of rune-tipped arrows, agile and lightly equipped, perched on a high vantage point atop a ruined stone watchtower overlooking a besieged valley, a clear unobstructed line of sight toward the valley below with nothing blocking the arrow's trajectory, longbow fully drawn with a rune-tipped arrow nocked and about to be released, focused aiming stance, muted forest-camouflage tones, a hazy orc warband and distant siege fires visible far below in the background
 ```
-*Traduction :* Archer-rôdeur humain, équipement léger de cuir avec une cape à capuche, arc long ou arbalète bandé(e), carquois rempli de flèches à pointe runique, posture accroupie et alerte en visée, tons sourds de camouflage forestier, agile et légèrement équipé
+*Traduction :* Archer-rôdeur humain (oreilles humaines, pas elfiques), équipement léger de cuir avec une cape à capuche, carquois rempli de flèches à pointe runique, agile et légèrement équipé, perché en hauteur au sommet d'une tour de guet en ruine surplombant une vallée assiégée, une ligne de mire dégagée vers la vallée en contrebas, rien ne bloquant la trajectoire de la flèche, arc long complètement bandé avec une flèche à pointe runique encochée sur le point d'être relâchée, posture de visée concentrée, tons sourds de camouflage forestier, une horde d'orcs et des feux de siège visibles au loin en contrebas, dans la brume
+
+**Référence retenue : variation 1** de l'essai "mise en situation" du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md)) — remplace la référence studio précédente (variation 3).
+
+*Correctif du 2026-10-04 post-essai : deux dérives observées sur l'essai initial — oreilles elfiques sur une variation (hors-lore, l'unité est humaine), et trajectoire de tir qui semblait viser un pan de mur au premier plan sur deux variations faute de préciser une ligne de mire dégagée. Les deux corrigées explicitement dans le brief ci-dessus — à surveiller sur toute future unité à distance/visée (Mage de Combat notamment).*
 
 ---
 

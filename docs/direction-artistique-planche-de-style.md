@@ -134,10 +134,70 @@ Dark heroic fantasy full-body character/vehicle concept art, human kingdom under
 
 **Décision : variation 4 retenue comme référence pour l'archétype Garde.** Les deux défauts de l'essai initial (arme ambiguë, armure trop propre) sont corrigés — brief Garde figé dans [direction-artistique-unites.md](direction-artistique-unites.md).
 
+## Suite du roster — deuxième lot (Piquier des Marches, Mage de Combat, Franc-Archer)
+
+Tests du réglage standard sur trois unités supplémentaires, 2026-10-04.
+
+**Piquier des Marches — à reprendre (essai 1 rejeté).** Le gabarit rustique de garde-frontière est là, mais 2 variations sur 4 montrent des erreurs d'anatomie/physique : pique traversant littéralement le corps sur l'une, prise en main improbable sur l'autre. Cause probable : "pike/halberd" ambigu (comme pour l'épée du Garde) et absence de précision sur la prise en main, qui laissent Midjourney improviser une pose incohérente sur une arme aussi longue et fine.
+
+Correctif appliqué le 2026-10-04 sur [direction-artistique-unites.md](direction-artistique-unites.md) : une seule arme (pique, plus de "/halberd"), prise à deux mains explicitement décrite (hampe contre l'épaule, tête crochetée vers l'avant, "not clipping through the body").
+
+**Essai 2, reçu le 2026-10-04 :** le problème d'anatomie est corrigé — prise à deux mains cohérente et pique qui ne traverse plus le corps sur les 4 variations. **Mais rejeté pour une autre raison :** silhouette trop proche du Soldat et du Franc-Archer — même base de cape/capuche en fourrure et cuir brut qui domine le rendu, bouclier à peine visible, armure "banded" peu lisible, et la touche "earthy browns and **greens**" du brief ne ressort quasiment pas (tout reste dans les bruns). Le Piquier devrait pourtant se distinguer comme un fantassin plus armé que l'Archer (cuir léger) mais moins qu'un chevalier, avec une silhouette de "garde-frontière" plutôt que de "rôdeur" — hors, actuellement rien ne l'en différencie fortement à l'œil.
+
+Correctif proposé pour l'essai 3 : retirer la capuche/cape (partagée avec le Franc-Archer), rendre l'armure à bandes métalliques explicitement visible sur le torse, ajouter une pièce d'équipement distinctive (surcot/tabard vert sombre avec un insigne régional usé) pour ancrer la teinte verte du brief et casser la ressemblance avec les deux autres unités en cuir.
+
+**Essai 3 à lancer :**
+```
+Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed, Border-guard human pikeman, visibly riveted banded metal armor plates layered over a padded gambeson on the torso and forearms, a worn dark-green surcoat with a faded regional insignia over the armor, no hood or heavy fur cloak, short practical hair with the face clearly visible, a single very long hooked pike held firmly in both hands with a clear anatomically correct two-handed grip, the shaft resting against the shoulder and the hooked head pointing forward, not clipping through the body, small round buckler strapped to the forearm, planted wide defensive stance angled forward --ar 2:3 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+**Essai 4, reçu le 2026-10-04 :** net progrès, les deux défauts de l'essai 2 sont réglés sur les 4 variations — prise à deux mains enfin crédible (mains bien refermées sur la hampe, plus de main flottante/déconnectée), plus de capuche/écharpe (têtes et visages dégagés), armure à bandes lisible. Le surcot vert ressort nettement sur les variations 3 et 4.
+
+**Nouveau défaut identifié :** la pique sort du cadre en haut sur les 4 variations — attendu, le `--ar 2:3` (portrait) ne laisse pas la place à une arme "very long" tenue en diagonale sur toute sa longueur une fois les autres contraintes de cadrage par défaut appliquées.
+
+**Essai 5 à lancer** — ajout d'une consigne de cadrage explicite pour garder l'arme entière dans le champ :
+```
+Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed, wide full-body shot with the camera pulled back so the entire pike from butt to hooked tip is fully visible within frame, nothing cropped out, Border-guard human pikeman, both hands visibly closed around a single very long hooked pike held diagonally across the body, one hand gripping just below the hooked head and the other hand gripping lower near the waist, no gap between either hand and the shaft, visibly riveted banded metal armor plates layered over a padded gambeson on the torso and forearms, a worn dark-green surcoat with a faded regional insignia over the armor, bare head, short practical hair, face and neck clearly visible, no scarf, hood or fur wrap, small round buckler strapped to the forearm, planted wide defensive stance angled forward --ar 2:3 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no floating weapon, weapon merging with hand, disconnected grip, gap between hand and shaft, extra weapon, scarf, hood, cropped weapon, weapon cut off by frame
+```
+
+**Essai 5, reçu le 2026-10-04 :** le cadrage est corrigé (arme entière visible, crochet net sur plusieurs variations), mais l'ensemble est jugé en retrait par rapport à l'essai 4 — éclairage plus dur/sombre, surcot vert quasi absent, lecture plus "guerrier" que "garde-frontière". Cause probable : la longue liste `--no` ajoutée pour forcer le cadrage a sur-contraint le prompt et tiré le rendu vers un résultat moins soigné esthétiquement (effet classique de sur-contrainte sur Midjourney). **Mise en pause du Piquier** sur ce point précis — pas de décision prise entre repartir du texte de l'essai 4 avec juste `--ar` ajusté, ou accepter le crop partiel de la pointe (convention courante en concept art de personnage).
+
+**Mage de Combat — validé. Référence retenue : variation 1** (modèle masculin).
+
+**Franc-Archer — validé. Référence retenue : variation 3.**
+
+## Pivot structurant — mise en situation plutôt que fond studio (2026-10-04)
+
+En comparant au rendu des cartes d'unités d'Aleryos et d'Embercraft (jeux de référence), le fond de studio neutre commun à toutes les unités a été remis en question : il produit des fiches cohérentes entre elles mais anonymes, alors que chaque unité du roster a un rôle tactique et une mécanique de jeu différents (l'archer tire à distance, le garde encaisse en ligne, le mage lance des sorts, le rôdeur frappe en embuscade) qui gagnent à être montrés plutôt que décrits.
+
+**Option envisagée puis écartée :** personnage isolé sur fond neutre (comme actuellement) + décor générique réutilisé composé dans l'UI (CSS/layering). Écartée car elle ne permet pas à chaque unité d'avoir une action et un décor qui lui sont propres — un mage en pleine incantation et un rôdeur en embuscade n'ont pas de raison de partager un même arrière-plan pour être cohérents.
+
+**Décision : chaque unité est générée directement dans sa propre mise en situation** (action + micro-décor adaptés à son rôle), plutôt que sur un fond neutre partagé. Le préambule commun est corrigé en conséquence dans [direction-artistique-unites.md](direction-artistique-unites.md) : "clean neutral studio background" → consigne de scène de bataille dynamique propre à chaque unité, avec le personnage qui reste le point focal net.
+
+**Conséquence :** les 5 unités déjà validées en fond studio (Soldat, Garde, Rôdeur des ombres, Mage de Combat, Franc-Archer) seront à reprendre avec une mise en situation une fois ce nouveau format validé — à ne pas refaire avant d'avoir confirmé que le style `--sref` tient toujours une fois un vrai décor ajouté.
+
+**Unité test : Franc-Archer**, repris avec son brief mis à jour (perché sur une tour de guet en ruine, arc complètement bandé, horde d'orcs et feux de siège visibles en contrebas dans la brume) :
+```
+Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle scene, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source lighting consistent with the scene, atmospheric battle environment supporting the action without overwhelming the character, sharp readable silhouette with the character as the clear focal point, highly detailed, Human ranger archer, light leather scout gear with a hooded cloak, quiver full of rune-tipped arrows, agile and lightly equipped, perched on a high vantage point atop a ruined stone watchtower overlooking a besieged valley, longbow fully drawn with a rune-tipped arrow nocked and about to be released, focused aiming stance, muted forest-camouflage tones, a hazy orc warband and distant siege fires visible far below in the background --ar 3:2 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+À vérifier sur le résultat : le style de l'ancre (palette, lueur, matières) tient-il toujours avec un vrai décor derrière le personnage ? Le personnage reste-t-il le point focal net malgré la scène ? Le format plus large (`--ar 3:2`) convient-il mieux qu'un portrait serré pour ce genre de composition ?
+
+**Résultat, reçu le 2026-10-04 : pivot validé.** Le style de l'ancre (palette, lueur, matières) tient très bien avec un vrai décor, le `--ar 3:2` fonctionne bien pour ce type de composition, et l'ambiance gagne nettement par rapport au fond studio. **Référence retenue : variation 1.**
+
+Deux dérives identifiées à corriger pour la suite (déjà reportées dans le brief Franc-Archer de [direction-artistique-unites.md](direction-artistique-unites.md)) :
+- Variation 2 : oreilles elfiques — dérive hors-lore (l'unité est humaine), probablement l'archétype "ranger/archer" qui tire le style vers des tropes elfiques. À surveiller sur toute unité à l'arc/à distance : préciser "human ears, not elven" au besoin.
+- Variations 3 et 4 : la flèche semble viser un pan de mur au premier plan plutôt que la vallée — rien dans le prompt ne garantissait une ligne de mire dégagée. À reprendre sur toute unité en action de visée/tir à distance : préciser explicitement une ligne de mire dégagée vers la cible.
+
+**Prochaine étape :** reprendre les 4 autres unités déjà validées en fond studio (Soldat, Garde, Rôdeur des ombres, Mage de Combat) avec une mise en situation propre à chacune, sur le modèle du Franc-Archer.
+
 ## Points encore ouverts
 
 - [x] Image ancre choisie et URL du `--sref` figé — voir "Image ancre retenue"
 - [x] Reporter la correction "faint glow" → "clearly visible glow" sur le préambule de [direction-artistique-unites.md](direction-artistique-unites.md) — fait le 2026-10-01
 - [x] Réglage du `--sw` figé à **275** (préambule corrigé) — validé sur icône et Soldat (essai 4, 2026-10-01)
+- [x] Pivot "mise en situation" (décor propre à chaque unité plutôt que fond studio) validé sur le Franc-Archer — 2026-10-04
+- [ ] Reprendre Soldat, Garde, Rôdeur des ombres et Mage de Combat avec leur propre mise en situation (format validé sur le Franc-Archer)
+- [ ] Reprendre le Piquier des Marches (en pause depuis l'essai 5, cf. section dédiée) avec le nouveau format une fois les autres unités validées
 - [ ] Palette de couleurs définitive validée sur rendu réel (cf. point ouvert similaire dans [direction-artistique-unites.md](direction-artistique-unites.md))
-- [ ] Lancer la génération du reste du roster d'unités (cf. [direction-artistique-unites.md](direction-artistique-unites.md)) avec le réglage désormais figé : préambule corrigé + `--sref` + `--sw 275`, en acceptant une lueur plus ou moins marquée selon le tier de chaque unité
+- [ ] Lancer la génération du reste du roster d'unités (cf. [direction-artistique-unites.md](direction-artistique-unites.md)) avec le réglage désormais figé : préambule corrigé + mise en situation + `--sref` + `--sw 275`, en acceptant une lueur plus ou moins marquée selon le tier de chaque unité
