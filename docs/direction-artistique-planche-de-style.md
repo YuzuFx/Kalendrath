@@ -107,6 +107,33 @@ Dark heroic fantasy full-body character/vehicle concept art, human kingdom under
 
 **Référence retenue pour l'archétype Soldat :** variation 2 de l'essai 4 (jeune conscrit inexpérimenté) — à upscale et à utiliser comme référence de cohérence si d'autres générations du Soldat sont nécessaires plus tard (portrait, variantes d'équipement, etc.).
 
+## Suite du roster — premier lot (Garde, Rôdeur des ombres)
+
+Premiers tests du réglage standard (`--sw 275` + préambule corrigé) sur deux unités du roster, 2026-10-04.
+
+**Rôdeur des ombres — validé.** Les 4 variations confirment que le réglage tient sur une unité avec son propre brief magique (pas de surcharge entre la lueur du préambule et "faint dark violet magical energy" du brief — les deux se combinent en une seule signature cohérente sur la lame). **Référence retenue : variation 4** — cheveux visibles (pas de capuche complète), double dague, posture et ambiance "assassin" bien lues.
+
+**Garde — à reprendre (essai 5 lancé).** Gabarit massif, bouclier tour et heaume fermé bien là sur les 4 variations, mais deux défauts :
+- L'arme n'est pas clairement lisible comme une épée — le "halberd or broadsword" du brief laissait Midjourney choisir, et l'arme finissait souvent cachée derrière le bouclier ou ambiguë (lames doubles sur une variation).
+- L'armure rend "chevalier poli/propre" plutôt que "cabossée et marquée de cicatrices de bataille" — l'usure demandée dans le brief était sous-pondérée face au rendu par défaut assez propre de l'ancre.
+
+Correctif appliqué le 2026-10-04 sur le brief Garde dans [direction-artistique-unites.md](direction-artistique-unites.md) : arme reformulée en épée à une main explicitement visible et dégainée (bouclier dans l'autre main), usure de l'armure renforcée et rendue non-négociable ("no pristine or polished surfaces").
+
+**Essai 5 à lancer :**
+```
+Dark heroic fantasy full-body character/vehicle concept art, human kingdom under siege by resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and weapons, painterly digital illustration, dramatic single-source side lighting, clean neutral studio background, sharp readable silhouette, highly detailed, Heavily armored human line infantry, thick full plate armor plating, large tower shield held in one hand, a single-handed broadsword clearly visible and drawn in the other hand, closed great helm hiding the face, wide stable battle stance, visibly dented, scratched and battle-worn plate armor with chipped edges and old repairs — no pristine or polished surfaces, implying countless frontline clashes, imposing bulky silhouette --ar 2:3 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275
+```
+
+À vérifier sur le résultat : l'épée est-elle désormais clairement identifiable (pas cachée derrière le bouclier, pas ambiguë) ? L'armure montre-t-elle une usure visible (chocs, éraflures, réparations) plutôt qu'un rendu poli ?
+
+**Résultat de l'essai 5, reçu le 2026-10-04 :** net progrès sur les deux défauts visés.
+- Variation 1 : épée présente mais non dégainée (au fourreau) — ne répond pas au brief, écartée.
+- **Variation 2 :** épée dégainée et clairement visible, armure bien marquée par l'usure (rouille, éraflures) — bon candidat.
+- Variation 3 : épée tenue du mauvais côté, rendu incohérent (bouclier et épée mal répartis entre les mains) — écartée.
+- **Variation 4 (retenue) :** épée dégainée et visible avec une légère lueur arcanique bleutée sur le fil de la lame, armure cabossée/usée bien lue — meilleur équilibre entre le brief (épée, usure) et la signature du roster (lueur discrète, cohérente avec un tank de ligne sans brief magique propre, entre le quasi-rien du Soldat et le net du Rôdeur).
+
+**Décision : variation 4 retenue comme référence pour l'archétype Garde.** Les deux défauts de l'essai initial (arme ambiguë, armure trop propre) sont corrigés — brief Garde figé dans [direction-artistique-unites.md](direction-artistique-unites.md).
+
 ## Points encore ouverts
 
 - [x] Image ancre choisie et URL du `--sref` figé — voir "Image ancre retenue"

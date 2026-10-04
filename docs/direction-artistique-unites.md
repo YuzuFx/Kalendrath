@@ -33,9 +33,11 @@ Common human foot soldier, cheap conscript-tier infantry, light padded leather a
 
 ### Garde *(tank de ligne)*
 ```
-Heavily armored human line infantry, thick full plate armor plating, large tower shield covering most of the body, halberd or broadsword, closed great helm hiding the face, wide stable battle stance, dented and battle-scarred armor implying countless frontline clashes, imposing bulky silhouette
+Heavily armored human line infantry, thick full plate armor plating, large tower shield held in one hand, a single-handed broadsword clearly visible and drawn in the other hand, closed great helm hiding the face, wide stable battle stance, visibly dented, scratched and battle-worn plate armor with chipped edges and old repairs — no pristine or polished surfaces, implying countless frontline clashes, imposing bulky silhouette
 ```
-*Traduction :* Infanterie de ligne humaine lourdement blindée, épaisse armure de plates complète, grand bouclier tour couvrant la majeure partie du corps, hallebarde ou épée large, grand heaume fermé cachant le visage, posture de combat large et stable, armure cabossée et marquée de cicatrices de bataille suggérant d'innombrables affrontements en première ligne, silhouette imposante et massive
+*Traduction :* Infanterie de ligne humaine lourdement blindée, épaisse armure de plates complète, grand bouclier tour tenu dans une main, épée large à une main clairement visible et dégainée dans l'autre main, grand heaume fermé cachant le visage, posture de combat large et stable, armure visiblement cabossée, griffée et usée par la bataille avec des éclats et de vieilles réparations — aucune surface pristine ou polie, suggérant d'innombrables affrontements en première ligne, silhouette imposante et massive
+
+*Correctif du 2026-10-04 (cf. [direction-artistique-planche-de-style.md](direction-artistique-planche-de-style.md), essai 5) : le "halberd or broadsword" laissait Midjourney choisir et l'épée finissait souvent cachée derrière le bouclier ou remplacée par une arme ambiguë — reformulé pour forcer une épée à une main clairement visible. L'usure ("dented and battle-scarred") était aussi sous-pondérée face au rendu par défaut assez propre/poli de l'ancre — renforcée explicitement.*
 
 ### Rôdeur des ombres *(puissant mais mono-cible)*
 ```
