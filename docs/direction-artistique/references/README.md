@@ -15,6 +15,15 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
+## Autres rendus validés (hors roster)
+
+| Sujet | URL Midjourney |
+|---|---|
+| Cité (image d'ambiance, sert de bannière de la Vue d'ensemble) | https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png |
+| Ressource Mana | https://cdn.midjourney.com/4d087b07-3ba0-4a17-95ff-c683cbdc750c/0_0.png |
+
+*Fournies par Gregory le 2026-10-04. Copies locales en pleine résolution : `cite.png` (3360 × 1440) et `ressource-mana.png` (2048 × 2048).*
+
 ## Captures brutes (archive, interface Midjourney visible)
 
 Gardées en complément le temps que les URLs ci-dessus soient vérifiées utilisables durablement (un CDN Midjourney peut expirer selon la politique du service). Ce sont des captures de grilles de 4 variations ; la case retenue est indiquée pour chacune.
