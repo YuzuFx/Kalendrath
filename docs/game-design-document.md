@@ -224,6 +224,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 | Planète (une fois colonisée) | **Ville** | Ce qui est bâti sur un Éclat colonisé |
 | Galaxie / Système / Position | **Région / Contrée / Éclat** | Déjà établi (lore section 8) |
 | Alliance | **Alliance** | Conservé tel quel — terme déjà bien compris dans le genre |
+| Officiers (système premium d'OGame) | **Conseillers** | **Décidé le 2026-10-11** : mini-héros qui forment le conseil du héros principal (cf. 5.5) ; « officiers » écarté pour ne pas se confondre avec le système premium d'OGame |
 | Débris spatiaux (butin post-combat) | **Champ de ruines** | Cohérent avec le motif de vestiges/reliques du lore |
 
 ---
@@ -264,9 +265,38 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 
 ### 5.5 Système Héros / Gouverneur
 
-*Déjà cadré dans nos échanges précédents — synthèse :*
+#### Révision d'orientation — décidée le 2026-10-11 : un héros principal + des conseillers
 
-- Plusieurs héros par joueur, limite fixée à **6-7 héros maximum**
+*Motif : un héros par ville (6-7 au total) devenait lourd à gérer à mesure que l'empire grandit (18-21 arbres de talents, 174-203 points à répartir). Le modèle est remplacé par un seul héros fort, entouré de conseillers plus légers. Le pilote technique n'ayant à ce jour que la démo Guerrier, le coût du virage est minimal. Ce bloc prévaut sur les puces historiques plus bas (marquées « révisé 2026-10-11 » quand elles sont touchées).*
+
+**Héros principal — décidé**
+- **Un seul héros principal par joueur**, dont l'archétype est choisi à l'inscription parmi les 6 (cf. roster ci-dessous) pour personnaliser l'expérience. Il garde les **3 voies de talents** et le niveau max 30 (29 points) ; c'est le profil polyvalent.
+- **Son bonus passif et sa voie « royaume » s'appliquent à tout l'empire**, plus seulement à une ville. Le bonus reste actif même en mission ou indisponible.
+- **Changement de héros principal possible en cours de partie**, via la **boutique** (cf. section 9). L'équilibrage des 6 archétypes entre eux et des **explications claires au moment du choix** sont à la charge du projet : le choix du premier héros devient la décision la plus structurante du joueur.
+- Disparaît : le « gouverneur par ville ». Le prestige, les recherches et les bâtiments continuent de porter la progression des villes (cf. 5.6 pour l'évolution visuelle).
+
+**Conseillers — décidé**
+- **Jusqu'à 4 conseillers** par joueur, qui forment le **conseil du héros** (nom retenu ; « officiers » écarté, terme déjà pris par le système premium d'OGame).
+- Ce sont des **mini-héros** : niveau max **10 à 15** (valeur finale **[TBD]**), **un seul arbre de talents** (version « light » de l'archétype — chaque archétype existe donc en deux versions : héros à 3 voies, conseiller à 1 voie), **inventaire allégé** (moins d'emplacements que les 8 du héros, détail **[TBD]**), quelques points de talent seulement.
+- Ils apportent des **bonus d'empire mineurs**, plus spécialisés que le héros. Ils **peuvent partir en mission** comme lui, mais sont moins puissants ; leur indisponibilité après un échec reste proportionnelle à leur niveau (donc courte) — on peut leur confier des sorties risquées.
+- **Libres au niveau de l'archétype** : un conseiller peut être de n'importe quel archétype, indépendamment de celui du héros. Un héros Intendant ou Explorateur (sans voie de combat) peut ainsi nommer un conseiller Guerrier : moins efficace sur un champ de bataille qu'un héros Guerrier, mais cohérent avec la direction choisie par le joueur.
+- **Les bonus se cumulent** : quatre conseillers du même archétype donnent quatre fois son bonus. C'est le **choix de direction voulu** : spécialisation (empiler) ou polyvalence (varier).
+- **Sièges débloqués par les paliers de Prestige** (cf. 5.6), dans la limite de 4. Au-delà, un autre débouché des paliers suivants reste à trouver.
+
+**Garde-fous d'équilibrage — proposition du 2026-10-11, validée dans le principe (chiffres en Phase 6)**
+- Seul le **héros principal** a des effets à portée empire à pleine valeur (sa voie « royaume »). Les rendements du tableau de la section 5.5 ci-dessous restent valables.
+- Les **conseillers** donnent des bonus d'empire **de domaine** (construction, armée, exploration, logistique…), plus modestes.
+- **Plafond par axe pour la somme des conseillers** (ordre de grandeur : un tiers à la moitié du plafond du héros sur ce même axe, **[TBD]**), de sorte que quatre conseillers identiques restent un vrai choix stratégique plutôt qu'un dépassement des plafonds actuels.
+- Les tiers 1-2 de chaque archétype doivent toucher des axes universellement utiles, puisque le premier choix est désormais le seul de départ.
+
+**Pistes à valider (non tranchées)**
+- **Conseillers « fixes »** : quatre conseillers nommés par archétype, chacun avec ses stats ou son passif propre, pour donner de la réflexion au choix. Coût artistique : 24 personnages ; piste de réduction : 2 par archétype au lancement, le reste en contenu ultérieur. Piste de contenu : faire de leur arbre une version raccourcie d'une des 3 voies du héros plutôt qu'un arbre inédit.
+- **Changement de héros principal** : à décider ce que l'on conserve (niveau et XP, équipement) et ce qui est remis à zéro (talents) ; un changement gratuit pendant le tutoriel est à envisager pour ne pas bloquer un joueur qui s'est trompé.
+- **Chantier technique** (non commencé) : remplacer la limite de 6-7 héros et l'assignation héros → ville ; `TalentEffectScope` (héros / ville / groupe) n'a pas de portée « empire » ; table de conseillers à créer.
+
+*Synthèse historique (avant la révision du 2026-10-11) — la limite de 6-7 héros, le gouverneur par ville et l'adossement du déblocage aux colonies ci-dessous sont remplacés par le bloc précédent :*
+
+- Plusieurs héros par joueur, limite fixée à **6-7 héros maximum** *(révisé 2026-10-11 : 1 héros principal + 4 conseillers)*
 - Chaque héros peut être assigné comme **gouverneur d'une ville**, avec bonus passif thématique selon son archétype
 - **Déblocage progressif** des emplacements de ville (et donc de héros) via niveau de ville principale / technologies — inspiré du modèle Aleryos (limite de colonies)
   - **Formule existante identifiée le 2026-09-18** : `astrophysics` (rebaptisée **Découverte Tellurique**, cf. 4.3, `app/GameObjects/ResearchObjects.php` id 124) calcule déjà `MAX_COLONIES = round(niveau / 2)` et `MAX_EXPEDITION_SLOTS = floor(sqrt(niveau))`. Réutilisation directe possible pour le nombre de villes/héros débloquables — effort *faible* si on adosse le déblocage à cette même recherche.
@@ -298,7 +328,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
   | Explorateur | Voie du Cartographe *(vitesse, portée)* | Voie du Chercheur de Reliques *(butin, composants de craft)* | **Voie de l'Avant-Poste** *(stockage, emplacements de mission, réduction du risque)* |
   | Intendant | Voie de la Caravane *(fret, carburant, commerce)* | Voie du Sceau de Cire *(coûts de construction)* | **Voie du Grenier** *(production, stockage)* |
 
-  - **Explorateur et Intendant n'ont aucune voie de combat** — choix assumé : ils n'apportent rien à une armée accompagnée en Mode de Guerre (cf. 5.4) et gagnent en économie ce qu'ils perdent en guerre. C'est ce qui rend le choix "quel héros gouverne quelle ville" réellement structurant.
+  - **Explorateur et Intendant n'ont aucune voie de combat** — choix assumé : ils n'apportent rien à une armée accompagnée en Mode de Guerre (cf. 5.4) et gagnent en économie ce qu'ils perdent en guerre. C'est ce qui rend le choix "quel héros gouverne quelle ville" réellement structurant. *(Révisé 2026-10-11 : le gouverneur par ville disparaît ; le choix structurant devient l'archétype du héros principal et la composition de son conseil. Un héros sans voie de combat peut nommer un conseiller Guerrier.)*
 - **Cadre d'équilibrage des talents — proposition du 2026-09-23** (objectif posé par le joueur : impact ≤ 10 % sous le niveau 10, ~30 % maximum au niveau 30, un héros ne doit jamais renverser à lui seul une mécanique de jeu) :
   - **Règle maîtresse** : un héros gagne 29 points sur sa carrière (9 au niveau 10), donc **1 point de talent = 1 % d'impact** produit exactement 9 % au niveau 10 et 29 % au niveau 30. Le rendement est ensuite **dégressif selon le levier réel de l'axe** — un bonus de production composé sur des semaines n'a pas la même valeur qu'un bonus de dégâts sur une bataille.
 
@@ -316,8 +346,8 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
   | Réduction de coût de construction | **aucune — axe vierge dans le jeu** | 0,28 %/pt | +8 % |
 
   - **Vérifié techniquement le 2026-09-23** : dans OGameX les bonus de production sont **additifs sur la base (mine + position de planète)**, jamais composés (`GameObjectProduction::calculate()` empile des composants nommés dans un `ProductionIndex`, sommés par `calculateTotal()`). Un héros à +10 % s'ajoute donc à +25 % Collector pour donner +35 % de la base, pas ×1.25×1.10 — l'équilibrage reste linéaire et prévisible. Même logique côté combat : `ObjectPropertyService::calculateProperty()` fait `base + intdiv(base * bonus%, 100)`.
-  - **Risque méta asymétrique — point de vigilance principal** : en fin de partie un joueur possède 6-7 héros, soit *tous* les archétypes (un par ville) — le risque qu'un archétype domine est donc faible. Le vrai point de tension est le **premier héros créé à l'inscription**, choix unique et exclusif. Conséquence de design : les tiers 1-2 de chaque archétype doivent tous toucher des axes universellement utiles en début de partie (production, vitesse, survie), les spécialisations divergentes n'arrivant qu'à partir du tier 3.
-  - **Garde-fou "pas d'effet à portée empire"** : tout effet économique doit rester en portée `CITY` (cf. `TalentEffectScope`). Un effet à portée empire serait cumulé par les 6-7 héros du joueur et ferait exploser tous les plafonds ci-dessus.
+  - **Risque méta asymétrique — point de vigilance principal** *(révisé 2026-10-11 : avec un héros principal unique, ce risque n'est plus faible, il devient le point central ; les conseillers et le changement de héros en boutique servent de soupape)* : en fin de partie un joueur possède 6-7 héros, soit *tous* les archétypes (un par ville) — le risque qu'un archétype domine est donc faible. Le vrai point de tension est le **premier héros créé à l'inscription**, choix unique et exclusif. Conséquence de design : les tiers 1-2 de chaque archétype doivent tous toucher des axes universellement utiles en début de partie (production, vitesse, survie), les spécialisations divergentes n'arrivant qu'à partir du tier 3.
+  - **Garde-fou "pas d'effet à portée empire"** *(révisé 2026-10-11 : exception assumée pour la voie « royaume » du héros principal, seul héros du joueur, et pour les bonus de domaine plafonnés des conseillers)* : tout effet économique doit rester en portée `CITY` (cf. `TalentEffectScope`). Un effet à portée empire serait cumulé par les 6-7 héros du joueur et ferait exploser tous les plafonds ci-dessus.
   - **Lisibilité** : sur les axes économiques, les valeurs par nœud sont volontairement petites (+1 % pour 3 points) — c'est l'idiome OGameX (la recherche Plasma donne +1 %/niveau pour un coût élevé). Pour que les arbres restent désirables, ces petits pourcentages doivent être mélangés à des **effets qualitatifs non chiffrés** (révéler la garnison adverse, sauver une unité par bataille, débloquer un emplacement de mission), qui marquent le joueur sans peser sur l'équilibrage.
   - **[TBD]** — validation empirique en Phase 6 : ces rendements sont une anticipation calculée, pas un équilibrage testé.
 - **[TBD]** — Système de rançon/soin accéléré (contre ressources, cohérent avec le lore)
@@ -361,6 +391,11 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 - Contribution (au moins partielle) à un **score de prestige d'alliance**
 - **[TBD]** — Paliers précis (seuils, pourcentages de bonus/malus)
 - **[TBD]** — Débouchés positifs du prestige élevé (titres, missions exclusives, bonus de recrutement)
+- **Sièges de conseillers — décidé le 2026-10-11** : chaque palier de Prestige débloque un siège de conseiller (cf. 5.5), jusqu'à **4 sièges**. Les paliers au-delà du 4ᵉ siège auront un autre débouché, **[TBD]**. La jauge reste alimentée par les missions du héros **et** de ses conseillers.
+- **Évolution visuelle des villes — décidé le 2026-10-11** : l'image principale de la ville (bannière de la Vue d'ensemble) évolue pour donner un repère visuel de la progression, même composition, état de plus en plus prospère :
+  - la **capitale** évolue avec le **palier de Prestige** (un état par palier) ;
+  - chaque **colonie** évolue avec **son propre niveau de ville** (3-4 états visuels), le prestige restant attaché à l'empire et à la capitale.
+  - Production : décliner l'image de cité déjà validée avec Midjourney (même composition, stades successifs). Nombre exact d'états et seuils **[TBD]**.
 
 ### 5.7 Craft / Forge
 
@@ -472,6 +507,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 *Pour mémoire, à ne creuser qu'en Phase 8 de la roadmap :*
 
 - Cosmétique, gain de temps, rançon de héros — jamais de pay-to-win direct
+- **Changement de héros principal en cours de partie — décidé le 2026-10-11** : proposé en boutique (premier article concret). Vigilance : ne doit pas devenir un moyen d'acheter la méta ; coût, conservation du niveau/équipement et éventuel changement gratuit pendant le tutoriel sont à définir (cf. 5.5), **[TBD]**
 - **[TBD]** — détails à définir le moment venu
 
 ---
