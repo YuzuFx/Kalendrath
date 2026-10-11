@@ -137,6 +137,8 @@
 
 - [ ] **Arbre technologique/recherche complet** adapté au thème fantasy
 - [ ] **Catalogue de bâtiments** avec progression cohérente
+- [ ] **Theorycrafting des emplacements de cité** : socle (100-150 envisagé), incrément par palier d'Hôtel de ville, projection d'un build complet sur une aventure longue (pas de serveurs éphémères) — cf. GDD 4.2
+- [ ] **Theorycrafting des paliers de cité** : durée de passage d'un palier à l'autre et moment de déblocage de l'Académie Militaire et de l'Atelier des Remparts, pour ne pas freiner la production d'armées et de défenses — cf. GDD 4.2
 - [ ] **Catalogue d'unités/troupes** avec équilibrage attaque/défense/coût
 - [ ] **Catalogue d'équipements de héros** (par tier de rareté)
 - [ ] **Premiers events PvE d'alliance** (si tu joues déjà avec plusieurs potes en "alliance")
