@@ -24,6 +24,15 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 
 *Fournies par Gregory le 2026-10-04. Copies locales en pleine résolution : `cite.png` (3360 × 1440) et `ressource-mana.png` (2048 × 2048).*
 
+## Bâtiments (cf. [direction-artistique-batiments.md](../../direction-artistique-batiments.md))
+
+| Bâtiment | Palier | Fichier | URL Midjourney |
+|---|---|---|---|
+| Scierie | 1 (niv. 1-14) | `batiment-scierie-palier1.png` (2688 × 1792) | *(URL de la version régénérée à renseigner)* |
+| Scierie | 2 (niv. 15-29) | `batiment-scierie-palier2.png` (2688 × 1792) | *(URL de l'upscale à renseigner)* |
+
+*Retenu par Gregory le 2026-10-13, puis **remplacé le même jour par une version régénérée** : la première (`3fd86834-e08d-4577-afdf-7eda20636a39`) avait une zone noire en haut à gauche et un cadrage trop serré, qui se propageaient aux paliers suivants. La version actuelle a un ciel et un décor de forêt propres. Convention de nommage : `batiment-<nom>-palier<N>.png`. Le CDN Midjourney refuse les téléchargements automatiques (403) : la copie locale vient d'un envoi manuel.*
+
 ## Captures brutes (archive, interface Midjourney visible)
 
 Gardées en complément le temps que les URLs ci-dessus soient vérifiées utilisables durablement (un CDN Midjourney peut expirer selon la politique du service). Ce sont des captures de grilles de 4 variations ; la case retenue est indiquée pour chacune.

@@ -32,6 +32,13 @@ Les niveaux montent à 30 et plus. Une scierie de niveau 25 ne peut pas ressembl
 
 **Retour d'essai (Scierie, 2026-10-13).** La première version (préambule long avant le sujet, `--sw 200`, `--stylize 250`) donnait un **manoir** : toits multiples, tourelles, aucune lecture de scierie. Causes : sujet noyé après 80 mots de style, `--sref` qui importe l'architecture dense de la cité, aucune consigne de modestie. La version corrigée (sujet d'abord, `--sw 80`, `--stylize 150`, exclusions explicites) donne une vraie scierie lisible. **Ces réglages sont désormais la base de tous les prompts.**
 
+**Leçons du palier 2 de la Scierie (2026-10-13) :**
+- **Ne pas décrire d'eau au sol.** « A log pond with floating logs » et « mill race » ont mis les troncs dans l'eau à chaque génération. Écrire « on dry ground » et exclure `water, pond, floating logs`.
+- **Nettoyer l'image de référence avant de s'en servir.** Une zone noire dans l'image de palier 1 se recopiait dans tous les rendus du palier 2. L'image de référence doit avoir un décor complet, sans bandes noires.
+- **Une référence au cadrage serré empêche le bâtiment de paraître plus grand.** Demander explicitement « pulled back wide shot showing the whole site ».
+- **Pour qu'un palier se distingue, nommer des éléments visibles de grandeur** (étage, murs de pierre, deux toits, cheminée, grue), pas seulement « larger ».
+- **`--iw 0.5`** donne une bonne parenté sans copier le cadrage. Vérifier que `--iw` n'est pas ignoré : deux tirets simples (pas un tiret long), valeur avec un point.
+
 **Structure d'un prompt, dans cet ordre :**
 
 ```
@@ -96,14 +103,17 @@ A simple humble sawmill, one single low rectangular open-sided timber shed with 
 ```
 A simple humble sawmill, one single low rectangular open-sided timber shed with one plain gable roof, a long saw frame and big logs clearly visible under it, a water wheel on the side, huge stacks of pale logs in the foreground, small hut-sized and utilitarian, a river beside it
 ```
-**Palier 2 (niv. 15-29)**
+**Palier 2 (niv. 15-29)** — *Validé le 2026-10-13* ([image](direction-artistique/references/batiment-scierie-palier2.png)). Se lance avec l'image de palier 1 en référence d'image au début du prompt, et `--iw 0.5` à la place du début des paramètres.
 ```
-A larger sawmill hall of stone and timber, a long open work floor with several saw frames cutting logs at once, two water wheels on a mill race, a log pond with floating logs, stacked planks drying under a lean-to, a loading dock with a cart, busy and productive
+[URL_PALIER_1] The same sawmill grown into a larger sawmill complex at the edge of the same dark pine forest, pulled back wide shot showing the whole site on dry ground, a long stone-walled hall with a timber upper floor and two connected gable roofs of weathered shingles, a stone chimney, an open ground-floor work bay with several saw frames cutting logs in a row, one big water wheel on the side, a covered lumber shed, a loading crane over a cart, tidy stacks of pale logs and cut planks in a dry yard, busy and productive, clearly a proper workshop and no longer a hut
 ```
-**Palier 3 (niv. 30+)**
+Paramètres : ceux du palier 2 ci-dessus, avec `--iw 0.5` en tête et `black background, water, pond, floating logs` ajoutés à l'exclusion.
+
+**Palier 3 (niv. 30+)** — *À tester, même méthode que le palier 2 avec l'image du palier 2 en référence.*
 ```
-A great lumber manufactory on a river, a long stone-and-timber factory hall with many saw lines, three large water wheels and a canal system, a mechanical log lift, enormous stacks of cut planks, rune-etched bronze gearing along the roof beams, a small crane barge on the river, imposing and industrial
+[URL_PALIER_2] The same sawmill grown into a great lumber manufactory at the edge of the same dark pine forest, pulled back wide shot showing the whole site on dry ground, a long stone-and-timber factory hall with a tall upper floor and several roofs, many saw lines cutting logs in parallel, three large water wheels along the side, a mechanical log lift and a covered gantry crane, a tall stone chimney, rune-etched bronze gearing along the roof beams, enormous neat stacks of pale logs and cut planks in a dry yard, several carts, imposing and industrial, a clearly major production site
 ```
+Paramètres : comme le palier 2, avec l'accent de mana du palier 3 (`a clearly visible violet-blue arcane glow on runes and crystals`).
 
 ### Mine de fer *(fer)*
 
@@ -469,7 +479,7 @@ Total : 3 images retenues par bâtiment, soit une soixantaine, plus les villes. 
 
 - [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie (2026-10-13). Reste à confirmer sur d'autres bâtiments.
 - [ ] Vérifier que le choix de la cité validée comme `--sref` ne teinte pas tout en violet (à surveiller sur les paliers 2 et 3 avec plus de mana).
-- [ ] Tester le maintien du cadrage entre paliers d'un même bâtiment (référence d'image `--iw`, Vary Region).
+- [x] Tester le maintien du cadrage entre paliers d'un même bâtiment : **validé sur la Scierie palier 2** avec l'image de palier 1 en référence (`--iw 0.5`). Reste à confirmer sur le palier 3.
 - [ ] Tester le seuil de lisibilité à ~300 px de large sur les 3 paliers de la Scierie.
 - [ ] Appliquer la nouvelle méthode (sujet d'abord, `--sw` réduit) aux 6 paliers de cité et ajuster.
 - [ ] Tester la piste « Vary (Region) » pour les calques de capitale.
