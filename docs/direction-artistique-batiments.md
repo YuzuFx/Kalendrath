@@ -123,10 +123,11 @@ Style : celui du palier 3, avec l'accent `strong violet-blue arcane glow as the 
 
 ### Mine de fer *(fer)*
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-13* ([image](direction-artistique/references/batiment-mine-de-fer-palier1.png), [lien Midjourney](https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png)). Prompt réellement utilisé, avec le style et les paramètres du palier 1 :
 ```
-A simple iron mine, a single dark tunnel mouth cut into a rocky hillside with timber supports, two ore carts on a short rail track, a pile of rust-red iron ore, a hand-cranked hoist, small and rough, a few torches
+A simple humble iron mine, one single dark tunnel mouth cut into a rocky hillside with rough timber supports and a plain low timber lean-to beside it, two small ore carts on a short rail track, a pile of rust-red iron ore in the foreground, a hand-cranked hoist over a small shaft, a few hanging torches, small and rough and utilitarian, a bare rocky hillside with a few dark pines
 ```
+*Retours d'essai :* `--sw 80` confirmé sur un deuxième bâtiment (ambiance de la cité reprise, pas de manoir). Le cadrage sort **plus serré** que « centered wide shot » et le tas de minerai domine le premier plan ; aucune lanterne de mana n'apparaît (acceptable au palier 1). **Pour le palier 2 :** exiger `pulled back wide shot showing the whole site`, nommer des éléments de grandeur (bâtiment de pierre, chevalement, forge) et demander un accent de mana visible, sinon la référence serrée bloquera la montée en taille.
 **Palier 2**
 ```
 A developed iron mine with a stone-built gatehouse, a long rail track with a line of ore carts, a lift headframe over a vertical shaft, a smelting shed with a smoking chimney, ore sorting tables, piles of grey slag and red ore, workers with barrows
@@ -483,7 +484,7 @@ Total : 3 images retenues par bâtiment, soit une soixantaine, plus les villes. 
 
 ## Points ouverts
 
-- [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie (2026-10-13). Reste à confirmer sur d'autres bâtiments.
+- [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie puis confirmé sur la Mine de fer (2026-10-13). Reste à confirmer sur les bâtiments imposants (Donjon, Portail, Académie).
 - [ ] Vérifier que le choix de la cité validée comme `--sref` ne teinte pas tout en violet (à surveiller sur les paliers 2 et 3 avec plus de mana).
 - [x] Tester le maintien du cadrage entre paliers d'un même bâtiment : **validé sur la Scierie palier 2** (image de palier 1 en référence, `--iw 0.5`) **et palier 3** (image de palier 2 en référence, `--iw 0.25`).
 - [x] Tester le seuil de lisibilité à ~300 px de large sur les 3 paliers de la Scierie : **validé le 2026-10-13**. Les trois paliers restent lisibles et se distinguent à cette taille (cabane ouverte avec roue et troncs / halle en pierre à deux toits / tour à engrenage et aqueduc à pylônes bleus). Point de vigilance : le palier 3 est le plus sombre, ses détails fins (fenêtres, runes) disparaissent à 300 px, mais la silhouette et les cristaux bleus suffisent.
