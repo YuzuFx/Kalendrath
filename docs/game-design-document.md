@@ -151,6 +151,13 @@ Ce principe corrige directement l'incohérence repérée chez Embercraft (bâtim
 - **La capitale reçoit en plus des calques spécifiques selon le Prestige** (bannières, monuments, ambiance). Son bâtiment central s'appelle **Donjon** (siège du héros et des conseillers), alors que les colonies ont un **Hôtel de ville** qui sert de relais du Donjon. La capitale a donc sa propre série d'images de base, pas seulement des calques posés sur celles des colonies.
 - **Défi technique** : les calques doivent se superposer exactement à chaque image de capitale (même cadrage). Rangs de Prestige et nombre de calques **[TBD]**.
 
+#### Image des bâtiments selon leur niveau — décidé le 2026-10-13
+
+- **L'illustration d'un bâtiment évolue avec son niveau**, par 3 paliers visuels : **1 à 14** (modeste : petit, simple, utilitaire), **15 à 29** (développé : plus grand, plus solide, activité plus intense) et **30 et plus** (majeur : imposant, architecture ou mécanismes arcaniques, lueur de mana nettement visible). Une scierie de niveau 25 ne doit pas ressembler à la cabane du niveau 1.
+- **Indépendant des paliers de cité** : les images de bâtiments sont indexées sur le niveau du bâtiment, la bannière de la Vue d'ensemble sur le palier de la ville. Le Donjon et l'Hôtel de ville suivent aussi les 3 paliers de niveau.
+- **Mise en œuvre** : table de seuils côté interface (niveau → image), sans effet sur le domaine. Une image manquante retombe sur le palier précédent, ce qui permet de livrer d'abord le palier 1. Un 4e palier (par ex. niveau 45) reste possible plus tard **[TBD]**.
+- Prompts et ordre de production : [direction-artistique-batiments.md](direction-artistique-batiments.md).
+
 ### 4.3 Recherches / Technologies
 
 **Catalogue complet vérifié le 2026-09-18** (`app/GameObjects/ResearchObjects.php`, 16 technologies). Décisions tranchées le 2026-09-19 :
@@ -297,6 +304,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 - **Mode de Guerre (opt-in)** : rend le joueur attaquable par les autres joueurs également en Mode de Guerre **uniquement**. Un joueur en Mode Paix ne peut ni être ciblé, ni cibler personne — aucune situation à sens unique possible.
 - **Bonus actif en contrepartie du risque accepté** — **[TBD]** nature exacte (piste : production de ressources et/ou réduction du temps de construction).
 - **Délai de 72h minimum entre deux bascules** de mode (Paix→Guerre ou Guerre→Paix), pour empêcher l'activation opportuniste suivie d'une désactivation immédiate.
+- **Bouclier temporaire — piste retenue le 2026-10-08, **[TBD]** détails** : un joueur en Mode de Guerre peut activer un bouclier d'une durée limitée qui le rend inattaquable, inspiré des boucliers des jeux mobiles de stratégie (Last War, Call of Dragons, etc.). **Réservé aux joueurs en Mode de Guerre** : en Mode Paix l'invulnérabilité est déjà totale, le bouclier n'y aurait aucun sens. **Règle anti-abus : impossible à activer juste après une attaque PvP menée par le joueur**, pour empêcher le « frapper puis se protéger » et les attaques éclair. Sources envisagées : récompenses de quêtes et de progression, et boutique (voir section 9). Durée, délai de récupération et conditions exactes restent à définir. Point d'accroche technique probable : un horodatage de fin de bouclier sur `users` et une vérification dans `AttackMission::isMissionPossible()`, au même endroit que la vérification du Mode de Guerre.
 - **Anti-abus multicompte** : un compte en Mode Paix ne peut pas transférer de ressources vers un compte en Mode de Guerre, pour empêcher de financer un compte "exposé" via des comptes secondaires "safe".
 - **Héros et Mode de Guerre — révisé le 2026-09-23** : un héros peut accompagner une armée envoyée en bataille PvP (Mode de Guerre), en tant que chef de guerre — il apporte des bonus de combat à l'armée qu'il accompagne (nature exacte **[TBD]**, piste : buffs offensifs/défensifs sur les troupes, dans l'esprit du système de gouverneurs-héros d'Age of Wonders 4). C'est un renversement de la position précédente ("missions de héros exclusivement PvE") : le héros peut désormais être directement exposé au PvP, mais uniquement via ce choix explicite d'accompagnement, jamais par surprise. **Contrepartie punitive, volontairement mesurée (pas hardcore)** : si l'armée qu'il accompagne est vaincue, le héros devient **indisponible pour une durée scalée par son niveau**, exactement selon le mécanisme déjà défini pour l'échec d'une mission PvE (cf. 5.5) — jamais de perte définitive, juste assez d'enjeu pour que la décision d'engager un héros en PvP soit réfléchie plutôt qu'automatique.
 - **Alliances** : le mode n'a aucune incidence sur la coopération d'alliance — une alliance peut librement mélanger des membres en Mode Paix et en Mode de Guerre.
@@ -548,6 +556,8 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 
 - Cosmétique, gain de temps, rançon de héros — jamais de pay-to-win direct
 - **Changement de héros principal en cours de partie — décidé le 2026-10-11** : proposé en boutique (premier article concret). Vigilance : ne doit pas devenir un moyen d'acheter la méta ; coût, conservation du niveau/équipement et éventuel changement gratuit pendant le tutoriel sont à définir (cf. 5.5), **[TBD]**
+- **Nuance actée le 2026-10-08 :** pas de règle absolue du type « rien de ce qu'on achète ne peut agir contre un autre joueur ». Sont jugés acceptables, dans les limites à fixer en Phase 8 : le **bouclier temporaire en boutique** (réservé aux joueurs en Mode de Guerre, cf. 5.4), les **confort et paquets de ressources**, et les **accélérations**. Ce sont des mécaniques courantes des jeux du genre. Reste en tension avec la ligne « jamais de pay-to-win direct » ci-dessus : la frontière exacte est à trancher à ce moment-là, pas maintenant.
+- **À faire avant de figer l'offre :** auditer les boutiques des jeux les plus connus du genre (Last War, Call of Dragons, OGame, Travian, Tribal Wars, Forge of Empires…) : ce qu'ils vendent, à quel prix, quels plafonds, quelles critiques de la communauté.
 - **[TBD]** — détails à définir le moment venu
 
 ---

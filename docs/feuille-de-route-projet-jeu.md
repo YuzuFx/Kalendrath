@@ -170,6 +170,7 @@
 **Objectif : rendre le projet soutenable financièrement, sans casser l'équilibre PvE-first.**
 
 - [ ] **Définir l'offre de boutique** — cosmétique, gain de temps, rançon de héros capturé (cohérent avec le lore) : jamais de pay-to-win direct vu ton positionnement
+- [ ] **Auditer les boutiques des jeux les plus connus du genre** (Last War, Call of Dragons, OGame, Travian, Tribal Wars, Forge of Empires…) avant de figer l'offre : produits, prix, plafonds, critiques des joueurs. Décidé le 2026-10-08. Le bouclier temporaire (réservé au Mode de Guerre, cf. GDD 5.4) et les accélérations ou paquets de ressources sont envisagés en boutique ; la frontière avec « jamais de pay-to-win direct » est à trancher à ce moment-là
 - [ ] **Intégrer un moyen de paiement** (Stripe est le plus simple à intégrer techniquement)
 - [ ] **Tester la boutique en interne** avant ouverture large
 

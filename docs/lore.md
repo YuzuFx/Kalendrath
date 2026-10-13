@@ -108,6 +108,18 @@ Cette approche renforce le sentiment d'un monde tenu par les humains seuls, où 
 - **Indices de fond sur le peuple englouti / les Vahrun** : à distiller très progressivement, jamais annoncés frontalement, en prévision du twist de Phase 2.
 - **[TBD]** Structure exacte d'un event hebdomadaire (quête solo vs objectif de guilde/alliance).
 
+### Pistes en réserve (non décidées)
+
+- **Un ordre militaire-religieux d'inspiration templière** (idée d'un membre de l'alliance Aleryos, retenue le 2026-10-08 comme piste, pas comme décision). Cadrage : le jeu reste de la fantasy, sans connotation historique. L'ordre serait une faction **inventée**, qui s'inspire de l'imaginaire des Templiers (ordre guerrier, reliques mystérieuses, secrets gardés) sans reprendre leurs noms ni leurs objets réels.
+  - **Place possible dans la frise chronologique de l'évolution du monde :** suite à l'incursion d'un autre plan (à relier à la cosmologie des Neuf Sphères, section 1), l'ordre débarque dans le monde des joueurs à la recherche d'anciennes reliques.
+  - **Rôle ouvert :** allié ou ennemi, voire les deux selon les choix des joueurs. À trancher plus tard.
+  - **Forme envisagée : un méga event.** La faction débarque avec ses propres objectifs et son identité visuelle. Chaque joueur choisit de **l'aider ou de la combattre**, ce qui pourrait provoquer du **PvP entre joueurs pendant une période limitée**. Le choix est un levier de nuance narrative (personne n'a entièrement raison). À articuler avec le principe PvE-first du projet et le Mode de Guerre du GDD : le PvP resterait un moment exceptionnel, borné dans le temps, pas un mode permanent. Demande un état de monde partagé (cf. super events, ci-dessous).
+  - **Lien avec l'existant :** s'articule naturellement avec les reliques de l'ancienne cité naine-elfique et les expéditions archéologiques ci-dessus.
+
+- **Ambition narrative à long terme (retenue le 2026-10-08) :** viser une profondeur d'univers comparable à celle de Tolkien ou de The Witcher, pour fidéliser sur la durée les joueurs attachés à l'histoire. Deux étages : les **events ordinaires** qui ponctuent le gameplay, et des **super events** qui marquent un tournant impactant du lore pour tout le monde.
+  - **Méthode :** une phase d'écriture dédiée viendra plus tard (les Neuf Sphères, la chronologie complète, l'histoire du monde). Pas d'écriture exhaustive avant que l'interface et la V1 soient posées : écrire par couches, au rythme du développement.
+  - **Prérequis technique des super events :** un état de monde partagé entre tous les joueurs et une diffusion en temps réel (Reverb). Chantier à situer dans la feuille de route (Phase 4 ou 7), pas dans le moteur OGameX actuel.
+
 ---
 
 ## 8. Structure cartographique — la roue à huit secteurs
@@ -161,3 +173,4 @@ Cette logique donne un sens narratif clair à la progression individuelle : un j
 - [ ] Direction de numérotation des Régions (externe→interne ou inverse)
 - [ ] Structure exacte des events hebdomadaires
 - [ ] Factions ennemies supplémentaires éventuelles (section 5)
+- [ ] Ordre d'inspiration templière : faut-il l'intégrer à la frise du monde, et en allié ou en ennemi ? (section 7, pistes en réserve)

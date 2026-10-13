@@ -1,72 +1,153 @@
 # Direction artistique — Prompts visuels pour les bâtiments et les villes
 
-*Document de travail pour la Phase 3a. Briefs prêts à coller dans Midjourney : un par bâtiment (19), plus les 6 paliers de cité et la capitale. Prompts en anglais, noms et rôles en français (cf. [direction-artistique-unites.md](direction-artistique-unites.md) pour la même logique). La liste des bâtiments et les paliers sont dans le [GDD, section 4.2](game-design-document.md).*
+*Document de travail pour la Phase 3a. Briefs prêts à coller dans Midjourney : **un par bâtiment et par palier de niveau**, plus les 6 paliers de cité et la capitale. Prompts en anglais, noms et rôles en français (cf. [direction-artistique-unites.md](direction-artistique-unites.md) pour la même logique). La liste des bâtiments et les paliers de cité sont dans le [GDD, section 4.2](game-design-document.md).*
 
 Liste figée le 2026-10-12. Le lexique reste vivant : si un nom change, seul l'intitulé de la section change, pas le prompt.
+
+**Mis à jour le 2026-10-13** après le premier essai sur la Scierie (voir « Retour d'essai » plus bas) : structure de prompt inversée (sujet d'abord), influence du style réduite, et **l'image d'un bâtiment évolue avec son niveau**.
+
+---
+
+## Principe : l'image évolue avec le niveau du bâtiment
+
+Les niveaux montent à 30 et plus. Une scierie de niveau 25 ne peut pas ressembler à la cabane du niveau 1. Chaque bâtiment a donc **3 illustrations**, choisies par l'interface selon le niveau :
+
+| Palier visuel | Niveaux | Allure générale |
+|---|---|---|
+| **1 — Modeste** | 1 à 14 | Petit, simple, utilitaire : un toit, une fonction lisible, très peu de magie visible |
+| **2 — Développé** | 15 à 29 | Plus grand, plus solide (pierre, plusieurs corps de bâtiment), activité plus intense, un peu de mana visible |
+| **3 — Majeur** | 30 et plus | Imposant, mécanismes ou architecture arcaniques, lueur de mana nettement visible |
+
+- **Côté technique :** une simple table de seuils dans la configuration de l'interface React (niveau → image). Aucun impact sur le domaine PHP.
+- **Au-delà de 30 :** un 4e palier (par ex. à 45) reste possible si les trois premiers fonctionnent bien. Ne pas le produire d'emblée.
+- **Cohérence entre paliers :** même lieu, même orientation, même cadrage. Pour les paliers 2 et 3, partir de l'image de palier 1 validée comme référence d'image (`--iw`, à tester) ou utiliser Vary (Region).
+- **Hôtel de ville et Donjon :** ils suivent aussi ces 3 paliers de niveau. Les images de **cité** (bannière de la Vue d'ensemble) sont une autre série, indexée sur les paliers de cité.
+- **Ordre de production :** voir en fin de document. Les bâtiments où l'évolution est la plus parlante passent en premier.
 
 ---
 
 ## Réglage commun
 
-**Ancre de style : la cité validée** (celle de la bannière de la Vue d'ensemble), pas le portrait des unités. Elle a le bon rendu d'architecture, d'éclairage et d'ambiance. Le `--sref` du portrait reste réservé aux personnages.
+**Ancre de style : la cité validée** (celle de la bannière de la Vue d'ensemble), pas le portrait des unités. Le `--sref` du portrait reste réservé aux personnages.
+
+**Retour d'essai (Scierie, 2026-10-13).** La première version (préambule long avant le sujet, `--sw 200`, `--stylize 250`) donnait un **manoir** : toits multiples, tourelles, aucune lecture de scierie. Causes : sujet noyé après 80 mots de style, `--sref` qui importe l'architecture dense de la cité, aucune consigne de modestie. La version corrigée (sujet d'abord, `--sw 80`, `--stylize 150`, exclusions explicites) donne une vraie scierie lisible. **Ces réglages sont désormais la base de tous les prompts.**
+
+**Structure d'un prompt, dans cet ordre :**
 
 ```
---sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 200
+[SUJET du bâtiment et du palier] + [STYLE du palier] + [PARAMÈTRES]
 ```
 
-Point de départ du poids de style : `--sw 200` (moins que pour les unités, car un bâtiment n'a pas de visage à protéger). Si la ressemblance avec la cité est trop faible, monter vers 300 ; si tous les bâtiments finissent par se ressembler, redescendre.
+Le sujet vient en premier car Midjourney pèse davantage le début du prompt.
+
+### Style (une variante par palier)
+
+À coller **après** le sujet. Seule la ligne d'accent de mana change d'un palier à l'autre.
+
+**Palier 1 :**
+```
+Dark heroic fantasy concept art, weathered timber and stone, muted earthy palette (iron grey, aged bronze, oxblood red), a few small violet-blue mana lanterns as the only accent, painterly digital illustration, dusk light, three-quarter view slightly from above, centered wide shot, strong simple silhouette readable at small size
+```
+
+**Palier 2 :** remplacer l'accent par
+```
+a few violet-blue mana glows on runes and lanterns as accent
+```
+
+**Palier 3 :** remplacer l'accent par
+```
+a clearly visible violet-blue arcane glow on runes and crystals
+```
+
+### Paramètres
+
+**Palier 1 :**
+```
+--ar 3:2 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80 --no text, letters, watermark, modern, people crowd, photography, black borders, animals, manor, mansion, castle, towers, turrets, multiple roofs, complex roofline
+```
+
+**Paliers 2 et 3 :** même chose, **sans** la fin d'exclusion (`manor … complex roofline`), puisque ces bâtiments ont le droit d'être plus complexes :
+```
+--ar 3:2 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80 --no text, letters, watermark, modern, people crowd, photography, black borders, animals
+```
+
+Réglage du `--sw` : départ à 80. Si l'ambiance de la cité n'est pas assez reprise, monter vers 120. Si tous les bâtiments se ressemblent, redescendre. Les bâtiments naturellement imposants (Donjon, Portail, Académie) supportent mieux un `--sw` plus élevé.
 
 **Formats :**
 - carte de bâtiment (liste des bâtiments) : `--ar 3:2`, bâtiment centré, à recadrer en carte sur les écrans ;
 - paliers de cité (bannière de la Vue d'ensemble) : `--ar 7:3` (la cité validée fait 3360 × 1440) ;
 - icônes de menu : pas ici, elles seront dessinées en SVG avec le design system.
 
-**Paramètres à ajouter à chaque prompt :**
+**Lisibilité.** Chaque image doit rester reconnaissable réduite à environ 300 px de large : un seul sujet, une silhouette distincte, pas de foule. Test à faire à chaque validation.
+
+### Exemple composé (Scierie, palier 1, validé en essai)
 
 ```
---ar 3:2 --stylize 250 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 200 --no text, letters, watermark, modern, people crowd, photography
+A simple humble sawmill, one single low rectangular open-sided timber shed with one plain gable roof, a long saw frame and big logs clearly visible under it, a water wheel on the side, huge stacks of pale logs in the foreground, small hut-sized and utilitarian, a river beside it. Dark heroic fantasy concept art, weathered timber and stone, muted earthy palette (iron grey, aged bronze, oxblood red), a few small violet-blue mana lanterns as the only accent, painterly digital illustration, dusk light, three-quarter view slightly from above, centered wide shot, strong simple silhouette readable at small size --ar 3:2 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80 --no text, letters, watermark, modern, people crowd, photography, black borders, animals, manor, mansion, castle, towers, turrets, multiple roofs, complex roofline
 ```
-
-### Préambule de style commun
-
-À coller en tête de chaque prompt de bâtiment :
-
-```
-Dark heroic fantasy architecture concept art, a medieval human kingdom, weathered stone, aged timber and hand-forged iron with visible repairs, muted earthy palette (iron grey, aged bronze, oxblood red) accented by a clearly visible violet-blue arcane mana glow on runes and crystals, painterly digital illustration, dramatic dusk lighting from a single source, three-quarter view slightly from above, the building is the clear focal point with a sharp readable silhouette, small ambient details showing it is in use, highly detailed
-```
-
-*Traduction :* Art conceptuel d'architecture heroic fantasy sombre, royaume humain médiéval, pierre usée, bois vieilli et fer forgé à la main avec des réparations visibles, palette terreuse sourde (gris fer, bronze vieilli, rouge sang séché) rehaussée d'une lueur arcanique violet-bleu nettement visible sur les runes et les cristaux, illustration numérique façon peinture, éclairage dramatique de crépuscule à source unique, vue en trois quarts légèrement en hauteur, le bâtiment est le point focal avec une silhouette nette et lisible, petits détails d'ambiance montrant qu'il est utilisé, très détaillé.
-
-**Lisibilité.** Chaque bâtiment doit rester reconnaissable une fois réduit à la taille d'une carte de liste : un seul sujet, une silhouette distincte, pas de foule.
-
-**Taille du bâtiment.** Les bâtiments ne changent pas d'aspect selon leur niveau (les niveaux montent à 30 et plus). C'est l'image de la **ville** qui évolue avec les paliers. Une seule illustration par bâtiment suffit, sauf le Hôtel de ville / Donjon (voir plus bas).
 
 ---
 
 ## ⛏️ Production
 
 ### Scierie *(bois)*
-Palier : Hameau.
+
+**Palier 1 (niv. 1-14)** — *Validé en essai.*
 ```
-[PRÉAMBULE] A rustic sawmill beside a fast river, a large water wheel driving a long saw frame, stacked pale logs and cut planks, a lumberjack's lean-to, a forest edge of dark pines behind, sawdust in the air, a few small violet-blue lanterns hanging from the beams
+A simple humble sawmill, one single low rectangular open-sided timber shed with one plain gable roof, a long saw frame and big logs clearly visible under it, a water wheel on the side, huge stacks of pale logs in the foreground, small hut-sized and utilitarian, a river beside it
+```
+**Palier 2 (niv. 15-29)**
+```
+A larger sawmill hall of stone and timber, a long open work floor with several saw frames cutting logs at once, two water wheels on a mill race, a log pond with floating logs, stacked planks drying under a lean-to, a loading dock with a cart, busy and productive
+```
+**Palier 3 (niv. 30+)**
+```
+A great lumber manufactory on a river, a long stone-and-timber factory hall with many saw lines, three large water wheels and a canal system, a mechanical log lift, enormous stacks of cut planks, rune-etched bronze gearing along the roof beams, a small crane barge on the river, imposing and industrial
 ```
 
 ### Mine de fer *(fer)*
-Palier : Hameau.
+
+**Palier 1**
 ```
-[PRÉAMBULE] An iron mine entrance cut into a rocky hillside, heavy timber supports around the dark tunnel mouth, ore carts on a short rail track, piles of raw rust-red iron ore and grey slag, a hand-cranked hoist, a few torches, thin violet-blue crystal veins glowing in the rock
+A simple iron mine, a single dark tunnel mouth cut into a rocky hillside with timber supports, two ore carts on a short rail track, a pile of rust-red iron ore, a hand-cranked hoist, small and rough, a few torches
+```
+**Palier 2**
+```
+A developed iron mine with a stone-built gatehouse, a long rail track with a line of ore carts, a lift headframe over a vertical shaft, a smelting shed with a smoking chimney, ore sorting tables, piles of grey slag and red ore, workers with barrows
+```
+**Palier 3**
+```
+A vast fortified mining complex carved into a cliff, multiple tunnel entrances at different levels linked by rail bridges, a large steam-less mechanical winding tower, an ore crushing hall, a furnace block with orange glow, thin violet-blue crystal veins glowing in the rock walls, imposing and heavy
 ```
 
 ### Puits de mana *(mana)*
-Palier : Hameau. Distinct de l'Obélisque, qui est désormais dans l'Hôtel de ville.
+
+**Palier 1**
 ```
-[PRÉAMBULE] An ancient stone well ringed by carved runes, a column of luminous violet-blue mana rising from its depths, a hoist with copper chains lifting glowing crystal-laden buckets, raw mana crystals clustered around the rim, faint wisps of energy in the air, the ground cracked with glowing veins
+A small ancient stone well ringed by carved runes, a thin column of violet-blue mana rising from its depths, a simple wooden hoist with a bucket of glowing crystals, a few raw mana crystals around the rim, cracked ground with faint glowing veins
+```
+**Palier 2**
+```
+A mana well wellhouse built in carved stone, a wider stone ring with a bronze-framed hoist and copper chains lifting crystal-laden buckets, rune pillars around it, cobbled platform, a clear column of violet-blue mana rising, attendants in dark robes carrying crystals
+```
+**Palier 3**
+```
+A grand mana wellspring sanctum, a circular stone platform with tall rune pylons and bronze rings, a powerful pillar of violet-blue mana rising from a deep shaft high into the sky, large crystal clusters, copper conduits and chains lifting enormous crystals, glowing cracked ground, awe-inspiring and arcane
 ```
 
 ### Champ de blé *(nourriture)*
-Palier : Hameau.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A wide golden wheat field at dusk with a stone and timber farmhouse and a round barn, a scarecrow, harvest sheaves tied and stacked, a windmill on the hill behind, warm amber light on the grain contrasting with the cool violet sky
+A small golden wheat field at dusk with a simple stone and timber farmhouse, a scarecrow, tied harvest sheaves, a little cart, warm amber light on the grain
+```
+**Palier 2**
+```
+A wide farm estate with large wheat fields, a stone farmhouse and a round barn, a windmill on a hill, stacked sheaves, a team of harvesters with scythes, warm amber light on the grain contrasting with the cool violet sky
+```
+**Palier 3**
+```
+A vast agricultural domain of terraced golden wheat fields, several windmills, a large stone manor-farm with big barns, irrigation channels with faint violet-blue glowing water, many harvest carts and workers, a sense of abundance
 ```
 
 ---
@@ -74,27 +155,65 @@ Palier : Hameau.
 ## 📦 Stockage
 
 ### Entrepôt de bois
-Palier : Hameau.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A large open-fronted timber warehouse, tall stacks of seasoned logs and planks, rope and wooden crane at the gable, cart loaded with lumber at the door, iron-banded beams, a faint violet lantern glow
+A small open-fronted timber shed, neat stacks of seasoned logs and planks, a simple handcart at the door, a single iron-banded beam, a faint lantern
+```
+**Palier 2**
+```
+A large open-fronted timber warehouse with a stone base, tall stacks of seasoned logs and planks, a rope and wooden crane at the gable, a cart loaded with lumber at the door, iron-banded beams
+```
+**Palier 3**
+```
+A huge lumber depot with several long warehouse halls, towering stacks of timber, gantry cranes with chain hoists, a loading yard full of carts, stone foundations and bronze-bound doors with rune marks
 ```
 
 ### Entrepôt de fer
-Palier : Hameau.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A heavy stone warehouse with iron-banded doors and a barred loading bay, ingots stacked on pallets beside the entrance, ore sacks, a small crane, thick walls with arrow-slit windows suggesting it guards valuable metal
+A small stone store with a heavy iron-banded door, a few ingots stacked beside the entrance, ore sacks, a barred window
+```
+**Palier 2**
+```
+A heavy stone warehouse with iron-banded doors and a barred loading bay, ingots stacked on pallets beside the entrance, ore sacks, a small crane, thick walls with arrow-slit windows suggesting it guards valuable metal
+```
+**Palier 3**
+```
+A fortified metal vault complex of thick stone with massive iron doors and a gatehouse, towers of ingots visible through an open bay, a gantry crane, guards at the gate, rune-sealed locks glowing faintly
 ```
 
 ### Réservoir de mana
-Palier : Hameau. Doit rappeler le cristal de mana de l'icône de ressource, mais plus grand.
+
+Doit rappeler le cristal de mana de l'icône de ressource, mais plus grand.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A tall stone tower reservoir holding a huge glowing violet-blue mana crystal inside a cage of bronze rings and runic pylons, thick conduits of light running into the base, a small gantry around it, the glow lighting the surrounding cobbles
+A short round stone tower holding one glowing violet-blue mana crystal in a simple bronze cage, a small ladder, a few conduits of light running into the base, a lantern on a post
+```
+**Palier 2**
+```
+A tall stone tower reservoir holding a large glowing violet-blue mana crystal inside a cage of bronze rings and runic pylons, thick conduits of light running into the base, a small gantry around it, the glow lighting the surrounding cobbles
+```
+**Palier 3**
+```
+A colossal mana reservoir citadel, a huge stone tower holding an enormous glowing violet-blue crystal inside concentric bronze rings, several smaller crystal storage towers connected by luminous conduits, a wide plaza lit by the glow, awe-inspiring
 ```
 
 ### Silo de nourriture
-Palier : Hameau.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A tall round stone granary silo with a conical thatched roof, a wooden ladder and loading hatch, grain sacks stacked at the base, a cart of wheat sheaves unloading, a few lanterns, pigeons on the roof
+A small round stone granary with a conical thatched roof, a wooden loading hatch, a few grain sacks at the base, a small cart
+```
+**Palier 2**
+```
+A tall round stone granary silo with a conical slate roof, a wooden ladder and loading hatch, grain sacks stacked at the base, a cart of wheat sheaves unloading, a few lanterns
+```
+**Palier 3**
+```
+A group of three large stone granary silos linked by covered walkways, a big grain hall at the base, a loading dock with many carts, a bell tower on the central silo, faint violet-blue runes preserving the grain
 ```
 
 ---
@@ -102,84 +221,201 @@ Palier : Hameau.
 ## 🏛️ Cité
 
 ### Hôtel de ville *(colonies)*
-Palier : tous. Bâtiment central de chaque colonie. **Relais du Donjon.** Il héberge l'Obélisque (lore), qui doit rester visible. Une version par palier est utile dès que la Vue d'ensemble affiche le bâtiment ; en première passe, une seule suffit.
+
+Bâtiment central de chaque colonie. **Relais du Donjon.** Il héberge l'Obélisque (lore), qui doit rester visible à tous les paliers.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A stately stone town hall with a timber-framed upper floor and a bell tower, wide steps and a banner pole, a tall ancient obelisk of dark stone with glowing violet-blue runes standing in the courtyard in front, townsfolk and a notice board, a sense of civic authority without being a castle
+A modest stone and timber town hall with a small bell tower, a few wide steps and a banner pole, a small dark obelisk with faint violet-blue runes standing in the courtyard in front, a notice board, a sense of civic authority without being a castle
+```
+**Palier 2**
+```
+A stately stone town hall with a timber-framed upper floor and a bell tower, wide steps and banners, a tall ancient obelisk of dark stone with glowing violet-blue runes in the courtyard in front, townsfolk and a notice board
+```
+**Palier 3**
+```
+A grand civic palace of dressed stone with a clock tower and a columned entrance, large banners, a monumental dark obelisk with brightly glowing violet-blue runes rising in a paved plaza in front, guards and officials, authority and prosperity
 ```
 
 ### Donjon *(capitale uniquement)*
-Palier : tous, avec une version par palier. Siège du héros et des conseillers.
+
+Siège du héros et des conseillers. Même cadrage pour recevoir les calques de Prestige (voir « Capitale et calques »).
+
+**Palier 1**
 ```
-[PRÉAMBULE] A commanding fortified keep at the heart of the capital, thick stone walls and corner towers, a high central tower crowned with a radiant violet-blue obelisk spire, large heraldic banners, a war room balcony, torchlit gates guarded by sentries, imposing and noble
+A small stone keep with a single square tower and a timber hoarding, a gatehouse with a wooden gate, a banner, a violet-blue lantern at the door, a small yard with a well, plain and sturdy
 ```
-*Note :* les images de la capitale doivent garder exactement le même cadrage pour recevoir les calques de Prestige (bannières, monuments, ambiance). Voir « Capitale et calques » plus bas.
+**Palier 2**
+```
+A commanding fortified keep with thick stone walls and corner towers, a high central tower, large heraldic banners, a war room balcony, torchlit gates guarded by sentries, a small violet-blue obelisk on the roof
+```
+**Palier 3**
+```
+A monumental fortified keep at the heart of the capital, massive walls and tall corner towers, a high central tower crowned with a radiant violet-blue obelisk spire, large heraldic banners, a war room balcony, grand torchlit gates, imposing and noble
+```
 
 ### Institut Arcanique *(recherche)*
-Palier : Hameau.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A scholarly institute of pale stone with a domed observatory and tall arched windows, floating rune-inscribed books drifting around a central cupola, a courtyard with an armillary sphere, robed scholars on the steps, glowing violet-blue glyphs along the cornice
+A small scholar's lodge of pale stone with one low domed turret, a few arched windows, books on a stone bench outside, a small armillary sphere, one violet-blue lantern
+```
+**Palier 2**
+```
+A scholarly institute of pale stone with a domed observatory and tall arched windows, a courtyard with an armillary sphere, robed scholars on the steps, glowing violet-blue glyphs along the cornice
+```
+**Palier 3**
+```
+A great arcane university with a grand central dome and several wings, floating rune-inscribed books drifting around the cupola, an observatory tower, a courtyard with a giant armillary sphere, robed scholars, brightly glowing violet-blue glyphs across the facades
 ```
 
 ### Académie Militaire *(recrutement)*
-Palier : Village.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A fortified military academy with a wide drill yard, a stone hall flying royal banners, wooden practice dummies and an archery range, weapon racks, a mounted squad leaving the gate, and in a side court a robed instructor teaching battle-mages with glowing violet-blue sigils
+A small barracks yard with a plain stone hall, wooden practice dummies and a few weapon racks, a small archery target, a banner on a pole, a few trainees
+```
+**Palier 2**
+```
+A fortified military academy with a wide drill yard, a stone hall flying royal banners, wooden practice dummies and an archery range, weapon racks, a mounted squad leaving the gate
+```
+**Palier 3**
+```
+A grand military academy with a vast parade ground, a monumental stone hall with banners, separate training wings, an archery range, a cavalry arena, and in a side court a robed instructor teaching battle-mages with glowing violet-blue sigils
 ```
 *Idée à garder pour plus tard :* quatre vignettes (infanterie, cavalerie, magie, siège) pour illustrer les onglets de l'écran de recrutement.
 
 ### Forge *(craft des équipements)*
-Palier : Village.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A large stone forge with an open furnace glowing orange-red and violet-blue enchantment light, a blacksmith hammering a sword on an anvil, racks of finished armor and weapons, a quench barrel, sparks flying in the dusk, a rune table in a corner for enchanting
+A small open-front smithy of stone and timber, a single forge glowing orange-red, an anvil with a blacksmith hammering a blade, a quench barrel, a rack of tools, sparks flying
+```
+**Palier 2**
+```
+A large stone forge with an open furnace glowing orange-red, a blacksmith hammering a sword on an anvil, racks of finished armor and weapons, a quench barrel, sparks flying, a rune table in a corner for enchanting with violet-blue light
+```
+**Palier 3**
+```
+A grand arcane foundry, a big stone hall with several furnaces glowing orange-red and violet-blue enchantment light, master smiths at anvils, racks of enchanted armor and weapons, a rune table with floating glyphs, towering chimneys, impressive
 ```
 
 ### Atelier des Maîtres d'œuvre *(accélère les bâtiments)*
-Palier : Village.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A master builders' workshop beside scaffolding, wooden cranes and pulleys, a big drafting table with unrolled blueprints, stacks of dressed stone blocks, builders in leather aprons, a half-built tower behind, practical and industrious
+A small builders' yard with a wooden shed, a wooden crane and pulley, a drafting table with unrolled blueprints, a few dressed stone blocks, a builder in a leather apron
+```
+**Palier 2**
+```
+A master builders' workshop beside scaffolding, wooden cranes and pulleys, a big drafting table with unrolled blueprints, stacks of dressed stone blocks, builders in leather aprons, a half-built tower behind
+```
+**Palier 3**
+```
+A grand architects' guildhall and building yard, huge cranes with counterweights, a tall scaffolded tower under construction, a hall of scale models and blueprints, many builders, bronze surveying instruments with violet-blue glow, industrious and monumental
 ```
 
 ### Atelier des Automates Arcaniques *(accélère artisanat et défenses)*
-Palier : Citadelle.
+
+Palier de cité d'ouverture : Citadelle. Le palier 1 de ce bâtiment est donc déjà plus évolué que les ateliers de base.
+
+**Palier 1**
 ```
-[PRÉAMBULE] An arcane automata workshop, bronze and stone clockwork constructs with glowing violet-blue cores assembling parts on a long workbench, gears and rune-etched plates, a half-finished golem frame suspended on chains, mana conduits along the ceiling, a mix of craft and magic
+A small arcane clockwork workshop of stone and bronze, a single clockwork construct with a glowing violet-blue core on a workbench, gears and rune-etched plates, a half-finished frame hanging on chains
+```
+**Palier 2**
+```
+An arcane automata workshop, several bronze and stone clockwork constructs with glowing violet-blue cores assembling parts on a long workbench, gears and rune-etched plates, a half-finished golem frame suspended on chains, mana conduits along the ceiling
+```
+**Palier 3**
+```
+A grand arcane automata factory, an assembly hall where large bronze golems are built on rails, glowing violet-blue cores, giant gears, mana conduits and rune circuits across the walls, a finished golem standing guard at the gate, awe-inspiring
 ```
 
 ### Atelier des Remparts *(défenses)*
-Palier : Cité fortifiée.
+
+Palier de cité d'ouverture : Cité fortifiée.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A fortification yard where engineers assemble defensive war machines, a large ballista being tested, stone-cut battlement sections ready to be hoisted, a trebuchet frame under construction, stacks of bolts and iron-capped stones, a stretch of rampart in the background
+A fortification yard where engineers assemble a single ballista, a few cut stone battlement blocks, a stack of bolts, a wooden crane, a short stretch of rampart
+```
+**Palier 2**
+```
+A fortification yard where engineers assemble defensive war machines, a large ballista being tested, stone-cut battlement sections ready to be hoisted, a trebuchet frame under construction, stacks of bolts and iron-capped stones, a stretch of rampart in the background
+```
+**Palier 3**
+```
+A grand siegecraft arsenal, a huge yard with several finished ballistae and trebuchets, large gantry cranes lifting battlement sections, an iron foundry for projectile heads, a tall stretch of rampart with runes glowing violet-blue, imposing and military
 ```
 
 ### Hôpital *(troupes blessées)*
-Palier : Bourg.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A hospital of whitewashed stone with a covered cloister, wounded soldiers carried in on stretchers, healers in pale robes tending patients with soft golden-white light, herb gardens, bandages drying on lines, a quiet and humane atmosphere against the dark palette
+A small whitewashed stone infirmary with a single ward, a healer in a pale robe tending a wounded soldier, herbs drying on lines, a quiet and humane atmosphere
+```
+**Palier 2**
+```
+A hospital of whitewashed stone with a covered cloister, wounded soldiers carried in on stretchers, healers in pale robes tending patients with soft golden-white light, herb gardens, bandages drying on lines
+```
+**Palier 3**
+```
+A grand healing sanctuary of white stone with a domed central hall and several wings around a garden cloister, many healers tending patients with golden-white and faint violet-blue light, a fountain, a calm sacred atmosphere against the dark palette
 ```
 
 ### Tour de guet arcanique *(détection)*
-Palier : Bourg.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A tall slender watchtower of dark stone crowned with a glowing violet-blue scrying crystal in a bronze ring, a sentry on the balcony looking out, signal braziers, a long staircase winding around the tower, mist and a distant horizon behind
+A short wooden-and-stone watchtower with a small platform and a lantern, a sentry looking out, a signal brazier, a ladder, mist and a distant horizon behind
+```
+**Palier 2**
+```
+A tall slender watchtower of dark stone with a bronze ring holding a small glowing violet-blue scrying crystal, a sentry on the balcony, signal braziers, a staircase winding around the tower, mist behind
+```
+**Palier 3**
+```
+A tall slender watchtower of dark stone crowned with a large glowing violet-blue scrying crystal in a bronze ring, observation balconies, several sentries, signal braziers, a long staircase winding around the tower, mist and a distant horizon behind
 ```
 
 ### Portail des Sphères *(téléportation)*
-Palier : Métropole. Pour Midjourney, on illustre le **cercle de passage**. Le nom « Portail des Sphères » est un clin d'œil aux Neuf Sphères du lore.
+
+Pour Midjourney, on illustre le **cercle de passage**. Le nom est un clin d'œil aux Neuf Sphères du lore. Palier de cité d'ouverture : Métropole.
+
+**Palier 1**
 ```
-[PRÉAMBULE] A circle of tall ancient standing stones carved with glowing runes arranged around a raised platform, a luminous violet-blue portal of swirling light at the center, nine small floating orbs orbiting above, mist at the base, robed attendants at the edge, majestic and sacred
+A small circle of ancient standing stones carved with faint runes around a stone platform, a thin swirl of violet-blue light at the center, mist at the base
+```
+**Palier 2**
+```
+A circle of tall ancient standing stones carved with glowing runes around a raised platform, a luminous violet-blue portal of swirling light at the center, mist at the base, robed attendants at the edge
+```
+**Palier 3**
+```
+A circle of colossal ancient standing stones carved with brightly glowing runes around a raised platform, a vast luminous violet-blue portal of swirling light at the center, nine small floating orbs orbiting above, robed attendants, majestic and sacred
 ```
 
 ### Ambassade *(diplomatie, pactes, guilde)*
-Palier : Bourg.
+
+**Palier 1**
 ```
-[PRÉAMBULE] An embassy with a grand hall and a courtyard of banners from many different realms, envoys in ceremonial robes exchanging scrolls at a long table, heraldic shields on the walls, a diplomatic atmosphere, banners in violet, gold and iron grey
+A small stone lodge with a few banners from different realms, a modest meeting hall with a long table, a heraldic shield on the wall, a couple of envoys exchanging a scroll
+```
+**Palier 2**
+```
+An embassy with a grand hall and a courtyard of banners from many different realms, envoys in ceremonial robes exchanging scrolls at a long table, heraldic shields on the walls, banners in violet, gold and iron grey
+```
+**Palier 3**
+```
+A grand embassy palace with a columned entrance and a vast banner-lined courtyard, many envoys in ceremonial robes, heraldic shields and tall flags from countless realms, a ceremonial table of state, diplomatic and majestic atmosphere
 ```
 
 ---
 
 ## 🏙️ Paliers de cité
 
-Une image par palier, même lieu, **même cadrage et même heure** pour qu'on lise la progression. Format `--ar 7:3`. L'Obélisque (violet-blue runes) est toujours visible au centre : c'est le fil rouge de la série.
+Une image par palier, même lieu, **même cadrage et même heure** pour qu'on lise la progression. Format `--ar 7:3`. L'Obélisque (runes violet-bleu) est toujours visible au centre : c'est le fil rouge de la série. **Ces prompts n'ont pas encore été testés** avec la nouvelle méthode ; appliquer la même logique que pour les bâtiments (sujet d'abord, `--sw` à ajuster).
 
 Préambule des villes :
 ```
@@ -221,14 +457,22 @@ Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55
 
 ## Ordre de production proposé
 
-1. **Les 6 paliers de cité** (ils donnent le ton de toute la série et le fil rouge de l'Obélisque).
-2. **Les 8 bâtiments de production et de stockage** (les plus simples, ils valident le `--sw` et le format de carte).
-3. **L'Hôtel de ville, le Donjon, l'Institut Arcanique, l'Académie Militaire, la Forge** (bâtiments du premier jet de jeu).
-4. **Les autres bâtiments de cité**, selon l'avancement.
+1. **Palier 1 des 8 bâtiments de production et de stockage** (Scierie déjà validée). Ils valident le `--sw 80` et le format de carte.
+2. **Paliers 2 et 3 de ces 8 bâtiments**, en partant de l'image de palier 1 comme référence. C'est là qu'on teste la cohérence entre paliers (même lieu, même cadrage).
+3. **Les 6 paliers de cité** (ils donnent le ton de la Vue d'ensemble et le fil rouge de l'Obélisque).
+4. **Hôtel de ville, Donjon, Institut Arcanique, Académie Militaire, Forge** (bâtiments du premier jet de jeu), les 3 paliers.
+5. **Les autres bâtiments de cité**, selon l'avancement.
+
+Total : 3 images retenues par bâtiment, soit une soixantaine, plus les villes. On peut livrer l'interface avec le seul palier 1 et ajouter les autres ensuite : la table de seuils gère l'absence d'image en retombant sur le palier précédent.
 
 ## Points ouverts
 
-- [ ] Valider le `--sw` de départ (200 pour les bâtiments, 250 pour les villes) après un essai sur la Scierie et le Hameau.
-- [ ] Vérifier que le choix de la cité validée comme `--sref` fait bien ressortir la palette sans tout teinter de violet.
+- [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie (2026-10-13). Reste à confirmer sur d'autres bâtiments.
+- [ ] Vérifier que le choix de la cité validée comme `--sref` ne teinte pas tout en violet (à surveiller sur les paliers 2 et 3 avec plus de mana).
+- [ ] Tester le maintien du cadrage entre paliers d'un même bâtiment (référence d'image `--iw`, Vary Region).
+- [ ] Tester le seuil de lisibilité à ~300 px de large sur les 3 paliers de la Scierie.
+- [ ] Appliquer la nouvelle méthode (sujet d'abord, `--sw` réduit) aux 6 paliers de cité et ajuster.
 - [ ] Tester la piste « Vary (Region) » pour les calques de capitale.
+- [ ] Décider d'un éventuel 4e palier (par ex. niveau 45) une fois les 3 premiers validés.
 - [ ] Prévoir une icône SVG par bâtiment pour le menu et les files, à dessiner dans le design system (pas via Midjourney).
+- [ ] Noter dans le GDD (section 4.2) le principe « l'image du bâtiment évolue avec son niveau : paliers 1-14, 15-29, 30+ ».
