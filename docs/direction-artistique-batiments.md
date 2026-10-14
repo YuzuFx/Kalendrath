@@ -230,10 +230,12 @@ A colossal mana reservoir citadel, a huge stone tower holding an enormous glowin
 
 ### Silo de nourriture
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-14* ([image](direction-artistique/references/batiment-silo-de-nourriture-palier1.png), [lien Midjourney](https://cdn.midjourney.com/107608a4-45fd-4316-a6cb-fd60823d52ac/0_0.png)). Case 4 de la grille retenue (cylindre de pierre haut, toit conique de chaume, trappe avec échelle, sacs, chariot de gerbes). Prompt réellement utilisé, avec le style du palier 1 **sans** « three-quarter view slightly from above » (comme le Champ de blé) :
 ```
-A small round stone granary with a conical thatched roof, a wooden loading hatch, a few grain sacks at the base, a small cart
+A simple humble granary silo, one single small round stone granary with one conical thatched roof, a small wooden loading hatch with a short ladder, a few grain sacks stacked at its base, a small hay cart with a few tied sheaves, a rough wooden fence, a dirt path worn into dry ground, one small lantern with a faint violet-blue glow, small and solid and utilitarian, pulled back wide shot showing the whole small site on dry packed ground against a dark pine forest edge, deep dusk sky with low sun and no bright clouds
 ```
+Paramètres : ceux du palier 1, avec `towers` **retiré** de l'exclusion et `water, wheat field, farmhouse, cottage, top-down view, isometric, game asset, black background` ajoutés à la fin.
+*Retours d'essai :* le ciel sort **bleu de jour**, plus clair que les autres bâtiments (à homogénéiser ou à traiter à l'intégration) ; aucun accent violet visible (lanternes orangées). Le silo est **déjà haut** et cadré serré : **pour le palier 2**, nommer des éléments de grandeur (toit d'ardoise, second niveau, quai de chargement) plutôt que de compter sur la taille, et exiger `pulled back wide shot`. Test de lisibilité à 300 px à faire.
 **Palier 2**
 ```
 A tall round stone granary silo with a conical slate roof, a wooden ladder and loading hatch, grain sacks stacked at the base, a cart of wheat sheaves unloading, a few lanterns
