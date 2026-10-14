@@ -32,7 +32,7 @@ Selon les mythes recueillis dans les rares archives ayant survécu à la Rupture
 ### Avant la Rupture
 
 - **~-5000 AR** — Âge des premiers peuples. Découverte empirique des Straumar ; naissance des premiers mythes sur les Neuf Sphères.
-- **~-2200 AR** — Nains et elfes, jusque-là peuples voisins, unissent leurs forces et fondent ensemble une grande cité-nation (nom à trancher, voir section 8), bâtie autour de la maîtrise croissante des obélisques de mana. Les elfes y apportent leur maîtrise magique, les nains leur génie architectural et leur artisanat. Une troisième population, orcs et gobelins, s'intègre à la cité comme main-d'œuvre — mineurs, bâtisseurs, artisans du quotidien — sans jamais accéder aux cercles de pouvoir.
+- **~-2200 AR** — Nains et elfes, jusque-là peuples voisins, unissent leurs forces et fondent ensemble une grande cité-nation, **Kaelhelm** (cf. section 9.1), bâtie autour de la maîtrise croissante des obélisques de mana. Les elfes y apportent leur maîtrise magique, les nains leur génie architectural et leur artisanat. Une troisième population, orcs et gobelins, s'intègre à la cité comme main-d'œuvre — mineurs, bâtisseurs, artisans du quotidien — sans jamais accéder aux cercles de pouvoir.
 - **~-800 AR** — Les érudits elfes commencent à recueillir des fragments de savoir sur la Grande Conjonction.
 - **~-50 AR** — Un groupe de nains, désormais convaincu que le rite est un péril mortel pour le monde entier, se réunit en secret. Ils se nomment entre eux **le Serment Rompu** — conscients qu'agir contre leur propre nation revient à rompre un serment de loyauté plus ancien.
 
@@ -146,6 +146,8 @@ Cette logique donne un sens narratif clair à la progression individuelle : un j
 
 ### 9.1 Nom de la cité-nation naine-elfique déchue
 
+**Tranché le 2026-10-14 : Kaelhelm** pour la cité antique (celle engloutie par le rite, bâtie autour des obélisques). Le nom de la *nation* (Kaelgard dans la proposition recommandée) n'est pas validé séparément : à décider si le texte a besoin de distinguer la nation de sa capitale.
+
 *Nécessite un nom reflétant la fusion des deux peuples fondateurs — proposition d'alternatives :*
 
 | Proposition | Nation | Capitale | Note |
@@ -168,7 +170,7 @@ Cette logique donne un sens narratif clair à la progression individuelle : un j
 
 ## 10. Points encore ouverts
 
-- [ ] Nom définitif de la cité-nation naine-elfique (section 9.1)
+- [x] Nom définitif de la cité naine-elfique (section 9.1) — **Kaelhelm**, tranché le 2026-10-14 (nom de la nation, Kaelgard, non tranché)
 - [x] Nom définitif du monde/jeu (section 9.3) — **Kalendrath**, tranché le 2026-09-29
 - [ ] Direction de numérotation des Régions (externe→interne ou inverse)
 - [ ] Structure exacte des events hebdomadaires
