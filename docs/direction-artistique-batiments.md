@@ -132,10 +132,11 @@ A vast fortified mining complex carved into a cliff, multiple tunnel entrances a
 
 ### Puits de mana *(mana)*
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-14* ([image](direction-artistique/references/batiment-puits-de-mana-palier1.png), [lien Midjourney](https://cdn.midjourney.com/74a58407-9f05-44e3-85a4-a48b20097199/0_0.png)). Le premier brief (puits seul, « no building around it ») donnait un puits de jardin isolé : il faut un **site d'extraction**, cadré large, avec la colonne de mana qui sort bien **du puits**.
 ```
-A small ancient stone well ringed by carved runes, a thin column of violet-blue mana rising from its depths, a simple wooden hoist with a bucket of glowing crystals, a few raw mana crystals around the rim, cracked ground with faint glowing veins
+A simple humble mana extraction site, a rough stone well ring set in a rocky hollow with a crude timber windlass and rope hoisting a wooden bucket, a thin column of violet-blue mana rising from the shaft, a small low timber-and-stone shelter with one plain roof beside it holding crates and crystal-filled barrels, a small cart with raw violet-blue crystals, a few raw crystal clusters among the rocks, rough path worn into the dry ground, pulled back wide shot showing the whole small site against a dark rocky cliff, modest and utilitarian
 ```
+Paramètres : ceux du palier 1, avec `complex roofline, water, black background` à la fin de l'exclusion (sans `multiple roofs`). Vérifier à chaque tirage que la colonne part du puits et non de l'arrière-plan.
 **Palier 2**
 ```
 A mana well wellhouse built in carved stone, a wider stone ring with a bronze-framed hoist and copper chains lifting crystal-laden buckets, rune pillars around it, cobbled platform, a clear column of violet-blue mana rising, attendants in dark robes carrying crystals
