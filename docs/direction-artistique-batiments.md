@@ -21,7 +21,7 @@ Les niveaux montent à 30 et plus. Une scierie de niveau 25 ne peut pas ressembl
 - **Côté technique :** une simple table de seuils dans la configuration de l'interface React (niveau → image). Aucun impact sur le domaine PHP.
 - **Au-delà de 30 :** un 4e palier (par ex. à 45) reste possible si les trois premiers fonctionnent bien. Ne pas le produire d'emblée.
 - **Cohérence entre paliers :** même lieu, même orientation, même cadrage. Pour les paliers 2 et 3, partir de l'image de palier 1 validée comme référence d'image (`--iw`, à tester) ou utiliser Vary (Region).
-- **Hôtel de ville et Donjon :** ils suivent aussi ces 3 paliers de niveau. Les images de **cité** (bannière de la Vue d'ensemble) sont une autre série, indexée sur les paliers de cité.
+- **Hôtel de ville et Donjon :** le Donjon suit ces 3 paliers de niveau ; l'Hôtel de ville a **ses propres paliers** (4 proposés, niv. 1-3 / 4-7 / 8-11 / 12-15) car il ne dépasse pas le niveau 12-15. Les images de **cité** (bannière de la Vue d'ensemble) sont une autre série, indexée sur les paliers de cité.
 - **Ordre de production :** voir en fin de document. Les bâtiments où l'évolution est la plus parlante passent en premier.
 
 ---
@@ -251,19 +251,32 @@ A group of three large stone granary silos linked by covered walkways, a big gra
 
 ### Hôtel de ville *(colonies)*
 
-Bâtiment central de chaque colonie. **Relais du Donjon.** Il héberge l'Obélisque (lore), qui doit rester visible à tous les paliers.
+Bâtiment central de chaque colonie. **Relais du Donjon.** Il héberge l'Obélisque (lore). **Décidé le 2026-10-14 :**
+- **L'Obélisque ne grandit pas.** C'est un artefact antérieur à la ville, hérité de Kaelhelm (cité naine-elfique antique), posé sur un nœud de mana pour stabiliser la zone contre les incursions de plans. Il garde la même taille et la même place sur la place à tous les paliers : c'est ce qui permet de garder le même cadrage.
+- **Ce qui évolue :** les **dispositifs** qui renforcent son pouvoir (cercle de pierres brutes → anneaux de bronze et piliers à runes → conduits de lumière dans le dallage → pylônes et voile de lumière) **et l'architecture** de l'Hôtel de ville, de plus en plus soignée et organisée autour de la place. C'est le bâtiment central de la ville : il peut être nettement plus beau que les bâtiments de production, et **chaque palier doit montrer un vrai saut de qualité de construction**.
+- **Matière de l'Obélisque :** pierre noire polie, arêtes nettes, pointe pyramidale, bandes de runes incrustées en bronze et argent qui brillent violet-bleu. Il tranche volontairement avec le village rustique (artefact d'une civilisation bien plus avancée, pas un menhir).
+- **4 paliers** (l'Hôtel de ville ne dépasse pas le niveau 12-15), à la place des 3 paliers communs : **1 = niv. 1-3, 2 = niv. 4-7, 3 = niv. 8-11, 4 = niv. 12-15.** Proposition à confirmer.
+- **Format :** `--ar 3:2`, comme les autres bâtiments (la bannière de la Vue d'ensemble est une autre série, `--ar 7:3`).
 
-**Palier 1**
+**Palier 1 — Pierre dressée** (niv. 1-3) — *Validé le 2026-10-14* (case 2 de la grille ; **l'upscale reste à archiver** : `batiment-hotel-de-ville-palier1.png`). Leçons : le premier concept (obélisque dans le toit, puis monument devant la halle) a été abandonné ; `menhir`/pierre brute doivent être exclus pour que l'obélisque soit « classe » ; sans consigne, les runes sortent électriques ou dorées, d'où `deep violet-blue` et l'exclusion `cyan, neon, electric blue` ; un village animé en arrière-plan fait trop avancé pour le palier 1. Réserve : la halle est reléguée à gauche et petite, à compenser aux paliers suivants. Prompt réellement utilisé :
 ```
-A modest stone and timber town hall with a small bell tower, a few wide steps and a banner pole, a small dark obelisk with faint violet-blue runes standing in the courtyard in front, a notice board, a sense of civic authority without being a castle
+A simple humble town hall facing a small village square built around an ancient obelisk of a far more advanced lost civilization from Kaelhelm, a tall slim obelisk of polished black stone with perfectly cut sharp edges, a square section tapering to a small pyramid tip, unweathered and flawless, with fine inlaid bands of bronze and silver runes glowing clearly in deep violet-blue running continuously up all its sides as the main light accent, a soft violet-blue light spilling onto the standing stones and the ground around its base, the whole obelisk fully visible with clear space above its tip, standing in the middle of the packed-earth square, a ring of rough standing stones braced with crude timber beams makeshift around its base, two small iron braziers and lanterns on posts, a modest low timber-and-fieldstone hall with one plain slate gable roof and a lower side wing closing one side of the square, a few wide worn stone steps up to a plank door, one oxblood red banner on a pole, a small notice board, a sense of civic authority without being a castle, pulled back wide shot showing the whole square with the obelisk at its center and the hall behind it against a dark pine hillside
 ```
-**Palier 2**
+Style : celui du palier 1 avec `deep dusk light with a low sun and no bright clouds`. Paramètres : ceux du palier 1, avec `fortress, bell tower, chimney, complex roofline, water, menhir, cracked, rough monolith, cut off, cyan, neon, electric blue, black background` ajoutés à l'exclusion (`towers` retiré).
+
+**Palier 2 — Cercle de veille** (niv. 4-7). Se lance avec l'image de palier 1 en référence d'image au début du prompt, avec `--iw 0.5`. Même obélisque, même place, même cadrage et même heure.
 ```
-A stately stone town hall with a timber-framed upper floor and a bell tower, wide steps and banners, a tall ancient obelisk of dark stone with glowing violet-blue runes in the courtyard in front, townsfolk and a notice board
+A developed town hall on a paved village square around the same ancient obelisk of polished black stone with inlaid violet-blue rune bands, a stately two-storey dressed-stone hall with a timber-framed upper floor, a slate roof with dormers and a carved gable, tall arched windows glowing warm, two wings embracing the square, a wide stone stairway with banners, two bronze rings encircling the base of the obelisk and four low dark-stone rune pillars with bronze caps around it, thin grooves of glowing violet-blue light inlaid in the flagstone paving linking the pillars to the obelisk, a notice board, a few townsfolk, a sense of civic authority and growing order
 ```
-**Palier 3**
+Paramètres : ceux du palier 1 sans `complex roofline` ni `multiple roofs` dans l'exclusion.
+
+**Palier 3 — Parvis du Conseil** (niv. 8-11) — *brief, à tester*
 ```
-A grand civic palace of dressed stone with a clock tower and a columned entrance, large banners, a monumental dark obelisk with brightly glowing violet-blue runes rising in a paved plaza in front, guards and officials, authority and prosperity
+A grand civic hall of finely dressed stone on a monumental paved parvis around the same ancient obelisk, a columned arcade framing the square, a wide monumental stairway, tall windows with bronze frames, large banners, the obelisk encircled by bronze rings and rune pillars with crystal tips, luminous conduits running through the paving to bronze pylons, councillors and guards on the steps, order and prosperity
+```
+**Palier 4 — Sanctuaire** (niv. 12-15) — *brief, à tester*
+```
+A palatial civic complex in a U around the same ancient obelisk, a colonnade and domed council hall of dressed stone with bronze details, concentric bronze rings and tall rune pylons with crystals around the obelisk, a veil of faint violet-blue light rising from the pylons and protecting the whole square, glowing conduits across the paving, banners, many citizens and guards, awe-inspiring and arcane
 ```
 
 ### Donjon *(capitale uniquement)*
