@@ -117,7 +117,7 @@ Paramètres : comme le palier 2, avec l'accent de mana du palier 3 (`a clearly v
 
 ### Mine de fer *(fer)*
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-13* ([image](direction-artistique/references/batiment-mine-de-fer-palier1.png), [lien Midjourney](https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png)). Le prompt exact utilisé n'a pas été consigné ; celui ci-dessous est la base du brief.
 ```
 A simple iron mine, a single dark tunnel mouth cut into a rocky hillside with timber supports, two ore carts on a short rail track, a pile of rust-red iron ore, a hand-cranked hoist, small and rough, a few torches
 ```
