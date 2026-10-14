@@ -39,6 +39,12 @@ Les niveaux montent à 30 et plus. Une scierie de niveau 25 ne peut pas ressembl
 - **Pour qu'un palier se distingue, nommer des éléments visibles de grandeur** (étage, murs de pierre, deux toits, cheminée, grue), pas seulement « larger ».
 - **`--iw 0.5`** donne une bonne parenté sans copier le cadrage. Vérifier que `--iw` n'est pas ignoré : deux tirets simples (pas un tiret long), valeur avec un point.
 
+**Leçons du palier 3 de la Scierie (2026-10-13) :**
+- **L'erreur « Skipped --iw because the required reference is missing »** signifie que l'URL de référence n'est pas au tout début du prompt, ou qu'un placeholder (`[URL_PALIER_2]`) est resté tel quel. Midjourney génère alors sans référence : le résultat ne prouve rien sur la cohérence entre paliers. Toujours coller la vraie URL `https://cdn.midjourney.com/.../0_0.png` en première position.
+- **Un palier ne doit pas être un simple agrandissement.** Avec `--iw 0.5` et « plus grand, plus de toits, plus de roues », le palier 3 restait un palier 2 un peu plus lumineux. Ce qui fait la différence : **changer de silhouette** (tour à engrenage, aqueduc surélevé, pylônes à cristaux), **monter le point de vue** (`from higher up`) et **baisser `--iw` à 0.25**.
+- **Le mana doit devenir la lumière principale du palier 3** (`as the main light accent`), avec des motifs nommés (cercles runiques sur les murs et au sol, cristaux sur pylônes), sinon il se noie dans les lueurs orange des fenêtres.
+- **Garder de la marge en haut du cadre** : l'engrenage ou la tour tendent à toucher le bord supérieur.
+
 **Structure d'un prompt, dans cet ordre :**
 
 ```
@@ -109,18 +115,19 @@ A simple humble sawmill, one single low rectangular open-sided timber shed with 
 ```
 Paramètres : ceux du palier 2 ci-dessus, avec `--iw 0.5` en tête et `black background, water, pond, floating logs` ajoutés à l'exclusion.
 
-**Palier 3 (niv. 30+)** — *À tester, même méthode que le palier 2 avec l'image du palier 2 en référence.*
+**Palier 3 (niv. 30+)** — *Validé le 2026-10-13* ([image](direction-artistique/references/batiment-scierie-palier3.png), [lien Midjourney](https://cdn.midjourney.com/139de172-4d85-4330-9c76-7afd14695367/0_0.png)). Se lance avec l'image de palier 2 en référence, mais avec `--iw 0.25`. La première version (simple agrandissement du palier 2, `--iw 0.5`) donnait un résultat trop proche du palier 2 : voir les leçons plus haut.
 ```
-[URL_PALIER_2] The same sawmill grown into a great lumber manufactory at the edge of the same dark pine forest, pulled back wide shot showing the whole site on dry ground, a long stone-and-timber factory hall with a tall upper floor and several roofs, many saw lines cutting logs in parallel, three large water wheels along the side, a mechanical log lift and a covered gantry crane, a tall stone chimney, rune-etched bronze gearing along the roof beams, enormous neat stacks of pale logs and cut planks in a dry yard, several carts, imposing and industrial, a clearly major production site
+[URL_PALIER_2] The same sawmill site transformed into a vast arcane lumber manufactory, pulled back wide shot from higher up showing the whole complex on dry ground, a massive stone factory hall three times larger than before with tall arched windows and a high slate roof, a tall stone tower with a huge rune-etched bronze gear mechanism on top, a long elevated wooden aqueduct feeding a row of four giant water wheels, a mechanical log lift carrying logs up into the hall, glowing violet-blue rune circles carved into the walls and ground, floating violet-blue mana crystals mounted on iron pylons along the roofline, enormous ordered stacks of pale logs and planks in a wide paved yard, several carts, the dark pine forest cleared back around it, monumental and industrial, a clearly major arcane production site
 ```
-Paramètres : comme le palier 2, avec l'accent de mana du palier 3 (`a clearly visible violet-blue arcane glow on runes and crystals`).
+Style : celui du palier 3, avec l'accent `strong violet-blue arcane glow as the main light accent` et un point de vue `three-quarter view high above`. Paramètres : `--iw 0.25` en tête, puis ceux du palier 2 avec `black background, water, pond, floating logs, small hut` ajoutés à l'exclusion.
 
 ### Mine de fer *(fer)*
 
-**Palier 1** — *Validé le 2026-10-13* ([image](direction-artistique/references/batiment-mine-de-fer-palier1.png), [lien Midjourney](https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png)). Le prompt exact utilisé n'a pas été consigné ; celui ci-dessous est la base du brief.
+**Palier 1** — *Validé le 2026-10-13* ([image](direction-artistique/references/batiment-mine-de-fer-palier1.png), [lien Midjourney](https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png)). Prompt réellement utilisé, avec le style et les paramètres du palier 1 :
 ```
-A simple iron mine, a single dark tunnel mouth cut into a rocky hillside with timber supports, two ore carts on a short rail track, a pile of rust-red iron ore, a hand-cranked hoist, small and rough, a few torches
+A simple humble iron mine, one single dark tunnel mouth cut into a rocky hillside with rough timber supports and a plain low timber lean-to beside it, two small ore carts on a short rail track, a pile of rust-red iron ore in the foreground, a hand-cranked hoist over a small shaft, a few hanging torches, small and rough and utilitarian, a bare rocky hillside with a few dark pines
 ```
+*Retours d'essai :* `--sw 80` confirmé sur un deuxième bâtiment (ambiance de la cité reprise, pas de manoir). Le cadrage sort **plus serré** que « centered wide shot » et le tas de minerai domine le premier plan ; aucune lanterne de mana n'apparaît (acceptable au palier 1). **Pour le palier 2 :** exiger `pulled back wide shot showing the whole site`, nommer des éléments de grandeur (bâtiment de pierre, chevalement, forge) et demander un accent de mana visible, sinon la référence serrée bloquera la montée en taille.
 **Palier 2**
 ```
 A developed iron mine with a stone-built gatehouse, a long rail track with a line of ore carts, a lift headframe over a vertical shaft, a smelting shed with a smoking chimney, ore sorting tables, piles of grey slag and red ore, workers with barrows
@@ -481,10 +488,10 @@ Total : 3 images retenues par bâtiment, soit une soixantaine, plus les villes. 
 
 ## Points ouverts
 
-- [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie (2026-10-13). Reste à confirmer sur d'autres bâtiments.
+- [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie puis confirmé sur la Mine de fer (2026-10-13). Reste à confirmer sur les bâtiments imposants (Donjon, Portail, Académie).
 - [ ] Vérifier que le choix de la cité validée comme `--sref` ne teinte pas tout en violet (à surveiller sur les paliers 2 et 3 avec plus de mana).
-- [x] Tester le maintien du cadrage entre paliers d'un même bâtiment : **validé sur la Scierie palier 2** avec l'image de palier 1 en référence (`--iw 0.5`). Reste à confirmer sur le palier 3.
-- [ ] Tester le seuil de lisibilité à ~300 px de large sur les 3 paliers de la Scierie.
+- [x] Tester le maintien du cadrage entre paliers d'un même bâtiment : **validé sur la Scierie palier 2** (image de palier 1 en référence, `--iw 0.5`) **et palier 3** (image de palier 2 en référence, `--iw 0.25`).
+- [x] Tester le seuil de lisibilité à ~300 px de large sur les 3 paliers de la Scierie : **validé le 2026-10-13**. Les trois paliers restent lisibles et se distinguent à cette taille (cabane ouverte avec roue et troncs / halle en pierre à deux toits / tour à engrenage et aqueduc à pylônes bleus). Point de vigilance : le palier 3 est le plus sombre, ses détails fins (fenêtres, runes) disparaissent à 300 px, mais la silhouette et les cristaux bleus suffisent.
 - [ ] Appliquer la nouvelle méthode (sujet d'abord, `--sw` réduit) aux 6 paliers de cité et ajuster.
 - [ ] Tester la piste « Vary (Region) » pour les calques de capitale.
 - [ ] Décider d'un éventuel 4e palier (par ex. niveau 45) une fois les 3 premiers validés.
