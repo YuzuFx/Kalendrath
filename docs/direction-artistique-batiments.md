@@ -194,10 +194,12 @@ A huge lumber depot with several long warehouse halls, towering stacks of timber
 
 ### Entrepôt de fer
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-14* ([image](direction-artistique/references/batiment-entrepot-de-fer-palier1.png), [lien Midjourney](https://cdn.midjourney.com/85249949-1edd-4023-8dfd-33f238f48517/0_0.png)). Case 4 de la grille retenue. Leçons : le premier brief (bâtiment de pierre, lingots « dull grey ») donnait un **entrepôt de pierre** où les lingots passaient pour des blocs de roche. Ce qui fait lire « fer » : des **barres biseautées bleu-acier sur un râtelier au premier plan**, une porte **entièrement blindée de plaques rivetées**, une enclume et un peson. Prompt réellement utilisé, avec le style et les paramètres du palier 1 :
 ```
-A small stone store with a heavy iron-banded door, a few ingots stacked beside the entrance, ore sacks, a barred window
+A simple humble iron store, one single low squat dark timber-and-iron building with one plain low gable roof and a massive door fully sheathed in riveted iron plates, narrow barred windows, neat rows of long beveled dark steel-blue iron bars stacked on a wooden rack in the foreground with a visible metallic sheen, a few stamped iron ingots on a plank table with a hanging weighing scale, a small anvil, a few ore sacks and a small handcart, one small lantern with a faint violet-blue glow, small and solid and utilitarian, pulled back wide shot showing the whole site on dry packed ground against a bare rocky hillside with a few dark pines
 ```
+Paramètres : ceux du palier 1, avec `water, mine, tunnel, rail track, ore carts, stone blocks, stone wall, cottage, black background` à la fin de l'exclusion.
+*Retours d'essai :* le bâtiment sort en bois sombre, proche de l'Entrepôt de bois : dans la liste, c'est la porte blindée et les barres bleu-acier qui les distinguent. Le premier plan (barres) est massif : recadrer sur la porte pour la carte de liste. Lanterne violette bien rendue, mais petite. Test de lisibilité à 300 px à faire.
 **Palier 2**
 ```
 A heavy stone warehouse with iron-banded doors and a barred loading bay, ingots stacked on pallets beside the entrance, ore sacks, a small crane, thick walls with arrow-slit windows suggesting it guards valuable metal
