@@ -149,10 +149,12 @@ A grand mana wellspring sanctum, a circular stone platform with tall rune pylons
 
 ### Champ de blé *(nourriture)*
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-14* ([image](direction-artistique/references/batiment-champ-de-ble-palier1.png), [lien Midjourney](https://cdn.midjourney.com/b1dd8d79-ee47-4882-8bbd-cc110670802e/0_0.png)). Leçons : sans consigne, le blé sortait en herbe sèche ; demander `heavy ears of grain on tall stalks`. **Ne pas demander « from above » ni « parallel rows »** : cela bascule en vue isométrique de jeu de stratégie, hors style. Vue à hauteur d'homme, dusk. Le premier plan est chargé en épis : recadrer sur la chaumière pour la carte de liste.
 ```
-A small golden wheat field at dusk with a simple stone and timber farmhouse, a scarecrow, tied harvest sheaves, a little cart, warm amber light on the grain
+A simple humble wheat farm, a single small low timber-and-stone cottage with one plain thatched gable roof at the edge of a modest field of ripe golden wheat with clearly visible heavy ears of grain on tall stalks in the foreground, a few tied sheaves and a small hay cart, a worn scarecrow in the field, a rough wooden fence, a dirt path leading to the cottage, pulled back wide shot on dry ground against a dark pine forest edge, deep dusk sky with low sun and no bright clouds, small and utilitarian
 ```
+Style : celui du palier 1 **sans** « three-quarter view slightly from above ». Paramètres : ceux du palier 1, avec `water, black background, top-down view, isometric, game asset` à la fin de l'exclusion.
+
 **Palier 2**
 ```
 A wide farm estate with large wheat fields, a stone farmhouse and a round barn, a windmill on a hill, stacked sheaves, a team of harvesters with scythes, warm amber light on the grain contrasting with the cool violet sky

@@ -32,6 +32,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Scierie | 2 (niv. 15-29) | `batiment-scierie-palier2.png` (2688 × 1792) | *(URL de l'upscale à renseigner)* |
 | Mine de fer | 1 (niv. 1-14) | `batiment-mine-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png |
 | Puits de mana | 1 (niv. 1-14) | `batiment-puits-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/74a58407-9f05-44e3-85a4-a48b20097199/0_0.png |
+| Champ de blé | 1 (niv. 1-14) | `batiment-champ-de-ble-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/b1dd8d79-ee47-4882-8bbd-cc110670802e/0_0.png |
 
 *Retenu par Gregory le 2026-10-13, puis **remplacé le même jour par une version régénérée** : la première (`3fd86834-e08d-4577-afdf-7eda20636a39`) avait une zone noire en haut à gauche et un cadrage trop serré, qui se propageaient aux paliers suivants. La version actuelle a un ciel et un décor de forêt propres. Convention de nommage : `batiment-<nom>-palier<N>.png`. Le CDN Midjourney refuse les téléchargements automatiques (403) : la copie locale vient d'un envoi manuel.*
 
