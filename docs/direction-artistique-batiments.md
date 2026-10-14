@@ -213,10 +213,12 @@ A fortified metal vault complex of thick stone with massive iron doors and a gat
 
 Doit rappeler le cristal de mana de l'icône de ressource, mais plus grand.
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-14* ([image](direction-artistique/references/batiment-reservoir-de-mana-palier1.png), [lien Midjourney](https://cdn.midjourney.com/88ee6dbc-6f60-40cc-b412-b8d4de8da1d8/0_0.png)). Case 1 de la grille retenue. Leçons : `tower` donnait une vraie tour, d'où une **base de pierre basse et ronde** avec le cristal en cage ; le cristal est **stocké**, pas extrait, d'où l'exclusion `well, bucket, windlass, rope, column of light` pour ne pas retomber sur le Puits de mana. Prompt réellement utilisé, avec le style et les paramètres du palier 1 :
 ```
-A short round stone tower holding one glowing violet-blue mana crystal in a simple bronze cage, a small ladder, a few conduits of light running into the base, a lantern on a post
+A simple humble mana reservoir, one single short round stone base with one glowing violet-blue mana crystal as tall as a man held upright inside a simple bronze cage, small and rough, a short wooden ladder leaning on the cage, a few thin conduits of violet-blue light running along the ground into the stone base, a lantern on a post, a few stacked crates and a small handcart nearby, small and solid and utilitarian, pulled back wide shot showing the whole small site on dry packed ground against a dark rocky cliff with a few dark pines
 ```
+Paramètres : ceux du palier 1, avec `towers` **retiré** de l'exclusion et `water, well, bucket, windlass, rope, column of light, black background` ajoutés à la fin.
+*Retours d'essai :* ambiance plus **nocturne que crépusculaire**, très sombre (la lueur du cristal porte la silhouette) ; le cristal est plus grand que « la taille d'un homme » et tire vers le **bleu électrique** plus que le violet-bleu de la cité ; une ligne de texte illisible apparaît tout en bas de l'image (à recadrer ou retoucher). **Pour le palier 2 :** la référence est déjà haute, nommer des éléments de grandeur (anneaux de bronze, pylônes runiques, petite passerelle) et demander `dusk light` pour un cadrage moins sombre.
 **Palier 2**
 ```
 A tall stone tower reservoir holding a large glowing violet-blue mana crystal inside a cage of bronze rings and runic pylons, thick conduits of light running into the base, a small gantry around it, the glow lighting the surrounding cobbles
