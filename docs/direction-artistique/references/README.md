@@ -37,7 +37,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Entrepôt de fer | 1 (niv. 1-14) | `batiment-entrepot-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/85249949-1edd-4023-8dfd-33f238f48517/0_0.png |
 | Réservoir de mana | 1 (niv. 1-14) | `batiment-reservoir-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/88ee6dbc-6f60-40cc-b412-b8d4de8da1d8/0_0.png |
 | Silo de nourriture | 1 (niv. 1-14) | `batiment-silo-de-nourriture-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/107608a4-45fd-4316-a6cb-fd60823d52ac/0_0.png |
-| Hôtel de ville | 1 (niv. 1-3) | `batiment-hotel-de-ville-palier1.png` (1344 × 896, **non upscalé**) | https://cdn.midjourney.com/bd140d42-535e-4a11-b3a5-c031e22315c0/0_1.png |
+| Hôtel de ville | 1 (niv. 1-3) | `batiment-hotel-de-ville-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/def74ef2-b75c-4412-a161-af26155211b8/0_0.png |
 
 *Scierie : retenu par Gregory le 2026-10-13, puis **remplacé le même jour par une version régénérée** : la première (`3fd86834-e08d-4577-afdf-7eda20636a39`) avait une zone noire en haut à gauche et un cadrage trop serré, qui se propageaient aux paliers suivants. La version actuelle a un ciel et un décor de forêt propres. Convention de nommage : `batiment-<nom>-palier<N>.png`. Le CDN Midjourney refuse les téléchargements automatiques (403) : la copie locale vient d'un envoi manuel.*
 
