@@ -137,6 +137,7 @@ A vast fortified mining complex carved into a cliff, multiple tunnel entrances a
 A simple humble mana extraction site, a rough stone well ring set in a rocky hollow with a crude timber windlass and rope hoisting a wooden bucket, a thin column of violet-blue mana rising from the shaft, a small low timber-and-stone shelter with one plain roof beside it holding crates and crystal-filled barrels, a small cart with raw violet-blue crystals, a few raw crystal clusters among the rocks, rough path worn into the dry ground, pulled back wide shot showing the whole small site against a dark rocky cliff, modest and utilitarian
 ```
 Paramètres : ceux du palier 1, avec `complex roofline, water, black background` à la fin de l'exclusion (sans `multiple roofs`). Vérifier à chaque tirage que la colonne part du puits et non de l'arrière-plan.
+
 **Palier 2**
 ```
 A mana well wellhouse built in carved stone, a wider stone ring with a bronze-framed hoist and copper chains lifting crystal-laden buckets, rune pillars around it, cobbled platform, a clear column of violet-blue mana rising, attendants in dark robes carrying crystals
