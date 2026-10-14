@@ -177,10 +177,12 @@ A vast agricultural domain of terraced golden wheat fields, several windmills, a
 
 ### Entrepôt de bois
 
-**Palier 1**
+**Palier 1** — *Validé le 2026-10-14* ([image](direction-artistique/references/batiment-entrepot-de-bois-palier1.png), [lien Midjourney](https://cdn.midjourney.com/91d7d4c1-e0dc-440d-8d2a-acbf887ccec8/0_0.png)). Prompt réellement utilisé, avec le style et les paramètres du palier 1 :
 ```
-A small open-fronted timber shed, neat stacks of seasoned logs and planks, a simple handcart at the door, a single iron-banded beam, a faint lantern
+A simple humble lumber store, one single low rectangular timber shed with one plain gable roof and a wide plank door standing open, neat stacks of seasoned logs and planks stored under a plain lean-to beside it, a simple handcart at the door, a single iron-banded beam, one small lantern with a faint violet-blue glow, small and utilitarian, pulled back wide shot showing the whole site on dry packed ground against a dark pine forest edge
 ```
+Paramètres : ceux du palier 1, avec `water, water wheel, saw frame, black background` à la fin de l'exclusion (pour ne pas retomber sur la Scierie).
+*Retours d'essai :* case 1 de la grille retenue (hangar ouvert, piles de rondins et de planches bien lisibles). Les lanternes sortent **orangées** et non violettes (acceptable au palier 1). Le cadrage est **plus serré** que demandé et le décor de forêt est dense et sombre : **pour le palier 2**, exiger `pulled back wide shot showing the whole yard`, une clairière dégagée, et nommer des éléments de grandeur (base de pierre, grue) pour ne pas être bloqué par la référence. Test de lisibilité à 300 px à faire.
 **Palier 2**
 ```
 A large open-fronted timber warehouse with a stone base, tall stacks of seasoned logs and planks, a rope and wooden crane at the gable, a cart loaded with lumber at the door, iron-banded beams
