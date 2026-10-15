@@ -42,6 +42,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Hôtel de ville | 3 (niv. 7-9) | `batiment-hotel-de-ville-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/d5ec2391-df8e-463d-9584-f80641bae0f7/0_0.png |
 | Donjon | 1 (niv. 1-14) | `batiment-donjon-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/4a086288-caf5-4be6-8767-eb5ae315d113/0_0.png |
 | Donjon | 2 (niv. 15-29) | `batiment-donjon-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/02d08075-9d9b-439b-ad91-0be02a5ca761/0_0.png |
+| Institut Arcanique | 1 (niv. 1-14) | `batiment-institut-arcanique-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/2b21be6f-2405-4a9f-ba27-ae476e2e8dd6/0_0.png |
 
 *Scierie : retenu par Gregory le 2026-10-13, puis **remplacé le même jour par une version régénérée** : la première (`3fd86834-e08d-4577-afdf-7eda20636a39`) avait une zone noire en haut à gauche et un cadrage trop serré, qui se propageaient aux paliers suivants. La version actuelle a un ciel et un décor de forêt propres. Convention de nommage : `batiment-<nom>-palier<N>.png`. Le CDN Midjourney refuse les téléchargements automatiques (403) : la copie locale vient d'un envoi manuel.*
 
