@@ -376,9 +376,9 @@ A great arcane university with a grand central dome and several wings, floating 
 
 ### Académie Militaire *(recrutement)*
 
-**Palier 1**
+**Palier 1** *(brief, à tester)* — cour d'entraînement rustique, **pas une forteresse**. Style et paramètres du palier 1 ; l'exclusion standard est reprise (elle retire `towers, turrets`, utile ici) avec les exclusions apprises sur l'Institut (`cross, church, chapel, monastery, hobbit, cottage, fairytale, ivy, moss`). Le `--sw` reste à 80 (le doc suggère qu'un bâtiment imposant supporte plus, à monter vers 100 si l'ambiance manque).
 ```
-A small barracks yard with a plain stone hall, wooden practice dummies and a few weapon racks, a small archery target, a banner on a pole, a few trainees
+A simple humble military training yard, one long low barracks hall of fieldstone and timber with one plain slate gable roof closing one side of a packed-earth drill yard, a low stone wall around the yard, wooden practice dummies scarred by blows, racks of spears, shields and training swords, a straw archery butt with a few arrows, one oxblood red banner on a pole, an iron brazier, a few trainees in leather and mail drilling and one veteran instructor watching, a sense of discipline and grit, utilitarian and sturdy, set on dry ground at the edge of a village, pulled back wide shot showing the whole yard and the barracks behind it against a dark pine hillside. Dark heroic fantasy concept art, weathered timber and stone, muted earthy palette (iron grey, aged bronze, oxblood red), a few small violet-blue mana lanterns as the only accent, painterly digital illustration, deep dusk light with a low sun and no bright clouds, three-quarter view slightly from above, centered wide shot, strong simple silhouette readable at small size --ar 3:2 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80 --no text, letters, watermark, modern, people crowd, photography, black borders, animals, manor, mansion, castle, fortress, towers, turrets, multiple roofs, complex roofline, water, cyan, neon, electric blue, black background, cross, church, chapel, monastery, hobbit, cottage, fairytale, whimsical, ivy, moss, overgrown
 ```
 **Palier 2**
 ```
