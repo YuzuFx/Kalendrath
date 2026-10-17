@@ -32,6 +32,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Scierie | 2 (niv. 15-29) | `batiment-scierie-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/e6a11996-b406-4784-8fc3-75f09cbd9e30/0_0.png |
 | Scierie | 3 (niv. 30+) | `batiment-scierie-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/139de172-4d85-4330-9c76-7afd14695367/0_0.png |
 | Mine de fer | 1 (niv. 1-14) | `batiment-mine-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png |
+| Mine de fer | 2 (niv. 15-29) | `batiment-mine-de-fer-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/89afce82-944a-48c3-8ee8-8e99f5bd2d44/0_0.png |
 | Puits de mana | 1 (niv. 1-14) | `batiment-puits-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/74a58407-9f05-44e3-85a4-a48b20097199/0_0.png |
 | Champ de blé | 1 (niv. 1-14) | `batiment-champ-de-ble-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/b1dd8d79-ee47-4882-8bbd-cc110670802e/0_0.png |
 | Entrepôt de bois | 1 (niv. 1-14) | `batiment-entrepot-de-bois-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/91d7d4c1-e0dc-440d-8d2a-acbf887ccec8/0_0.png |
