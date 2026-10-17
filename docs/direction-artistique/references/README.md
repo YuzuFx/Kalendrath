@@ -28,7 +28,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 
 | Bâtiment | Palier | Fichier | URL Midjourney |
 |---|---|---|---|
-| Scierie | 1 (niv. 1-14) | `batiment-scierie-palier1.png` (2688 × 1792) | *(URL de la version régénérée à renseigner)* |
+| Scierie | 1 (niv. 1-14) | `batiment-scierie-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/d773a34a-77a6-4a3b-bdfe-dc5ab9c7a631/0_0.png |
 | Scierie | 2 (niv. 15-29) | `batiment-scierie-palier2.png` (2688 × 1792) | *(URL de l'upscale à renseigner)* |
 | Scierie | 3 (niv. 30+) | `batiment-scierie-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/139de172-4d85-4330-9c76-7afd14695367/0_0.png |
 | Mine de fer | 1 (niv. 1-14) | `batiment-mine-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png |
