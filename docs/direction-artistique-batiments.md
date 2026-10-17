@@ -420,9 +420,9 @@ A grand arcane foundry, a big stone hall with several furnaces glowing orange-re
 
 ### Atelier des Maîtres d'œuvre *(accélère les bâtiments)*
 
-**Palier 1**
+**Palier 1** *(brief, à tester)* — chantier de village, **pas un bâtiment en pierre**. L'identité visuelle est la **grue de bois à roue de carrier** et la **table à plans**, pas un atelier fermé. Style et paramètres du palier 1 avec les exclusions apprises (`cross, church, chapel, monastery, hobbit, cottage, fairytale, whimsical, ivy, moss, overgrown`). La tour en construction est réservée au palier 2, d'où `towers, turrets` laissés en exclusion.
 ```
-A small builders' yard with a wooden shed, a wooden crane and pulley, a drafting table with unrolled blueprints, a few dressed stone blocks, a builder in a leather apron
+A simple humble builders' yard, one open-sided timber lean-to shed with one plain plank roof beside a packed-earth yard, a tall wooden crane with a treadwheel, rope and pulley lifting a dressed stone block, a drafting table under the lean-to with unrolled blueprints held down by stones and a set of bronze dividers, neat stacks of dressed stone blocks and timber beams, a few wooden sawhorses, one builder in a leather apron checking a plan and one mason chiselling a block, one small violet-blue lantern hanging from the shed post, a sense of orderly work and craft, utilitarian and sturdy, set on dry ground at the edge of a village beside a dirt track, pulled back wide shot showing the whole yard and its crane against a dark pine hillside. Dark heroic fantasy concept art, weathered timber and stone, muted earthy palette (iron grey, aged bronze, oxblood red), painterly digital illustration, deep dusk light with a low sun and no bright clouds, three-quarter view slightly from above, centered wide shot, strong simple silhouette readable at small size --ar 3:2 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80 --no text, letters, watermark, modern, people crowd, photography, black borders, animals, manor, mansion, castle, fortress, towers, turrets, multiple roofs, complex roofline, water, cyan, neon, electric blue, black background, cross, church, chapel, monastery, hobbit, cottage, fairytale, whimsical, ivy, moss, overgrown, scaffolding, half-built tower
 ```
 **Palier 2**
 ```
