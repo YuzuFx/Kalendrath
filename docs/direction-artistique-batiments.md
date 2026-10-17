@@ -322,7 +322,7 @@ Siège du héros et des conseillers. Même cadrage pour recevoir les calques de 
 
 **Décidé le 2026-10-15 :** le Donjon est **l'Hôtel de ville en plus grand**, le bâtiment central de la capitale, et pas un avant-poste. Il reprend la composition validée de l'Hôtel de ville (place, Obélisque au centre, bâtiment derrière) et **l'Obélisque y est toujours présent**. Le premier brief (petit donjon isolé) a été abandonné : les rendus donnaient une tour de guet sur un rocher, sans Obélisque ni lien avec une ville.
 - **Dans la capitale, l'Obélisque est l'original, posé sur un socle de Kaelhelm** : estrade circulaire basse de la même pierre noire polie, trois marches concentriques, cercle de runes bronze et argent incrusté à fleur de surface, éclats de dallage noir ancien qui affleurent dans la terre. Le joueur est venu bâtir autour : l'ancien parfait contre le neuf rustique.
-- **Piste à confirmer (lore, pas encore dans le GDD) :** les colonies imitent maladroitement l'Obélisque de la capitale (d'où le cercle de pierres brutes de l'Hôtel de ville p1), et le joueur apprendra à reproduire la magie pour fonder de nouvelles colonies, ou en trouvera d'autres.
+- **Lore décidé le 2026-10-17 (écrit dans le GDD et le lore) :** les obélisques sont des artefacts anciens ; la capitale possède l'original, et **les colonies l'imitent** (d'où le cercle de pierres brutes de l'Hôtel de ville p1). Les érudits du joueur étudient leur fonctionnement, ce qui permet de reproduire la magie pour fonder de nouvelles colonies.
 - **Marge pour les paliers 2 et 3** : le palier 1 doit rester rustique (terre battue, halle de moellons à étage de bois, une tour trapue, une bannière, village discret). Pierre de taille, cour dallée, grand escalier, plusieurs tours et foule sont réservés aux paliers 2 et 3.
 
 **Palier 1 — Obélisque de Kaelhelm** (niv. 1-14) — *Validé le 2026-10-15* ([image](direction-artistique/references/batiment-donjon-palier1.png), [lien Midjourney](https://cdn.midjourney.com/4a086288-caf5-4be6-8767-eb5ae315d113/0_0.png) ; case 3 de la grille, upscalée). Leçons :
@@ -536,7 +536,7 @@ Pour Midjourney, on illustre le **cercle de passage**. Le nom est un clin d'œil
 - **Les neuf piliers de pierre noire polie à runes ont donné un vrai cercle de passage**, à la place d'un cercle de menhirs bruts (rejeté pour l'Obélisque pour son aspect bricolé). Les exclusions `menhir, rough monolith, standing stones, stonehenge, ruins, cracked, church, chapel, temple, altar` ont tenu. Pierre noire, plateforme à plusieurs degrés, dallage de plaza, ville de pierre au fond : ambiance Métropole.
 - **Case choisie :** la plus lisible comme cercle de passage (cercle entier dans le cadre, plateforme et filet de lumière au centre, préposé en robe avec lanterne au bord, marge de ciel). Les cases 1 et 3 étaient des gros plans à l'intérieur d'une colonnade, plus proches d'une rotonde de temple ; la case 4 (dalles plates) rappelait Stonehenge.
 - **Écarts acceptés :** la **lumière centrale est blanc-bleu** (et non violet-bleu) : `cyan, neon, electric blue` en exclusion n'a pas suffi ; **les runes et le pied des piliers brillent en orange** (braises), contrairement à « le violet-bleu est la lumière principale » ; les piliers sont des **grandes stèles** et non « bas et fins » (le palier 2 devra donc se différencier autrement : pierres colossales, portail lumineux plein, préposés en nombre). Pour corriger sans relancer, piste non testée : Quick Edit (« change the central swirl to deep violet-blue, remove the orange glow at the base of the pillars »).
-- **Piste de lore non décidée :** la pierre noire à runes de bronze et d'argent est de la même famille que l'Obélisque de Kaelhelm ; le Portail serait-il un dispositif de Kaelhelm ? À trancher avant de l'écrire dans le GDD ou le lore.
+- **Lore décidé le 2026-10-17 :** le Portail des Sphères **n'est pas un dispositif de Kaelhelm**. Il naît de l'étude des obélisques par les érudits du joueur, d'où son prérequis très élevé en bâtiments et en études arcaniques. La parenté visuelle avec l'Obélisque (pierre noire, bandes de runes de bronze et d'argent) vient de cette étude : le Portail imite le savoir-faire des obélisques, il n'est pas l'œuvre de Kaelhelm.
 - **Test de lisibilité à 300 px à faire** (le cercle de piliers et la lueur centrale portent la lecture).
 
 Prompt réellement utilisé :
@@ -625,6 +625,24 @@ Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55
 - Midjourney ne garantit pas un cadrage identique d'une génération à l'autre. Pour obtenir des calques de Prestige qui se superposent, la piste la plus fiable est de partir de l'image de base validée et d'utiliser **Vary (Region)** pour ajouter bannières et monuments, puis de comparer les deux images pour extraire le calque. À tester sur un palier avant de généraliser. Rangs de Prestige et nombre de calques **[TBD]**.
 
 ---
+
+## Test de lisibilité à 300 px — paliers 1 (2026-10-17)
+
+Planche de contact des 20 paliers 1 réduits à 300 px de large : [planche-paliers1-300px.png](direction-artistique/references/planche-paliers1-300px.png).
+
+**Lisibles du premier coup (silhouette distincte) :** Tour de guet arcanique, Silo de nourriture (tour ronde à toit de chaume), Donjon et Hôtel de ville (l'Obélisque domine), Réservoir de mana (cristal dans sa cage), Puits de mana (colonne de lumière), Portail des Sphères (cercle de piliers), Institut Arcanique (tour à armillaire + longue halle), Atelier des Maîtres d'œuvre (grue), Mine de fer (tas de minerai et rails), Champ de blé, Forge (feu).
+
+**À surveiller :**
+- **Académie Militaire :** le bâtiment est petit, dans un cadre large et sombre ; les mannequins et la bannière sont minuscules, la lecture est celle d'une scène rurale. Candidat à un recadrage ou à une régénération plus serrée si l'on veut une vraie carte.
+- **Atelier des Remparts :** lisible (baliste, hangar, mur), mais la baliste est noyée dans les tons bruns du hangar.
+- **Atelier des Automates Arcaniques :** la lueur de l'intérieur se lit, mais l'automate et son cœur sont trop petits ; proche de la Forge par la lumière chaude de l'ouverture.
+- **Ambassade :** les bannières et l'écusson passent, mais la silhouette est celle d'un chalet à pignon.
+
+**Risque de confusion entre bâtiments voisins :**
+- **Scierie, Entrepôt de bois, Entrepôt de fer, Forge :** quatre hangars à pignon de bois avec piles de bûches ou de barres au premier plan. L'Entrepôt de fer est le plus ambigu : ses barres de fer ressemblent à des troncs. Le palier 2 devra les différencier par la silhouette (ajouter un élément de métal luisant pour l'Entrepôt de fer, rails ou chariot).
+- **Donjon et Hôtel de ville :** deux obélisques sur place. La parenté est voulue (l'Hôtel de ville est le relais du Donjon), mais à 300 px seuls le socle à runes et la grosse tour du Donjon les distinguent.
+
+**Équilibre d'exposition :** la série oscille entre des images très lumineuses et bleutées (Tour de guet, Silo, Institut) et des images très sombres (Académie, Automates, Ambassade, Remparts, Hôtel de ville). À normaliser côté interface (luminosité, voile de fond) plutôt qu'à régénérer.
 
 ## Ordre de production proposé
 

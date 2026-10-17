@@ -11,6 +11,7 @@ Le monde repose sur l'existence de **Straumar** (singulier : *Straumr*) — des 
 Cette réalité fait partie d'un ensemble plus vaste : **les Neuf Sphères**, des plans d'existence distincts reliés entre eux par les points de convergence les plus puissants des Straumar.
 
 - **Obélisques de mana** : structures permettant de canaliser et stocker le mana ambiant sur un point de convergence — fondement de toute magie et ressource économique centrale du jeu.
+  - **Décidé le 2026-10-17 :** les obélisques sont des **artefacts anciens**, hérités de Kaelhelm. Le joueur possède l'**original** dans sa capitale ; ses colonies **l'imitent**. Ses érudits en étudient le fonctionnement, ce qui permet de reproduire la magie (fonder de nouvelles colonies) et, plus tard, de créer le **Portail des Sphères**. Le Portail **n'est pas un dispositif de Kaelhelm** : il naît de cette étude.
 - **Éclats** : fragments de terre isolés (voir section 3), naturellement riches en mana du fait de la Rupture qui a exposé et fracturé les Straumar en surface.
 
 ---

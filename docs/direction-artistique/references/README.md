@@ -30,6 +30,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 |---|---|---|---|
 | Scierie | 1 (niv. 1-14) | `batiment-scierie-palier1.png` (2688 × 1792) | *(URL de la version régénérée à renseigner)* |
 | Scierie | 2 (niv. 15-29) | `batiment-scierie-palier2.png` (2688 × 1792) | *(URL de l'upscale à renseigner)* |
+| Scierie | 3 (niv. 30+) | `batiment-scierie-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/139de172-4d85-4330-9c76-7afd14695367/0_0.png |
 | Mine de fer | 1 (niv. 1-14) | `batiment-mine-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png |
 | Puits de mana | 1 (niv. 1-14) | `batiment-puits-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/74a58407-9f05-44e3-85a4-a48b20097199/0_0.png |
 | Champ de blé | 1 (niv. 1-14) | `batiment-champ-de-ble-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/b1dd8d79-ee47-4882-8bbd-cc110670802e/0_0.png |
@@ -55,6 +56,8 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Ambassade | 2 (niv. 15-29) | `batiment-ambassade-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/1bcf533b-1b74-4aac-aa37-28494a0484a1/0_0.png |
 
 *Scierie : retenu par Gregory le 2026-10-13, puis **remplacé le même jour par une version régénérée** : la première (`3fd86834-e08d-4577-afdf-7eda20636a39`) avait une zone noire en haut à gauche et un cadrage trop serré, qui se propageaient aux paliers suivants. La version actuelle a un ciel et un décor de forêt propres. Convention de nommage : `batiment-<nom>-palier<N>.png`. Le CDN Midjourney refuse les téléchargements automatiques (403) : la copie locale vient d'un envoi manuel.*
+
+*Planche de contact des 20 paliers 1 à 300 px : [planche-paliers1-300px.png](planche-paliers1-300px.png) (test de lisibilité du 2026-10-17, résultats dans le doc des bâtiments).*
 
 ## Captures brutes (archive, interface Midjourney visible)
 
