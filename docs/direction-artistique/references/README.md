@@ -61,6 +61,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Atelier des Automates Arcaniques | 1 (niv. 1-14) | `batiment-atelier-des-automates-arcaniques-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/ba64ce4d-697b-4712-b26b-5b6488f7d39d/0_0.png |
 | Atelier des Automates Arcaniques | 2 (niv. 15-29) | `batiment-atelier-des-automates-arcaniques-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/fc9b18ae-d237-4ca2-87be-a4988b9206ec/0_0.png |
 | Atelier des Remparts | 1 (niv. 1-14) | `batiment-atelier-des-remparts-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/713afdf1-1060-4139-99cc-2030119ce30e/0_0.png |
+| Atelier des Remparts | 2 (niv. 15-29) | `batiment-atelier-des-remparts-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/7d27c8a5-c09a-4a7c-a651-e79b02f4a528/0_0.png |
 | Hôpital | 1 (niv. 1-14) | `batiment-hopital-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/1e98feb8-a60c-4616-87e5-99ca2407d6ad/0_0.png |
 | Tour de guet arcanique | 1 (niv. 1-14) | `batiment-tour-de-guet-arcanique-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/32c3f13a-223b-44b9-bd1d-49942b6d2f8e/0_0.png |
 | Portail des Sphères | 1 (niv. 1-14) | `batiment-portail-des-spheres-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/9a8e3765-6c26-4c46-a4b1-ee1b62e6fc73/0_0.png |
