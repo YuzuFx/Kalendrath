@@ -51,6 +51,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Donjon | 1 (niv. 1-14) | `batiment-donjon-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/4a086288-caf5-4be6-8767-eb5ae315d113/0_0.png |
 | Donjon | 2 (niv. 15-29) | `batiment-donjon-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/02d08075-9d9b-439b-ad91-0be02a5ca761/0_0.png |
 | Institut Arcanique | 1 (niv. 1-14) | `batiment-institut-arcanique-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/2b21be6f-2405-4a9f-ba27-ae476e2e8dd6/0_0.png |
+| Institut Arcanique | 2 (niv. 15-29) | `batiment-institut-arcanique-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/713a2986-3df8-400e-974d-5cf0d11bbaa4/0_0.png |
 | Académie Militaire | 1 (niv. 1-14) | `batiment-academie-militaire-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/a5eced10-3ee5-4d3b-b58e-46b0a06bfc16/0_0.png |
 | Forge | 1 (niv. 1-14) | `batiment-forge-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6ec44b4f-30cc-4363-96b7-a291d5bebd94/0_0.png |
 | Atelier des Maîtres d'œuvre | 1 (niv. 1-14) | `batiment-atelier-des-maitres-d-oeuvre-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/07dc4396-fbfe-423c-9fb2-54bac294e286/0_0.png |
