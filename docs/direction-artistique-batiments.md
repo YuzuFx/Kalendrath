@@ -727,7 +727,7 @@ Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55
 
 ---
 
-## État d'avancement et plan de la prochaine session (2026-10-18, soir)
+## État d'avancement et plan de la prochaine session (2026-10-18, soir) — session suivante sur le Mac, faire d'abord `git pull`
 
 **Fait :** 20 / 20 paliers 1 ; **19 / 20 paliers 2** (tout sauf le Portail des Sphères) ; 2 paliers 3 (Scierie, Hôtel de ville). Tableau des références cohérent (une ligne par image, aucune URL en double ni manquante), planche de lisibilité des paliers 1 faite, lore des obélisques et du Portail écrit.
 
@@ -737,7 +737,7 @@ Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55
 - **Réservé au palier 3** : pierres colossales, portail immense, **neuf petites orbes en orbite**, ambiance sacrée. **Pas d'effet temple ni stonehenge** (`temple, altar, church, chapel, stonehenge, menhir` en exclusion).
 
 **Ensuite :**
-1. **Test de lisibilité à 300 px des paliers 2** (planche de contact, comme pour les paliers 1 : refaire le script PowerShell de la session du 17 octobre) ; points déjà connus : Scierie p2 et Entrepôt de bois p2 (longs halls à deux pignons), Académie p2 et Atelier des Remparts p2 (effet fort), Hôpital p2 (ferme blanche).
+1. **Test de lisibilité à 300 px des paliers 2** (planche de contact de 300 px de large par image, comme pour les paliers 1 ; le script PowerShell/.NET de la session du 17 octobre tournait sous WSL et n'est pas conservé : **sur le Mac, PowerShell n'existe pas**, utiliser `montage` d'ImageMagick, `sips` ou Python avec Pillow) ; points déjà connus : Scierie p2 et Entrepôt de bois p2 (longs halls à deux pignons), Académie p2 et Atelier des Remparts p2 (effet fort), Hôpital p2 (ferme blanche).
 2. **Audit des prérequis de bâtiments** (**décidé le 2026-10-17 : une fois les paliers 2 validés**), sous forme de **tableau dans le GDD et/ou arbre de dépendances en Artifact**. Deux couches à croiser : prérequis OGameX hérités dans `app/GameObjects` et déblocage par palier de cité du GDD (section 4.2). Mémoire du projet : `todo-prerequis-batiments`.
 3. **Paliers 3** (20 images) : 2 faits ; **à refaire :** Donjon p3 (tours carrées à créneaux à la place des tourelles coniques, colombages à exclure, marge au-dessus de la tour) et Ambassade p3 (case 4 néoclassique mise en réserve) ; **Atelier des Remparts p3** (pierre de taille sans charpente apparente) ; **Hôtel de ville p4 et p5** (briefs prêts).
 4. **Décision éventuelle d'un 4e palier visuel** (par exemple niveau 45) une fois les paliers 3 validés.
