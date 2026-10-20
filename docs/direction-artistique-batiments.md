@@ -743,7 +743,7 @@ Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55
 **Abonnement Midjourney (2026-10-20) :** limite de fast time atteinte (3h20 consommées depuis le début, environ 4 à 5 min par bâtiment), 1 h rachetée à 4 $ ; refresh le 30 octobre. Estimation du reste : 3 à 4 h pour les paliers 3 et les reprises, donc rachat à l'heure plutôt que l'upgrade à 30 $.
 
 **Ensuite :**
-1. **Test de lisibilité à 300 px des paliers 2** (Portail p2 compris) (planche de contact de 300 px de large par image, comme pour les paliers 1 ; le script PowerShell/.NET de la session du 17 octobre tournait sous WSL et n'est pas conservé : **sur le Mac, PowerShell n'existe pas**, utiliser `montage` d'ImageMagick, `sips` ou Python avec Pillow) ; points déjà connus : Scierie p2 et Entrepôt de bois p2 (longs halls à deux pignons), Académie p2 et Atelier des Remparts p2 (effet fort), Hôpital p2 (ferme blanche).
+1. ~~**Test de lisibilité à 300 px des paliers 2**~~ — **fait le 2026-10-20** (voir la section dédiée ; reprise Hôpital p2 et Académie p1/p2 à décider) (planche de contact de 300 px de large par image, comme pour les paliers 1 ; le script PowerShell/.NET de la session du 17 octobre tournait sous WSL et n'est pas conservé : **sur le Mac, PowerShell n'existe pas**, utiliser `montage` d'ImageMagick, `sips` ou Python avec Pillow) ; points déjà connus : Scierie p2 et Entrepôt de bois p2 (longs halls à deux pignons), Académie p2 et Atelier des Remparts p2 (effet fort), Hôpital p2 (ferme blanche).
 2. **Audit des prérequis de bâtiments** (**décidé le 2026-10-17 : une fois les paliers 2 validés**), sous forme de **tableau dans le GDD et/ou arbre de dépendances en Artifact**. Deux couches à croiser : prérequis OGameX hérités dans `app/GameObjects` et déblocage par palier de cité du GDD (section 4.2). Mémoire du projet : `todo-prerequis-batiments`.
 3. **Paliers 3** (20 images) : 2 faits ; **à refaire :** Donjon p3 (tours carrées à créneaux à la place des tourelles coniques, colombages à exclure, marge au-dessus de la tour) et Ambassade p3 (case 4 néoclassique mise en réserve) ; **Atelier des Remparts p3** (pierre de taille sans charpente apparente) ; **Hôtel de ville p4 et p5** (briefs prêts).
 4. **Décision éventuelle d'un 4e palier visuel** (par exemple niveau 45) une fois les paliers 3 validés.
@@ -776,6 +776,28 @@ Planche de contact des 20 paliers 1 réduits à 300 px de large : [planche-palie
 - **Donjon et Hôtel de ville :** deux obélisques sur place. La parenté est voulue (l'Hôtel de ville est le relais du Donjon), mais à 300 px seuls le socle à runes et la grosse tour du Donjon les distinguent.
 
 **Équilibre d'exposition :** la série oscille entre des images très lumineuses et bleutées (Tour de guet, Silo, Institut) et des images très sombres (Académie, Automates, Ambassade, Remparts, Hôtel de ville). À normaliser côté interface (luminosité, voile de fond) plutôt qu'à régénérer.
+
+## Test de lisibilité à 300 px — paliers 2 (2026-10-20)
+
+Planche de contact des 20 paliers 2 réduits à 300 px de large : [planche-paliers2-300px.png](direction-artistique/references/planche-paliers2-300px.png) (générée avec Pillow, script non conservé : 20 images en 5 colonnes, 300 × 200 px, nom sous chaque vignette).
+
+**Lisibles du premier coup :** Tour de guet arcanique (tour élancée sur crête), Portail des Sphères (cercle de piliers et ovale lumineux), Réservoir de mana (cristal en cage), Puits de mana (colonne de lumière), Donjon et Hôtel de ville (l'Obélisque domine), Silo de nourriture (tour ronde), Institut Arcanique (tour à observatoire + longue halle), Champ de blé, Mine de fer (chevalement et rails), Forge (feu).
+
+**À surveiller :**
+- **Hôpital :** la ferme blanche à longue galerie se lit comme une **maison de village**, sans signe de soin visible (aucun symbole, peu de lits) ; le moins lisible de la série.
+- **Académie Militaire :** toujours petite et sombre dans un cadre large ; elle se lit comme une **forteresse au fond d'un chemin**, les mannequins d'entraînement sont minuscules. Confirme le candidat à régénération (p1 comme p2).
+- **Ambassade :** chalet de pierre à bannières et fenêtres éclairées, lisible mais proche d'une chapelle ou d'une auberge ; l'écusson passe à peine.
+- **Atelier des Automates Arcaniques :** la grande arche éclairée se lit, mais l'automate est minuscule et la lumière chaude de l'ouverture rapproche encore de la Forge.
+- **Entrepôt de fer :** hangar de bois sombre ; le tas de barres en pyramide et les piles plates sauvent la lecture, mais l'ensemble reste le plus terne.
+
+**Risque de confusion entre bâtiments voisins :**
+- **Scierie et Entrepôt de bois :** deux grands halls de bois à toit de bardeaux avec des rondins au premier plan ; seuls la roue à aubes et l'établi éclairé de la Scierie les distinguent. Le plus fort risque de la série.
+- **Atelier des Maîtres d'œuvre et Atelier des Remparts :** deux chantiers de charpente en bois avec grue ou baliste ; la grue haute du premier et la baliste du second restent la seule différence.
+- **Mine de fer et Scierie/Entrepôts :** bois et pierre sombres, mais le chevalement et les rails de la Mine la distinguent bien.
+
+**Équilibre d'exposition :** images claires ou bleutées (Champ de blé, Tour de guet, Silo, Institut) contre images très sombres (Académie, Automates, Hôtel de ville, Puits de mana, Réservoir de mana, Portail des Sphères, Entrepôt de fer). Les sources de lumière (cristal, portail, forge, fenêtres) portent la lecture des sombres ; à homogénéiser au moment de l'intégration (courbe de niveaux par image).
+
+**À retenir pour les paliers 3 :** donner à chaque bâtiment **un élément signature de grande taille** qui se lit à 300 px (roue, cristal, portail, tour), éviter les deux chantiers de charpente et les deux halls de bois côte à côte, et préférer la **pierre de taille** ou le **bronze** au bois (comme déjà décidé pour les Remparts et l'Hôtel de ville).
 
 ## Ordre de production proposé
 
