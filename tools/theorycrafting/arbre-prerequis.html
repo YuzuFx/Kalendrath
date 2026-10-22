@@ -1,0 +1,928 @@
+<title>Arbre des prérequis Kalendrath</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus+SC&family=Source+Sans+3:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout : pleine largeur. Arbre + fiche, puis rythme simulé (réglages, frise, coûts), tableaux d'audit, points à trancher. */
+:root {
+  --bg: #f2f1f6;
+  --surface: #ffffff;
+  --ink: #1e1c2b;
+  --muted: #5e5a73;
+  --line: #d8d5e3;
+  --mana: #5446c9;
+  --bronze: #94622a;
+  --stone: #6f6a84;
+  --ok: #2f7a4f;
+  --warn: #a35a12;
+  --new: #2a6f8f;
+  --mana-soft: #e9e6fb;
+  --bronze-soft: #f5ece1;
+  --stone-soft: #ebe9f1;
+  --band: #dcd8ea;
+  --font-display: "Marcellus SC", "Cormorant SC", Georgia, serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12111a; --surface: #1b1927; --ink: #ebe8f5; --muted: #a29eba; --line: #343148;
+    --mana: #9f95ff; --bronze: #d6a466; --stone: #a8a3bf; --ok: #6cc795; --warn: #e8a35a; --new: #6cc0e3;
+    --mana-soft: #27234a; --bronze-soft: #2e2519; --stone-soft: #252335; --band: #353150;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12111a; --surface: #1b1927; --ink: #ebe8f5; --muted: #a29eba; --line: #343148;
+  --mana: #9f95ff; --bronze: #d6a466; --stone: #a8a3bf; --ok: #6cc795; --warn: #e8a35a; --new: #6cc0e3;
+  --mana-soft: #27234a; --bronze-soft: #2e2519; --stone-soft: #252335; --band: #353150;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: 15px; line-height: 1.5;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 24px 56px;
+}
+.wrap { width: 100%; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(30px, 3.4vw, 42px); line-height: 1.1; }
+h2 { font-size: 24px; }
+h3 { font-size: 20px; line-height: 1.2; }
+p { margin: 0; }
+.eyebrow { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; }
+header { display: flex; flex-direction: column; gap: 10px; }
+.lead { max-width: 80ch; color: var(--muted); }
+.principles { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px 28px; margin-top: 8px; }
+.principles div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.principles b { font-weight: 600; }
+.principles span { color: var(--muted); font-size: 14px; max-width: 60ch; }
+
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; justify-content: space-between; }
+.controls { display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+.ctl { display: flex; align-items: center; gap: 8px; font-size: 14px; color: var(--muted); }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--surface); }
+.seg button, .zoom button {
+  font: inherit; font-size: 14px; color: var(--ink); background: transparent; border: 0;
+  padding: 7px 12px; cursor: pointer;
+}
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--mana); color: var(--surface); }
+.zoom { display: inline-flex; gap: 4px; }
+.zoom button { border: 1px solid var(--line); border-radius: 8px; background: var(--surface); min-width: 36px; }
+button:focus-visible { outline: 2px solid var(--mana); outline-offset: 2px; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 13px; color: var(--muted); align-items: center; }
+.legend i { display: inline-block; width: 22px; height: 0; border-top: 2px solid; vertical-align: middle; margin-right: 6px; }
+.legend .sw { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 6px; vertical-align: -1px; border: 1.5px solid; }
+
+.stage { display: grid; grid-template-columns: minmax(0, 1fr) 360px; gap: 16px; align-items: start; }
+@media (max-width: 960px) { .stage { grid-template-columns: minmax(0, 1fr); } }
+.graph {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  overflow: auto; height: max(520px, calc(100vh - 210px)); position: relative;
+}
+@media (max-width: 960px) { .graph { height: 70vh; } }
+.graph svg { display: block; margin: 0 auto; }
+.node { cursor: pointer; }
+.node rect.box { stroke-width: 1.5; }
+.node.b rect.box { fill: var(--bronze-soft); stroke: var(--bronze); }
+.node.r rect.box { fill: var(--mana-soft); stroke: var(--mana); }
+.node.gate rect.box { fill: var(--stone-soft); stroke: var(--stone); stroke-dasharray: 4 3; }
+.node text { fill: var(--ink); font-family: var(--font-body); }
+.node .name { font-size: 13.5px; font-weight: 600; }
+.node .sub { font-size: 11px; fill: var(--muted); font-family: var(--font-mono); }
+.node .dot-herite { fill: var(--muted); }
+.node .dot-adapte { fill: var(--warn); }
+.node .dot-nouveau { fill: var(--new); }
+.node .dot-repo { fill: var(--ok); }
+.node .dot-palier { fill: var(--stone); }
+.node.sel rect.box { stroke-width: 3; }
+.node:focus { outline: none; }
+.node:focus-visible rect.box { stroke-width: 3; }
+.edge path { fill: none; stroke-width: 1.4; }
+.edge.from-b path { stroke: var(--bronze); }
+.edge.from-r path { stroke: var(--mana); }
+.edge.from-gate path { stroke: var(--stone); stroke-dasharray: 5 4; }
+.edge text { font-family: var(--font-mono); font-size: 11px; fill: var(--ink); paint-order: stroke; stroke: var(--surface); stroke-width: 4px; display: none; }
+.dim .node:not(.on), .dim .edge:not(.on) { opacity: .14; }
+.dim .edge.on path { stroke-width: 2.2; }
+.dim .edge.on text { display: block; }
+.mk-b { fill: var(--bronze); } .mk-r { fill: var(--mana); } .mk-gate { fill: var(--stone); }
+
+.card {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px; display: flex; flex-direction: column; gap: 14px; min-width: 0;
+}
+.stage .card { max-height: max(520px, calc(100vh - 210px)); overflow: auto; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { font-size: 12px; font-weight: 600; padding: 2px 8px; border-radius: 99px; border: 1px solid currentColor; white-space: nowrap; }
+.chip.k-b { color: var(--bronze); } .chip.k-r { color: var(--mana); } .chip.k-gate { color: var(--stone); }
+.chip.o-herite { color: var(--muted); } .chip.o-adapte { color: var(--warn); } .chip.o-nouveau { color: var(--new); } .chip.o-repo { color: var(--ok); } .chip.o-palier { color: var(--stone); }
+.chip.s-ok { color: var(--ok); } .chip.s-tot { color: var(--new); } .chip.s-tard { color: var(--warn); }
+.card .og { color: var(--muted); }
+.card h4 { margin: 0 0 6px; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+.reqlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; }
+.reqlist li { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.reqlist button { font: inherit; color: var(--ink); background: none; border: 0; padding: 0; cursor: pointer; text-align: left; text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 3px; }
+.reqlist button:hover { text-decoration-color: var(--mana); }
+.reqlist .lv { font-family: var(--font-mono); font-size: 12.5px; color: var(--muted); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.why { font-size: 14px; color: var(--ink); }
+.was { font-size: 13px; color: var(--muted); }
+.empty { color: var(--muted); font-size: 14px; }
+.pace { display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; font-size: 14px; }
+.pace .mono { font-variant-numeric: tabular-nums; }
+
+section { display: flex; flex-direction: column; gap: 14px; }
+section > p.intro { max-width: 85ch; color: var(--muted); }
+.tbl { overflow-x: auto; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; min-width: 980px; font-size: 14px; }
+th, td { text-align: left; padding: 9px 12px; vertical-align: top; border-bottom: 1px solid var(--line); }
+th { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 600; background: var(--stone-soft); }
+tr:last-child td { border-bottom: 0; }
+td.pal, td.num { font-family: var(--font-mono); font-size: 12.5px; white-space: nowrap; font-variant-numeric: tabular-nums; }
+td .mono { color: var(--muted); }
+tr.grp td { background: var(--bg); font-family: var(--font-display); font-size: 15px; padding-block: 6px; }
+
+.pacegrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 620px), 1fr)); gap: 16px; align-items: start; }
+.chartbox { position: relative; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 14px 8px; min-width: 0; }
+.chartbox h3 { font-size: 17px; margin-bottom: 4px; }
+.chartbox .sub { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+#chart svg { display: block; width: 100%; height: auto; }
+#chart text { font-family: var(--font-body); fill: var(--ink); font-size: 12.5px; }
+#chart .tick text { fill: var(--muted); font-family: var(--font-mono); font-size: 11px; }
+#chart .tick line { stroke: var(--line); }
+#chart .bandr { fill: var(--band); }
+#chart .dotc { fill: var(--mana); stroke: var(--surface); stroke-width: 2; }
+#chart .row.hov .bandr { fill: var(--mana-soft); }
+#chart .hit { fill: transparent; cursor: default; }
+.tip { position: absolute; pointer-events: none; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; font-size: 13px; box-shadow: 0 4px 16px rgba(0,0,0,.12); max-width: 280px; z-index: 2; }
+.tip b { display: block; }
+.status { font-size: 13px; color: var(--muted); min-height: 1.4em; }
+.hyp { margin: 0; padding-left: 18px; display: flex; flex-direction: column; gap: 4px; font-size: 14px; color: var(--muted); max-width: 95ch; }
+
+.issues { list-style: none; counter-reset: q; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 14px; }
+.issues li { counter-increment: q; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.issues li b::before { content: counter(q) ". "; color: var(--mana); font-family: var(--font-mono); }
+.issues li p { font-size: 14px; color: var(--muted); }
+.issues li p.prop { color: var(--ink); }
+.removed { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 8px 24px; font-size: 14px; }
+.removed div { min-width: 0; }
+.removed .mono { color: var(--muted); }
+@media (prefers-reduced-motion: no-preference) { .node, .edge { transition: opacity .18s ease; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">Kalendrath · audit des prérequis · version 2 du 21 octobre 2026</div>
+    <h1>Arbre des prérequis</h1>
+    <p class="lead">Proposition complète pour les 19 bâtiments (Hôtel de ville compris) et les 17 recherches, croisée avec un rythme de déblocage simulé. Kalendrath vise un serveur unique qui dure des années : chaque palier doit arriver assez tôt pour ne pas lasser, et assez tard pour qu'il reste quelque chose à conquérir pendant deux ans. Comme dans Call of Dragons ou Last War, l'intérêt durable vient des events PvE et PvP ; la construction en est le socle, pas le but.</p>
+    <div class="principles">
+      <div><b>Partir d'OGameX</b><span>Chaque prérequis hérité est gardé tant qu'il a un sens dans l'univers. Ceux qui pointent vers un objet supprimé sont remplacés.</span></div>
+      <div><b>Le palier ouvre, le niveau autorise</b><span>Le palier de cité fait apparaître le bâtiment. Les niveaux de bâtiments et de recherches décident ensuite s'il est constructible.</span></div>
+      <div><b>Deux troncs de recherche</b><span>Abondance (nourriture) porte les recherches de troupes. Le Puits de mana porte les études arcaniques.</span></div>
+      <div><b>Des chantiers qui s'allongent</b><span>Tous les bâtiments ralentissent avec le niveau, l'Hôtel de ville plus que les autres (environ 35 jours au niveau 16). Les accélérateurs gagnés ou achetés comptent vraiment.</span></div>
+    </div>
+  </header>
+
+  <section aria-labelledby="t-arbre">
+    <h2 id="t-arbre">L'arbre</h2>
+    <div class="toolbar">
+      <div class="seg" role="group" aria-label="Contenu de l'arbre">
+        <button type="button" id="m-b" data-mode="b">Bâtiments seuls</button>
+        <button type="button" id="m-br" data-mode="br">+ recherches requises</button>
+        <button type="button" id="m-all" data-mode="all">Arbre complet</button>
+      </div>
+      <div class="legend">
+        <span><span class="sw" style="border-color:var(--stone);background:var(--stone-soft)"></span>Palier de cité</span>
+        <span><span class="sw" style="border-color:var(--bronze);background:var(--bronze-soft)"></span>Bâtiment</span>
+        <span><span class="sw" style="border-color:var(--mana);background:var(--mana-soft)"></span>Recherche</span>
+        <span><i style="border-color:var(--stone);border-top-style:dashed"></i>ouvert par le palier</span>
+        <span><i style="border-color:var(--bronze)"></i>exige un bâtiment</span>
+        <span><i style="border-color:var(--mana)"></i>exige une recherche</span>
+        <span>Pastille : <b style="color:var(--muted)">●</b> hérité · <b style="color:var(--warn)">●</b> adapté · <b style="color:var(--new)">●</b> nouveau · <b style="color:var(--ok)">●</b> repositionné</span>
+      </div>
+      <div class="zoom">
+        <button type="button" id="z-out" aria-label="Dézoomer">−</button>
+        <button type="button" id="z-fit">Ajuster</button>
+        <button type="button" id="z-in" aria-label="Zoomer">+</button>
+      </div>
+    </div>
+    <div class="stage">
+      <div class="graph" id="graph" aria-label="Graphe des prérequis"></div>
+      <aside class="card" id="detail" aria-live="polite"></aside>
+    </div>
+    <p class="empty">Cliquer sur un élément met en évidence tout ce qu'il demande (en amont) et tout ce qu'il débloque (en aval), avec les niveaux sur les liens. Cliquer dans le vide pour tout réafficher.</p>
+  </section>
+
+  <section aria-labelledby="t-rythme">
+    <h2 id="t-rythme">Rythme de déblocage</h2>
+    <p class="intro">La page simule une ville jour après jour : production des mines, plafonds des entrepôts, file de construction et file de recherche, durées des chantiers, récompenses du profil choisi. Le joueur simulé fonce vers l'élément visé et fait toujours l'action la moins chère entre sa prochaine mine et le prochain prérequis. Les fenêtres cibles visent le joueur gratuit actif : environ 2 ans pour la Métropole, l'équivalent des unités T5 de Call of Dragons. Les réglages ci-dessous relancent le calcul.</p>
+    <div class="controls">
+      <div class="ctl"><span>Vitesse économique</span>
+        <div class="seg" role="group" aria-label="Vitesse économique" id="c-speed">
+          <button type="button" data-v="1">×1</button><button type="button" data-v="2">×2</button><button type="button" data-v="3">×3</button><button type="button" data-v="5">×5</button>
+        </div></div>
+      <div class="ctl"><span>Profil</span>
+        <div class="seg" role="group" aria-label="Profil de joueur" id="c-prof">
+          <button type="button" data-v="reference">Sans bonus</button><button type="button" data-v="gratuit">Gratuit actif</button><button type="button" data-v="pass">Pass payant</button><button type="button" data-v="payeur">Gros payeur</button>
+        </div></div>
+      <div class="ctl"><span>Expansion</span>
+        <div class="seg" role="group" aria-label="Expansion du joueur" id="c-emp">
+          <button type="button" data-v="1">Empire en croissance</button><button type="button" data-v="0">Capitale seule</button>
+        </div></div>
+      <div class="ctl"><span>Coût de l'Hôtel de ville, facteur par niveau</span>
+        <div class="seg" role="group" aria-label="Facteur de coût de l'Hôtel de ville" id="c-hdv">
+          <button type="button" data-v="1.85">1,85</button><button type="button" data-v="1.9">1,9</button><button type="button" data-v="1.95">1,95</button><button type="button" data-v="2">2,0</button>
+        </div></div>
+    </div>
+    <div class="status" id="status" aria-live="polite"></div>
+    <div class="pacegrid">
+      <div class="chartbox">
+        <h3>Déblocage simulé face aux fenêtres cibles</h3>
+        <p class="sub">Bande : fenêtre cible proposée pour le joueur gratuit actif. Point : moment où tous les prérequis sont réunis dans la simulation, pour le profil choisi. Échelle logarithmique.</p>
+        <div id="chart"></div>
+        <div class="tip" id="tip" hidden></div>
+      </div>
+      <div class="tbl"><table id="tbl-rythme"></table></div>
+    </div>
+    <h3>Coûts proposés pour ce qui n'existe pas dans OGameX</h3>
+    <div class="tbl"><table id="tbl-couts"></table></div>
+    <ul class="hyp">
+      <li>Formules OGameX : coût = base × facteur<sup>niveau − 1</sup>, production des mines (Scierie = métal, Mine de fer = cristal, Puits de mana = deutérium, température moyenne 20 °C), revenu de base 30 bois et 15 fer par heure, entrepôts de 10 000 au niveau 0.</li>
+      <li>Durées : base OGameX (bois + fer) / (2 500 × max(4 − niv/2, 1) × (1 + Maîtres d'œuvre) × vitesse), sans le ×2 par niveau d'Automates. Au-delà du niveau 10, ×1,095 par niveau pour les bâtiments et ×1,15 pour l'Hôtel de ville. L'Atelier des Automates retire 3 % par niveau, 30 % au plus. Recherche : (bois + fer) / (1 000 × (1 + Institut) × vitesse).</li>
+      <li>Profils (hypothèses à confronter à l'audit de la Phase 8) : gratuit actif +10 % de production et de vitesse de construction, 2 h d'accélérateurs par jour ; pass payant +15 %, 4 h ; gros payeur +20 %, 8 h. Les accélérateurs servent aussitôt sur le chantier en cours.</li>
+      <li>Pas d'énergie : dans Kalendrath, les mines produisent sans centrale. La nourriture n'entre pas dans les coûts de bâtiments.</li>
+      <li>« Empire en croissance » : une colonie aux jours 4, 8, 14, 21, 30, 45, 60 et 90, chacune produisant la moitié de la capitale. C'est une hypothèse de joueur régulier, pas un calcul.</li>
+      <li>Ni marchand, ni pillage, ni classe de personnage, ni bonus de héros, ni colonies au-delà de huit : un joueur réel actif ira plus vite, un joueur occasionnel plus lentement.</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="t-pal">
+    <h2 id="t-pal">Passages de palier</h2>
+    <p class="intro">Hypothèse : un palier de cité tous les 3 niveaux d'Hôtel de ville, comme les paliers d'images (1-3, 4-6, 7-9, 10-12, 13-15). Le palier 6 tombe donc au niveau 16, au-delà du plafond provisoire de 15 (voir le point 1).</p>
+    <div class="tbl"><table id="tbl-pal"></table></div>
+  </section>
+
+  <section aria-labelledby="t-bat">
+    <h2 id="t-bat">Bâtiments</h2>
+    <p class="intro">Format prêt à reprendre dans la section 4.2 du GDD. « Débloqué vers » suit les réglages de la simulation ci-dessus ; le verdict ne s'affiche que pour le joueur gratuit actif.</p>
+    <div class="tbl"><table id="tbl-bat"></table></div>
+  </section>
+
+  <section aria-labelledby="t-rech">
+    <h2 id="t-rech">Recherches</h2>
+    <p class="intro">« Accessible dès » est le palier le plus élevé parmi les bâtiments que la recherche demande, directement ou par ses propres prérequis.</p>
+    <div class="tbl"><table id="tbl-rech"></table></div>
+  </section>
+
+  <section aria-labelledby="t-ret">
+    <h2 id="t-ret">Objets retirés et prérequis orphelins</h2>
+    <div class="removed">
+      <div><b>Base lunaire</b> <span class="mono">lunar_base</span><br>Exigée par la Tour de guet et le Portail. Remplacée par Espionnage 3 et par un prérequis arcanique.</div>
+      <div><b>Technologie hyperspatiale</b> <span class="mono">hyperspace_technology</span><br>Exigée par le Portail (7) et l'Ingénierie de Siège (3). Remplacée par Arcanes des Obélisques et Lecture des Runes.</div>
+      <div><b>Réacteur à fusion</b> <span class="mono">fusion_plant</span><br>Aucun dépendant. Retrait sans effet sur l'arbre.</div>
+      <div><b>Silo de missiles</b> <span class="mono">missile_silo</span><br>Aucun dépendant. Retrait sans effet sur l'arbre.</div>
+      <div><b>Réseau de recherche, Graviton</b> <span class="mono">intergalactic_research_network, graviton_technology</span><br>Feuilles de l'arbre OGameX. Retrait sans effet.</div>
+      <div><b>Terraformeur</b> <span class="mono">terraformer</span><br>Exigeait l'Usine de nanites 1 et l'Énergie 12. Devient le Rite d'Ancrage, avec un nouveau rôle (point 3).</div>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-q">
+    <h2 id="t-q">Points à trancher</h2>
+    <ol class="issues">
+      <li><b>Palier 6 au-delà du plafond</b><p>À 3 niveaux par palier, la Métropole demande l'Hôtel de ville niveau 16, alors que le plafond provisoire est 15.</p><p class="prop">Proposition : monter le plafond à 18 dès la V1, sans 6ᵉ image tout de suite. Autre option : le Portail des Sphères au palier 5.</p></li>
+      <li><b>Atelier des Maîtres d'œuvre au palier 1</b><p>Le GDD le place au palier 2. Mais l'Académie Militaire (palier 2) l'exige au niveau 2, et il accélère toute la construction : dans OGameX, il est disponible dès le départ.</p><p class="prop">Proposition : le passer au palier 1. Sinon, le passage au Village ne peut pas l'exiger.</p></li>
+      <li><b>Rôle du Rite d'Ancrage Tellurique</b><p>Le GDD se contredit : la section 4.3 en fait une recherche, la section 4.2 dit que l'Hôtel de ville remplace le Terraformeur.</p><p class="prop">Proposition : le Rite devient la clé des passages de palier (niv. 1 pour le Village, puis 2, 4, 6, 8). Il reste une recherche, l'Hôtel de ville garde les emplacements.</p></li>
+      <li><b>Abondance n'est plus le tronc commun</b><p>Dans OGameX, l'Énergie est exigée par 8 recherches. Devenue la recherche de la nourriture, elle n'a pas de sens devant les runes ou l'Infusion Arcanique.</p><p class="prop">Proposition : Abondance garde l'Endurance du Fantassin et l'Art Équestre (troupes et chevaux mangent). Les études arcaniques demandent le Puits de mana.</p></li>
+      <li><b>Nommer laser, ion et plasma</b><p>Le GDD les garde comme paliers de déblocage sans leur donner de nom. Noms provisoires : Lecture des Runes, Résonance du Mana, Arcanes des Obélisques.</p><p class="prop">Le plasma donne un bonus direct dans OGameX (+1 % métal, +0,66 % cristal, +0,33 % deutérium par niveau), contrairement à ce que dit le GDD. Garder ce bonus sur Bois, Fer et Mana ?</p></li>
+      <li><b>Atelier des Remparts au palier 4</b><p>Avec les réglages proposés, les défenses arrivent vers le 18ᵉ jour. Le jeu est PvE-first et le GDD demande qu'elles ne tardent pas.</p><p class="prop">À décider : palier 4 comme prévu, ou palier 3 (vers le 7ᵉ jour) avec des défenses de base, les défenses lourdes restant derrière son niveau.</p></li>
+      <li><b>Serveur unique ou serveurs plus courts</b><p>Les fenêtres cibles supposent un serveur unique très long, en vitesse ×1. À ×2 ou ×3, la même courbe donne des serveurs de 8 à 12 mois.</p><p class="prop">À trancher avec le sondage prévu : le simulateur peut produire les deux variantes à partir des mêmes données.</p></li>
+      <li><b>Écart entre joueurs gratuits et payants</b><p>Avec les profils proposés, la Métropole arrive 11 % plus tôt avec le pass payant et 25 % plus tôt pour un gros payeur. Au-delà de 30 %, c'est du pay-to-win.</p><p class="prop">Tendance retenue : 20 à 30 %. Plafond à fixer après l'audit des boutiques (Phase 8) ; les volumes d'accélérateurs des events et du pass se calent sur ce plafond.</p></li>
+      <li><b>Le palier 5 est le grand palier du long terme</b><p>Le saut entre Citadelle (vers 3 mois) et Métropole (vers 22 mois pour un joueur gratuit actif) est voulu : c'est là que le joueur installe son empire, avec les chantiers les plus longs. Le Portail arrive une dizaine de jours après la Métropole : ses propres prérequis ne freinent presque pas.</p><p class="prop">À valider avec les contenus de milieu de partie (events PvE et PvP, Prestige, tiers d'unités) qui doivent remplir ces mois. Pour éloigner le Portail, monter Arcanes des Obélisques de 8 à 10.</p></li>
+      <li><b>Des prérequis qui dépendent du niveau</b><p>Dans le moteur, un prérequis est fixe : un objet, un niveau (<span class="mono">GameObjectRequirement</span>). « Rite N pour le palier N+1 » et « palier X pour apparaître » n'y existent pas.</p><p class="prop">C'est du travail de domaine, à rattacher au système de paliers de cité (Phase 4), avec ses tests Pest.</p></li>
+      <li><b>Prérequis vérifiés dans la ville courante</b><p>Les recherches sont communes à l'empire, mais un prérequis de bâtiment se vérifie dans la ville où l'on construit (comportement OGameX). L'Institut niveau 12 du Portail doit donc exister dans chaque ville qui veut un Portail.</p><p class="prop">À confirmer : c'est voulu, ou le Portail ne demande que des recherches.</p></li>
+      <li><b>Hors périmètre de ce jet</b><p>Unités (branche magie liée à l'Institut, cavalerie, siège) et défenses (Atelier des Remparts plus recherches). Ce sera l'étape suivante, une fois l'arbre des bâtiments validé.</p></li>
+    </ol>
+  </section>
+</div>
+
+<script id="model">
+// Modèle de theorycrafting de Kalendrath : prérequis, coûts et simulateur de rythme.
+// Source unique : la ligne de commande (simulate.js), les tests (model.test.js) et la page
+// interactive (arbre-prerequis.html, régénérée par build-artifact.js) lisent ce fichier.
+// Hypothèses et mode d'emploi : README.md du même dossier.
+
+// ---------- Données : prérequis proposés ----------
+// k : gate (palier), b (bâtiment), r (recherche). o : herite, adapte, nouveau, repo, palier.
+// p : palier d'apparition. req : [id, niveau]. cible : fenêtre de déblocage proposée, en jours, pour un joueur
+// gratuit actif (profil « gratuit ») en vitesse ×1 avec colonies.
+const N = [
+  { id: 'hdv1', k: 'gate', p: 1, n: 'Hôtel de ville', sub: 'Palier 1 · Hameau', hdv: 1, o: 'palier', og: null, req: [],
+    why: "Bâtiment central présent dès la fondation (Donjon dans la capitale). Il fait apparaître les bâtiments du Hameau et porte l'Obélisque." },
+  { id: 'hdv2', k: 'gate', p: 2, n: 'Village', sub: 'Palier 2 · HdV niv. 4', hdv: 4, o: 'palier', og: null, req: [['hdv1', 3], ['rite', 1], ['maitres', 2]], cible: [1, 3],
+    why: "Premier passage : il oblige à ouvrir l'Institut pour étudier le Rite, et à poser l'Atelier des Maîtres d'œuvre. Cible : le 2ᵉ ou 3ᵉ jour, pour que l'armée arrive vite." },
+  { id: 'hdv3', k: 'gate', p: 3, n: 'Bourg', sub: 'Palier 3 · HdV niv. 7', hdv: 7, o: 'palier', og: null, req: [['hdv2', 6], ['rite', 2], ['maitres', 4]], cible: [5, 10],
+    why: "Murs de pierre partiels et tour de guet : la ville s'ouvre au soin, à la diplomatie et à la surveillance. Cible : fin de la première semaine." },
+  { id: 'hdv4', k: 'gate', p: 4, n: 'Cité fortifiée', sub: 'Palier 4 · HdV niv. 10', hdv: 10, o: 'palier', og: null, req: [['hdv3', 9], ['rite', 4], ['maitres', 6]], cible: [14, 30],
+    why: "Remparts complets : l'Atelier des Remparts apparaît. Cible : entre la 2ᵉ et la 4ᵉ semaine." },
+  { id: 'hdv5', k: 'gate', p: 5, n: 'Citadelle', sub: 'Palier 5 · HdV niv. 13', hdv: 13, o: 'palier', og: null, req: [['hdv4', 12], ['rite', 6], ['maitres', 8]], cible: [60, 120],
+    why: "Donjon et quartiers spécialisés : l'Atelier des Automates Arcaniques apparaît. Cible : entre 2 et 4 mois." },
+  { id: 'hdv6', k: 'gate', p: 6, n: 'Métropole', sub: 'Palier 6 · HdV niv. 16', hdv: 16, o: 'palier', og: null, req: [['hdv5', 15], ['rite', 8], ['maitres', 10]], cible: [540, 730],
+    why: "Cité monumentale : le Portail des Sphères apparaît. Cible : 18 à 24 mois pour un joueur gratuit actif, l'équivalent des unités T5 de Call of Dragons (1,5 à 2 ans en parcours standard). Niveau 16 au-delà du plafond provisoire de 15 (point 1)." },
+
+  { id: 'scierie', k: 'b', p: 1, n: 'Scierie', o: 'herite', og: 'metal_mine', was: 'aucun', req: [], why: 'Production de base, disponible dès la fondation.' },
+  { id: 'minefer', k: 'b', p: 1, n: 'Mine de fer', o: 'herite', og: 'crystal_mine', was: 'aucun', req: [], why: 'Production de base.' },
+  { id: 'puits', k: 'b', p: 1, n: 'Puits de mana', o: 'herite', og: 'deuterium_synthesizer', was: 'aucun', req: [], why: "Production de base. Devient le socle des études arcaniques (point 4)." },
+  { id: 'champ', k: 'b', p: 1, n: 'Champ de blé', o: 'herite', og: 'solar_plant', was: 'aucun', req: [], why: "Production de nourriture. Exigé par l'Académie Militaire : les troupes coûtent de la nourriture." },
+  { id: 'entbois', k: 'b', p: 1, n: 'Entrepôt de bois', o: 'herite', og: 'metal_store', was: 'aucun', req: [], why: 'Stockage, sans prérequis comme dans OGameX.' },
+  { id: 'entfer', k: 'b', p: 1, n: 'Entrepôt de fer', o: 'herite', og: 'crystal_store', was: 'aucun', req: [], why: 'Stockage, sans prérequis.' },
+  { id: 'reservoir', k: 'b', p: 1, n: 'Réservoir de mana', o: 'herite', og: 'deuterium_store', was: 'aucun', req: [], why: 'Stockage, sans prérequis.' },
+  { id: 'silo', k: 'b', p: 1, n: 'Silo de nourriture', o: 'nouveau', og: null, was: '—', req: [], why: 'Nouveau stockage, aligné sur les trois autres : aucun prérequis.' },
+  { id: 'maitres', k: 'b', p: 1, n: "Atelier des Maîtres d'œuvre", o: 'adapte', og: 'robot_factory', was: 'aucun', req: [],
+    why: "Gardé sans prérequis comme dans OGameX, mais avancé du palier 2 au palier 1 (point 2) : il accélère la construction et il conditionne l'Académie et les passages de palier." },
+  { id: 'institut', k: 'b', p: 1, n: 'Institut Arcanique', o: 'adapte', og: 'research_lab', was: 'aucun', req: [['hdv1', 2], ['puits', 1]], cible: [0.25, 1.5],
+    why: "Pas un bâtiment du premier jour (cf. sa direction artistique) : il demande un Hôtel de ville niveau 2 et un premier Puits de mana, puisque les érudits étudient le mana." },
+  { id: 'academie', k: 'b', p: 2, n: 'Académie Militaire', o: 'adapte', og: 'shipyard', was: 'robot_factory 2', req: [['maitres', 2], ['champ', 3]], cible: [1, 3],
+    why: "Hérite de l'Atelier des Maîtres d'œuvre 2. Ajout du Champ de blé 3, parce que former des troupes coûte de la nourriture." },
+  { id: 'forge', k: 'b', p: 2, n: 'Forge', o: 'nouveau', og: null, was: '—', req: [['minefer', 5], ['maitres', 2]], cible: [1, 4],
+    why: "L'équipement du héros se forge dans le fer : Mine de fer 5. Les Maîtres d'œuvre 2 marquent un artisanat déjà organisé." },
+  { id: 'hopital', k: 'b', p: 3, n: 'Hôpital', o: 'adapte', og: 'space_dock', was: 'shipyard 2', req: [['academie', 2], ['institut', 3]], cible: [5, 12],
+    why: "Hérite de l'Académie Militaire 2 : on soigne les troupes qu'on forme. Ajout de l'Institut 3, la guérison relevant aussi de la magie de lumière." },
+  { id: 'ambassade', k: 'b', p: 3, n: 'Ambassade', o: 'herite', og: 'alliance_depot', was: 'aucun', req: [], cible: [5, 14],
+    why: "Aucun prérequis dans OGameX. Le palier 3 suffit à la placer après les débuts." },
+  { id: 'tour', k: 'b', p: 3, n: 'Tour de guet arcanique', o: 'adapte', og: 'sensor_phalanx', was: 'lunar_base 1', req: [['espionnage', 3], ['institut', 3]], cible: [7, 14],
+    why: "La base lunaire n'existe plus. La surveillance à distance passe par l'Espionnage 3 et un Institut capable d'enchanter la tour." },
+  { id: 'remparts', k: 'b', p: 4, n: 'Atelier des Remparts', o: 'nouveau', og: null, was: '—', req: [['maitres', 5], ['academie', 4]], cible: [14, 30],
+    why: "Les défenses demandent des bâtisseurs (Maîtres d'œuvre 5) et une doctrine militaire (Académie 4). Les recherches entrent en jeu au niveau des défenses elles-mêmes." },
+  { id: 'automates', k: 'b', p: 5, n: 'Atelier des Automates Arcaniques', o: 'adapte', og: 'nano_factory', was: 'robot_factory 10, computer_technology 10', req: [['maitres', 10], ['resonance', 5]], cible: [60, 150],
+    why: "Garde l'Atelier des Maîtres d'œuvre 10. La Chaîne de Ravitaillement 10 (ex-informatique) n'a pas de lien avec des automates : remplacée par la Résonance du Mana 5." },
+  { id: 'portail', k: 'b', p: 6, n: 'Portail des Sphères', o: 'adapte', og: 'jump_gate', was: 'lunar_base 1, hyperspace_technology 7', req: [['institut', 12], ['arcanes', 8], ['decouverte', 6]], cible: [540, 800],
+    why: "Né de l'étude des obélisques : Arcanes des Obélisques 8 et Institut 12. La Découverte Tellurique 6 fait connaître les nœuds que le Portail relie." },
+
+  { id: 'abondance', k: 'r', n: 'Abondance', o: 'herite', og: 'energy_technology', was: 'research_lab 1', req: [['institut', 1]],
+    why: "Recherche de la nourriture. Elle ne porte plus que les recherches de troupes (point 4)." },
+  { id: 'lecture', k: 'r', n: 'Lecture des Runes', nomProv: true, o: 'adapte', og: 'laser_technology', was: 'energy_technology 2, research_lab 1', req: [['institut', 1], ['puits', 3]],
+    why: "Première étude arcanique. L'Énergie 2 devient le Puits de mana 3. Nom provisoire (point 5)." },
+  { id: 'resonance', k: 'r', n: 'Résonance du Mana', nomProv: true, o: 'adapte', og: 'ion_technology', was: 'research_lab 4, energy_technology 4, laser_technology 5', req: [['institut', 4], ['lecture', 5], ['puits', 6]],
+    why: "L'Énergie 4 devient le Puits de mana 6. Exigée par les Automates Arcaniques. Nom provisoire." },
+  { id: 'arcanes', k: 'r', n: 'Arcanes des Obélisques', nomProv: true, o: 'adapte', og: 'plasma_technology', was: 'research_lab 4, energy_technology 8, laser_technology 10, ion_technology 5', req: [['institut', 4], ['lecture', 10], ['resonance', 5]],
+    why: "L'étude des obélisques du lore. L'Énergie 8 est retirée (les deux études précédentes suffisent). Clé du Portail. Nom provisoire." },
+  { id: 'endurance', k: 'r', n: 'Endurance du Fantassin', o: 'herite', og: 'combustion_drive', was: 'energy_technology 1, research_lab 1', req: [['abondance', 1], ['institut', 1]],
+    why: "Hérité tel quel : un fantassin qui marche loin doit être nourri." },
+  { id: 'equestre', k: 'r', n: 'Art Équestre', o: 'herite', og: 'impulse_drive', was: 'energy_technology 1, research_lab 2', req: [['abondance', 1], ['institut', 2]],
+    why: "Hérité tel quel : les chevaux aussi mangent." },
+  { id: 'siege', k: 'r', n: 'Ingénierie de Siège', o: 'adapte', og: 'hyperspace_drive', was: 'research_lab 7, hyperspace_technology 3', req: [['institut', 7], ['lecture', 5]],
+    why: "La technologie hyperspatiale est supprimée. Les engins de siège marchent au mana : Lecture des Runes 5." },
+  { id: 'espionnage', k: 'r', n: 'Espionnage', o: 'herite', og: 'espionage_technology', was: 'research_lab 3', req: [['institut', 3]],
+    why: 'Hérité tel quel. Exigé par la Tour de guet arcanique.' },
+  { id: 'ravitaillement', k: 'r', n: 'Chaîne de Ravitaillement', o: 'herite', og: 'computer_technology', was: 'research_lab 1', req: [['institut', 1]],
+    why: "Hérité tel quel. Ne débloque plus les Automates (remplacée par la Résonance du Mana)." },
+  { id: 'decouverte', k: 'r', n: 'Découverte Tellurique', o: 'herite', og: 'astrophysics', was: 'impulse_drive 3, research_lab 3, espionage_technology 4', req: [['equestre', 3], ['institut', 3], ['espionnage', 4]],
+    why: "Hérité tel quel : on explore à cheval avec des éclaireurs. Exigée par le Portail." },
+  { id: 'affutage', k: 'r', n: 'Affûtage', o: 'herite', og: 'weapon_technology', was: 'research_lab 4', req: [['institut', 4]],
+    why: "Palier 1 de la chaîne d'attaque. Hérité tel quel." },
+  { id: 'alliage', k: 'r', n: 'Alliage de Guerre', o: 'nouveau', og: null, was: '—', req: [['affutage', 6], ['forge', 3]],
+    why: "Palier 2 de la chaîne d'attaque. Un alliage se met au point à la Forge : Forge 3." },
+  { id: 'runescombat', k: 'r', n: 'Runes de Combat', o: 'nouveau', og: null, was: '—', req: [['alliage', 6], ['lecture', 6]],
+    why: "Palier 3 : bascule vers la magie, d'où la Lecture des Runes 6." },
+  { id: 'benediction', k: 'r', n: 'Bénédiction des Armes', o: 'nouveau', og: null, was: '—', req: [['runescombat', 6], ['arcanes', 5]],
+    why: "Palier 4, le plus magique : Arcanes des Obélisques 5." },
+  { id: 'armures', k: 'r', n: 'Forge des Armures', o: 'herite', og: 'armor_technology', was: 'research_lab 2', req: [['institut', 2]],
+    why: 'Hérité tel quel.' },
+  { id: 'infusion', k: 'r', n: 'Infusion Arcanique', o: 'adapte', og: 'shielding_technology', was: 'research_lab 6, energy_technology 3', req: [['institut', 6], ['lecture', 3]],
+    why: "Barrière magique : l'Énergie 3 devient la Lecture des Runes 3." },
+  { id: 'rite', k: 'r', n: "Rite d'Ancrage Tellurique", o: 'repo', og: 'terraformer', was: 'nano_factory 1, energy_technology 12', req: [['institut', 1]],
+    why: "Les érudits étendent l'influence de l'Obélisque : c'est ce qui permet à la ville de grandir. Devient la clé des passages de palier (point 3)." },
+];
+
+// Coûts niveau 1 [bois, fer, mana, facteur]. Valeurs OGameX, sauf les objets marqués « proposé ».
+const COST = {
+  scierie: [60, 15, 0, 1.5], minefer: [48, 24, 0, 1.6], puits: [225, 75, 0, 1.5], champ: [75, 30, 0, 1.5],
+  entbois: [1000, 0, 0, 2], entfer: [1000, 500, 0, 2], reservoir: [1000, 1000, 0, 2], silo: [1000, 500, 0, 2],
+  maitres: [400, 120, 200, 2], institut: [200, 400, 200, 2], academie: [400, 200, 100, 2],
+  forge: [1200, 800, 200, 2], hopital: [200, 0, 50, 2], ambassade: [20000, 40000, 0, 2],
+  tour: [20000, 40000, 10000, 2], remparts: [6000, 4000, 1000, 2], automates: [1000000, 500000, 100000, 2],
+  portail: [2000000, 4000000, 2000000, 2], hdv: [400, 250, 100, 1.9],
+  abondance: [0, 800, 400, 2], lecture: [200, 100, 0, 2], resonance: [1000, 300, 100, 2], arcanes: [2000, 4000, 1000, 2],
+  endurance: [400, 0, 600, 2], equestre: [2000, 4000, 600, 2], siege: [10000, 20000, 6000, 2], espionnage: [200, 1000, 200, 2],
+  ravitaillement: [0, 400, 600, 2], decouverte: [4000, 8000, 4000, 1.75], affutage: [800, 200, 0, 2],
+  armures: [1000, 0, 0, 2], infusion: [200, 600, 0, 2], rite: [300, 600, 300, 2],
+  alliage: [4000, 2000, 0, 2], runescombat: [8000, 8000, 4000, 2], benediction: [20000, 20000, 20000, 2],
+};
+const PROPOSED = [
+  ['hdv', "Hôtel de ville", 16, "Règle le rythme des paliers avec la courbe de durées. Chantier brut d'environ 35 jours au niveau 16."],
+  ['forge', 'Forge', 1, "Un peu plus chère que l'Académie Militaire, surtout en bois."],
+  ['silo', 'Silo de nourriture', 1, "Aligné sur l'Entrepôt de fer."],
+  ['remparts', 'Atelier des Remparts', 1, "Investissement net au palier 4, sans bloquer."],
+  ['rite', "Rite d'Ancrage Tellurique", 8, "Le coût du Terraformeur (50 000 fer, 100 000 mana) aurait bloqué le Village : remplacé."],
+  ['alliage', 'Alliage de Guerre', 1, "Chaîne d'attaque : environ 5 fois l'Affûtage."],
+  ['runescombat', 'Runes de Combat', 1, "Environ 4 fois l'Alliage, avec du mana."],
+  ['benediction', 'Bénédiction des Armes', 1, "Palier ultime, très coûteux en mana."],
+];
+
+const byId = Object.fromEntries(N.map(x => [x.id, x]));
+const RESEARCH = new Set(N.filter(x => x.k === 'r').map(x => x.id));
+const toSim = ([a, l]) => byId[a].k === 'gate' ? ['hdv', l] : [a, l];
+const PASSAGE = {};
+N.filter(x => x.k === 'gate' && x.p > 1).forEach(g => (PASSAGE[g.hdv] = g.req.filter(r => byId[r[0]].k !== 'gate')));
+
+function reqsFor(obj, lv) {
+  if (obj === 'hdv') { const r = []; for (const k in PASSAGE) if (+k <= lv) r.push(...PASSAGE[k]); return r; }
+  const x = byId[obj]; if (!x) return [];
+  const r = x.req.map(toSim);
+  if (x.k === 'b' && x.p > 1) r.push(['hdv', byId['hdv' + x.p].hdv]);
+  return r;
+}
+function makeCost(hdvF) {
+  return (obj, lv) => {
+    const b = COST[obj]; const f = obj === 'hdv' ? (hdvF ?? b[3]) : b[3]; const k = f ** (lv - 1);
+    return [Math.floor(b[0] * k), Math.floor(b[1] * k), Math.floor(b[2] * k)];
+  };
+}
+function closure(targets) {
+  const need = {};
+  const visit = (o, l) => {
+    if ((need[o] || 0) >= l) return;
+    need[o] = l;
+    for (let i = 1; i <= l; i++) reqsFor(o, i).forEach(([a, b]) => visit(a, b));
+  };
+  targets.forEach(([o, l]) => visit(o, l));
+  return need;
+}
+const MINES = { scierie: 0, minefer: 1, puits: 2 };
+const STORE = ['entbois', 'entfer', 'reservoir'];
+const cap = l => 5000 * Math.floor(2.5 * Math.exp(20 * l / 33));
+const COLONY_DAYS = [4, 8, 14, 21, 30, 45, 60, 90];
+const colonies = days => COLONY_DAYS.filter(d => days >= d).length;
+const prodOf = lv => [30 + 30 * lv.scierie * 1.1 ** lv.scierie, 15 + 20 * lv.minefer * 1.1 ** lv.minefer, 10 * lv.puits * 1.1 ** lv.puits * 1.36];
+const W = [1, 1.5, 3];
+const eqv = v => v[0] * W[0] + v[1] * W[1] + v[2] * W[2];
+
+// Durées des chantiers (proposé le 2026-10-22). Tous les bâtiments ralentissent au-delà d'un seuil de niveau,
+// l'Hôtel de ville plus fort que les autres (modèle Call of Dragons / Last War : un grand jalon à accélérer).
+// L'Atelier des Automates réduit un peu les durées des bâtiments, sans le ×2 par niveau d'OGameX,
+// pour laisser leur valeur aux accélérateurs.
+const DUREES = {
+  batiments: { seuil: 10, croissance: 1.095 },
+  hdv: { seuil: 10, croissance: 1.15 },
+  automates: { parNiveau: 0.03, max: 0.3 },
+};
+// Profils de joueur (hypothèses à confronter à l'audit des boutiques de la Phase 8).
+// prod : bonus de production (events, packs de ressources, pass) ; vitesse : bonus permanent de vitesse
+// de construction ; accel : accélérateurs gagnés ou achetés, en heures par jour, utilisés sur le chantier en cours.
+const PROFILS = {
+  reference: { nom: 'Référence (moteur seul)', prod: 0, vitesse: 0, accel: 0 },
+  gratuit: { nom: 'Gratuit actif (events, pass gratuit)', prod: 0.10, vitesse: 0.10, accel: 2 },
+  pass: { nom: 'Pass payant', prod: 0.15, vitesse: 0.15, accel: 4 },
+  payeur: { nom: 'Gros payeur', prod: 0.20, vitesse: 0.20, accel: 8 },
+};
+const dureeMult = (o, nl) => { const d = o === 'hdv' ? DUREES.hdv : DUREES.batiments; return d.croissance ** Math.max(0, nl - d.seuil); };
+
+// Temps (heures) pour réunir toutes les cibles [obj, niveau].
+// P : speed (vitesse économique), empire (colonies ou non), hdvF (facteur de coût de l'Hôtel de ville),
+// profil (clé de PROFILS, « gratuit » par défaut), buildMult / researchMult / prodMult (multiplicateurs libres).
+// P.journal (tableau, facultatif) reçoit chaque chantier terminé : { file, o, niv, debut, fin } en heures.
+function simulate(targets, P) {
+  const speed = P.speed, cost = makeCost(P.hdvF);
+  const prof = PROFILS[P.profil || 'gratuit'];
+  const buildMult = (P.buildMult ?? 1) / (1 + prof.vitesse), researchMult = P.researchMult ?? 1, prodMult = (P.prodMult ?? 1) * (1 + prof.prod);
+  let banque = 0;
+  const need = closure(targets);
+  const lv = {}; Object.keys(COST).forEach(k => (lv[k] = 0)); lv.hdv = 1;
+  if (Object.keys(need).every(k => lv[k] >= need[k])) return 0;
+  const res = [500, 500, 0];
+  let t = 0, bq = null, rq = null;
+  const H = 1500 * 24;
+  const done = () => Object.keys(need).every(k => lv[k] >= need[k]);
+  const queued = o => (bq && bq.o === o ? 1 : 0) + (rq && rq.o === o ? 1 : 0);
+  const avail = o => reqsFor(o, lv[o] + 1).every(([a, b]) => lv[a] >= b);
+  const pick = research => {
+    let best = null, bc = Infinity;
+    for (const o in need) {
+      if (RESEARCH.has(o) !== research) continue;
+      if (lv[o] >= need[o] || queued(o) || !avail(o)) continue;
+      const s = eqv(cost(o, lv[o] + 1));
+      if (s < bc) { bc = s; best = o; }
+    }
+    return best;
+  };
+  const afford = c => res[0] >= c[0] && res[1] >= c[1] && res[2] >= c[2];
+  const pay = c => { res[0] -= c[0]; res[1] -= c[1]; res[2] -= c[2]; };
+  // Durée OGameX (sans le ×2 par niveau d'Automates), allongée par DUREES, réduite par les Automates et les bonus.
+  const bTime = (o, nl, c) => {
+    const auto = Math.min(DUREES.automates.max, DUREES.automates.parNiveau * lv.automates);
+    return buildMult * dureeMult(o, nl) * (1 - auto) * (c[0] + c[1]) / (2500 * Math.max(4 - nl / 2, 1) * (1 + lv.maitres) * speed);
+  };
+  while (t < H) {
+    if (done()) return t;
+    const mult = P.empire ? 1 + 0.5 * colonies(t / 24) : 1;
+    const PR = prodOf(lv).map(x => x * speed * mult * prodMult);
+    const CAP = STORE.map(k => cap(lv[k]));
+    const tooBig = c => { for (let i = 0; i < 3; i++) if (c[i] > CAP[i]) return STORE[i]; return null; };
+    if (!bq) {
+      let mine = null, mc = Infinity;
+      for (const m in MINES) { const e = eqv(cost(m, lv[m] + 1)); if (e < mc) { mc = e; mine = m; } }
+      const next = pick(false);
+      let o = next && eqv(cost(next, lv[next] + 1)) <= mc ? next : mine;
+      const st = tooBig(cost(o, lv[o] + 1)); if (st) o = st;
+      const c = cost(o, lv[o] + 1);
+      if (afford(c)) { pay(c); bq = { o, start: t, end: t + Math.max(bTime(o, lv[o] + 1, c), 1 / 3600) }; }
+    }
+    if (!rq) {
+      const o = pick(true);
+      if (o) {
+        const c = cost(o, lv[o] + 1), st = tooBig(c);
+        if (st && !bq) { const cs = cost(st, lv[st] + 1); if (afford(cs)) { pay(cs); bq = { o: st, start: t, end: t + bTime(st, lv[st] + 1, cs) }; } }
+        else if (!st && afford(c)) { pay(c); rq = { o, start: t, end: t + Math.max(researchMult * (c[0] + c[1]) / (1000 * (1 + lv.institut) * speed), 1 / 3600) }; }
+      }
+    }
+    // Accélérateurs : gagnés au fil des jours, utilisés aussitôt sur le chantier en cours.
+    if (bq && banque > 0) { const u = Math.min(banque, bq.end - t); bq.end -= u; banque -= u; }
+    let step = t < 24 * 30 ? 0.25 : 1;
+    if (bq) step = Math.min(step, bq.end - t);
+    if (rq) step = Math.min(step, rq.end - t);
+    step = Math.max(step, 1e-6);
+    t += step;
+    banque += prof.accel / 24 * step;
+    for (let i = 0; i < 3; i++) if (res[i] < CAP[i]) res[i] = Math.min(res[i] + PR[i] * step, CAP[i]);
+    if (bq && bq.end <= t + 1e-9) { lv[bq.o]++; if (P.journal) P.journal.push({ file: 'construction', o: bq.o, niv: lv[bq.o], debut: bq.start, fin: t }); bq = null; }
+    if (rq && rq.end <= t + 1e-9) { lv[rq.o]++; if (P.journal) P.journal.push({ file: 'recherche', o: rq.o, niv: lv[rq.o], debut: rq.start, fin: t }); rq = null; }
+  }
+  return Infinity;
+}
+// Cible de simulation pour un élément : le palier atteint, ou tous ses prérequis réunis.
+function unlockTargets(id) {
+  const x = byId[id];
+  if (x.k === 'gate') return [['hdv', x.hdv]];
+  return reqsFor(id, 1);
+}
+function fmtTime(h) {
+  if (h === Infinity) return '> 4 ans';
+  if (h === 0) return 'fondation';
+  if (h < 48) return `${h < 10 ? h.toFixed(1).replace('.', ',') : Math.round(h)} h`;
+  const d = h / 24;
+  if (d < 60) return `J${d < 10 ? d.toFixed(1).replace('.', ',') : Math.round(d)}`;
+  return `J${Math.round(d)} (${(d / 30.44).toFixed(1).replace('.', ',')} mois)`;
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dagre/0.8.5/dagre.min.js"></script>
+<script>
+(function () {
+  const ORIG = { herite: 'Hérité', adapte: 'Adapté', nouveau: 'Nouveau', repo: 'Repositionné', palier: 'Palier de cité' };
+  const KIND = { b: 'Bâtiment', r: 'Recherche', gate: 'Palier de cité' };
+  const PAL_NAMES = { 1: 'Hameau', 2: 'Village', 3: 'Bourg', 4: 'Cité fortifiée', 5: 'Citadelle', 6: 'Métropole' };
+
+  N.forEach(x => {
+    x.all = x.req.map(([id, lv]) => ({ id, lv }));
+    if (x.k === 'b' && !x.all.some(r => byId[r.id].k === 'gate')) x.all.unshift({ id: 'hdv' + x.p, lv: null });
+  });
+  const children = {};
+  N.forEach(x => x.all.forEach(r => (children[r.id] = children[r.id] || []).push({ id: x.id, lv: r.lv })));
+
+  function ancestors(id, acc = new Map()) {
+    byId[id].all.forEach(r => {
+      const prev = acc.get(r.id);
+      const lv = r.lv == null ? (byId[r.id].hdv || null) : r.lv;
+      if (prev === undefined || (lv || 0) > (prev || 0)) acc.set(r.id, lv);
+      ancestors(r.id, acc);
+    });
+    return acc;
+  }
+  function descendants(id, acc = new Set()) {
+    (children[id] || []).forEach(c => { if (!acc.has(c.id)) { acc.add(c.id); descendants(c.id, acc); } });
+    return acc;
+  }
+  function minPalier(id) {
+    let p = 1;
+    ancestors(id).forEach((lv, a) => { const o = byId[a]; if (o.k === 'b' || o.k === 'gate') p = Math.max(p, o.p); });
+    return p;
+  }
+  const neededByBuildings = new Set();
+  N.filter(x => x.k !== 'r').forEach(x => ancestors(x.id).forEach((lv, a) => neededByBuildings.add(a)));
+
+  function label(id, lv) {
+    const o = byId[id];
+    if (o.k === 'gate') return lv == null ? `Palier ${o.p} · ${PAL_NAMES[o.p]}` : `Hôtel de ville niv. ${lv}`;
+    return o.n;
+  }
+  function lvText(id, lv) {
+    const o = byId[id];
+    if (o.k === 'gate') return lv == null ? `HdV niv. ${o.hdv}` : '';
+    return lv == null ? '' : `niv. ${lv}`;
+  }
+
+  // ---------- Simulation (réglages + cache) ----------
+  const params = { speed: 1, empire: true, hdvF: COST.hdv[3], profil: 'gratuit' };
+  try { Object.assign(params, JSON.parse(localStorage.getItem('kal-prereq-params-v2') || '{}')); } catch (e) {}
+  const results = {};
+  let runId = 0;
+  const statusEl = document.getElementById('status');
+  function status(x, id) {
+    const h = results[id];
+    if (h === undefined || !x.cible || params.profil !== 'gratuit') return null;
+    const d = h / 24;
+    if (d < x.cible[0]) return ['s-tot', 'En avance'];
+    if (d > x.cible[1]) return ['s-tard', 'En retard'];
+    return ['s-ok', 'Dans la cible'];
+  }
+  function runAll() {
+    const id0 = ++runId;
+    Object.keys(results).forEach(k => delete results[k]);
+    const order = [...N.filter(x => x.cible), ...N.filter(x => !x.cible)].map(x => x.id);
+    let i = 0;
+    statusEl.textContent = 'Calcul en cours…';
+    const stepFn = () => {
+      if (id0 !== runId) return;
+      const t0 = performance.now();
+      while (i < order.length && performance.now() - t0 < 30) { const id = order[i++]; results[id] = simulate(unlockTargets(id), params); }
+      renderPace();
+      if (i < order.length) setTimeout(stepFn, 0);
+      else { statusEl.textContent = `Simulation : ${PROFILS[params.profil].nom}, vitesse ×${params.speed}, ${params.empire ? 'empire en croissance' : 'capitale seule'}, Hôtel de ville facteur ${String(params.hdvF).replace('.', ',')}.${params.profil === 'gratuit' ? '' : ' Les verdicts ne concernent que le joueur gratuit actif.'}`; renderTables(); if (selected) renderDetail(); }
+    };
+    setTimeout(stepFn, 0);
+  }
+  function bindSeg(elId, key, parse) {
+    const el = document.getElementById(elId);
+    const sync = () => el.querySelectorAll('button').forEach(b => b.setAttribute('aria-pressed', String(parse(b.dataset.v) === params[key])));
+    el.querySelectorAll('button').forEach(b => b.addEventListener('click', () => {
+      params[key] = parse(b.dataset.v); sync();
+      try { localStorage.setItem('kal-prereq-params-v2', JSON.stringify(params)); } catch (e) {}
+      runAll();
+    }));
+    sync();
+  }
+  bindSeg('c-speed', 'speed', Number);
+  bindSeg('c-prof', 'profil', String);
+  bindSeg('c-emp', 'empire', v => v === '1');
+  bindSeg('c-hdv', 'hdvF', Number);
+
+  // ---------- Graphe ----------
+  const NS = 'http://www.w3.org/2000/svg';
+  const graphEl = document.getElementById('graph');
+  const detailEl = document.getElementById('detail');
+  let mode = 'br', selected = 'portail', scale = 1, svg = null;
+  try { mode = localStorage.getItem('kal-prereq-mode') || mode; } catch (e) {}
+
+  const visible = x => mode === 'all' || x.k !== 'r' || (mode === 'br' && neededByBuildings.has(x.id));
+  function el(tag, attrs, parent) {
+    const e = document.createElementNS(NS, tag);
+    for (const k in attrs) e.setAttribute(k, attrs[k]);
+    if (parent) parent.appendChild(e);
+    return e;
+  }
+  function wrapName(name) {
+    if (name.length <= 23) return [name];
+    const words = name.split(' '); let a = '', i = 0;
+    while (i < words.length && (a + ' ' + words[i]).trim().length <= 23) { a = (a + ' ' + words[i]).trim(); i++; }
+    return [a, words.slice(i).join(' ')];
+  }
+
+  function build() {
+    const Wd = 210;
+    const g = new dagre.graphlib.Graph();
+    g.setGraph({ rankdir: 'LR', ranksep: 64, nodesep: 12, edgesep: 8, marginx: 20, marginy: 20 });
+    g.setDefaultEdgeLabel(() => ({}));
+    const vis = N.filter(visible);
+    const visSet = new Set(vis.map(x => x.id));
+    vis.forEach(x => { const lines = wrapName(x.n); g.setNode(x.id, { width: Wd, height: lines.length > 1 ? 62 : 46, lines }); });
+    vis.forEach(x => x.all.forEach(r => { if (visSet.has(r.id)) g.setEdge(r.id, x.id, { lv: r.lv }); }));
+    dagre.layout(g);
+
+    graphEl.innerHTML = '';
+    const gw = g.graph().width, gh = g.graph().height;
+    svg = el('svg', { viewBox: `0 0 ${gw} ${gh}`, role: 'img', 'aria-label': "Arbre des prérequis de bâtiments et de recherches" }, graphEl);
+    svg.dataset.w = gw; svg.dataset.h = gh;
+    const defs = el('defs', {}, svg);
+    ['b', 'r', 'gate'].forEach(k => {
+      const m = el('marker', { id: 'ar-' + k, viewBox: '0 0 10 10', refX: 9, refY: 5, markerWidth: 7, markerHeight: 7, orient: 'auto-start-reverse' }, defs);
+      el('path', { d: 'M0,0 L10,5 L0,10 z', class: 'mk-' + k }, m);
+    });
+    const root = el('g', {}, svg);
+    const edgesG = el('g', {}, root), nodesG = el('g', {}, root);
+    g.edges().forEach(e => {
+      const pts = g.edge(e).points, src = byId[e.v];
+      const grp = el('g', { class: `edge from-${src.k}`, 'data-v': e.v, 'data-w': e.w }, edgesG);
+      let d = `M${pts[0].x},${pts[0].y}`;
+      for (let i = 1; i < pts.length - 1; i++) {
+        const mx = (pts[i].x + pts[i + 1].x) / 2, my = (pts[i].y + pts[i + 1].y) / 2;
+        d += ` Q${pts[i].x},${pts[i].y} ${mx},${my}`;
+      }
+      const last = pts[pts.length - 1];
+      d += ` L${last.x},${last.y}`;
+      el('path', { d, 'marker-end': `url(#ar-${src.k})` }, grp);
+      const lv = g.edge(e).lv;
+      const txt = lv == null ? '' : src.k === 'gate' ? `HdV ${lv}` : `niv. ${lv}`;
+      if (txt) {
+        const p = pts[pts.length - 2] || pts[0];
+        el('text', { x: (p.x + last.x) / 2, y: (p.y + last.y) / 2 - 4, 'text-anchor': 'middle' }, grp).textContent = txt;
+      }
+    });
+    g.nodes().forEach(id => {
+      const nd = g.node(id), x = byId[id];
+      const grp = el('g', { class: `node ${x.k}`, 'data-id': id, tabindex: 0, role: 'button', transform: `translate(${nd.x - nd.width / 2},${nd.y - nd.height / 2})` }, nodesG);
+      el('title', {}, grp).textContent = x.n;
+      el('rect', { class: 'box', width: nd.width, height: nd.height, rx: x.k === 'r' ? 14 : 5 }, grp);
+      el('circle', { class: 'dot-' + x.o, cx: nd.width - 11, cy: 11, r: 4 }, grp);
+      nd.lines.forEach((ln, i) => { el('text', { class: 'name', x: 10, y: 19 + i * 16 }, grp).textContent = ln; });
+      el('text', { class: 'sub', x: 10, y: nd.height - 9 }, grp).textContent =
+        x.k === 'gate' ? x.sub : x.k === 'b' ? `Bâtiment · palier ${x.p}` : `Recherche · dès palier ${minPalier(id)}`;
+      grp.addEventListener('click', ev => { ev.stopPropagation(); select(id); });
+      grp.addEventListener('keydown', ev => { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); select(id); } });
+    });
+    svg.addEventListener('click', () => select(null));
+    highlight();
+  }
+  function applyScale() {
+    if (!svg) return;
+    svg.setAttribute('width', Math.round(svg.dataset.w * scale));
+    svg.setAttribute('height', Math.round(svg.dataset.h * scale));
+  }
+  // Ajuste l'arbre entier à la zone visible (largeur et hauteur).
+  function fit() {
+    if (!svg) return;
+    const aw = graphEl.clientWidth - 8, ah = graphEl.clientHeight - 8;
+    scale = Math.min(2.5, Math.max(0.3, Math.min(aw / svg.dataset.w, ah / svg.dataset.h)));
+    applyScale();
+  }
+  function highlight() {
+    if (!svg) return;
+    const on = new Set();
+    if (selected && visible(byId[selected])) {
+      on.add(selected);
+      ancestors(selected).forEach((lv, a) => on.add(a));
+      descendants(selected).forEach(d => on.add(d));
+    }
+    svg.classList.toggle('dim', on.size > 0);
+    svg.querySelectorAll('.node').forEach(n => { n.classList.toggle('on', on.has(n.dataset.id)); n.classList.toggle('sel', n.dataset.id === selected); });
+    const anc = selected ? new Set([selected, ...ancestors(selected).keys()]) : new Set();
+    const des = selected ? new Set([selected, ...descendants(selected)]) : new Set();
+    svg.querySelectorAll('.edge').forEach(e => {
+      const v = e.dataset.v, w = e.dataset.w;
+      e.classList.toggle('on', (anc.has(v) && anc.has(w)) || (des.has(v) && des.has(w)));
+    });
+  }
+  function select(id) { selected = id; highlight(); renderDetail(); }
+  const reqItem = (id, lv) => `<li><button type="button" data-go="${id}">${label(id, lv)}</button><span class="lv">${lvText(id, lv)}</span></li>`;
+  const cibleText = c => `J${String(c[0]).replace('.', ',')} à J${c[1]}`;
+
+  function renderDetail() {
+    if (!selected) {
+      detailEl.innerHTML = `<h3>Aucune sélection</h3><p class="empty">Choisir un bâtiment, une recherche ou un palier dans l'arbre pour voir ses prérequis, ce qu'il débloque, le moment où il arrive et la justification proposée.</p>`;
+      return;
+    }
+    const x = byId[selected];
+    const direct = x.all.map(r => reqItem(r.id, r.lv)).join('');
+    const anc = ancestors(selected);
+    const groups = { gate: [], b: [], r: [] };
+    anc.forEach((lv, a) => groups[byId[a].k].push([a, lv]));
+    const topGate = groups.gate.sort((a, b) => byId[b[0]].p - byId[a[0]].p)[0];
+    const sortLv = arr => arr.sort((a, b) => (b[1] || 0) - (a[1] || 0));
+    const fullB = sortLv(groups.b).map(([a, lv]) => reqItem(a, lv)).join('');
+    const fullR = sortLv(groups.r).map(([a, lv]) => reqItem(a, lv)).join('');
+    const kids = (children[selected] || []).map(c => reqItem(c.id, c.lv)).join('');
+    const pal = x.k === 'r' ? `Accessible dès le palier ${minPalier(selected)}` : x.k === 'b' ? `Apparaît au palier ${x.p}` : `Hôtel de ville niv. ${x.hdv}`;
+    const h = results[selected], st = status(x, selected);
+    const pace = h === undefined ? '<span class="empty">calcul en cours…</span>'
+      : `<span>Débloqué vers <b class="mono">${fmtTime(h)}</b></span>${x.cible ? `<span class="empty">cible ${cibleText(x.cible)}</span>` : ''}${st ? `<span class="chip ${st[0]}">${st[1]}</span>` : ''}`;
+    detailEl.innerHTML = `
+      <div class="chips"><span class="chip k-${x.k}">${KIND[x.k]}</span><span class="chip o-${x.o}">${ORIG[x.o]}</span>${x.nomProv ? '<span class="chip o-adapte">Nom provisoire</span>' : ''}</div>
+      <div><h3>${x.n}</h3><div class="mono og">${x.og ? x.og + ' · ' : ''}${pal}</div></div>
+      <div class="pace">${pace}</div>
+      <p class="why">${x.why}</p>
+      ${x.was ? `<p class="was">OGameX : <span class="mono">${x.was}</span></p>` : ''}
+      <div><h4>Prérequis directs</h4>${direct ? `<ul class="reqlist">${direct}</ul>` : '<p class="empty">Aucun.</p>'}</div>
+      ${anc.size > x.all.length ? `<div><h4>Tout ce qu'il faut réunir</h4>
+        ${topGate ? `<ul class="reqlist">${reqItem(topGate[0], null)}</ul>` : ''}
+        ${fullB ? `<ul class="reqlist" style="margin-top:6px">${fullB}</ul>` : ''}
+        ${fullR ? `<ul class="reqlist" style="margin-top:6px">${fullR}</ul>` : ''}</div>` : ''}
+      <div><h4>Débloque</h4>${kids ? `<ul class="reqlist">${kids}</ul>` : '<p class="empty">Rien dans ce périmètre (unités et défenses non traitées).</p>'}</div>`;
+    detailEl.querySelectorAll('[data-go]').forEach(b => b.addEventListener('click', () => {
+      const id = b.dataset.go;
+      if (!visible(byId[id])) setMode('all');
+      select(id);
+      const n = svg.querySelector(`.node[data-id="${id}"]`);
+      if (n) n.focus({ preventScroll: true });
+    }));
+  }
+  function setMode(m) {
+    mode = m;
+    try { localStorage.setItem('kal-prereq-mode', m); } catch (e) {}
+    document.querySelectorAll('.toolbar .seg button').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
+    build(); fit();
+  }
+  document.querySelectorAll('.toolbar .seg button').forEach(b => b.addEventListener('click', () => setMode(b.dataset.mode)));
+  document.getElementById('z-in').addEventListener('click', () => { scale = Math.min(3, scale * 1.15); applyScale(); });
+  document.getElementById('z-out').addEventListener('click', () => { scale = Math.max(0.25, scale / 1.15); applyScale(); });
+  document.getElementById('z-fit').addEventListener('click', fit);
+
+  // ---------- Frise de rythme ----------
+  const chartEl = document.getElementById('chart'), tipEl = document.getElementById('tip');
+  const rows = N.filter(x => x.cible).sort((a, b) => a.cible[0] - b.cible[0] || a.cible[1] - b.cible[1]);
+  const TICKS = [[1, '1 h'], [6, '6 h'], [24, '1 j'], [72, '3 j'], [168, '1 sem'], [720, '1 mois'], [2160, '3 mois'], [4380, '6 mois'], [8760, '1 an'], [17520, '2 ans'], [26280, '3 ans']];
+  function renderChart() {
+    const w = Math.max(320, chartEl.clientWidth || 600);
+    const lw = Math.min(210, w * 0.36), rp = 16, top = 8, rh = 26, axisH = 26;
+    const h = top + rows.length * rh + axisH;
+    const x0 = lw, x1 = w - rp, lmin = Math.log(1), lmax = Math.log(26280);
+    const X = hrs => x0 + (Math.log(Math.max(1, Math.min(26280, hrs))) - lmin) / (lmax - lmin) * (x1 - x0);
+    let s = `<svg viewBox="0 0 ${w} ${h}" role="img" aria-label="Déblocage simulé face aux fenêtres cibles">`;
+    TICKS.forEach(([v, t]) => { const x = X(v); s += `<g class="tick"><line x1="${x}" x2="${x}" y1="${top}" y2="${top + rows.length * rh}"/><text x="${x}" y="${h - 8}" text-anchor="middle">${t}</text></g>`; });
+    rows.forEach((x, i) => {
+      const y = top + i * rh, cy = y + rh / 2;
+      const a = X(x.cible[0] * 24), b = X(x.cible[1] * 24);
+      const r = results[x.id];
+      s += `<g class="row" data-id="${x.id}"><text x="${lw - 10}" y="${cy + 4}" text-anchor="end">${x.k === 'gate' ? 'Palier ' + x.p + ' · ' + x.n : x.n}</text>`;
+      s += `<rect class="bandr" x="${a}" y="${cy - 7}" width="${Math.max(2, b - a)}" height="14" rx="4"/>`;
+      if (r !== undefined) {
+        const cx = X(r === Infinity ? 26280 : r);
+        s += `<circle class="dotc" cx="${cx}" cy="${cy}" r="5.5"/>`;
+      }
+      s += `<rect class="hit" x="0" y="${y}" width="${w}" height="${rh}"/></g>`;
+    });
+    s += '</svg>';
+    chartEl.innerHTML = s;
+    chartEl.querySelectorAll('.row').forEach(g => {
+      g.addEventListener('mouseenter', () => g.classList.add('hov'));
+      g.addEventListener('mouseleave', () => { g.classList.remove('hov'); tipEl.hidden = true; });
+      g.addEventListener('mousemove', ev => {
+        const x = byId[g.dataset.id], r = results[x.id], st = status(x, x.id);
+        tipEl.innerHTML = `<b>${x.k === 'gate' ? 'Palier ' + x.p + ' · ' + x.n : x.n}</b>Cible : ${cibleText(x.cible)}<br>Simulé : ${r === undefined ? 'calcul en cours' : fmtTime(r)}${st ? '<br>' + st[1] : ''}`;
+        tipEl.hidden = false;
+        const box = chartEl.parentElement.getBoundingClientRect();
+        let left = ev.clientX - box.left + 14, topP = ev.clientY - box.top + 14;
+        if (left + 290 > box.width) left = ev.clientX - box.left - 290;
+        tipEl.style.left = Math.max(4, left) + 'px'; tipEl.style.top = topP + 'px';
+      });
+      g.addEventListener('click', () => { select(g.dataset.id); });
+    });
+  }
+  function renderPaceTable() {
+    document.getElementById('tbl-rythme').innerHTML =
+      '<thead><tr><th>Étape</th><th>Fenêtre cible</th><th>Simulé</th><th>Verdict</th></tr></thead><tbody>' +
+      rows.map(x => {
+        const r = results[x.id], st = status(x, x.id);
+        return `<tr><td>${x.k === 'gate' ? '<b>Palier ' + x.p + ' · ' + x.n + '</b>' : x.n}</td><td class="num">${cibleText(x.cible)}</td><td class="num">${r === undefined ? '…' : fmtTime(r)}</td><td>${st ? `<span class="chip ${st[0]}">${st[1]}</span>` : ''}</td></tr>`;
+      }).join('') + '</tbody>';
+  }
+  function renderPace() { renderChart(); renderPaceTable(); }
+
+  function renderCosts() {
+    const cost = makeCost(params.hdvF);
+    const n = v => v.toLocaleString('fr-FR');
+    document.getElementById('tbl-couts').innerHTML =
+      '<thead><tr><th>Objet</th><th>Coût niv. 1 (bois · fer · mana)</th><th>Facteur</th><th>Niveau clé</th><th>Coût au niveau clé</th><th>Pourquoi</th></tr></thead><tbody>' +
+      PROPOSED.map(([id, name, key, why]) => {
+        const c1 = cost(id, 1), ck = cost(id, key), f = id === 'hdv' ? params.hdvF : COST[id][3];
+        return `<tr><td><b>${name}</b></td><td class="num">${n(c1[0])} · ${n(c1[1])} · ${n(c1[2])}</td><td class="num">${String(f).replace('.', ',')}</td><td class="num">${key}</td><td class="num">${n(ck[0])} · ${n(ck[1])} · ${n(ck[2])}</td><td>${why}</td></tr>`;
+      }).join('') + '</tbody>';
+  }
+
+  // ---------- Tableaux ----------
+  const fmt = (id, lv) => `${label(id, lv)}${lvText(id, lv) ? ' <span class="mono">' + lvText(id, lv) + '</span>' : ''}`;
+  const join = arr => arr.length ? arr.join('<br>') : '<span class="mono">—</span>';
+  const simCell = id => { const r = results[id]; return r === undefined ? '…' : fmtTime(r); };
+  function renderTables() {
+    renderCosts();
+    const gates = N.filter(x => x.k === 'gate');
+    document.getElementById('tbl-pal').innerHTML =
+      '<thead><tr><th>Palier</th><th>HdV</th><th>Conditions de passage</th><th>Bâtiments qui apparaissent</th><th>Cible</th><th>Simulé</th></tr></thead><tbody>' +
+      gates.map(gt => {
+        const conds = gt.req.filter(r => byId[r[0]].k !== 'gate').map(([id, lv]) => fmt(id, lv));
+        const prev = gt.req.find(r => byId[r[0]].k === 'gate');
+        if (prev) conds.unshift(`Hôtel de ville <span class="mono">niv. ${prev[1]}</span>`);
+        const bs = N.filter(x => x.k === 'b' && x.p === gt.p).map(x => x.n);
+        return `<tr><td>${gt.p} · ${PAL_NAMES[gt.p]}</td><td class="pal">niv. ${gt.hdv}</td><td>${conds.length ? conds.join('<br>') : 'Fondation de la ville'}</td><td>${bs.join(', ')}</td><td class="num">${gt.cible ? cibleText(gt.cible) : '—'}</td><td class="num">${simCell(gt.id)}</td></tr>`;
+      }).join('') + '</tbody>';
+
+    let rowsB = '';
+    for (let p = 1; p <= 6; p++) {
+      rowsB += `<tr class="grp"><td colspan="8">Palier ${p} · ${PAL_NAMES[p]}</td></tr>`;
+      N.filter(x => x.k === 'b' && x.p === p).forEach(x => {
+        const rb = x.req.filter(r => byId[r[0]].k !== 'r').map(([id, lv]) => fmt(id, lv));
+        const rr = x.req.filter(r => byId[r[0]].k === 'r').map(([id, lv]) => fmt(id, lv));
+        const st = status(x, x.id);
+        rowsB += `<tr><td><b>${x.n}</b></td><td>${join(rb)}</td><td>${join(rr)}</td><td class="num">${simCell(x.id)}</td><td class="num">${x.cible ? cibleText(x.cible) : '—'}</td><td>${st ? `<span class="chip ${st[0]}">${st[1]}</span>` : ''}</td><td><span class="mono">${x.og || '—'}</span><br><span class="mono">${x.was}</span></td><td><span class="chip o-${x.o}">${ORIG[x.o]}</span></td></tr>`;
+      });
+    }
+    document.getElementById('tbl-bat').innerHTML =
+      '<thead><tr><th>Bâtiment</th><th>Bâtiments requis</th><th>Recherches requises</th><th>Débloqué vers</th><th>Cible</th><th>Verdict</th><th>OGameX (objet · prérequis)</th><th>Statut</th></tr></thead><tbody>' + rowsB + '</tbody>';
+
+    const rechs = N.filter(x => x.k === 'r').sort((a, b) => (results[a.id] ?? 0) - (results[b.id] ?? 0));
+    document.getElementById('tbl-rech').innerHTML =
+      '<thead><tr><th>Recherche</th><th>Accessible dès</th><th>Débloquée vers</th><th>Prérequis</th><th>OGameX (objet · prérequis)</th><th>Statut</th></tr></thead><tbody>' +
+      rechs.map(x => `<tr><td><b>${x.n}</b>${x.nomProv ? ' <span class="mono">(nom provisoire)</span>' : ''}</td><td class="pal">P${minPalier(x.id)}</td><td class="num">${simCell(x.id)}</td><td>${join(x.req.map(([id, lv]) => fmt(id, lv)))}</td><td><span class="mono">${x.og || '—'}</span><br><span class="mono">${x.was}</span></td><td><span class="chip o-${x.o}">${ORIG[x.o]}</span></td></tr>`).join('') + '</tbody>';
+  }
+
+  // ---------- Démarrage ----------
+  renderTables(); renderPace();
+  if (window.dagre) { setMode(mode); select(selected); }
+  else { graphEl.innerHTML = '<p class="empty" style="padding:16px">Le moteur de mise en page du graphe n\'a pas pu se charger. Les tableaux contiennent toute la proposition.</p>'; renderDetail(); }
+  runAll();
+  let t; window.addEventListener('resize', () => { clearTimeout(t); t = setTimeout(() => { fit(); renderChart(); }, 150); });
+})();
+</script>

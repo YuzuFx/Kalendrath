@@ -1,0 +1,22 @@
+{
+  "enabledPlugins": {
+    "superpowers@anthropic-plugin-directory": true,
+    "code-review-anthropics@anthropic-plugin-directory": true,
+    "claude-security@anthropic-plugin-directory": true
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node \"$CLAUDE_PROJECT_DIR/.claude/hooks/post-edit.mjs\"",
+            "timeout": 120,
+            "statusMessage": "Contrôles Kalendrath (pint, phpstan, règles du projet)"
+          }
+        ]
+      }
+    ]
+  }
+}

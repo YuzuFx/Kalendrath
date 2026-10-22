@@ -20,11 +20,18 @@ Ces documents dans `docs/` définissent la vision, les mécaniques, l'univers et
 - **[docs/decision-architecture-cible.md](docs/decision-architecture-cible.md)** — Décision d'architecture : ce qui est conservé du moteur OGameX et ce qui est jeté, la stack retenue (FrankenPHP/Octane, Redis + Horizon, API JSON + Sanctum, React + TypeScript, TanStack, Tailwind + shadcn/ui, Reverb), les alternatives écartées et leur motif, le chantier de la résolution temporelle, l'ordre de bascule des écrans. **À lire avant toute tâche technique**, pour ne pas rouvrir des choix déjà tranchés.
 - **[docs/game-design-document.md](docs/game-design-document.md)** — Game Design Document (GDD) : piliers de gameplay, boucles courte/moyenne/longue, lexique de conversion Ogame→jeu fantasy (ressources, bâtiments, recherches, unités), systèmes détaillés (production, combat, Mode de Guerre, héros/gouverneur, prestige d'empire, craft/forge, bots PvE, alliance). Document vivant, plusieurs sections encore marquées **[TBD]**.
 - **[docs/lore.md](docs/lore.md)** — Univers narratif : cosmologie (Straumar, Neuf Sphères), la Rupture (chronologie), les Vahrun, factions ennemies, races jouables, structure cartographique (Régions/Contrées/Éclats), noms encore en discussion.
+- **[docs/references-jeux-du-genre.md](docs/references-jeux-du-genre.md)** — Comparatif d'OGame, Travian Kingdoms, Last War et Call of Dragons (format de serveur, rythme, place du joueur gratuit, poids du paiement) et leçons pour Kalendrath. À consulter pour tout travail de rythme, de theorycrafting ou de monétisation.
 - **[docs/direction-artistique-unites.md](docs/direction-artistique-unites.md)** — Briefs visuels (prompts IA générative, en anglais) pour les unités militaires du lexique, avec un préambule de style commun. Document de travail pour la Phase 3a de la roadmap (DA Midjourney).
 - **[docs/direction-artistique-batiments.md](docs/direction-artistique-batiments.md)** — Briefs visuels (prompts Midjourney) pour les 19 bâtiments, les 6 paliers de cité et la capitale.
 - **[docs/direction-artistique-planche-de-style.md](docs/direction-artistique-planche-de-style.md)** — Outil retenu (Midjourney, `--sref`) et méthode pour la planche de style de la Phase 3a, avec les prompts d'amorçage (personnage, architecture, icône, cadre d'interface).
 
 Ces documents sont vivants et évolueront au fil du projet — s'y référer plutôt que de supposer des mécaniques ou noms non confirmés.
+
+## Outils du projet
+
+- **Simulateur de theorycrafting** — [tools/theorycrafting/](tools/theorycrafting/README.md) : prérequis, coûts et simulation du rythme de déblocage (paliers de cité, bâtiments, recherches). **Pierre angulaire du theorycrafting** (décidé le 2026-10-21) : toute proposition de prérequis, de coût ou de rythme passe par lui avant d'aller dans le GDD, puis dans le domaine. `model.js` est la source unique ; la page interactive [Arbre des prérequis](https://claude.ai/artifact/2GSoLWt91J28Rve5n12EMK) se régénère depuis lui.
+- **Skills de projet** — `.claude/skills/` : `brief-midjourney-batiment` (méthode Midjourney validée pour les bâtiments) et `lexique-kalendrath` (machine names ↔ noms affichés en français).
+- **Hook après édition** — `.claude/hooks/post-edit.mjs` : pint et phpstan sur les fichiers PHP (dans le conteneur `ogamex-app`), rappels des règles ci-dessous quand on touche au domaine, à du Blade ou à un contrôleur d'API, tests du simulateur quand on le modifie.
 
 ## Principes de travail
 
