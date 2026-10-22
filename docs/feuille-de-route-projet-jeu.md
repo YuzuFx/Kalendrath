@@ -138,11 +138,14 @@
 - [ ] **Arbre technologique/recherche complet** adapté au thème fantasy
 - [ ] **Catalogue de bâtiments** avec progression cohérente
 - [ ] **Theorycrafting des emplacements de cité** : socle (100-150 envisagé), incrément par palier d'Hôtel de ville, projection d'un build complet sur une aventure longue (pas de serveurs éphémères) — cf. GDD 4.2
-- [ ] **Theorycrafting des paliers de cité** : durée de passage d'un palier à l'autre et moment de déblocage de l'Académie Militaire et de l'Atelier des Remparts, pour ne pas freiner la production d'armées et de défenses — cf. GDD 4.2
+- [ ] **Theorycrafting des paliers de cité** : durée de passage d'un palier à l'autre et moment de déblocage de l'Académie Militaire et de l'Atelier des Remparts, pour ne pas freiner la production d'armées et de défenses — cf. GDD 4.2. **Premier jet le 2026-10-21** : simulateur de rythme et fenêtres cibles par palier (Village J1-3 … Métropole J150-240), cf. GDD 4.2 « Prérequis et rythme de déblocage »
 - [ ] **Catalogue d'unités/troupes** avec équilibrage attaque/défense/coût
 - [ ] **Catalogue d'équipements de héros** (par tier de rareté)
 - [ ] **Premiers events PvE d'alliance** (si tu joues déjà avec plusieurs potes en "alliance")
 - [ ] **Passes d'équilibrage** basées sur les retours de tes potes en Phase 5
+- [ ] **Serveur alpha à ratios augmentés** (vitesse ×3 à ×5) pour dérouler les mécaniques et le rythme en accéléré et repérer les erreurs de conception avant un serveur ×1. Noté le 2026-10-22
+- [ ] **Stock de contenu d'avance** : environ 1 an d'events et de chapitres prêts avant l'ouverture, pour qu'un développeur seul garde de l'avance sur les joueurs. Noté le 2026-10-22
+- [ ] **Sondages réguliers du panel de joueurs** (12 à 15 personnes ; sondage design du 2026-10-07, puis [rythme et format de serveur](sondages/2026-10-rythme-et-format-de-serveur.md) en octobre 2026), avant d'élargir la communauté
 
 **Durée estimée : en continu, jamais vraiment "fini" — c'est la phase qui vit le plus longtemps dans le temps.**
 

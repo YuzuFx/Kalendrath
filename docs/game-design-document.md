@@ -141,6 +141,22 @@ Ce principe corrige directement l'incohérence repérée chez Embercraft (bâtim
 | 5 | Citadelle | Donjon, quartiers spécialisés | Atelier des Automates Arcaniques |
 | 6 | Métropole | Cité-capitale monumentale | Portail des Sphères |
 
+- **Proposition du 2026-10-22 : passer à 10 paliers sur 30 niveaux** *(souhait de Gregory, à valider avec le simulateur corrigé)*. Avec 25 à 30 niveaux d'Hôtel de ville (point 14 ci-dessous), on garde la règle d'un palier tous les 3 niveaux, déjà celle des images de l'Hôtel de ville : 10 paliers, 10 images de cité, 10 images d'Hôtel de ville. Les 3 images d'Hôtel de ville validées (niv. 1-3, 4-6, 7-9) restent valables ; aucune des 6 images de cité n'a encore été produite (prompts non testés), donc rien n'est perdu. Premier jet des noms et des déblocages :
+
+| Palier | Niveaux | Nom (provisoire) | Bâtiments qui apparaissent (premier jet) |
+|---|---|---|---|
+| 1 | 1-3 | Hameau | Scierie, Mine de fer, Puits de mana, Champ de blé, entrepôts, Institut Arcanique |
+| 2 | 4-6 | Village | Académie Militaire, Forge, Atelier des Maîtres d'œuvre |
+| 3 | 7-9 | Bourg | Hôpital, Ambassade |
+| 4 | 10-12 | Ville franche | Tour de guet arcanique |
+| 5 | 13-15 | Cité fortifiée | Atelier des Remparts |
+| 6 | 16-18 | Citadelle | Atelier des Automates Arcaniques |
+| 7 | 19-21 | Cité arcanique | *à remplir* (grades d'unités, défenses avancées ?) |
+| 8 | 22-24 | Cité palatine | *à remplir* |
+| 9 | 25-27 | Métropole | *à remplir* |
+| 10 | 28-30 | Cité des Sphères | Portail des Sphères |
+
+  Les paliers 7 à 9 n'ont pas encore de bâtiment : ils apporteront des emplacements, des plafonds de niveau et un nouvel état de la ville, et pourront accueillir les grades d'unités (4.4) ou de nouvelles défenses. Le tableau validé le 2026-10-12 ci-dessus reste la référence tant que cette proposition n'est pas tranchée.
 - **Déblocage par palier** : un bâtiment n'apparaît qu'à partir du palier où il a du sens (pas d'Atelier des Remparts dans un hameau). Cela s'ajoute aux prérequis habituels de bâtiments et de recherches. Le tableau ci-dessus est un **premier jet** : il doit être validé par du theorycrafting (cf. ci-dessous). Plafonds de niveau par palier **[TBD]**.
 - **Emplacements** : logique OGame, **1 niveau de bâtiment = 1 emplacement**, pas de tirage aléatoire (refus assumé du modèle Ogame/Aleryos). L'Hôtel de ville de création ouvre un socle d'emplacements et chaque palier en ajoute un nombre fixe : progression linéaire et identique pour tous les joueurs. **Socle envisagé : 100 à 150** (abaissé depuis l'exemple de 300), **+30 par palier à titre d'exemple**. Le champ `field_max` des planètes existe déjà et peut porter cette règle.
 - **Theorycrafting à faire (Phase 6)** : Kalendrath vise une aventure longue, pas des serveurs éphémères façon Travian, donc la courbe d'emplacements ne doit pas se tromper (socle, incrément par palier, projection du nombre d'emplacements nécessaires pour un build complet). Il faut aussi simuler **le temps de passage d'un palier à l'autre** et vérifier que les joueurs ne sont pas freinés pour produire des armées ou des défenses : le moment où l'Académie Militaire et l'Atelier des Remparts deviennent disponibles doit rester cohérent avec le début de production.
@@ -157,6 +173,88 @@ Ce principe corrige directement l'incohérence repérée chez Embercraft (bâtim
 - **Indépendant des paliers de cité** : les images de bâtiments sont indexées sur le niveau du bâtiment, la bannière de la Vue d'ensemble sur le palier de la ville. Le Donjon et l'Hôtel de ville suivent aussi les 3 paliers de niveau.
 - **Mise en œuvre** : table de seuils côté interface (niveau → image), sans effet sur le domaine. Une image manquante retombe sur le palier précédent, ce qui permet de livrer d'abord le palier 1. Un 4e palier (par ex. niveau 45) reste possible plus tard **[TBD]**.
 - Prompts et ordre de production : [direction-artistique-batiments.md](direction-artistique-batiments.md).
+
+#### Prérequis et rythme de déblocage — premier jet du 2026-10-21, révisé le 2026-10-22, à valider
+
+> **⚠️ Chiffres de rythme non fiables — audit du 2026-10-22.** Le simulateur bloque sa file de construction sur des mines aux chantiers de 68 à 123 jours, qu'aucun joueur ne lancerait. Les dates de Métropole (22 mois) et l'écart payeur (25 %) sont des artefacts de ce comportement : en réalité la Métropole se situe quelque part entre 4 et 30 mois selon les hypothèses. Les prérequis, les principes et la forme des courbes restent valables ; les dates et fenêtres cibles sont à recalculer après correction du simulateur.
+
+*Proposition, rien n'est tranché. Version interactive (arbre, simulateur réglable par profil de joueur, frise de rythme) : [Arbre des prérequis](https://claude.ai/artifact/2GSoLWt91J28Rve5n12EMK). Source des données et du simulateur : [tools/theorycrafting/](../tools/theorycrafting/README.md) (`node tools/theorycrafting/simulate.js`, `--profils` pour comparer les profils). Les unités et les défenses ne sont pas encore traitées.*
+
+**Orientation de rythme — 2026-10-22.** Kalendrath s'inspire de Call of Dragons et Last War plutôt que d'OGame ou Travian, pensés pour des serveurs plus courts. Le jalon de fin de cité (Métropole, Portail des Sphères) vise **environ 2 ans pour un joueur gratuit actif**, l'équivalent des premières unités T5 de Call of Dragons (environ 380 jours pour un joueur gratuit très optimisé, 1,5 à 2 ans en parcours standard). L'intérêt durable vient des events PvE et PvP ; la course aux bâtiments n'en est que le socle. Tous les chantiers ralentissent avec le niveau, l'Hôtel de ville plus que les autres, pour donner leur valeur aux accélérateurs (events, season pass, boutique). Cible à confronter à un sondage des joueurs. Comparatif des jeux de référence et leçons (saisons, nombre de niveaux de l'Hôtel de ville, fin de cité distincte de la fin militaire) : [references-jeux-du-genre.md](references-jeux-du-genre.md).
+
+**Principes proposés :**
+- Partir des prérequis OGameX (`app/GameObjects`) et ne remplacer que ceux qui pointent vers un objet supprimé ou qui n'ont pas de sens dans l'univers.
+- Trois couches : le **palier de cité** fait apparaître le bâtiment ; les **niveaux de bâtiments** et les **recherches** le rendent constructible.
+- **Un palier de cité tous les 3 niveaux d'Hôtel de ville**, comme les paliers d'images : Village niv. 4, Bourg niv. 7, Cité fortifiée niv. 10, Citadelle niv. 13, Métropole niv. 16 (au-delà du plafond provisoire de 15).
+- **Passage de palier conditionné** par le **Rite d'Ancrage Tellurique** (niv. 1, 2, 4, 6, 8) et l'**Atelier des Maîtres d'œuvre** (niv. 2, 4, 6, 8, 10). Le Rite reste une recherche ; il devient la clé de la croissance de la ville, ce qui lève la contradiction avec « l'Hôtel de ville remplace le Terraformeur ».
+- **Deux troncs de recherche** : Abondance (ex-Énergie) ne porte plus que les recherches de troupes ; les études arcaniques demandent le Puits de mana.
+- Noms provisoires des trois recherches de déblocage : `laser_technology` → **Lecture des Runes**, `ion_technology` → **Résonance du Mana**, `plasma_technology` → **Arcanes des Obélisques** (l'étude des obélisques du lore). Correction : le plasma n'est pas qu'un prérequis, OGameX lui donne un bonus de production (+1 % métal, +0,66 % cristal, +0,33 % deutérium par niveau).
+
+**Bâtiments** (fenêtres cibles et résultats pour le joueur gratuit actif, vitesse ×1, colonies) :
+
+| Palier | Bâtiment | Prérequis proposés | OGameX | Fenêtre cible | Simulé |
+|---|---|---|---|---|---|
+| 1 | Scierie, Mine de fer, Puits de mana, Champ de blé, 3 entrepôts, Silo de nourriture | aucun | aucun | fondation | fondation |
+| 1 | Atelier des Maîtres d'œuvre | aucun (**avancé du palier 2 au palier 1**, sinon l'Académie et le passage au Village ne peuvent pas l'exiger) | aucun | fondation | fondation |
+| 1 | Institut Arcanique | Hôtel de ville 2, Puits de mana 1 | aucun | 6 h à J1,5 | 22 h |
+| 2 | Académie Militaire | Maîtres d'œuvre 2, Champ de blé 3 | robot_factory 2 | J1 à J3 | J2,6 |
+| 2 | Forge | Mine de fer 5, Maîtres d'œuvre 2 | — | J1 à J4 | J2,5 |
+| 3 | Hôpital | Académie Militaire 2, Institut 3 | shipyard 2 | J5 à J12 | J6,7 |
+| 3 | Ambassade | aucun | aucun | J5 à J14 | J6,5 |
+| 3 | Tour de guet arcanique | Espionnage 3, Institut 3 | lunar_base 1 | J7 à J14 | J6,6 (un peu tôt) |
+| 4 | Atelier des Remparts | Maîtres d'œuvre 5, Académie Militaire 4 | — | J14 à J30 | J18 |
+| 5 | Atelier des Automates Arcaniques | Maîtres d'œuvre 10, Résonance du Mana 5 | robot_factory 10, computer_technology 10 | J60 à J150 | J74 |
+| 6 | Portail des Sphères | Institut 12, Arcanes des Obélisques 8, Découverte Tellurique 6 | lunar_base 1, hyperspace_technology 7 | J540 à J800 | J692 |
+
+**Paliers de cité** (joueur gratuit actif) : Village J1 à J3 (simulé J2,5), Bourg J5 à J10 (J6,5), Cité fortifiée J14 à J30 (J18), Citadelle J60 à J120 (J84), **Métropole J540 à J730 (J683, environ 22 mois)**. Les premiers paliers restent rapides pour accrocher le joueur ; le grand écart entre Citadelle et Métropole est la phase où il installe son empire, avec les chantiers les plus longs, et que le contenu de milieu de partie (events PvE et PvP, Prestige, tiers d'unités) doit remplir.
+
+**Durées des chantiers** (proposé le 2026-10-22) :
+- Base OGameX : (bois + fer) / (2 500 × max(4 − niv/2, 1) × (1 + Maîtres d'œuvre) × vitesse).
+- Au-delà du niveau 10 : **×1,095 par niveau pour tous les bâtiments**, **×1,15 par niveau pour l'Hôtel de ville**. Chantier brut de l'Hôtel de ville : environ 16 jours au niveau 15 et **35 jours au niveau 16**, dans l'esprit de Call of Dragons (30 à 40 jours au plus haut niveau).
+- **Atelier des Automates Arcaniques** : il réduit les durées des bâtiments de 3 % par niveau, 30 % au plus, au lieu du ×2 par niveau d'OGameX (ou des 30 % par palier d'Aleryos), pour laisser leur valeur aux accélérateurs. Cela précise la décision du 2026-10-11 (Automates = Forge et défenses) : ils gardent ce rôle principal et touchent aussi, modestement, les bâtiments.
+
+**Profils de joueur et rewarding** (hypothèses à confronter à l'audit des boutiques de la Phase 8) :
+
+| Profil | Production | Vitesse de construction | Accélérateurs | Métropole | Écart avec le gratuit actif |
+|---|---|---|---|---|---|
+| Sans bonus (moteur seul) | — | — | — | J812 (26,7 mois) | — |
+| Gratuit actif (events, pass gratuit) | +10 % | +10 % | 2 h par jour | J683 (22,5 mois) | référence |
+| Pass payant | +15 % | +15 % | 4 h par jour | J608 (20 mois) | 11 % plus tôt |
+| Gros payeur | +20 % | +20 % | 8 h par jour | J512 (16,8 mois) | 25 % plus tôt |
+
+**Écart payeur — tendance du 2026-10-22, plafond à fixer après l'audit de la Phase 8** : 20 à 30 % d'avance au maximum pour un gros payeur. Au-delà de 50 %, c'est du pay-to-win. Les volumes de récompenses des events, du pass gratuit et du pass payant se calent sur ce plafond.
+
+**Recherches :** Endurance du Fantassin (Abondance 1, Institut 1), Art Équestre (Abondance 1, Institut 2), Ingénierie de Siège (Institut 7, Lecture des Runes 5 ; la technologie hyperspatiale est supprimée), Infusion Arcanique (Institut 6, Lecture des Runes 3), Lecture des Runes (Institut 1, Puits de mana 3), Résonance du Mana (Institut 4, Lecture 5, Puits 6), Arcanes des Obélisques (Institut 4, Lecture 10, Résonance 5), Alliage de Guerre (Affûtage 6, Forge 3), Runes de Combat (Alliage 6, Lecture 6), Bénédiction des Armes (Runes de Combat 6, Arcanes 5), Rite d'Ancrage Tellurique (Institut 1). Les autres gardent leurs prérequis OGameX.
+
+**Coûts proposés pour ce qui n'existe pas dans OGameX** (bois · fer · mana au niveau 1, facteur par niveau) :
+
+| Objet | Coût niv. 1 | Facteur | Note |
+|---|---|---|---|
+| Hôtel de ville | 400 · 250 · 100 | **1,9** | Règle le rythme des paliers avec la courbe de durées |
+| Forge | 1 200 · 800 · 200 | 2 | Un peu plus chère que l'Académie Militaire |
+| Silo de nourriture | 1 000 · 500 · 0 | 2 | Aligné sur l'Entrepôt de fer |
+| Atelier des Remparts | 6 000 · 4 000 · 1 000 | 2 | |
+| Rite d'Ancrage Tellurique | 300 · 600 · 300 | 2 | Le coût du Terraformeur (50 000 fer, 100 000 mana) aurait bloqué le Village |
+| Alliage de Guerre / Runes de Combat / Bénédiction des Armes | 4 000 · 2 000 · 0 / 8 000 · 8 000 · 4 000 / 20 000 · 20 000 · 20 000 | 2 | Chaîne d'attaque, hors chemin des bâtiments |
+
+**Hypothèses de la simulation :** vitesse économique ×1 ; formules OGameX de coût, de production et de stockage ; pas d'énergie (les mines produisent sans centrale) ; un joueur qui vise un élément et fait toujours l'action la moins chère entre sa prochaine mine et le prochain prérequis ; accélérateurs utilisés aussitôt sur le chantier en cours ; « empire en croissance » : une colonie aux jours 4, 8, 14, 21, 30, 45, 60 et 90, chacune produisant la moitié de la capitale. Ni marchand, ni pillage, ni classe, ni héros. Les recherches gardent les durées OGameX. Ce sont des ordres de grandeur pour comparer des réglages, pas des promesses de temps de jeu.
+
+**Points à trancher :**
+1. Palier 6 au niveau 16 de l'Hôtel de ville : monter le plafond à 18 dès la V1, ou mettre le Portail au palier 5.
+2. Atelier des Maîtres d'œuvre au palier 1.
+3. Rôle du Rite d'Ancrage Tellurique comme clé des passages de palier.
+4. Abondance limitée aux recherches de troupes, le Puits de mana devenant le socle des études arcaniques.
+5. Noms de Lecture des Runes, Résonance du Mana et Arcanes des Obélisques, et sort du bonus de production du plasma.
+6. Atelier des Remparts au palier 4 (vers J18) ou au palier 3 (vers J7) avec des défenses de base.
+7. **Format de serveur** : serveur unique très long (cible actuelle) ou serveurs plus courts (la même courbe en vitesse ×2 ou ×3 donne 8 à 12 mois). À trancher avec un sondage (cf. [sondage d'octobre 2026](sondages/2026-10-rythme-et-format-de-serveur.md)). **Piste de Gregory, 2026-10-22 : une ligne de rattrapage pour les retardataires.** Un joueur qui arrive tard suit une progression accélérée, avec une reprise des events du début, et rejoint la ligne principale. Exemple : arrivé au 8e mois, il rattrape en 5 mois, soit au niveau d'un joueur du premier jour au 13e mois. Méthode non arrêtée ; la question va avec celle du format (serveur unique sans fin ou serveurs à durée limitée).
+8. **Plafond de l'écart payeur** et volumes de récompenses par source, après l'audit de la Phase 8. **Cible de Gregory, 2026-10-22 : +30 % au plus** pour un joueur qui achète tout ce que vend la boutique, face à un joueur gratuit actif. Assez pour motiver l'achat, pas assez pour frustrer ou pour valoir au jeu l'étiquette pay-to-win. Repère : dans OGame, Travian ou Call of Dragons, un petit payeur fait des choses intéressantes et tient sa place dans une alliance de milieu de tableau, voire du haut avec une très forte activité. La boutique doit donc avoir des plafonds (achats limités par période, rendements décroissants) : sans eux, un payeur qui dépense sans limite dépasse n'importe quel pourcentage. **Forme retenue par Gregory, 2026-10-22 : des packs limités en durée et en quantité** (offres disponibles quelques jours, achetables un nombre fixe de fois). Ils créent un peu d'urgence pour pousser l'achat sans déséquilibrer le jeu, et ils servent de plafond : la somme de tous les packs d'une période fixe l'avance maximale d'un payeur. À vérifier à l'audit de la Phase 8 : rester dans les règles européennes sur les pratiques commerciales (fausse urgence, mineurs).
+9. Portail juste après la Métropole (monter Arcanes des Obélisques à 10 pour l'éloigner).
+10. Durées des recherches : garder OGameX ou les allonger elles aussi avec le niveau.
+11. Prérequis dépendant du niveau (passages de palier, palier d'apparition) et nouvelle formule de durée : absents du moteur (`GameObjectRequirement` = un objet, un niveau ; facteur 2^Automates dans `PlanetService::getBuildingConstructionTime()`), travail de domaine à rattacher aux paliers de cité (Phase 4).
+12. Prérequis de bâtiment vérifiés dans la ville courante : l'Institut 12 du Portail doit exister dans chaque ville qui veut un Portail.
+13. **Une seule file de construction par ville** (comportement OGameX, `BuildingQueueService::start()`) : un long chantier d'Hôtel de ville gèle toute la ville. **Piste retenue par Gregory le 2026-10-22 : des files supplémentaires (2e, 3e « ouvrier »), comme dans Last War et Call of Dragons.** À cadrer : une 2e file accessible au joueur gratuit (progression, event, pass gratuit ou location temporaire) pour que sa ville ne gèle pas, la 3e en boutique ; l'effet d'une file en plus compte dans le plafond d'avance payante. Travail de domaine (files multiples, tests Pest), Phase 4. **Précision de Gregory, 2026-10-22** : la 2e file doit être facile à obtenir pour un joueur gratuit, grâce à la monnaie payante qu'il gagne dans les events et les récompenses gratuites.
+14. **Trop peu de niveaux d'Hôtel de ville en fin de course** : 13 niveaux en 73 jours, puis 3 niveaux en 20 mois (J148, J333, J683) pour un joueur gratuit actif. Pistes : 25 à 30 niveaux comme Call of Dragons et Last War, paliers de cité plus espacés, ou jalons intermédiaires ; et une Métropole vers 10 à 14 mois, avant un objectif militaire vers 18 à 24 mois (cf. [references-jeux-du-genre.md](references-jeux-du-genre.md)). **Décidé par Gregory le 2026-10-22 : 25 à 30 niveaux, définis par une table niveau par niveau** (coût et durée de chaque niveau), pas par une formule à facteur constant qui dérape sur les derniers niveaux. Nombre de paliers de cité : **Gregory souhaite passer à 10** (un tous les 3 niveaux), voir la proposition sous le tableau des paliers.
+15. **Ville unique ou empire de colonies** *(soulevé par Gregory le 2026-10-22, à sonder)*. Les jeux à plusieurs files de construction (Last War, Call of Dragons) ont un point commun : un joueur = une ville. Kalendrath part sur des colonies, comme OGame et Travian. Les deux choix ne s'additionnent pas sans conséquence : plusieurs files dans chaque ville multiplient la vitesse de progression, et le rythme visé (environ 2 ans) dépend de ce choix autant que des coûts. Options : plusieurs villes avec une file chacune (OGame), une ville avec plusieurs files (Call of Dragons), ou un mélange (une capitale à plusieurs files, des colonies plus simples).
 
 ### 4.3 Recherches / Technologies
 
@@ -249,6 +347,12 @@ Les engins de siège fonctionnent au mana mais restent dans la branche siège : 
 **Décidé le 2026-09-21 — Étoile de la mort (`deathstar`) : supprimée complètement.** Vérifié dans le code : attaque de 200 000 contre 2 000-2 800 pour les meilleures unités du roster normal (destroyer/reaper), un rapport de puissance de 70-100x qui casserait l'équilibrage — y compris en PvE où elle trivialiserait le contenu. Pas d'unité ultime en V1, l'idée de "golem de guerre" du lore reste disponible pour du contenu narratif futur sans être une unité productible en masse.
 
 Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros General (cf. 5.5), hors du roster militaire standard ci-dessus, à traiter avec le reste du système héros plutôt qu'ici.
+
+**Piste à étudier — 2026-10-22 : tiers et grades d'unités** *(idée de Gregory, rien n'est décidé)*. Deux mécaniques pour prolonger le jeu sur la durée d'un serveur unique :
+- **Tiers d'unités, façon Call of Dragons** (T1 à T5) : chaque unité existe en plusieurs tiers, débloqués par les bâtiments et les recherches. Les unités T5 sont l'objectif de fin de partie ; c'est sur elles que s'est calée la cible de rythme d'environ 2 ans (cf. 4.2, « Prérequis et rythme de déblocage »).
+- **Grades d'unités, façon Age of Wonders 4** : une unité gagne de l'expérience au combat et monte en grade (recrue, vétéran, élite…), avec de petits bonus de stats. Cela récompense la conservation des troupes, en lien avec l'Hôpital (troupes blessées).
+- **Précision de Gregory, 2026-10-22** : pas question d'imposer 5 tiers à chaque unité. La question ouverte est : comment cette mécanique peut-elle allonger la durée de jeu ? Piste préférée : des **grades débloqués par la recherche** (ou par un bonus d'expérience propre au type d'unité). Un grade change seulement les **valeurs de base** des caractéristiques de l'unité : le moteur de combat ne s'alourdit pas, il lit d'autres chiffres. À définir : le nombre de grades, leurs prérequis (recherches, bâtiments) et ceux du déblocage de chaque unité.
+- **Questions à trancher avant d'aller plus loin** : tiers par unité (12 unités × 5 tiers) ou tiers par branche de l'Académie ; coût artistique (une image par tier, ou des variantes d'une même image) ; grades portés par l'unité, par le groupe ou par l'armée (le moteur de combat instancie un `BattleUnit` par unité, des grades individuels sur des milliers d'unités seraient lourds) ; place des tiers dans le simulateur de theorycrafting.
 
 **Civils :**
 
@@ -555,6 +659,7 @@ Reaper (`reaper`) reste **[TBD]** — vaisseau spécifique à la classe héros G
 *Pour mémoire, à ne creuser qu'en Phase 8 de la roadmap :*
 
 - Cosmétique, gain de temps, rançon de héros — jamais de pay-to-win direct
+- **Files de construction supplémentaires — piste du 2026-10-22** : un 2e et un 3e « ouvrier » pour lancer plusieurs chantiers en même temps, comme dans Last War et Call of Dragons. Jugé acceptable par Gregory, à condition qu'une 2e file soit facile à obtenir pour le joueur gratuit (monnaie payante gagnée dans les events et récompenses gratuites) et que l'avantage entre dans le plafond d'avance payante (+30 % au plus, cf. 4.2, point 8). Dépend du choix ville unique ou colonies (4.2, point 15).
 - **Changement de héros principal en cours de partie — décidé le 2026-10-11** : proposé en boutique (premier article concret). Vigilance : ne doit pas devenir un moyen d'acheter la méta ; coût, conservation du niveau/équipement et éventuel changement gratuit pendant le tutoriel sont à définir (cf. 5.5), **[TBD]**
 - **Nuance actée le 2026-10-08 :** pas de règle absolue du type « rien de ce qu'on achète ne peut agir contre un autre joueur ». Sont jugés acceptables, dans les limites à fixer en Phase 8 : le **bouclier temporaire en boutique** (réservé aux joueurs en Mode de Guerre, cf. 5.4), les **confort et paquets de ressources**, et les **accélérations**. Ce sont des mécaniques courantes des jeux du genre. Reste en tension avec la ligne « jamais de pay-to-win direct » ci-dessus : la frontière exacte est à trancher à ce moment-là, pas maintenant.
 - **À faire avant de figer l'offre :** auditer les boutiques des jeux les plus connus du genre (Last War, Call of Dragons, OGame, Travian, Tribal Wars, Forge of Empires…) : ce qu'ils vendent, à quel prix, quels plafonds, quelles critiques de la communauté.

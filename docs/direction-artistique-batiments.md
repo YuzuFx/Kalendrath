@@ -694,6 +694,8 @@ A grand embassy palace with a columned entrance and a vast banner-lined courtyar
 
 ## 🏙️ Paliers de cité
 
+> **Proposition du 2026-10-22 : 10 paliers de cité au lieu de 6** (un tous les 3 niveaux d'Hôtel de ville, sur 30 niveaux ; cf. GDD 4.2). Aucune image de cité n'est encore produite : la série est à réécrire à 10 avant de lancer Midjourney. Les 3 images d'Hôtel de ville validées restent valables, la série de l'Hôtel de ville passerait de 5 à 10 images.
+
 Une image par palier, même lieu, **même cadrage et même heure** pour qu'on lise la progression. Format `--ar 7:3`. L'Obélisque (runes violet-bleu) est toujours visible au centre : c'est le fil rouge de la série. **Ces prompts n'ont pas encore été testés** avec la nouvelle méthode ; appliquer la même logique que pour les bâtiments (sujet d'abord, `--sw` à ajuster).
 
 Préambule des villes :
@@ -744,7 +746,7 @@ Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55
 
 **Ensuite :**
 1. ~~**Test de lisibilité à 300 px des paliers 2**~~ — **fait le 2026-10-20** (voir la section dédiée ; reprise Hôpital p2 et Académie p1/p2 à décider) (planche de contact de 300 px de large par image, comme pour les paliers 1 ; le script PowerShell/.NET de la session du 17 octobre tournait sous WSL et n'est pas conservé : **sur le Mac, PowerShell n'existe pas**, utiliser `montage` d'ImageMagick, `sips` ou Python avec Pillow) ; points déjà connus : Scierie p2 et Entrepôt de bois p2 (longs halls à deux pignons), Académie p2 et Atelier des Remparts p2 (effet fort), Hôpital p2 (ferme blanche).
-2. **Audit des prérequis de bâtiments** (**décidé le 2026-10-17 : une fois les paliers 2 validés**), sous forme de **tableau dans le GDD et/ou arbre de dépendances en Artifact**. Deux couches à croiser : prérequis OGameX hérités dans `app/GameObjects` et déblocage par palier de cité du GDD (section 4.2). Mémoire du projet : `todo-prerequis-batiments`.
+2. **Audit des prérequis de bâtiments** — **premier jet fait le 2026-10-21** (GDD 4.2, « Prérequis et rythme de déblocage », et [l'arbre interactif](https://claude.ai/artifact/2GSoLWt91J28Rve5n12EMK)), points à trancher en cours. Rappel : (**décidé le 2026-10-17 : une fois les paliers 2 validés**), sous forme de **tableau dans le GDD et/ou arbre de dépendances en Artifact**. Deux couches à croiser : prérequis OGameX hérités dans `app/GameObjects` et déblocage par palier de cité du GDD (section 4.2). Mémoire du projet : `todo-prerequis-batiments`.
 3. **Paliers 3** (20 images) : 2 faits ; **à refaire :** Donjon p3 (tours carrées à créneaux à la place des tourelles coniques, colombages à exclure, marge au-dessus de la tour) et Ambassade p3 (case 4 néoclassique mise en réserve) ; **Atelier des Remparts p3** (pierre de taille sans charpente apparente) ; **Hôtel de ville p4 et p5** (briefs prêts).
 4. **Décision éventuelle d'un 4e palier visuel** (par exemple niveau 45) une fois les paliers 3 validés.
 5. **Académie Militaire p1** : candidate à une régénération plus serrée (bâtiment petit dans un cadre large), à décider après le test de lisibilité des paliers 2.
