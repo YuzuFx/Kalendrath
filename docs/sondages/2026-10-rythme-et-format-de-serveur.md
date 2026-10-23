@@ -2,7 +2,7 @@
 
 *Préparé le 2026-10-22 pour le panel de 12 à 15 joueurs (sondage précédent : design, le 2026-10-07). La partie 1 est le texte à reprendre dans l'outil de sondage ; la partie 2 est pour nous seuls : pourquoi chaque question, et ce qu'elle doit trancher. Les résultats seront ajoutés en partie 3.*
 
-Durée visée : 12 à 15 minutes, 19 questions, toutes facultatives sauf la 1.
+Durée visée : 12 à 15 minutes, 19 questions, toutes facultatives (choix de Gregory : on compte sur la bonne volonté du panel ; sans réponse aux questions 1 à 3, on perd la pondération pour la personne concernée).
 
 ---
 
@@ -30,11 +30,11 @@ Durée visée : 12 à 15 minutes, 19 questions, toutes facultatives sauf la 1.
 - 45 minutes à 2 heures
 - Plus de 2 heures
 
-**3. Dans ces jeux, combien avez-vous dépensé en moyenne ?** *(un choix)*
-- Rien
-- Un pass ou un petit achat de temps en temps (moins de 10 € par mois)
-- 10 à 50 € par mois
-- Plus de 50 € par mois
+**3. Combien avez-vous dépensé en moyenne par mois ?** *(un choix)*
+- Rien, je suis F2P
+- Moins de 10 € / mois, un petit abonnement pour me donner du confort
+- Entre 10 € et 49 € / mois, un abonnement, pass et quelques packs
+- Plus de 50 € / mois, je soutiens le jeu à fond et je me fais plaisir
 
 ### B. Durée d'une partie et format de serveur
 
