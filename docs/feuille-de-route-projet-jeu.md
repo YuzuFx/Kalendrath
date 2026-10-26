@@ -2,6 +2,8 @@
 
 *Basé sur nos échanges : clone Ogame-like réorienté fantasy, PvE-first, système héros/gouverneur, prestige d'empire, bots PvE. Développement solo via Claude Code, rythme régulier (quelques heures/semaine), zéro code manuel de ton côté.*
 
+*Depuis le 2026-10-26, la version de référence détaillée est la [Feuille de route Kalendrath](https://claude.ai/artifact/RFdBPx8c1kbQQA5PtBHr9F) (source : [feuille-de-route-kalendrath.html](feuille-de-route-kalendrath.html)). Elle ajoute les jalons publics, les serveurs et le lobby, la communication (C0 à C5) et le financement. Ce document garde le détail historique des phases 0 à 8.*
+
 ---
 
 ## Phase 0 — Cadrage du concept (avant tout code)

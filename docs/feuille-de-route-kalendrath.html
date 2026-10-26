@@ -1,0 +1,340 @@
+<title>Feuille de route Kalendrath</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout : couloir unique, jalons en bandeau, puis une carte par phase ; filtres par piste et par statut. */
+:root {
+  --bg: #eceef2; --surface: #f8f9fb; --fg: #18202b; --muted: #5b6676; --line: #cfd5de;
+  --arcane: #1f7d73; --brass: #9a6b13;
+  --s-done: #2f7f56; --s-doing: #9a6b13; --s-next: #3b66b8; --s-later: #6b7686; --s-decision: #b4452f;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Source Sans 3", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e141b; --surface: #151d27; --fg: #e4e9f0; --muted: #98a4b4; --line: #2a3644;
+  --arcane: #5fc9b8; --brass: #dcae55;
+  --s-done: #5cc08a; --s-doing: #dcae55; --s-next: #7ea4ec; --s-later: #8a95a6; --s-decision: #ee8a72;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --bg: #0e141b; --surface: #151d27; --fg: #e4e9f0; --muted: #98a4b4; --line: #2a3644;
+  --arcane: #5fc9b8; --brass: #dcae55;
+  --s-done: #5cc08a; --s-doing: #dcae55; --s-next: #7ea4ec; --s-later: #8a95a6; --s-decision: #ee8a72;
+  color-scheme: dark; }
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-body); font-size: 16px; line-height: 1.5;
+  margin: 0; padding-block: 40px 72px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.wrap { max-width: 980px; margin: 0 auto; display: flex; flex-direction: column; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; line-height: 1.1; }
+h1 { font-size: clamp(2.2rem, 6vw, 3.4rem); }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.35rem; }
+p { margin: 0; }
+.mono { font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.02em; }
+.muted { color: var(--muted); }
+.lede { max-width: 65ch; color: var(--muted); }
+header { display: flex; flex-direction: column; gap: 12px; padding-bottom: 8px; border-bottom: 2px solid var(--line); }
+.eyebrow { text-transform: uppercase; letter-spacing: 0.14em; color: var(--arcane); }
+
+.miles { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 12px; }
+.mile { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--brass); padding: 14px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.mile.now { border-top-color: var(--arcane); }
+.mile b { font-family: var(--font-display); font-size: 1.15rem; }
+.mile .say { color: var(--muted); font-size: 0.92rem; }
+
+.week { background: var(--surface); border: 1px solid var(--line); padding: 20px; display: flex; flex-direction: column; gap: 14px; }
+.week ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.week li { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: baseline; padding-bottom: 8px; border-bottom: 1px dashed var(--line); min-width: 0; }
+.week li:last-child { border-bottom: 0; padding-bottom: 0; }
+.who { color: var(--muted); text-align: right; }
+
+.filters { display: flex; flex-direction: column; gap: 10px; position: sticky; top: env(safe-area-inset-top, 0px); background: var(--bg); padding-block: 10px; z-index: 5; border-bottom: 1px solid var(--line); }
+.frow { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+.frow > span { color: var(--muted); min-width: 56px; }
+button.chip { font: inherit; font-family: var(--font-mono); font-size: 0.78rem; border: 1px solid var(--line); background: var(--surface); color: var(--fg); padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+button.chip[aria-pressed="true"] { background: var(--fg); color: var(--bg); border-color: var(--fg); }
+button.chip:focus-visible { outline: 2px solid var(--arcane); outline-offset: 2px; }
+
+.phases { display: flex; flex-direction: column; gap: 20px; }
+.phase { background: var(--surface); border: 1px solid var(--line); display: flex; flex-direction: column; min-width: 0; }
+.phead { padding: 18px 20px 12px; display: flex; flex-direction: column; gap: 6px; border-left: 4px solid var(--s-later); }
+.phase[data-st="done"] .phead { border-left-color: var(--s-done); }
+.phase[data-st="doing"] .phead { border-left-color: var(--s-doing); }
+.phase[data-st="next"] .phead { border-left-color: var(--s-next); }
+.ptitle { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: baseline; justify-content: space-between; }
+.badge { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 2px 8px; border: 1px solid currentColor; border-radius: 3px; white-space: nowrap; }
+.b-done { color: var(--s-done); } .b-doing { color: var(--s-doing); } .b-next { color: var(--s-next); } .b-later { color: var(--s-later); } .b-decision { color: var(--s-decision); }
+.tasks { list-style: none; margin: 0; padding: 0 20px 6px; display: flex; flex-direction: column; }
+.task { display: grid; grid-template-columns: 78px 1fr; gap: 12px; padding: 9px 0; border-top: 1px solid var(--line); align-items: baseline; min-width: 0; }
+.task .badge { justify-self: start; }
+.task .txt { min-width: 0; overflow-wrap: anywhere; }
+.task .trk { color: var(--muted); }
+.hook { margin: 6px 20px 18px; padding: 10px 14px; border: 1px dashed var(--brass); color: var(--fg); font-size: 0.95rem; }
+.hook b { color: var(--brass); font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.1em; margin-right: 8px; }
+
+.decs { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 640px; background: var(--surface); border: 1px solid var(--line); }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-family: var(--font-mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 500; }
+footer { color: var(--muted); border-top: 1px solid var(--line); padding-top: 16px; }
+@media (max-width: 560px) { .task { grid-template-columns: 1fr; gap: 4px; } .week li { grid-template-columns: 1fr; } .who { text-align: left; } }
+@media (prefers-reduced-motion: reduce) { * { scroll-behavior: auto; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow mono">Version 1 · mise à jour le 26 octobre 2026</div>
+    <h1>Kalendrath, feuille de route</h1>
+    <p class="lede">Jeu navigateur heroic fantasy, PvE d'abord, bâti sur le moteur OGameX et une interface React. Cette page réunit le développement, la direction artistique, les serveurs, la communication et le financement. Les jalons sont annoncés sans date : chaque phase dit ce qu'elle permet de montrer au public.</p>
+  </header>
+
+  <section aria-labelledby="h-miles" style="display:flex;flex-direction:column;gap:14px">
+    <h2 id="h-miles">Jalons publics</h2>
+    <p class="lede">Chaque jalon est un moment où l'on a quelque chose de vrai à montrer. La version marketing de cette feuille de route part de cette liste.</p>
+    <div class="miles" id="miles"></div>
+  </section>
+
+  <section class="week" aria-labelledby="h-week">
+    <div class="mono muted">Semaine du 26 octobre 2026</div>
+    <h2 id="h-week">Cette semaine : préparer la vitrine</h2>
+    <ul id="week"></ul>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px" aria-labelledby="h-ph">
+    <h2 id="h-ph">Phases</h2>
+    <div class="filters" id="filters" aria-label="Filtres"></div>
+    <div class="phases" id="phases"></div>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:14px" aria-labelledby="h-dec">
+    <h2 id="h-dec">Décisions ouvertes</h2>
+    <div class="decs"><table id="decs"></table></div>
+  </section>
+
+  <footer class="mono">Sources : docs/feuille-de-route-projet-jeu.md, docs/decision-architecture-cible.md, docs/game-design-document.md, docs/etude-serveurs-en-continu.md, docs/references-jeux/lancement-indie-et-communaute.md.</footer>
+</div>
+
+<script>
+const ST = { d: "Fait", o: "En cours", n: "Prochain", l: "Plus tard", x: "À décider" };
+const STC = { d: "done", o: "doing", n: "next", l: "later", x: "decision" };
+const TR = { J: "Jeu", T: "Technique", D: "Direction artistique", C: "Communauté", B: "Business et légal" };
+
+const MILES = [
+  { now: true, t: "Vitrine ouverte", say: "Discord et site d'une page en ligne, liste d'e-mails, première note de devlog.", phase: "C0" },
+  { t: "Design system et écran Héros", say: "L'interface a son identité. Le pilote Héros tourne dans la nouvelle chaîne React.", phase: "3a, 3b" },
+  { t: "Boucle courte jouable", say: "Aperçu, ressources, bâtiments, recherche et chantier dans la nouvelle interface, avec les premiers bots PvE.", phase: "3c, 4.1" },
+  { t: "Alpha entre amis", say: "Serveur de test sur le NAS, ratios accélérés ×3 à ×5, retours structurés.", phase: "5, 6" },
+  { t: "Alpha fermée et financement", say: "Vagues de 10 à 30 testeurs depuis la liste d'e-mails. Décision sur la campagne de financement.", phase: "C2, C3, B" },
+  { t: "Ouverture de s1", say: "Lobby, premier serveur public, chapitre 1.", phase: "S, 7" },
+  { t: "Chapitre 2 et serveur s2", say: "Chaque nouveau chapitre ouvre un nouveau serveur. Le serveur s1 continue.", phase: "S, C5" }
+];
+
+const WEEK = [
+  ["Feuille de route v1 (cette page)", "Claude"],
+  ["Plan marketing complet : cibles, canaux, calendrier calé sur les chapitres, budget, indicateurs", "Claude, puis arbitrage de Gregory"],
+  ["Spécification du Discord (salons, rôles, accueil, AutoMod) et script de mise en place", "Claude. Gregory crée le serveur et le bot"],
+  ["Site vitrine d'une page (pitch, visuels de la DA, formulaire d'e-mails, mention Midjourney)", "Claude. Gregory choisit le domaine"],
+  ["Skills voix-kalendrath, devlog et checklist-publication", "Claude"],
+  ["Réserver les identifiants Discord, Bluesky, X, YouTube, Reddit et le nom de domaine", "Gregory"],
+  ["Lancer la démarche d'auto-entreprise", "Gregory"],
+  ["Étude comparée des IA vidéo pour le teaser (Runway, Veo, Kling, Seedance) et test d'un plan", "Claude, ensuite"]
+];
+
+const PH = [
+ { id: "0", n: "Phase 0, cadrage du concept", st: "d", goal: "Un document de conception assez clair pour que Claude Code sache quoi construire.",
+   tasks: [
+    ["J","d","GDD, lexique Ogame vers fantasy et lore (Straumar, la Rupture, factions, races jouables) rédigés. Quelques [TBD] subsistent, dont la mécanique de l'Hôpital."],
+    ["J","d","Périmètre V1 minimum jouable posé : ressources, bâtiments, recherche, troupes, combat PvE contre bots, un héros par ville."],
+    ["T","d","Base technique tranchée : OGameX."]],
+   hook: "Pitch : univers, piliers de gameplay, promesse « PvE d'abord, pas de pay-to-win »." },
+ { id: "1", n: "Phase 1, environnement de travail", st: "d", goal: "Un poste prêt pour que Claude Code puisse opérer.",
+   tasks: [["T","d","VSCode, extension Claude Code, GitHub, fork d'OGameX cloné, Docker en local."]],
+   hook: "Rien à montrer." },
+ { id: "2", n: "Phase 2, audit d'OGameX", st: "d", goal: "Comprendre la base avant d'y toucher. Terminée le 18 septembre 2026.",
+   tasks: [
+    ["T","d","Stack Docker complète en local, cartographie du code, expéditions confirmées, tableau GDD ↔ OGameX."],
+    ["J","d","Pilote Héros : table, arbre de talents (3 branches, 16 nœuds), équipement à 8 emplacements."],
+    ["T","d","Décision de rester sur OGameX : PHPStan niveau 8 sans erreur, 1109 tests passants."]],
+   hook: "Devlog : « ce qu'on a gardé et ce qu'on a jeté » (113 609 lignes de CSS abandonnées)." },
+ { id: "3a", n: "Phase 3a, mockups et direction artistique", st: "o", goal: "Aucune ligne de front avant que le design system soit arrêté.",
+   tasks: [
+    ["D","o","Planche de style Midjourney (--sref) : méthode arrêtée, briefs rédigés pour les unités, les 19 bâtiments, les 6 paliers de cité."],
+    ["D","o","Paliers visuels des bâtiments : paliers 2 validés (20 sur 20). Les paliers suivants se poursuivent."],
+    ["D","o","Mockups de chaque écran en version PC et en version mobile (390 × 844). La reprise des 4 écrans mobiles est en attente."],
+    ["D","n","Mockup de l'écran Héros, pilote technique de la 3b."],
+    ["D","n","Design system arrêté : palette, typographie, grille, états des composants (file d'attente, carte de bâtiment, compteur)."],
+    ["D","x","Densité d'affichage et comportement responsive, sortir du conteneur figé à 990 px."],
+    ["D","x","Application mobile native (Android et iOS) : objectif posé, approche à cadrer (PWA ou enveloppe native)."],
+    ["B","x","Licence commerciale des images Midjourney : à vérifier avant tout financement ou boutique."]],
+   hook: "Matière visuelle principale : planche de style, bâtiments en trois paliers, cadre d'interface. À publier avec la mention de transparence sur l'IA générative." },
+ { id: "3b", n: "Phase 3b, socle technique et pilote", st: "n", goal: "La chaîne complète service, API, React, tests, validée sur l'écran Héros.",
+   tasks: [
+    ["T","n","FrankenPHP et Laravel Octane en mode worker."],
+    ["T","n","Cache, sessions et file d'attente sur Redis, avec Horizon."],
+    ["T","n","Squelette d'API /api/v1 et Sanctum. Règle stricte : aucune logique de jeu dans les contrôleurs."],
+    ["T","n","Shell React 19 et TypeScript, TanStack Router et Query, Tailwind 4, shadcn/ui, Zustand, Motion."],
+    ["T","n","Playwright pour les parcours d'interface."],
+    ["T","n","Écran Héros comme pilote, puis vérification que les 1109 tests Pest passent toujours."],
+    ["T","x","Moteur de base de données : rester sur MariaDB ou passer à PostgreSQL (voir Décisions ouvertes). À trancher avant le premier déploiement."]],
+   hook: "Premier écran jouable de la nouvelle interface : capture et courte vidéo de l'écran Héros." },
+ { id: "3c", n: "Phase 3c, bascule écran par écran", st: "l", goal: "Le jeu reste jouable en permanence : un écran n'est retiré qu'une fois son remplaçant en place.",
+   tasks: [
+    ["T","l","Lot 2, boucle courte : aperçu, ressources, installations, recherche, chantier, défense."],
+    ["T","l","Résolution temporelle : horodatages absolus, jobs Redis planifiés, diffusion Reverb, verrou et idempotence. Les événements se calculent à partir de la date d'ouverture du serveur (t0)."],
+    ["T","l","Lot 3, temps et espace : galaxie, puis flotte découpée en sous-étapes (envoi, mouvements, rappel, unions)."],
+    ["T","l","Lot 4, rapports. Lot 5, social (alliance, chat, amis, classement). Lot 6, périphérie."],
+    ["T","l","Retirer le middleware GlobalGame, puis supprimer le CSS legacy et les vues Blade obsolètes."],
+    ["T","l","Administration serveur laissée en Blade, volontairement."]],
+   hook: "Devlogs par écran : avant et après, captures de la boucle courte." },
+ { id: "4", n: "Phase 4, mécaniques différenciantes", st: "n", goal: "Ce qui rend le jeu unique. Développé directement dans la nouvelle interface, jamais en Blade.",
+   tasks: [
+    ["J","n","4.1 Bots PvE : cibles dans la galaxie, paliers de difficulté, butin, régénération."],
+    ["J","l","4.2 Héros et gouverneur : stats, niveau, lien à une ville, statut, 6 à 7 héros par joueur."],
+    ["J","l","4.3 Missions PvE pour héros, contre les bots de la 4.1."],
+    ["J","l","4.4 Prestige d'empire : jauge alimentée par les missions, effet par paliers sur la production."],
+    ["J","l","4.5 Craft et forge, équipement de héros."],
+    ["J","l","4.6 Indisponibilité du héros après un échec, régénération passive."],
+    ["J","l","Mode de Guerre : champ sur le joueur, bascule avec délai de 72 h, vérification dans AttackMission."],
+    ["J","x","Transferts de ressources entre joueurs : le moteur hérité permet tout. À décider, car cela conditionne le pushing et les comptes multiples."]],
+   hook: "Teaser : le héros, le prestige et les bots PvE sont ce qui distingue Kalendrath d'OGame." },
+ { id: "5", n: "Phase 5, hébergement de développement (NAS)", st: "l", goal: "Tester en conditions quasi réelles avec les amis, dès que 4.1 et 4.2 sont jouables.",
+   tasks: [
+    ["T","l","Vérifier le support Docker du NAS, déployer la stack avec Redis et Reverb."],
+    ["T","l","Cloudflare Tunnel pour exposer le jeu sans ouvrir de ports, sauvegarde automatique séparée du NAS."],
+    ["C","l","Inviter les amis du panel, itérer sur leurs retours."]],
+   hook: "Premier test public restreint : annonce « alpha entre amis »." },
+ { id: "6", n: "Phase 6, contenu et équilibrage", st: "o", goal: "Assez de contenu pour que le jeu soit amusant sur la durée. Phase qui vit le plus longtemps.",
+   tasks: [
+    ["J","o","Simulateur de theorycrafting (tools/theorycrafting) : prérequis, coûts et rythme de déblocage par palier de cité. Premier jet du 21 octobre."],
+    ["J","o","Sondages du panel : design (7 octobre), puis rythme et format de serveur (rédigé, envoi différé jusqu'à la vitrine)."],
+    ["J","l","Arbre de recherche complet, catalogue de bâtiments et d'unités, équipements de héros par rareté."],
+    ["J","l","Emplacements de cité (socle de 100 à 150 envisagé) et fenêtres cibles par palier, de Village (J1 à J3) à Métropole (J150 à J240)."],
+    ["J","l","Serveur alpha à ratios ×3 à ×5 pour repérer les erreurs de conception avant un serveur ×1."],
+    ["J","l","Stock d'avance d'environ un an d'events et de chapitres avant l'ouverture. Premiers events PvE d'alliance."],
+    ["J","x","Rythme cible d'environ 2 ans pour la fin de cité d'un joueur gratuit actif : à confronter au sondage."]],
+   hook: "Sondages publics, résultats commentés, devlog d'équilibrage." },
+ { id: "S", n: "Serveurs, lobby et exploitation", st: "l", goal: "Un serveur par chapitre, calendrier fixe, sans alourdir la pile ni le coût des premiers serveurs.",
+   tasks: [
+    ["J","x","Format validé par Gregory le 26 octobre : un nouveau serveur à chaque nouveau chapitre. Pas de seuil de population. Les inscriptions sur les anciens serveurs restent ouvertes pour rejoindre un ami."],
+    ["T","l","Lobby (lobby.kalendrath.com) construit dès s1, même vide : comptes (Sanctum), liste des serveurs, jeton signé vérifié par chaque serveur."],
+    ["T","l","Pile partagée sur un seul VPS : une base par serveur, un Redis avec préfixe, un Reverb multi-applications, une image par serveur, un reverse proxy par sous-domaine."],
+    ["T","l","Test de charge pour mesurer le coût réel d'un serveur avant de dimensionner le VPS."],
+    ["T","l","Script de provisionnement : ouvrir un serveur en une commande."],
+    ["J","l","Score de puissance comparable entre serveurs (score OGameX, prestige ou indice composite), normalisé par l'âge du serveur."],
+    ["T","l","Fusion future par migration de personnage vers un serveur neuf, avec réattribution des coordonnées. Hors V1."],
+    ["J","l","Anti-boost : deux personnages du même propriétaire ne sont jamais envoyés sur le même serveur lors d'une fusion."]],
+   hook: "Chaque ouverture de serveur est un événement public : campagne, annonce, invitation d'un ami." },
+ { id: "7", n: "Phase 7, préparation à l'ouverture publique", st: "l", goal: "Passer d'un jeu entre amis à quelque chose d'exposable.",
+   tasks: [
+    ["T","l","VPS (OVH VPS-2 envisagé, environ 8,65 € par mois), migration de la stack, SSL, pipeline de déploiement."],
+    ["B","l","CGU, mentions légales, RGPD (liste d'e-mails et comptes joueurs)."],
+    ["J","l","Modération : signalements, bannissements, chat."],
+    ["B","l","Statut d'auto-entreprise en place avant tout encaissement."]],
+   hook: "Annonce d'ouverture de s1." },
+ { id: "8", n: "Phase 8, monétisation", st: "l", goal: "Soutenir le projet sans casser l'équilibre PvE d'abord.",
+   tasks: [
+    ["B","l","Offre de boutique : cosmétique, gain de temps, rançon de héros capturé. Jamais de pay-to-win direct (plafond de +30 %)."],
+    ["B","l","Audit des boutiques du genre (Last War, Call of Dragons, OGame, Travian, Tribal Wars, Forge of Empires) avant de figer l'offre."],
+    ["T","l","Moyen de paiement (Stripe)."],
+    ["B","l","Repère à étudier : le modèle de don contre objet cosmétique de Kingdom of Loathing."]],
+   hook: "Page « comment le projet est financé », rédigée avec transparence." },
+ { id: "C0", n: "Communication C0, fondations", st: "o", goal: "Poser ce qui coûte peu et qui évite de se faire prendre ses noms. Semaine du 26 octobre.",
+   tasks: [
+    ["C","o","Plan marketing complet et feuille de route publique tirée de cette page."],
+    ["C","o","Discord Kalendrath : 6 à 7 salons, rôles choisis à l'arrivée (vétéran OGame, Travian, 4X mobile, PvE et RPG, curieux), AutoMod, un second modérateur de confiance."],
+    ["C","o","Site vitrine d'une page sur Cloudflare Pages, séparé du VPS du jeu. Liste d'e-mails, mention de transparence sur Midjourney."],
+    ["C","n","Bot de news sans IA : devlog en Markdown, flux RSS, webhook Discord par GitHub Action."],
+    ["C","n","Skills du projet : voix-kalendrath, devlog, checklist-publication."],
+    ["B","n","Nom de domaine et identifiants réservés. Domaine à confirmer (.com ou .fr)."],
+    ["C","l","Sondage de rythme et de format : l'envoyer une fois le Discord et la vitrine en ligne, d'abord au panel connu."]],
+   hook: "Premier devlog et ouverture du Discord." },
+ { id: "C1", n: "Communication C1, présence avant l'alpha", st: "n", goal: "Installer une cadence tenable pendant des années, sans promettre de dates.",
+   tasks: [
+    ["C","n","Un devlog toutes les deux semaines, même court. Annoncer des jalons, jamais des dates. Annoncer aussi les pauses."],
+    ["C","n","Teaser cinématique de 30 à 45 secondes, étiqueté comme tel, sans faux gameplay. Étude comparée des IA vidéo, puis test d'un plan avec le serveur MCP officiel de Runway."],
+    ["C","n","Feuille de route publique en trois colonnes : fait, en cours, plus tard."],
+    ["C","l","Reddit : commenter sincèrement pendant des semaines avant le premier post. Un post par subreddit et par mois. Communautés de développeurs d'abord (r/IndieDev, r/gamedevscreens, fils hebdomadaires de r/gamedev)."],
+    ["C","l","Veille sur les communautés du genre (Agent Reach en lecture seule, compte secondaire), pour combler les communautés non vérifiées."],
+    ["C","l","Réseaux sociaux : deux canaux au plus. Claude rédige, Gregory publie."],
+    ["C","l","Discord de FAQ sous un modèle léger, alimenté par un extrait public des docs, sans outil d'écriture, avec renvoi vers Gregory dès le doute."]],
+   hook: "Le récit : un non-développeur reconstruit un OGame fantasy avec une IA sur une base open source. Un vrai sujet de devlog." },
+ { id: "C2", n: "Communication C2, alpha par vagues", st: "l", goal: "Élargir le panel par cercles : amis, liste d'e-mails, public froid.",
+   tasks: [
+    ["C","l","Vagues de 10 à 30 testeurs, en priorité les profils qui manquent. Rôle Testeur et salon fermé."],
+    ["C","l","Formulaire court en fin de vague : ce qui fait revenir, ce qui fait partir, à quel moment. Noter l'origine de chaque réponse."],
+    ["C","l","Kit de presse : logo, planche de style, captures, texte court."],
+    ["C","l","r/playmygame et r/incremental_games seulement une fois la version jouable. r/WebGames exclu (pas d'inscription)."]],
+   hook: "Premiers témoignages de testeurs et chiffres d'alpha." },
+ { id: "C3", n: "Financement participatif", st: "x", goal: "Seuil envisagé : 5 000 € (1 à 2 ans de frais de fonctionnement et budget de lancement).",
+   tasks: [
+    ["B","x","Critères de déclenchement : alpha jouable, liste d'e-mails solide, teaser publié. L'auto-entreprise doit exister."],
+    ["B","x","Plateforme : Kickstarter (déclaration de l'IA obligatoire, qui pèse sur le taux de réussite), Ulule (public français) ou Ko-fi (plus tard, une fois la cadence de devlog tenue)."],
+    ["B","x","Contreparties cosmétiques uniquement : pas d'avantage de jeu, plafond de +30 %."],
+    ["B","l","Frais de plateforme, fiscalité de l'auto-entreprise et TVA : à confirmer auprès d'un comptable et des pages officielles."]],
+   hook: "La campagne, si elle a lieu, se cale sur un jalon visible et non sur une date." },
+ { id: "C4", n: "Communication C4 et C5, ouverture de s1 puis chaque chapitre", st: "l", goal: "Chaque ouverture de serveur devient un temps fort.",
+   tasks: [
+    ["C","l","Annonce d'ouverture de s1, campagne sur les communautés du genre (r/StrategyGames, Discord Serveur Privé, forums de joueurs)."],
+    ["C","l","Invitation d'un ami : lien qui permet de rejoindre un ami sur un ancien serveur."],
+    ["C","l","À chaque chapitre : annonce du nouveau serveur, devlog du contenu, campagne calée sur la date d'ouverture."],
+    ["C","l","Ne rien promettre d'irréversible sur la fusion des serveurs (leçon New World)."]],
+   hook: "Un calendrier public des chapitres et des serveurs." }
+];
+
+const DEC = [
+ ["Moteur de base de données", "MariaDB ou PostgreSQL. MariaDB et PostgreSQL sont tous deux gratuits en auto-hébergement. Passer à PostgreSQL oblige à rejouer la suite de tests et à remplacer des requêtes propres à MySQL (par exemple FIELD()), et éloigne de l'amont. Supabase auto-hébergé ajoute une douzaine de services, ce qui contredit l'objectif de pile légère.", "Avant le premier déploiement (3b)"],
+ ["Format de serveur", "Un serveur par chapitre, calendrier fixe : validé. Reste à confirmer par le sondage et par un test de charge.", "Sondage, puis 3b"],
+ ["Score de puissance", "Score OGameX (ressources dépensées divisées par 1000), prestige d'empire ou indice composite. À passer au simulateur.", "Avant s2"],
+ ["Domaine", ".com (lobby.kalendrath.com envisagé) ou .fr.", "Cette semaine"],
+ ["Ton éditorial", "Épique et sérieux ou plus léger. Les directions visuelles B et D plaisent, C est rejetée.", "Cette semaine"],
+ ["Plateforme de financement", "Kickstarter, Ulule ou Ko-fi, après l'alpha.", "À l'alpha"],
+ ["IA vidéo du teaser", "Runway (MCP officiel, API facturée à part), Veo, Kling, Seedance. Test d'un plan avant tout engagement.", "Après la vitrine"],
+ ["Transferts de ressources entre joueurs", "Conditionne le pushing et les comptes multiples.", "Phase 4"],
+ ["Licence des images Midjourney", "Usage commercial à vérifier avant tout financement.", "Avant la campagne"],
+ ["Application mobile native", "PWA ou enveloppe native. À cadrer avant de figer le shell React.", "Avant 3b"]
+];
+
+const state = { tr: "all", st: "all" };
+const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+
+function badge(code) { return '<span class="badge b-' + STC[code] + '">' + ST[code] + '</span>'; }
+
+document.getElementById("miles").innerHTML = MILES.map(m =>
+  '<div class="mile' + (m.now ? ' now' : '') + '"><span class="mono muted">Phases ' + esc(m.phase) + '</span><b>' + esc(m.t) + '</b><span class="say">' + esc(m.say) + '</span></div>').join("");
+
+document.getElementById("week").innerHTML = WEEK.map(w =>
+  '<li><span>' + esc(w[0]) + '</span><span class="who mono">' + esc(w[1]) + '</span></li>').join("");
+
+function renderFilters() {
+  const trs = [["all", "Toutes"]].concat(Object.entries(TR));
+  const sts = [["all", "Tous"]].concat(Object.entries(ST));
+  const row = (label, key, list) => '<div class="frow"><span class="mono">' + label + '</span>' +
+    list.map(([k, v]) => '<button class="chip" data-k="' + key + '" data-v="' + k + '" aria-pressed="' + (state[key] === k) + '">' + v + '</button>').join("") + '</div>';
+  document.getElementById("filters").innerHTML = row("Piste", "tr", trs) + row("Statut", "st", sts);
+}
+
+function renderPhases() {
+  const html = PH.map(p => {
+    const tasks = p.tasks.filter(t => (state.tr === "all" || t[0] === state.tr) && (state.st === "all" || t[1] === state.st));
+    if (!tasks.length) return "";
+    const done = p.tasks.filter(t => t[1] === "d").length;
+    return '<article class="phase" data-st="' + STC[p.st] + '"><div class="phead"><div class="ptitle"><h3>' + esc(p.n) + '</h3>' + badge(p.st) + '</div>' +
+      '<p class="muted">' + esc(p.goal) + '</p><span class="mono muted">' + done + ' sur ' + p.tasks.length + ' tâches faites</span></div>' +
+      '<ul class="tasks">' + tasks.map(t => '<li class="task">' + badge(t[1]) + '<span class="txt">' + esc(t[2]) + ' <span class="trk mono">· ' + TR[t[0]] + '</span></span></li>').join("") + '</ul>' +
+      '<div class="hook"><b>Montrer au public</b>' + esc(p.hook) + '</div></article>';
+  }).join("");
+  document.getElementById("phases").innerHTML = html || '<p class="muted">Aucune tâche ne correspond à ces filtres.</p>';
+}
+
+document.getElementById("filters").addEventListener("click", e => {
+  const b = e.target.closest("button.chip");
+  if (!b) return;
+  state[b.dataset.k] = b.dataset.v;
+  renderFilters(); renderPhases();
+});
+
+document.getElementById("decs").innerHTML = '<thead><tr><th>Sujet</th><th>État et position</th><th>À trancher</th></tr></thead><tbody>' +
+  DEC.map(d => '<tr><td><b>' + esc(d[0]) + '</b></td><td>' + esc(d[1]) + '</td><td class="mono">' + esc(d[2]) + '</td></tr>').join("") + '</tbody>';
+
+renderFilters(); renderPhases();
+</script>
