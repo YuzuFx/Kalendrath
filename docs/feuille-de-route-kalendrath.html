@@ -83,14 +83,14 @@ footer { color: var(--muted); border-top: 1px solid var(--line); padding-top: 16
 
 <div class="wrap">
   <header>
-    <div class="eyebrow mono">Version 1 · mise à jour le 26 octobre 2026</div>
+    <div class="eyebrow mono">Version 2 · mise à jour le 27 octobre 2026</div>
     <h1>Kalendrath, feuille de route</h1>
-    <p class="lede">Jeu navigateur heroic fantasy, PvE d'abord, bâti sur le moteur OGameX et une interface React. Cette page réunit le développement, la direction artistique, les serveurs, la communication et le financement. Les jalons sont annoncés sans date : chaque phase dit ce qu'elle permet de montrer au public.</p>
+    <p class="lede">Jeu navigateur heroic fantasy, PvE d'abord, bâti sur le moteur OGameX et une interface React. Cette page réunit le développement, la direction artistique, les serveurs, la communication et le financement. Les jalons sont annoncés sans date jusqu'aux préinscriptions à la bêta, qui fixent la date de la bêta puis celle de la sortie. Chaque phase dit ce qu'elle permet de montrer au public.</p>
   </header>
 
   <section aria-labelledby="h-miles" style="display:flex;flex-direction:column;gap:14px">
     <h2 id="h-miles">Jalons publics</h2>
-    <p class="lede">Chaque jalon est un moment où l'on a quelque chose de vrai à montrer. La version marketing de cette feuille de route part de cette liste.</p>
+    <p class="lede">Chaque jalon est un moment où l'on a quelque chose de vrai à montrer. Ordre arrêté par Gregory le 27 octobre (voir docs/plan-marketing.md).</p>
     <div class="miles" id="miles"></div>
   </section>
 
@@ -111,7 +111,7 @@ footer { color: var(--muted); border-top: 1px solid var(--line); padding-top: 16
     <div class="decs"><table id="decs"></table></div>
   </section>
 
-  <footer class="mono">Sources : docs/feuille-de-route-projet-jeu.md, docs/decision-architecture-cible.md, docs/game-design-document.md, docs/etude-serveurs-en-continu.md, docs/references-jeux/lancement-indie-et-communaute.md.</footer>
+  <footer class="mono">Sources : docs/feuille-de-route-projet-jeu.md, docs/decision-architecture-cible.md, docs/game-design-document.md, docs/etude-serveurs-en-continu.md, docs/references-jeux/lancement-indie-et-communaute.md, docs/plan-marketing.md.</footer>
 </div>
 
 <script>
@@ -120,22 +120,25 @@ const STC = { d: "done", o: "doing", n: "next", l: "later", x: "decision" };
 const TR = { J: "Jeu", T: "Technique", D: "Direction artistique", C: "Communauté", B: "Business et légal" };
 
 const MILES = [
-  { now: true, t: "Vitrine ouverte", say: "Discord et site d'une page en ligne, liste d'e-mails, première note de devlog.", phase: "C0" },
+  { now: true, t: "Communication sur le projet", say: "Vitrine et Discord en français et en anglais, devlog toutes les deux semaines, feuille de route publique, sondages participatifs. Des jalons, pas de dates.", phase: "C0, C1" },
   { t: "Design system et écran Héros", say: "L'interface a son identité. Le pilote Héros tourne dans la nouvelle chaîne React.", phase: "3a, 3b" },
   { t: "Boucle courte jouable", say: "Aperçu, ressources, bâtiments, recherche et chantier dans la nouvelle interface, avec les premiers bots PvE.", phase: "3c, 4.1" },
-  { t: "Alpha entre amis", say: "Serveur de test sur le NAS, ratios accélérés ×3 à ×5, retours structurés.", phase: "5, 6" },
-  { t: "Alpha fermée et financement", say: "Vagues de 10 à 30 testeurs depuis la liste d'e-mails. Décision sur la campagne de financement.", phase: "C2, C3, B" },
-  { t: "Ouverture de s1", say: "Lobby, premier serveur public, chapitre 1.", phase: "S, 7" },
-  { t: "Chapitre 2 et serveur s2", say: "Chaque nouveau chapitre ouvre un nouveau serveur. Le serveur s1 continue.", phase: "S, C5" }
+  { t: "Lancement de l'alpha fermée", say: "Versions 0.1 à 0.4. Vagues de testeurs depuis la liste d'e-mails, ratios accélérés, notes de version publiées à chaque mise à jour.", phase: "5, 6, C2" },
+  { t: "Ouverture du Patreon", say: "Pendant l'alpha : ceux que l'alpha motive peuvent soutenir le développement. Il tient lieu de boutique tant qu'il n'y en a pas.", phase: "C2, B" },
+  { t: "Préinscriptions à la bêta, avec date", say: "Pour attirer des joueurs, pas pour gagner de l'argent. La date et la durée de la bêta sont annoncées, ainsi que les bonus des préinscrits.", phase: "C3" },
+  { t: "Bêta à durée limitée", say: "Versions 0.5 à 0.9. Boutique, classement, bonus des préinscrits et des participants. La date de sortie est annoncée dès le premier jour.", phase: "C3, 8" },
+  { t: "Sortie officielle et s1", say: "Version 1.0, environ 7 jours après la fin de la bêta. Remise à zéro, bonus de démarrage pour les participants et selon le classement de la bêta.", phase: "S, 7, C4" },
+  { t: "Chaque chapitre", say: "Une version majeure par chapitre de s1 (chapitre 2 = 2.0) et un nouveau serveur. Le lobby affiche l'âge de chaque serveur en jours et le nom de son chapitre.", phase: "S, C4" }
 ];
 
 const WEEK = [
-  ["Feuille de route v1 (cette page)", "Claude"],
-  ["Plan marketing complet : cibles, canaux, calendrier calé sur les chapitres, budget, indicateurs", "Claude, puis arbitrage de Gregory"],
-  ["Spécification du Discord (salons, rôles, accueil, AutoMod) et script de mise en place", "Claude. Gregory crée le serveur et le bot"],
-  ["Site vitrine d'une page (pitch, visuels de la DA, formulaire d'e-mails, mention Midjourney)", "Claude. Gregory choisit le domaine"],
+  ["Feuille de route v2 (cette page)", "Claude"],
+  ["Plan marketing v3 : arbitré par Gregory (docs/plan-marketing.md)", "Fait"],
+  ["Noms anglais du lexique, à valider", "Claude, puis Gregory"],
+  ["Spécification du Discord bilingue (salons, rôles, langue à l'arrivée, AutoMod) et script de mise en place", "Claude. Gregory crée l'application et le bot"],
+  ["Site vitrine en français et en anglais (pitch, visuels de la DA, formulaire d'e-mails, mention Midjourney)", "Claude"],
   ["Skills voix-kalendrath, devlog et checklist-publication", "Claude"],
-  ["Réserver les identifiants Discord, Bluesky, X, YouTube, Reddit et le nom de domaine", "Gregory"],
+  ["Créer les comptes : X @Kalendrath et @Kalendrath_FR, Reddit, YouTube, Patreon et les autres réseaux, réservés", "Gregory"],
   ["Lancer la démarche d'auto-entreprise", "Gregory"],
   ["Étude comparée des IA vidéo pour le teaser (Runway, Veo, Kling, Seedance) et test d'un plan", "Claude, ensuite"]
 ];
@@ -146,7 +149,7 @@ const PH = [
     ["J","d","GDD, lexique Ogame vers fantasy et lore (Straumar, la Rupture, factions, races jouables) rédigés. Quelques [TBD] subsistent, dont la mécanique de l'Hôpital."],
     ["J","d","Périmètre V1 minimum jouable posé : ressources, bâtiments, recherche, troupes, combat PvE contre bots, un héros par ville."],
     ["T","d","Base technique tranchée : OGameX."]],
-   hook: "Pitch : univers, piliers de gameplay, promesse « PvE d'abord, pas de pay-to-win »." },
+   hook: "Pitch : univers, piliers de gameplay, promesse « PvE d'abord, PvP jamais subi »." },
  { id: "1", n: "Phase 1, environnement de travail", st: "d", goal: "Un poste prêt pour que Claude Code puisse opérer.",
    tasks: [["T","d","VSCode, extension Claude Code, GitHub, fork d'OGameX cloné, Docker en local."]],
    hook: "Rien à montrer." },
@@ -165,7 +168,7 @@ const PH = [
     ["D","n","Design system arrêté : palette, typographie, grille, états des composants (file d'attente, carte de bâtiment, compteur)."],
     ["D","x","Densité d'affichage et comportement responsive, sortir du conteneur figé à 990 px."],
     ["D","x","Application mobile native (Android et iOS) : objectif posé, approche à cadrer (PWA ou enveloppe native)."],
-    ["B","x","Licence commerciale des images Midjourney : à vérifier avant tout financement ou boutique."]],
+    ["B","x","Licence commerciale des images Midjourney : à vérifier avant l'ouverture du Patreon."]],
    hook: "Matière visuelle principale : planche de style, bâtiments en trois paliers, cadre d'interface. À publier avec la mention de transparence sur l'IA générative." },
  { id: "3b", n: "Phase 3b, socle technique et pilote", st: "n", goal: "La chaîne complète service, API, React, tests, validée sur l'écran Héros.",
    tasks: [
@@ -226,57 +229,64 @@ const PH = [
    hook: "Chaque ouverture de serveur est un événement public : campagne, annonce, invitation d'un ami." },
  { id: "7", n: "Phase 7, préparation à l'ouverture publique", st: "l", goal: "Passer d'un jeu entre amis à quelque chose d'exposable.",
    tasks: [
-    ["T","l","VPS (OVH VPS-2 envisagé, environ 8,65 € par mois), migration de la stack, SSL, pipeline de déploiement."],
+    ["T","l","Trois VPS pour environ 15 € par mois (budget de fonctionnement retenu : environ 40 € par mois pour 1 000 joueurs, capacité visée 2 500), migration de la stack, SSL, pipeline de déploiement."],
     ["B","l","CGU, mentions légales, RGPD (liste d'e-mails et comptes joueurs)."],
     ["J","l","Modération : signalements, bannissements, chat."],
-    ["B","l","Statut d'auto-entreprise en place avant tout encaissement."]],
+    ["B","l","Statut d'auto-entreprise en place avant tout encaissement, donc avant le Patreon de l'alpha."]],
    hook: "Annonce d'ouverture de s1." },
- { id: "8", n: "Phase 8, monétisation", st: "l", goal: "Soutenir le projet sans casser l'équilibre PvE d'abord.",
+ { id: "8", n: "Phase 8, monétisation", st: "l", goal: "Faire rapporter le projet sans casser l'équilibre : le joueur reste au centre.",
    tasks: [
-    ["B","l","Offre de boutique : cosmétique, gain de temps, rançon de héros capturé. Jamais de pay-to-win direct (plafond de +30 %)."],
+    ["B","l","Offre de boutique, ouverte dès la bêta : cosmétique, gain de temps, rançon de héros capturé, pack de confort, pass de saison. Panier visé : 15 € par mois et par payeur. Pay-to-win limité, plafond non chiffré pour l'instant."],
     ["B","l","Audit des boutiques du genre (Last War, Call of Dragons, OGame, Travian, Tribal Wars, Forge of Empires) avant de figer l'offre."],
     ["T","l","Moyen de paiement (Stripe)."],
     ["B","l","Repère à étudier : le modèle de don contre objet cosmétique de Kingdom of Loathing."]],
    hook: "Page « comment le projet est financé », rédigée avec transparence." },
  { id: "C0", n: "Communication C0, fondations", st: "o", goal: "Poser ce qui coûte peu et qui évite de se faire prendre ses noms. Semaine du 26 octobre.",
    tasks: [
-    ["C","o","Plan marketing complet et feuille de route publique tirée de cette page."],
-    ["C","o","Discord Kalendrath : 6 à 7 salons, rôles choisis à l'arrivée (vétéran OGame, Travian, 4X mobile, PvE et RPG, curieux), AutoMod, un second modérateur de confiance."],
-    ["C","o","Site vitrine d'une page sur Cloudflare Pages, séparé du VPS du jeu. Liste d'e-mails, mention de transparence sur Midjourney."],
-    ["C","n","Bot de news sans IA : devlog en Markdown, flux RSS, webhook Discord par GitHub Action."],
-    ["C","n","Skills du projet : voix-kalendrath, devlog, checklist-publication."],
-    ["B","n","Nom de domaine et identifiants réservés. Domaine à confirmer (.com ou .fr)."],
+    ["C","d","Plan marketing complet, arbitré le 27 octobre : pitch B, ton épique avec une pointe de légèreté, vouvoiement, communication en français et en anglais."],
+    ["B","d","Domaine : kalendrath.com en principal, kalendrath.fr redirigé vers lui."],
+    ["C","o","Discord Kalendrath (créé) : langue choisie à l'arrivée, salons doublés en français et en anglais pour les news, les notes de version, le devlog et la discussion, salons visuels communs. Rôles de profil, AutoMod, un second modérateur."],
+    ["C","o","Site vitrine sur Cloudflare Pages, en français et en anglais, séparé du VPS du jeu. Liste d'e-mails, mention de transparence sur Midjourney."],
+    ["C","n","Bot de publication sans IA : news et notes de version en Markdown dans le dépôt, GitHub Action, webhook par salon et par langue, publication automatique vers les serveurs Discord abonnés."],
+    ["C","n","Skills du projet : voix-kalendrath (deux langues), devlog, checklist-publication."],
+    ["J","n","Noms anglais du lexique (ressources, bâtiments, recherches, unités, lieux), proposés par Claude, validés par Gregory. L'anglais doit être dans le jeu dès la première version publique."],
     ["C","l","Sondage de rythme et de format : l'envoyer une fois le Discord et la vitrine en ligne, d'abord au panel connu."]],
    hook: "Premier devlog et ouverture du Discord." },
- { id: "C1", n: "Communication C1, présence avant l'alpha", st: "n", goal: "Installer une cadence tenable pendant des années, sans promettre de dates.",
+ { id: "C1", n: "Communication C1, présence avant l'alpha", st: "n", goal: "Installer une cadence tenable pendant des années. Des jalons, pas de dates.",
    tasks: [
-    ["C","n","Un devlog toutes les deux semaines, même court. Annoncer des jalons, jamais des dates. Annoncer aussi les pauses."],
-    ["C","n","Teaser cinématique de 30 à 45 secondes, étiqueté comme tel, sans faux gameplay. Étude comparée des IA vidéo, puis test d'un plan avec le serveur MCP officiel de Runway."],
-    ["C","n","Feuille de route publique en trois colonnes : fait, en cours, plus tard."],
-    ["C","l","Reddit : commenter sincèrement pendant des semaines avant le premier post. Un post par subreddit et par mois. Communautés de développeurs d'abord (r/IndieDev, r/gamedevscreens, fils hebdomadaires de r/gamedev)."],
-    ["C","l","Veille sur les communautés du genre (Agent Reach en lecture seule, compte secondaire), pour combler les communautés non vérifiées."],
-    ["C","l","Réseaux sociaux : deux canaux au plus. Claude rédige, Gregory publie."],
-    ["C","l","Discord de FAQ sous un modèle léger, alimenté par un extrait public des docs, sans outil d'écriture, avec renvoi vers Gregory dès le doute."]],
-   hook: "Le récit : un non-développeur reconstruit un OGame fantasy avec une IA sur une base open source. Un vrai sujet de devlog." },
- { id: "C2", n: "Communication C2, alpha par vagues", st: "l", goal: "Élargir le panel par cercles : amis, liste d'e-mails, public froid.",
+    ["C","n","Un devlog toutes les deux semaines, en français et en anglais, même court. Annoncer aussi les pauses."],
+    ["C","n","Teaser cinématique de 30 à 45 secondes, étiqueté comme tel, sans faux gameplay, en deux langues. Étude comparée des IA vidéo avant tout engagement."],
+    ["C","n","Feuille de route publique en trois colonnes : fait, en cours, plus tard. Sondages participatifs."],
+    ["C","l","Reddit, en anglais, en priorité : commenter sincèrement pendant des semaines avant le premier post. Un post par subreddit et par mois. Communautés de développeurs d'abord (r/IndieDev, r/gamedevscreens, fils hebdomadaires de r/gamedev)."],
+    ["C","l","X en priorité : @Kalendrath en anglais, @Kalendrath_FR en français. Claude rédige, Gregory publie. Les autres comptes restent réservés et inactifs."],
+    ["C","l","Veille sur les communautés du genre (Agent Reach en lecture seule, compte secondaire)."],
+    ["C","l","Discord de FAQ sous un modèle léger, alimenté par un extrait public des docs, avec renvoi vers Gregory dès le doute."]],
+   hook: "Le récit : un non-développeur construit un jeu de stratégie fantasy avec une IA sur une base open source. Un vrai sujet de devlog." },
+ { id: "C2", n: "Communication C2, alpha fermée et Patreon", st: "l", goal: "Élargir le panel par cercles, et permettre à ceux que l'alpha motive de soutenir le projet.",
    tasks: [
-    ["C","l","Vagues de 10 à 30 testeurs, en priorité les profils qui manquent. Rôle Testeur et salon fermé."],
-    ["C","l","Formulaire court en fin de vague : ce qui fait revenir, ce qui fait partir, à quel moment. Noter l'origine de chaque réponse."],
-    ["C","l","Kit de presse : logo, planche de style, captures, texte court."],
-    ["C","l","r/playmygame et r/incremental_games seulement une fois la version jouable. r/WebGames exclu (pas d'inscription)."]],
-   hook: "Premiers témoignages de testeurs et chiffres d'alpha." },
- { id: "C3", n: "Financement participatif", st: "x", goal: "Seuil envisagé : 5 000 € (1 à 2 ans de frais de fonctionnement et budget de lancement).",
+    ["C","l","Alpha fermée, versions 0.1 à 0.4 : vagues de testeurs, en priorité les profils et la langue qui manquent. Rôle Testeur et salon fermé."],
+    ["C","l","Salons de notes de version ouverts. Chaque mise à jour a ses notes, avec l'ancienne et la nouvelle valeur de chaque changement d'équilibrage."],
+    ["C","l","Formulaire court en fin de vague : ce qui fait revenir, ce qui fait partir, à quel moment."],
+    ["B","l","Ouverture du Patreon pendant l'alpha, sans seuil : soutien, visibilité, crédibilité. Il tient lieu de boutique tant qu'il n'y en a pas. Préalables : auto-entreprise, compte bancaire, règles de Patreon lues."],
+    ["B","x","Contreparties Patreon : avantages hors jeu (rôle, crédits, devlog en avant-première, vote sur un nom) et, en jeu, cosmétiques non échangeables recommandés."],
+    ["C","l","Kit de presse : logo, planche de style, captures, texte court."]],
+   hook: "Premiers témoignages de testeurs, chiffres d'alpha, ouverture du Patreon." },
+ { id: "C3", n: "Préinscriptions et bêta", st: "l", goal: "Attirer des joueurs, puis les fidéliser. La bêta est séparée du Patreon.",
    tasks: [
-    ["B","x","Critères de déclenchement : alpha jouable, liste d'e-mails solide, teaser publié. L'auto-entreprise doit exister."],
-    ["B","x","Plateforme : Kickstarter (déclaration de l'IA obligatoire, qui pèse sur le taux de réussite), Ulule (public français) ou Ko-fi (plus tard, une fois la cadence de devlog tenue)."],
-    ["B","x","Contreparties cosmétiques uniquement : pas d'avantage de jeu, plafond de +30 %."],
-    ["B","l","Frais de plateforme, fiscalité de l'auto-entreprise et TVA : à confirmer auprès d'un comptable et des pages officielles."]],
-   hook: "La campagne, si elle a lieu, se cale sur un jalon visible et non sur une date." },
- { id: "C4", n: "Communication C4 et C5, ouverture de s1 puis chaque chapitre", st: "l", goal: "Chaque ouverture de serveur devient un temps fort.",
+    ["C","l","Préinscriptions à la bêta avec une date annoncée, et la durée de la bêta. Campagne sur les communautés qui acceptent du jouable (r/playmygame, r/IndieGaming, Discord « Serveur Privé »), e-mail à toute la liste, teaser."],
+    ["J","l","Bêta à durée limitée, versions 0.5 à 0.9 : boutique, classement public qui crée la compétition, bonus des préinscrits et des participants."],
+    ["C","l","Date de sortie annoncée dès le premier jour de la bêta : fin de bêta et 7 jours (10 au plus). Chaque date annoncée est un engagement tenu."],
+    ["J","l","Gel du contenu de la 1.0 deux à trois semaines avant la fin de la bêta, pour que la pause ne serve qu'à la remise à zéro, aux bonus et aux derniers correctifs."],
+    ["B","l","Achats faits pendant la bêta : un tiers restitué sur s1 en monnaie virtuelle (décidé le 27 octobre). Règle écrite sur la boutique et dans les conditions de vente avant la première vente."],
+    ["J","l","Récompenses du classement de bêta : titres et effets cosmétiques, plus de petits bonus ou un pass de saison premium offert aux meilleurs (décidé le 27 octobre)."],
+    ["J","l","Bonus liés à un compte vérifié, pour éviter les comptes multiples de bêta."]],
+   hook: "Le compte à rebours de la bêta, puis celui de la sortie." },
+ { id: "C4", n: "Communication C4 et C5, sortie officielle puis chaque chapitre", st: "l", goal: "Chaque sortie de chapitre et chaque ouverture de serveur deviennent un temps fort.",
    tasks: [
-    ["C","l","Annonce d'ouverture de s1, campagne sur les communautés du genre (r/StrategyGames, Discord Serveur Privé, forums de joueurs)."],
-    ["C","l","Invitation d'un ami : lien qui permet de rejoindre un ami sur un ancien serveur."],
-    ["C","l","À chaque chapitre : annonce du nouveau serveur, devlog du contenu, campagne calée sur la date d'ouverture."],
+    ["C","l","Sortie officielle, version 1.0 et s1 : remise à zéro, bonus de démarrage des participants à la bêta et bonus selon leur classement."],
+    ["C","l","Campagne sur les communautés du genre, invitation d'un ami, calendrier public des chapitres."],
+    ["J","l","Une version majeure par chapitre de s1 (chapitre 2 = 2.0). Les chapitres portent un nom. Le lobby affiche pour chaque serveur son âge en jours et le nom de son chapitre."],
+    ["C","l","À chaque chapitre : annonce du chapitre par son nom, du nouveau serveur, devlog du contenu."],
     ["C","l","Ne rien promettre d'irréversible sur la fusion des serveurs (leçon New World)."]],
    hook: "Un calendrier public des chapitres et des serveurs." }
 ];
@@ -285,12 +295,14 @@ const DEC = [
  ["Moteur de base de données", "MariaDB ou PostgreSQL. MariaDB et PostgreSQL sont tous deux gratuits en auto-hébergement. Passer à PostgreSQL oblige à rejouer la suite de tests et à remplacer des requêtes propres à MySQL (par exemple FIELD()), et éloigne de l'amont. Supabase auto-hébergé ajoute une douzaine de services, ce qui contredit l'objectif de pile légère.", "Avant le premier déploiement (3b)"],
  ["Format de serveur", "Un serveur par chapitre, calendrier fixe : validé. Reste à confirmer par le sondage et par un test de charge.", "Sondage, puis 3b"],
  ["Score de puissance", "Score OGameX (ressources dépensées divisées par 1000), prestige d'empire ou indice composite. À passer au simulateur.", "Avant s2"],
- ["Domaine", ".com (lobby.kalendrath.com envisagé) ou .fr.", "Cette semaine"],
- ["Ton éditorial", "Épique et sérieux ou plus léger. Les directions visuelles B et D plaisent, C est rejetée.", "Cette semaine"],
- ["Plateforme de financement", "Kickstarter, Ulule ou Ko-fi, après l'alpha.", "À l'alpha"],
+ ["Plafond de l'écart payeur", "Aucun plafond chiffré écrit pour l'instant (30 ou 50 %), et jamais de communication sur le pay-to-win ni sur un plafond. Boutique attrayante, contenu exigeant pour le joueur gratuit, ligues de niveaux pour les events PvP. Panier visé : 15 € par mois et par payeur.", "Audit de la Phase 8"],
+ ["Nom de la monnaie virtuelle", "À fixer, puis à intégrer aux mockups.", "Cette semaine"],
+ ["Contreparties Patreon", "Avantages hors jeu et cosmétiques non échangeables recommandés.", "Avant l'ouverture du Patreon"],
+ ["Bonus de démarrage sur s1", "Ampleur du bonus des participants à la bêta. À passer au simulateur.", "Avant les préinscriptions"],
+ ["Noms anglais et noms des chapitres", "Proposés par Claude, validés par Gregory.", "Avant l'alpha publique"],
  ["IA vidéo du teaser", "Runway (MCP officiel, API facturée à part), Veo, Kling, Seedance. Test d'un plan avant tout engagement.", "Après la vitrine"],
  ["Transferts de ressources entre joueurs", "Conditionne le pushing et les comptes multiples.", "Phase 4"],
- ["Licence des images Midjourney", "Usage commercial à vérifier avant tout financement.", "Avant la campagne"],
+ ["Licence des images Midjourney", "Usage commercial à vérifier.", "Avant l'ouverture du Patreon"],
  ["Application mobile native", "PWA ou enveloppe native. À cadrer avant de figer le shell React.", "Avant 3b"]
 ];
 
