@@ -258,6 +258,44 @@ Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle 
 
 **Résultat, reçu le 2026-10-04 : validé, tranché en faveur de la variante bâton.** Les deux variantes gagnent nettement en impact par rapport à l'essai 1 — cercle runique enfin bien visible sur les deux, éclairs beaucoup plus présents. La variante "deux mains" est impressionnante en pure énergie mais dilue la lisibilité (pas de point focal d'arme, silhouette moins nette en petite icône). **Référence retenue : variante bâton, variation 2** (haut-droite) — pose dynamique de face, cercle runique net, éclair qui part clairement du cristal vers la horde en contrebas. Brief figé dans [direction-artistique-unites.md](direction-artistique-unites.md) sur la version bâton.
 
+## Icônes des quatre ressources et de la Kaelite (briefs du 2026-10-28, non testés)
+
+Une série de cinq icônes pour les compteurs de ressources des mockups et du design system. Elles partent du prompt d'icône v3 (section 3), validé à `--sref` de l'ancre et `--sw 275`. Pour qu'elles se lisent comme **une même série**, toutes les cinq gardent la même fin de prompt (fond, cadrage, taille de l'objet) ; seul le sujet change.
+
+**Règles de la série :**
+- **Une couleur par ressource**, pour qu'on les distingue à 24 px : Bois en bois clair, Fer en gris métal et rouille, Mana en violet-bleu, Nourriture en or de blé, Kaelite en or ambré veiné de violet. **Le violet-bleu pur est réservé au Mana** : les trois ressources sans magie excluent `glow, violet, crystal`.
+- **Le Mana ne garde pas le minerai de fer** du prompt v3 : à côté de l'icône du Fer, il prêterait à confusion. Il pousse dans de la roche sombre seule.
+- **La Kaelite** : cristal formé dans les vestiges de Kaelhelm (lore, section 3), d'où le fragment de pierre de ruine. Or ou ambre veiné de violet, jamais le violet-bleu du Mana.
+- **Ordre conseillé :** Mana d'abord (le plus proche du v3 validé), puis Kaelite, Fer, Bois, Nourriture. Si la série manque de cohérence, ajouter l'icône de Mana validée comme second `--sref` (`--sref <ancre> <icône mana>`).
+- **À contrôler :** l'objet entier dans le cadre et centré, aucun texte, aucune bague ni bijou, une silhouette qui se lit réduite à 32 px.
+
+**Bois**
+```
+Dark heroic fantasy RPG resource icon, a small bundle of exactly three thick freshly cut pale pine logs tied together with a rough rope, clearly visible tree rings and bark on the cut ends, clearly a raw crafting material, no magical glow, warm natural wood tones, muted earthy palette, flat simple digital illustration icon style, isolated on a clean flat dark neutral background, centered composition, the single object filling about two thirds of the frame, simple bold readable silhouette designed to stay legible at small icon scale, highly detailed but not visually noisy --ar 1:1 --stylize 150 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no photography, text, letters, watermark, frame, border, scenery, floating, reflection, ring, jewelry, glow, violet, crystal, axe, fire
+```
+
+**Fer**
+```
+Dark heroic fantasy RPG resource icon, a small stack of exactly three rough dark iron ingots with hammer marks resting on a chunk of rust-red iron ore, dull metallic grey sheen, clearly a raw crafting material, no magical glow, muted earthy palette (iron grey, rust red), flat simple digital illustration icon style, isolated on a clean flat dark neutral background, centered composition, the single object filling about two thirds of the frame, simple bold readable silhouette designed to stay legible at small icon scale, highly detailed but not visually noisy --ar 1:1 --stylize 150 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no photography, text, letters, watermark, frame, border, scenery, floating, reflection, ring, jewelry, glow, violet, crystal, gold, silver, coins, sword
+```
+
+**Mana**
+```
+Dark heroic fantasy RPG resource icon, a raw uncut cluster of deep violet-blue mana crystals growing out of a small chunk of dark weathered rock, uniform soft deep violet-blue arcane glow, clearly a raw crafting material, not jewelry, muted earthy palette for the rock, flat simple digital illustration icon style, isolated on a clean flat dark neutral background, centered composition, the single object filling about two thirds of the frame, simple bold readable silhouette designed to stay legible at small icon scale, highly detailed but not visually noisy --ar 1:1 --stylize 150 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no photography, text, letters, watermark, frame, border, scenery, floating, reflection, ring, jewelry, wearable, gemstone jewelry, claw setting, prongs, metal band, iron ore, orange, red, fire, cyan, neon, electric blue, white glow
+```
+
+**Nourriture**
+```
+Dark heroic fantasy RPG resource icon, a tied sheaf of ripe golden wheat with clearly visible heavy ears of grain, bound with a twisted straw band, a single round loaf of rustic bread at its base, clearly a basic food supply, no magical glow, warm amber and golden tones, muted earthy palette, flat simple digital illustration icon style, isolated on a clean flat dark neutral background, centered composition, the single object filling about two thirds of the frame, simple bold readable silhouette designed to stay legible at small icon scale, highly detailed but not visually noisy --ar 1:1 --stylize 150 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no photography, text, letters, watermark, frame, border, scenery, floating, reflection, ring, jewelry, glow, violet, crystal, basket, plate, table, fruit, corn
+```
+
+**Kaelite**
+```
+Dark heroic fantasy RPG premium currency icon, a single raw faceted crystal of warm gold-amber color with thin glowing violet veins running through it, half embedded in a broken fragment of ancient dark carved ruin stone, soft warm golden inner glow, precious and rare, clearly a raw crystal and not jewelry, muted earthy palette for the stone, flat simple digital illustration icon style, isolated on a clean flat dark neutral background, centered composition, the single object filling about two thirds of the frame, simple bold readable silhouette designed to stay legible at small icon scale, highly detailed but not visually noisy --ar 1:1 --stylize 150 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no photography, text, letters, watermark, frame, border, scenery, floating, reflection, ring, jewelry, wearable, gemstone jewelry, claw setting, prongs, coin, blue crystal, cyan, neon, electric blue, orange fire, red
+```
+
+Archivage d'une icône validée : `docs/direction-artistique/references/icone-<ressource>.png` (upscale Subtle), une ligne dans [references/README.md](references/README.md), case choisie et prompt réellement utilisé ici.
+
 ## Points encore ouverts
 
 - [x] Image ancre choisie et URL du `--sref` figé — voir "Image ancre retenue"

@@ -52,7 +52,22 @@ Règle de coût : **la Nourriture suit les êtres vivants, jamais la pierre** (u
 
 Supprimés : `fusion_plant`, `lunar_base`, `missile_silo`. `terraformer` devient la recherche Rite d'Ancrage Tellurique.
 
-Paliers de cité : 6 validés le 2026-10-12 (Hameau, Village, Bourg, Cité fortifiée, Citadelle, Métropole), passage à 10 paliers en cours de validation. Noms anglais à fixer avec la liste des 10 paliers (GDD 4.2).
+## Paliers de cité (10, validés le 2026-10-28, GDD 4.2)
+
+| Palier | Niveaux d'Hôtel de ville | Français | Anglais |
+|---|---|---|---|
+| 1 | 1-3 | Hameau | Hamlet |
+| 2 | 4-6 | Village | Village |
+| 3 | 7-9 | Bourg | Market Town |
+| 4 | 10-12 | Ville franche | Chartered Town |
+| 5 | 13-15 | Place forte | Stronghold |
+| 6 | 16-18 | Citadelle | Citadel |
+| 7 | 19-21 | Cité-Obélisque | Obelisk City |
+| 8 | 22-24 | Cité palatine | Palatine City |
+| 9 | 25-27 | Métropole | Metropolis |
+| 10 | 28-30 | Cité des Sphères | City of the Spheres |
+
+Noms abandonnés, à ne plus employer : Cité fortifiée, Cité arcanique, *Free Town*.
 
 ## Recherches
 

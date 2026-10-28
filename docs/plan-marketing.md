@@ -149,7 +149,13 @@ L'hébergement gratuit d'OVH (offert avec le domaine : 1 site, 100 Mo, SSL, d'ap
 1. **La publication automatique.** Le devlog, les news et les notes de version partent du dépôt GitHub (section 6) : Cloudflare Pages republie le site à chaque fusion sur `main`, sans rien faire. Chez OVH, il faudrait envoyer les fichiers par FTP depuis la GitHub Action, avec des identifiants à gérer et rien de prévu pour.
 2. **L'archive grossit.** Deux langues, un devlog toutes les deux semaines avec ses images : les 100 Mo seront atteints en un à deux ans. Cloudflare Pages n'a pas de plafond de stockage qui nous concerne.
 
-Le domaine et la boîte `contact@` **restent chez OVH** : on ajoute seulement une entrée DNS qui pointe `kalendrath.com` vers Cloudflare Pages, sans toucher aux entrées de messagerie (MX). L'hébergement gratuit d'OVH peut servir plus tard à autre chose (une page de statut, par exemple).
+**Décision de Gregory du 2026-10-28 : la solution la plus stable.** C'est Cloudflare Pages, pour une troisième raison qui compte plus que les deux autres :
+
+3. **La vitrine ne dépend pas des serveurs de jeu.** Elle est servie depuis le réseau mondial de Cloudflare, pas depuis nos VPS. Si un VPS tombe, si une mise à jour tourne mal ou si le jeu est attaqué, la vitrine reste en ligne et peut annoncer l'incident. C'est précisément le moment où les joueurs viennent la consulter.
+
+**Le parcours du joueur.** Les boutons « Connexion » et « Inscription » de la vitrine sont de simples liens vers le **lobby** (`lobby.kalendrath.com`), qui tourne sur le VPS avec les serveurs de jeu ([étude des serveurs](etude-serveurs-en-continu.md)). La vitrine ne gère aucun compte : le formulaire d'inscription, la connexion et le portefeuille de Kaelite sont dans le lobby. Le chemin est donc `kalendrath.com` (Cloudflare) → `lobby.kalendrath.com` (VPS) → `s1.kalendrath.com` (VPS).
+
+**Le DNS passe chez Cloudflare** (correction du 2026-10-28) : pour servir le domaine nu `kalendrath.com` depuis Cloudflare Pages, Cloudflare doit gérer le DNS du domaine. On change donc les serveurs de noms chez OVH pour ceux de Cloudflare (gratuit). Le domaine reste **enregistré** chez OVH, et la boîte `contact@` reste chez OVH : on recopie ses entrées de messagerie (MX, SPF, DKIM) dans Cloudflare avant la bascule, sans quoi le courrier s'arrête. Bénéfices au passage : un DNS rapide et protégé contre les attaques, et la possibilité, plus tard, de placer le lobby et les serveurs derrière la protection de Cloudflare. L'hébergement gratuit d'OVH peut servir plus tard à autre chose (une page de statut, par exemple).
 
 ### Steam
 
@@ -286,7 +292,7 @@ Décision de Gregory du 2026-10-28 : la Kaelite appartient au **compte**, pas au
 
 - **Pour le joueur :** un seul solde, valable sur tous les serveurs où il joue. Les packs de gros volume deviennent intéressants pour qui joue sur plusieurs serveurs, et rien n'est perdu quand un serveur ferme ou fusionne.
 - **Techniquement :** le portefeuille vit dans le **lobby**, qui tient déjà les comptes ([étude des serveurs](etude-serveurs-en-continu.md)). Chaque serveur demande au lobby de débiter le solde par un appel signé, et chaque débit porte un identifiant unique pour qu'un double clic ou une coupure réseau ne débite jamais deux fois. C'est un peu plus de travail qu'un solde par serveur, mais une seule fois, et c'est la base dont la bêta a besoin.
-- **Le point à concevoir :** la Kaelite **gagnée gratuitement** en jeu (events, récompenses). Si elle est liée au compte elle aussi, un joueur peut la farmer sur un vieux serveur facile, ou avec des comptes secondaires, et la dépenser sur un serveur neuf. **Piste :** deux soldes, la Kaelite **achetée** (compte, tous serveurs) et la Kaelite **gagnée** (serveur où elle a été gagnée), affichés comme une seule somme et dépensés dans un ordre fixé (gagnée d'abord).
+- **Deux soldes (décision de Gregory du 2026-10-28) :** la Kaelite **achetée** appartient au compte (tous serveurs) ; la Kaelite **gagnée** en jeu (events, récompenses) reste sur le **serveur** où elle a été gagnée. Sinon, un joueur pourrait la farmer sur un vieux serveur facile, ou avec des comptes secondaires, pour alimenter un seul serveur. Le joueur voit une seule somme, avec le détail au survol, et la Kaelite gagnée se dépense en premier. Techniquement, le solde acheté vit dans le lobby et le solde gagné dans la base du serveur.
 
 ### Règles décidées le 2026-10-27 et le 2026-10-28
 
@@ -330,6 +336,22 @@ Décision de Gregory du 2026-10-28 : la Kaelite appartient au **compte**, pas au
 - **Les actions passent par la session du joueur, jamais par la clé d'extension.** Une clé d'extension ne peut pas construire, recruter ni envoyer d'armée.
 - **Détection du rythme non humain :** des actions trop régulières ou trop rapides sur une session déclenchent un contrôle (vérification, puis enquête). À cadrer avec la fiche [triche, multicomptes et bots](references-jeux/triche-multicomptes-bots.md).
 - Ce chantier touche l'API (clés et droits de Sanctum) : à prévoir dès le squelette d'API de la Phase 3b, sans rouvrir les choix d'architecture.
+
+### Verrouiller l'API ouverte (Gregory, 2026-10-28)
+
+Gregory valide l'ouverture aux extensions, sur le modèle des add-ons de certains MMORPG : elle crée de l'attachement et donne du contrôle sur ce que font les outils. La condition : **ce qui n'est pas ouvert est verrouillé dans le code**, pas seulement interdit par les règles.
+
+- **Fermé par défaut.** Une clé d'extension n'accède qu'aux routes inscrites sur une liste blanche, avec des droits (*scopes*) explicites. Toute nouvelle route de l'API est fermée aux extensions tant qu'on ne l'a pas ouverte volontairement.
+- **Séparation physique.** Les routes ouvertes aux extensions forment un groupe à part, testé à part : des tests Pest vérifient qu'une clé d'extension reçoit un refus sur chaque route d'action (construire, recruter, envoyer, acheter).
+- **Limites de débit** par clé et par compte, journal des appels, révocation d'une clé en un clic par le joueur ou par l'équipe.
+- **Audit de sécurité avant l'ouverture**, par des personnes compétentes (Gregory : « un soin particulier avec des gens qui vont verrouiller et sécuriser tout ça »). L'API d'extension ne s'ouvre qu'après cet audit, pas avant l'alpha.
+
+### Le pack d'extensions de l'abonnement de confort (Gregory, 2026-10-28)
+
+Une partie des petites extensions de confort fera partie d'un **pack inclus dans l'abonnement de confort, à 5 ou 10 € par mois** (prix à trancher). Deux points à garder en tête :
+
+- **Du confort, jamais de la puissance** : affichage, rappels, raccourcis, tableaux de bord. Ce que le pack fait doit rester faisable à la main par le joueur gratuit.
+- **La concurrence des extensions gratuites.** Un joueur pourra écrire, pour la communauté, une extension qui fait la même chose qu'une extension du pack, tant qu'elle se contente de lire. On ne peut pas l'empêcher sans fermer la lecture, ce qui contredirait l'ouverture. Donc la valeur du pack doit tenir à ce qu'une extension tierce ne peut pas faire : l'intégration dans l'interface, les fonctions que seul le serveur accorde, la fiabilité. À cadrer quand on définira le contenu du pack.
 
 ### Comportements bannissables (premier jet, à valider)
 
