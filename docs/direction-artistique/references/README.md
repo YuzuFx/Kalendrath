@@ -24,6 +24,14 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 
 *Fournies par Gregory le 2026-10-04. Copies locales en pleine résolution : `cite.png` (3360 × 1440) et `ressource-mana.png` (2048 × 2048).*
 
+## Icônes des ressources et de la Kaelite (cf. [direction-artistique-planche-de-style.md](../../direction-artistique-planche-de-style.md))
+
+| Icône | Fichier | URL Midjourney |
+|---|---|---|
+| Mana | `icone-mana.png` (2048 × 2048) | https://cdn.midjourney.com/36a2e402-fdd2-4c45-b1ec-54aaa6e8b004/0_0.png |
+
+*Sol et ombre portée imposés par l'ancre `--sref` : icônes à détourer à l'intégration.*
+
 ## Bâtiments (cf. [direction-artistique-batiments.md](../../direction-artistique-batiments.md))
 
 | Bâtiment | Palier | Fichier | URL Midjourney |
