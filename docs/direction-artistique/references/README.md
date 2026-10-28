@@ -31,6 +31,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Mana | `icone-mana.png` (2048 × 2048) | https://cdn.midjourney.com/36a2e402-fdd2-4c45-b1ec-54aaa6e8b004/0_0.png |
 | Kaelite | `icone-kaelite.png` (2048 × 2048, signature parasite en bas à droite, sur le sol : disparaît au détourage) | https://cdn.midjourney.com/2fdb80ce-182d-49ad-97d9-3bdb7e1daeb2/0_0.png |
 | Fer | `icone-fer.png` (2048 × 2048) | https://cdn.midjourney.com/78de5f0e-e28a-4391-bd0d-00ee0487e837/0_0.png |
+| Bois | `icone-bois.png` (2048 × 2048, signature parasite en bas à droite, sur le sol : disparaît au détourage) | https://cdn.midjourney.com/39937397-0cf7-428b-9278-1f8556366e18/0_0.png |
 
 *Sol et ombre portée imposés par l'ancre `--sref` : icônes à détourer à l'intégration.*
 
