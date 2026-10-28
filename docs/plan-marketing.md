@@ -23,9 +23,17 @@
 13. **Sortie officielle environ 7 jours après la fin de la bêta** (10 au plus ; 15 jours paraît trop long pour un nouveau projet). Si la bêta dure 4 mois, la sortie a lieu à 4 mois et 7 jours.
 14. **Argent :** le projet doit aussi rapporter. **Aucun plafond chiffré n'est écrit** pour l'instant (30 ou 50 %, à décider). Panier visé : **15 € par mois et par joueur payant** (entre le pack de confort et le pass de saison).
 16. **La communication ne parle jamais de pay-to-win, ni de plafond, ni d'écart payeur** (décision du 2026-10-27). Un chiffre serait jugé trop élevé par les uns, et dissuaderait les joueurs qui aiment dépenser, qui y liraient un jeu sans enjeu. On le joue plus finement : **une boutique attrayante**, qui accélère réellement le joueur payant, et **un contenu intéressant et exigeant pour le joueur gratuit**. Pour les events PvP, les **ligues de niveaux** répartissent les joueurs par tranche.
-17. **Achats faits pendant la bêta : un tiers restitué sur s1.** Exemple : 30 € dépensés en bêta, 10 € de monnaie virtuelle rendus sur s1. Le joueur a profité de son investissement pendant la bêta.
+17. **Achats faits pendant la bêta : +30 % de Kaelite offerte sur tout achat** (proposition de Gregory du 2026-10-28, qui remplace la restitution d'un tiers en fin de bêta). La Kaelite est liée au compte : ce qui n'est pas dépensé reste après la remise à zéro (voir 8).
 18. **Récompenses du classement de bêta : titres et effets cosmétiques**, mis en avant par le classement, plus de **petits bonus** ou **un pass de saison premium offert** pour les meilleurs.
 19. **Les dates sont des engagements.** Les joueurs n'aiment pas les dates floues ni repoussées : on annonce une date seulement quand on peut la tenir, et on la tient.
+
+**Ajouts du 2026-10-28 :**
+
+20. **Un projet ouvert à sa communauté**, y compris aux extensions et outils que les joueurs écriront (avec l'IA, il y en aura) : les bonnes idées ont vocation à entrer dans le jeu. En face, des sécurités sur les fonctions automatiques, pour garder leur valeur aux options payantes, et une liste des comportements bannissables (voir 9).
+21. **Publicité payante : pas avant que le jeu génère du chiffre d'affaires.** Aucun budget n'y est alloué aujourd'hui.
+22. **Monnaie premium : la Kaelite**, liée au compte et non au serveur.
+23. **Réseaux créés :** Discord, communauté Reddit `r/Kalendrath` (en anglais seulement, Reddit étant surtout anglophone : pas de version FR), adresse `contact@kalendrath.com`.
+24. **Mode de Guerre remis en question** : PvP individuel on/off, ou PvP d'alliance contre alliance avec diplomatie et casus belli. Étude à mener ([GDD 5.4](game-design-document.md)). Le message public attend son résultat (voir 2).
 15. **Coûts de fonctionnement retenus : environ 40 € par mois** pour 1 000 joueurs (Claude Code 20 €, trois VPS pour environ 15 €, domaine 2 €). Capacité visée : environ 2 500 joueurs.
 
 ---
@@ -36,7 +44,7 @@
 2. **Posséder sa liste.** La liste d'e-mails (et les préinscriptions qui s'y rattachent) est le seul canal que le projet possède vraiment.
 3. **Des jalons, pas des dates, jusqu'aux préinscriptions ; ensuite, des dates tenues.** À partir des préinscriptions, chaque date annoncée est un engagement : date de la bêta, puis date de sortie, que la durée fixe de la bêta permet d'annoncer à l'avance. Une date se planifie avec sa marge avant d'être annoncée, jamais l'inverse.
 4. **Le jouable débloque les communautés de joueurs.** Avant l'alpha, on parle aux communautés de développeurs et au panel connu.
-5. **Pas de publicité payante avant d'avoir mesuré ce que rapporte un joueur.** La bêta donnera ce chiffre ; on décide ensuite.
+5. **Pas de publicité payante tant que le jeu ne génère pas de chiffre d'affaires.** Elle se financera sur les revenus, une fois connu ce que rapporte un joueur.
 6. **Transparence sur l'IA**, d'emblée et partout.
 7. **Une cadence tenable des années.** Claude rédige les deux langues, Gregory valide. Chaque action récurrente doit tenir en moins d'une heure par semaine pour Gregory.
 
@@ -52,7 +60,7 @@ La version anglaise s'adapte, elle ne se traduit pas mot à mot (skill `voix-kal
 
 ### Les arguments, dans l'ordre
 
-1. **Le PvP n'est jamais subi.** Mode de Guerre : invulnérable par défaut, exposé seulement sur activation volontaire et réciproque.
+1. **Le PvP n'est jamais injuste.** Formulation d'attente : la forme exacte (Mode de Guerre individuel, ou guerre d'alliances avec casus belli) dépend de l'étude en cours. Ce qui ne changera pas : un joueur pacifique ou sans alliance ne se fait pas écraser par plus fort que lui.
 2. **Un monde neuf à chaque chapitre.** Un nouveau serveur à chaque chapitre, sur un calendrier fixe ; on peut toujours rejoindre un ami sur un serveur plus ancien.
 3. **Un héros qui gouverne votre cité.** Archétypes, talents, équipement de la Forge. Un échec coûte du temps, jamais le héros.
 4. **Du défi pour chacun.** Un contenu PvE exigeant, des events, et des ligues de niveaux pour que chacun affronte des joueurs de sa force.
@@ -126,12 +134,31 @@ Les jeux installés vivent sur Facebook, Instagram, YouTube et Discord, avec de 
 | **Vitrine `kalendrath.com`** (Cloudflare Pages) | Référence, devlogs, notes de version, formulaire d'e-mail, puis préinscriptions | FR et EN (`/fr`, `/en`) | C0 |
 | **Liste d'e-mails** (Brevo) | Le seul canal possédé | Selon la langue choisie | C0 |
 | **Discord Kalendrath** | Communauté, panel, retours, alpha et bêta | FR et EN | C0 (créé) |
-| **Reddit** (priorité) | Développeurs avant l'alpha, joueurs après | EN | Compte à créer maintenant, premier post dans un à deux mois |
+| **Reddit** (priorité) | `r/Kalendrath` (créée) pour la communauté ; posts sur les communautés de développeurs avant l'alpha, de joueurs après | EN uniquement | Premier post ailleurs dans un à deux mois, le temps que le compte soit crédible |
+| **E-mail `contact@kalendrath.com`** (créée, chez OVH) | Contact public, presse, partenaires | FR et EN | C0 |
 | **X `@Kalendrath`** (priorité) | Coulisses, captures, #ScreenshotSaturday, communauté #gamedev | EN | C1 |
 | **X `@Kalendrath_FR`** (priorité) | Mêmes contenus adaptés, actualité francophone | FR | C1 |
 | **YouTube** | Teaser, vidéos d'avancement ; une seule chaîne, titres et sous-titres traduits | FR et EN | Au teaser |
 | **Patreon** | Soutien au projet, crédibilité | FR et EN | Alpha |
 | **Instagram, Facebook, TikTok, Bluesky** | Comptes réservés, inactifs ; Instagram et Facebook à reconsidérer à la bêta (public des jeux installés) | — | Plus tard |
+
+### Hébergement de la vitrine : Cloudflare Pages plutôt que l'hébergement gratuit d'OVH
+
+L'hébergement gratuit d'OVH (offert avec le domaine : 1 site, 100 Mo, SSL, d'après les [pages d'OVHcloud](https://www.ovhcloud.com/fr/web-hosting/)) suffirait en taille, à condition de compresser les images (en WebP, une illustration pèse 100 à 300 Ko). Deux raisons de rester sur Cloudflare Pages :
+
+1. **La publication automatique.** Le devlog, les news et les notes de version partent du dépôt GitHub (section 6) : Cloudflare Pages republie le site à chaque fusion sur `main`, sans rien faire. Chez OVH, il faudrait envoyer les fichiers par FTP depuis la GitHub Action, avec des identifiants à gérer et rien de prévu pour.
+2. **L'archive grossit.** Deux langues, un devlog toutes les deux semaines avec ses images : les 100 Mo seront atteints en un à deux ans. Cloudflare Pages n'a pas de plafond de stockage qui nous concerne.
+
+Le domaine et la boîte `contact@` **restent chez OVH** : on ajoute seulement une entrée DNS qui pointe `kalendrath.com` vers Cloudflare Pages, sans toucher aux entrées de messagerie (MX). L'hébergement gratuit d'OVH peut servir plus tard à autre chose (une page de statut, par exemple).
+
+### Steam
+
+**Pas maintenant ; à reconsidérer après l'ouverture de s1.**
+
+- **Ce que Steam apporte :** de la découverte (recherche, recommandations, liste de souhaits), des avis, des événements comme le Steam Next Fest.
+- **Ce qu'il impose :** un client à installer (le jeu doit embarquer l'API Steamworks, donc une enveloppe de bureau autour du jeu navigateur) ; et **tout achat en jeu fait depuis la version Steam passe par le portefeuille Steam** ([documentation Steamworks](https://partner.steamgames.com/doc/features/microtransactions)), avec la commission de Valve (30 % au départ, de mémoire, à vérifier). La Kaelite étant liée au compte, le lobby devrait créditer les achats Steam comme les autres : faisable, mais c'est un chantier.
+- **Le risque :** sur Steam, un jeu est jugé sur ses avis dès le premier jour. Un jeu de gestion par navigateur dans une enveloppe, sans version finie, s'expose à des avis négatifs difficiles à rattraper.
+- **Quand y revenir :** une fois s1 stable et les revenus connus. On peut alors ouvrir une page Steam (liste de souhaits) quelques mois avant un chapitre, avec un client de bureau léger. Cela rejoint la décision sur l'application mobile (PWA ou enveloppe native) : la même enveloppe peut servir aux deux.
 
 ### Règles des communautés
 
@@ -253,15 +280,70 @@ L'ordre décidé par Gregory, avec ce que fait la communication à chaque étape
 - **Classement** public, qui crée la compétition.
 - **Remise à zéro avant s1** ; bonus de démarrage sur s1 pour les participants, et bonus supplémentaires selon le classement.
 
-### Règles décidées le 2026-10-27
+### Kaelite liée au compte
 
-1. **Achats faits pendant la bêta : un tiers restitué sur s1**, en monnaie virtuelle. La règle doit être **écrite avant l'ouverture de la boutique de bêta** (page de la boutique et conditions de vente), pour que chaque acheteur la connaisse au moment de payer : c'est ce qui la rend juste et la protège juridiquement.
+Décision de Gregory du 2026-10-28 : la Kaelite appartient au **compte**, pas au serveur.
+
+- **Pour le joueur :** un seul solde, valable sur tous les serveurs où il joue. Les packs de gros volume deviennent intéressants pour qui joue sur plusieurs serveurs, et rien n'est perdu quand un serveur ferme ou fusionne.
+- **Techniquement :** le portefeuille vit dans le **lobby**, qui tient déjà les comptes ([étude des serveurs](etude-serveurs-en-continu.md)). Chaque serveur demande au lobby de débiter le solde par un appel signé, et chaque débit porte un identifiant unique pour qu'un double clic ou une coupure réseau ne débite jamais deux fois. C'est un peu plus de travail qu'un solde par serveur, mais une seule fois, et c'est la base dont la bêta a besoin.
+- **Le point à concevoir :** la Kaelite **gagnée gratuitement** en jeu (events, récompenses). Si elle est liée au compte elle aussi, un joueur peut la farmer sur un vieux serveur facile, ou avec des comptes secondaires, et la dépenser sur un serveur neuf. **Piste :** deux soldes, la Kaelite **achetée** (compte, tous serveurs) et la Kaelite **gagnée** (serveur où elle a été gagnée), affichés comme une seule somme et dépensés dans un ordre fixé (gagnée d'abord).
+
+### Règles décidées le 2026-10-27 et le 2026-10-28
+
+1. **Achats faits pendant la bêta : +30 % de Kaelite offerte sur tout achat** (proposition de Gregory du 2026-10-28, recommandée ; elle remplace la restitution d'un tiers en fin de bêta). Comparaison :
+
+   | | +30 % à l'achat | Un tiers restitué en fin de bêta |
+   |---|---|---|
+   | **Technique** | Un multiplicateur au moment de créditer l'achat. Rien à calculer à la fin | Tenir le compte de ce que chacun a dépensé, calculer et créditer à la remise à zéro, gérer les réclamations |
+   | **Ressenti du joueur** | Gain immédiat et visible (« +30 % pendant la bêta ») : c'est un argument de vente, et une raison d'acheter **pendant** la bêta | Récompense différée, et vécue comme une perte (« on me reprend les deux tiers ») |
+   | **Communication** | Une bannière sur la boutique | Une règle à expliquer, puis un message de fin de bêta |
+
+   Ce qui le rend possible : **la Kaelite est liée au compte**. La remise à zéro efface la progression sur le serveur de bêta, pas le solde du compte : la Kaelite non dépensée passe sur s1. La règle s'écrit sur la boutique et dans les conditions de vente avant la première vente : « Votre progression de bêta sera remise à zéro à la sortie ; votre Kaelite non dépensée est conservée sur votre compte. »
+
+   **Effet à surveiller :** un joueur peut acheter beaucoup pendant la bêta, bonus compris, et ne rien dépenser, pour arriver sur s1 avec un gros stock. C'est du chiffre d'affaires encaissé d'avance, mais aussi une avance au démarrage de s1. Si le simulateur montre que c'est trop, on plafonne le report (par exemple, le bonus de 30 % seulement sur la Kaelite dépensée en bêta).
 2. **Récompenses du classement : titres et effets cosmétiques**, que le classement met en avant, plus de petits bonus ou un pass de saison premium offert aux meilleurs. Le bonus de démarrage des participants reste modeste, à passer au simulateur avant d'annoncer.
 3. **Les comptes multiples.** Un bonus par participant pousse à créer plusieurs comptes de bêta. Les bonus sont liés à un compte vérifié (e-mail, activité minimale), cf. [triche, multicomptes et bots](references-jeux/triche-multicomptes-bots.md).
 
 ---
 
-## 9. Budget et rentabilité
+## 9. Communauté, extensions et règles du jeu
+
+**Principe (Gregory, 2026-10-28) :** avec l'IA, des joueurs écriront des extensions et des outils pour améliorer le jeu ou se simplifier la vie. Le projet y est ouvert, et intègre au jeu les fonctions pertinentes. En face, des sécurités sur les fonctions automatiques, pour que les options payantes gardent leur valeur, et des règles claires sur ce qui est bannissable.
+
+### S'ouvrir aux outils des joueurs
+
+- **Une seule porte d'entrée : l'API du jeu.** La nouvelle interface React passe déjà par une API JSON (`/api/v1`). Un outil de joueur peut s'appuyer sur la même API, avec une **clé d'extension** que le joueur crée lui-même, distincte de sa session, et limitée à la lecture au départ.
+- **Un lieu pour ces outils :** un salon Discord (`#outils-et-extensions` / `#tools-and-addons`) et une page de la vitrine qui recense les outils autorisés.
+- **Intégrer les bonnes idées :** quand un outil devient indispensable (simulateur de combat, calculateur de production, rappel de fin de chantier), on l'intègre au jeu, en créditant son auteur (titre ou cosmétique, mention dans les notes de version). C'est le meilleur moyen de dire à la communauté qu'on l'écoute.
+
+### Ce qui est autorisé, encadré, interdit (premier jet)
+
+| | Exemples | Règle |
+|---|---|---|
+| **Autorisé** | Affichage, calculs, simulateurs, statistiques, cartes, rappels, outils d'alliance hors jeu | Libre, tant que l'outil lit sans agir |
+| **Encadré** | Outils qui lisent l'API en continu (tableaux de bord d'alliance) | Clé d'extension, limite de débit par compte |
+| **Interdit** | Toute action de jeu déclenchée sans clic humain : relancer une file, envoyer une armée, farmer des cibles, répondre à une attaque | Bannissable ; et surtout **empêché côté serveur** quand c'est possible |
+
+### Protéger les options payantes
+
+- **Les règles payantes vivent sur le serveur, pas dans l'interface.** Une deuxième file de construction, une automatisation vendue en boutique : c'est le serveur qui les accorde. Un outil de joueur peut afficher, il ne peut pas créer une file que le serveur refuse.
+- **Les actions passent par la session du joueur, jamais par la clé d'extension.** Une clé d'extension ne peut pas construire, recruter ni envoyer d'armée.
+- **Détection du rythme non humain :** des actions trop régulières ou trop rapides sur une session déclenchent un contrôle (vérification, puis enquête). À cadrer avec la fiche [triche, multicomptes et bots](references-jeux/triche-multicomptes-bots.md).
+- Ce chantier touche l'API (clés et droits de Sanctum) : à prévoir dès le squelette d'API de la Phase 3b, sans rouvrir les choix d'architecture.
+
+### Comportements bannissables (premier jet, à valider)
+
+1. Scripts ou bots qui agissent à la place du joueur.
+2. Multicomptes au-delà de ce que permettent les règles (un compte par serveur), et transferts entre comptes d'un même joueur (*pushing*).
+3. Partage, vente ou achat de compte.
+4. Commerce en argent réel de ressources, d'objets ou de Kaelite en dehors de la boutique.
+5. Exploitation volontaire d'un bug sans le signaler.
+6. Contournement d'une protection (bouclier, ligue, règle de guerre).
+7. Harcèlement, propos haineux, usurpation de l'équipe de Kalendrath.
+
+**Sanctions graduées :** avertissement, suspension temporaire, bannissement, avec une voie d'appel. Les règles se publient dans les conditions d'utilisation (Phase 7) et sur la vitrine, en français et en anglais, **avant** l'alpha fermée.
+
+## 10. Budget et rentabilité
 
 ### Coûts de fonctionnement (décision de Gregory)
 
@@ -287,7 +369,7 @@ Le Patreon de l'alpha n'est pas chiffré : impossible à prévoir, et ce n'est p
 
 ---
 
-## 10. Indicateurs
+## 11. Indicateurs
 
 Pas de seuils de déclenchement : les étapes suivent l'ordre de la section 7. On suit en revanche ces chiffres, pour savoir ce qui marche :
 
@@ -304,20 +386,20 @@ Pas de seuils de déclenchement : les étapes suivent l'ordre de la section 7. O
 
 ---
 
-## 11. Risques
+## 12. Risques
 
 | Risque | Parade |
 |---|---|
 | Rejet de l'IA générative | Transparence d'emblée ; règles lues avant chaque post |
 | Épuisement, aggravé par le bilinguisme | Claude rédige les deux langues ; actions récurrentes de moins d'une heure par semaine |
 | Communauté anglaise trop petite | Catégorie anglaise ouverte avec le premier post Reddit ; salons visuels communs |
-| Colère après la remise à zéro des achats de bêta | Règle du tiers restitué écrite avant la première vente (voir 8) |
+| Colère après la remise à zéro des achats de bêta | Bonus de +30 % et conservation de la Kaelite non dépensée, écrits avant la première vente (voir 8) |
 | Date annoncée puis repoussée | Une date ne s'annonce qu'avec sa marge ; gel du contenu avant la fin de bêta, marge interne de 3 jours sur la sortie |
 | Dépendance au Discord | La liste d'e-mails reste le canal principal |
 
 ---
 
-## 12. Ce que les décisions du jour changent ailleurs
+## 13. Ce que les décisions du jour changent ailleurs
 
 - **CLAUDE.md :** l'anglais doit être disponible dans le jeu dès la première version publique (mis à jour).
 - **GDD, question 8 :** plus de plafond chiffré écrit pour l'instant, et rien de tel dans la communication (mis à jour).
@@ -325,7 +407,7 @@ Pas de seuils de déclenchement : les étapes suivent l'ordre de la section 7. O
 - **Noms anglais** du lexique, des chapitres et des lieux : proposition de Claude à venir, validation de Gregory.
 - **Feuille de route :** la phase « financement participatif » disparaît, remplacée par Patreon pendant l'alpha ; une bêta à durée limitée et une pause de 7 jours s'insèrent avant s1.
 
-## 13. À faire par Gregory
+## 14. À faire par Gregory
 
 - Créer les comptes : X `@Kalendrath` et `@Kalendrath_FR`, Reddit, YouTube, Patreon, et par précaution Instagram, Facebook, TikTok, Bluesky.
 - Commencer à commenter sur Reddit, en anglais, dans r/StrategyGames, r/IndieDev et r/gamedev, sans parler de Kalendrath.
@@ -334,7 +416,7 @@ Pas de seuils de déclenchement : les étapes suivent l'ordre de la section 7. O
 - Créer les comptes Cloudflare et Brevo, configurer la redirection de `kalendrath.fr`.
 - Lancer la démarche d'auto-entreprise (préalable au Patreon).
 
-## 14. Suite
+## 15. Suite
 
 1. Mettre à jour la feuille de route (artefact et source) avec l'ordre de la section 7.
 2. Proposer les noms anglais du lexique.
