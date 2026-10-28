@@ -45,6 +45,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Scierie | 3 (niv. 30+) | `batiment-scierie-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/139de172-4d85-4330-9c76-7afd14695367/0_0.png |
 | Mine de fer | 1 (niv. 1-14) | `batiment-mine-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6618e10e-66c3-4d50-8a84-3b9a3c64a8f3/0_0.png |
 | Mine de fer | 2 (niv. 15-29) | `batiment-mine-de-fer-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/89afce82-944a-48c3-8ee8-8e99f5bd2d44/0_0.png |
+| Mine de fer | 3 (niv. 30+) | `batiment-mine-de-fer-palier3.png` (2688 × 1792, **retouchée** en Quick Edit : veines violettes à droite) | https://cdn.midjourney.com/85f0bc1f-6d51-4754-a6b7-522eba66469c/0_0.png *(upscale avant retouche : https://cdn.midjourney.com/4219d906-15bc-4f6a-97d5-126b4ed46850/0_0.png)* |
 | Puits de mana | 1 (niv. 1-14) | `batiment-puits-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/74a58407-9f05-44e3-85a4-a48b20097199/0_0.png |
 | Puits de mana | 2 (niv. 15-29) | `batiment-puits-de-mana-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/e45076da-eceb-46d8-9d8b-6f34e0916bc9/0_0.png |
 | Champ de blé | 1 (niv. 1-14) | `batiment-champ-de-ble-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/b1dd8d79-ee47-4882-8bbd-cc110670802e/0_0.png |
