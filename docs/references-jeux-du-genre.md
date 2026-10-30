@@ -222,9 +222,11 @@ Les 20 questions des quatre critiques, fusionnées. Chaque question donne des op
     Options : (a) transport limité à ses propres cités ; (b) marché entre joueurs avec taxe, ratio borné et plafond hebdomadaire ; (c) tout ouvert, comme OGame.
     *Avis* : (a), configurable pour rester proche de l'upstream, avant l'alpha.
 
-## 6. Trous à combler quand le quota de recherche reviendra
+## 6. Trous à combler
 
-Par priorité :
+**Mise à jour du 2026-10-30.** Une deuxième vague de recherche (4 agents, détail dans [references-jeux/complements/](references-jeux/complements/)) a comblé peu de trous. Ce qui est acquis : durées de base de la fin du Hall de Call of Dragons (≈ 222 j du niveau 20 au 25) et de la Fournaise de Whiteout (265 j du niveau 30 à FC5) ; monde Travian Kingdoms ×1 d'environ 20 semaines ; un seul taux de payeurs navigateur sourcé (Fallen London, ~10 %, 2015) ; paliers de prix en dollars de Last War et Call of Dragons ; motifs de départ classés (pay-to-win, bots tolérés, support, pression d'alliance, publicité trompeuse) ; coûts du projet (médiateur ~30-80 €/an, paiement 1,5 à 5 %, micro-entreprise 12,3 / 21,2 / 25,6 %). **Complément Reddit (même jour)** : un navigateur piloté depuis WSL lit maintenant Reddit ([temps-reel-whiteout-reddit](references-jeux/complements/temps-reel-whiteout-reddit.md), [reddit-vague-2](references-jeux/complements/reddit-vague-2.md)). Le trou 1 est comblé en partie : un gratuit actif atteint la Fournaise 30 de Whiteout en ~100 à 180 jours, le QG 30 de Last War en ~120 à 150 jours, la Mairie 25 de Rise of Kingdoms en ~100 à 132 jours (témoignages déclaratifs). Call of Dragons, la rétention, les fusions et OGame (sous-reddit inaccessible) restent ouverts. **Les trous 2 à 4 restent largement ouverts** : les données qui les comblent sont sur Reddit, les Discords ou derrière des rapports payants, que les agents ne lisent pas. Ces chiffres sont à relire avant d'être cités (sources non officielles pour les prix, ToS Midjourney non lus à la source).
+
+Par priorité (liste d'origine, avant la deuxième vague) :
 
 1. **Temps réel d'un joueur gratuit actif** jusqu'au dernier niveau central de Whiteout (Fournaise 30, FC5), Rise of Kingdoms (Mairie 25), Last War (QG 30), Call of Dragons (Hall 25, T5). Pistes : r/whiteoutsurvival, Discords de joueurs, classements de serveurs. C'est le chiffre qui manque le plus à la cible des 2 ans.
 2. **Sourcer les records T5 de Call of Dragons** (380 et 567 jours) et les temps du Hall 20 à 25.

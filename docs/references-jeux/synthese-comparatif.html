@@ -224,7 +224,7 @@ html { scroll-behavior: smooth; }
 
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow">Kalendrath · comparatif élargi · 23 octobre 2026</span>
+    <span class="eyebrow">Kalendrath · comparatif élargi · 23 octobre 2026, complété le 30 octobre</span>
     <h1>Kalendrath face au genre</h1>
     <p class="hero-lede">Ce que font 13 jeux de stratégie persistants et 7 cas utiles, ce que cela change pour tes décisions, et les 12 choix qui restent à trancher.</p>
     <div class="meta">
@@ -232,9 +232,10 @@ html { scroll-behavior: smooth; }
       <span><b>4</b> critiques contradictoires</span>
       <span><b>20</b> leçons</span>
       <span><b>12</b> décisions à trancher</span>
+      <span><b>7</b> compléments du 30 octobre</span>
     </div>
     <div class="banner" role="note"><span class="ico" aria-hidden="true">!</span>
-      <p><b>Recherche partielle.</b> Le quota de recherche web s'est épuisé en cours de route : beaucoup de cases sont « non trouvé », Reddit n'a pas pu être lu. Aucune donnée publique de rétention au-delà de 30 jours pour un 4X, et aucun temps réel de joueur gratuit : les durées citées sont des durées de chantier <i>de base</i>, sans bonus.</p>
+      <p><b>Recherche encore partielle.</b> Le 30 octobre, une lecture directe de Reddit a donné pour la première fois des <i>temps réels</i> de joueurs gratuits actifs (Whiteout, Last War, Rise of Kingdoms), mais ce sont des témoignages déclaratifs. Restent introuvables : le temps réel sur Call of Dragons, la rétention au-delà de 30 jours, les taux de payeurs des jeux navigateur à abonnement et tout ce qui concerne OGame (r/OGame inaccessible). Les autres durées citées sont des durées de chantier <i>de base</i>, sans bonus.</p>
     </div>
   </div>
 </header>
@@ -278,10 +279,10 @@ html { scroll-behavior: smooth; }
   <div class="charts">
     <figure class="chart wide" style="margin:0">
       <h3>Jours de chantier pour finir le bâtiment central</h3>
-      <p class="sub">Durées de base, sans bonus ni accélérateur. La ligne pointillée est la cible de Kalendrath, exprimée en temps réel pour un gratuit actif : les deux ne se comparent qu'en ordre de grandeur.</p>
-      <div class="svg-scroll"><svg id="ch-build" viewBox="0 0 760 330" role="img" aria-label="Durée de chantier du bâtiment central par jeu"></svg></div>
+      <p class="sub">Les barres pleines sont des durées de base, sans bonus ni accélérateur. Les trois barres claires « réel » sont des témoignages de joueurs gratuits actifs (Reddit, 30 octobre) : les accélérateurs gagnés en jeu les ramènent à environ la moitié de la durée de base. La ligne pointillée est la cible de Kalendrath, en temps réel pour un gratuit actif.</p>
+      <div class="svg-scroll"><svg id="ch-build" viewBox="0 0 760 440" role="img" aria-label="Durée de chantier du bâtiment central par jeu"></svg></div>
       <details class="tbl"><summary>Voir en tableau</summary><div class="tscroll"><table id="tb-build"></table></div></details>
-      <p class="note">Aucun jeu étudié ne fait attendre 2 ans son dernier niveau central. Leurs « deux ans » sont des couches ajoutées (FC chez Whiteout, plasma chez State of Survival, QG 31-35 chez Last War) ou des objectifs militaires. Sources : whiteout-survival, rise-of-kingdoms, verification-des-4-jeux, state-of-survival, evony.</p>
+      <p class="note">Aucun jeu étudié ne fait attendre 2 ans son dernier niveau central : en temps réel, un gratuit actif y arrive en 3 à 6 mois. Leurs « deux ans » sont des couches ajoutées (FC chez Whiteout, plasma chez State of Survival, QG 31-35 chez Last War) ou des objectifs militaires. Sources : whiteout-survival, rise-of-kingdoms, verification-des-4-jeux, state-of-survival, evony.</p>
     </figure>
     <figure class="chart" style="margin:0">
       <h3>Combien de joueurs restent après l'installation</h3>
@@ -389,8 +390,8 @@ html { scroll-behavior: smooth; }
 <section id="trous">
   <div class="sec-head">
     <span class="eyebrow">Trous à combler</span>
-    <h2>À chercher quand le quota de recherche reviendra</h2>
-    <p>Par ordre de priorité. Le premier est le chiffre qui manque le plus à la cible des 2 ans.</p>
+    <h2>Ce qui est comblé et ce qui reste ouvert</h2>
+    <p>État au 30 octobre, après une deuxième vague de recherche et la lecture de Reddit. Par ordre de priorité d'origine ; ce qui reste ouvert tient à des données que le web public ne livre pas (rapports payants, Discords, sous-reddits privés).</p>
   </div>
   <ol class="gaps" id="gaps"></ol>
 </section>
@@ -398,14 +399,14 @@ html { scroll-behavior: smooth; }
 <section id="fiches">
   <div class="sec-head">
     <span class="eyebrow">Fiches</span>
-    <h2>Les 23 documents source</h2>
-    <p>Dans le dépôt, dossier <span class="mono">docs/references-jeux/</span>. La synthèse texte est <span class="mono">docs/references-jeux-du-genre.md</span>.</p>
+    <h2>Les 30 documents source</h2>
+    <p>Dans le dépôt, dossier <span class="mono">docs/references-jeux/</span> (les compléments du 30 octobre sont dans <span class="mono">complements/</span>). La synthèse texte est <span class="mono">docs/references-jeux-du-genre.md</span>.</p>
   </div>
   <div class="files" id="files"></div>
 </section>
 
 </main>
-<footer><div class="wrap">Synthèse du 23 octobre 2026, tirée de 19 fiches de recherche et 4 critiques. Les décisions qui en sortent vont dans le GDD.</div></footer>
+<footer><div class="wrap">Synthèse du 23 octobre 2026, complétée le 30 octobre par sept documents (dont trois lectures de Reddit), à partir de 19 fiches de recherche et 4 critiques. Les décisions qui en sortent vont dans le GDD.</div></footer>
 <div id="tip" hidden></div>
 
 <script>
@@ -415,7 +416,7 @@ const FIAB = { Bonne: "p-good", Moyenne: "p-warn", Faible: "p-bad" };
 
 /* ---------- L'essentiel : constats ---------- */
 const FINDINGS = [
-  ["p-bad", "Rythme", "Aucun jeu étudié ne fait attendre 2 ans son dernier niveau central (Fourneau 30 : 215 j de base, Mairie 25 : 257 j). Les chiffres de Call of Dragons qui fondaient la cible ne sont sourcés nulle part."],
+  ["p-bad", "Rythme", "Aucun jeu étudié ne fait attendre 2 ans son dernier niveau central (Fourneau 30 : 215 j de base, Mairie 25 : 257 j). Les témoignages Reddit donnent, en temps réel, 100 à 180 jours (Whiteout), 120 à 150 (Last War) et 100 à 132 (Rise of Kingdoms) à un gratuit actif. Les chiffres de Call of Dragons qui fondaient la cible ne sont toujours sourcés nulle part."],
   ["p-warn", "Économie", "Le modèle plafonné couvre ses frais vers 1 500 joueurs actifs mensuels. Il ne te paie 1 500 € nets qu'autour de 21 000."],
   ["p-good", "Positionnement", "Un plafond d'avance payante chiffré n'existe dans aucun 4X. C'est l'argument le plus fort d'un projet sans budget, à condition d'en faire une mesure."],
   ["p-good", "PvE-first", "Viable à l'échelle d'Elvenar (200 M€ en 10 ans, 40 % des joueurs depuis plus de 5 ans). Forge of Empires a fermé son PvP de guilde en 2024 à la demande des joueurs."],
@@ -423,6 +424,8 @@ const FINDINGS = [
   ["p-info", "Rattrapage", "Le genre rattrape par séparation (serveurs neufs). Ta ligne accélérée n'a aucun précédent complet, mais elle est faisable parce que le jeu est PvE-first."],
   ["p-info", "Format", "Un seul monde tant qu'il n'est pas plein : les mondes peu peuplés meurent ou fusionnent. Hybride recommandé, cité persistante et saisons PvE."],
   ["p-warn", "Triche", "Le transport de ressources hérité d'OGameX laisse deux comptes en Mode Paix se nourrir entre eux. À fermer avant l'alpha, une vérification et un test."],
+  ["p-warn", "Communication", "r/indiegames interdit l'IA générative dans les posts (règle 12 : art, visuels, musique). r/4Xgaming n'a pas de règle sur l'IA mais interdit l'autopromotion hors mégafils. À prévoir avant de poster des visuels Midjourney (relevé du 30 octobre)."],
+  ["p-info", "Départs", "Motifs récurrents sur Reddit : toxicité d'alliance, surcharge de minuteurs, dépense jugée vaine, or pay-to-win. Un transfert vers un serveur fort peut démotiver : le lien social pèse plus que la puissance."],
 ];
 $("#findings").innerHTML = FINDINGS.map(([c, t, p]) => `<div class="finding"><span class="tag ${c}">${t}</span><p>${p}</p></div>`).join("");
 
@@ -466,6 +469,9 @@ const BUILD = [
   { name: "State of Survival · QG 25-30 seuls", d: 146, partial: true, fiab: "Moyenne", note: "Au moins 146 jours bruts ; QG 30 à 39,5 jours pour un seul chantier. Puis 5 niveaux plasma ajoutés après coup." },
   { name: "Whiteout · Fournaise + FC1-10", d: 910, fiab: "Moyenne", note: "~215 + ~695 jours de base, mais le contenu FC est débloqué par l'âge du serveur (J60 à J500-600)." },
   { name: "Evony · Donjon 35 (nominal)", d: 1139, fiab: "Moyenne", note: "Durée nominale du wiki : elle se paie en accélérateurs. Un guide donne 8 à 14 mois en gratuit." },
+  { name: "Whiteout · Fournaise 30 · réel", d: 140, real: true, fiab: "Faible", note: "Témoignages Reddit : 100 à 180 jours pour un gratuit actif ou très faible dépensier ; dépensiers modérés (~500 $ à vie) vers J50-60. Déclaratif." },
+  { name: "Last War · QG 30 · réel", d: 135, real: true, fiab: "Faible", note: "Fil Reddit d'une vingtaine de réponses : 120 à 150 jours pour un gratuit motivé ; ~100 j avec 1 à 1,5 k$ ; 11 j pour une baleine ; 210 à 315 j pour les occasionnels. Déclaratif." },
+  { name: "Rise of Kingdoms · Mairie 25 · réel", d: 115, real: true, fiab: "Faible", note: "~100 jours pour un gratuit qui pousse (avant la première KvK), 132 jours sans pousser. Déclaratif." },
 ];
 (function () {
   const svg = $("#ch-build"); hatch(svg);
@@ -484,17 +490,17 @@ const BUILD = [
       el("rect", { x: x(b.split) + 1, y, width: x(b.d) - x(b.split) - 1, height: h, rx: 3, class: "bar" }, g);
       el("text", { x: x(b.split) + 6, y: y + 15, class: "t", style: "fill:var(--surface);font-size:11px;font-weight:700" }, g, "niv. 25");
     } else {
-      el("rect", { x: x(0), y, width: x(b.d) - x(0), height: h, rx: 3, class: "bar" + (b.partial ? " partial" : "") }, g);
+      el("rect", { x: x(0), y, width: x(b.d) - x(0), height: h, rx: 3, class: (b.real ? "bar soft" : "bar") + (b.partial ? " partial" : "") }, g);
     }
-    el("text", { x: x(b.d) + 8, y: y + 15, class: "t-val" }, g, (b.partial ? "≥ " : "") + b.d.toLocaleString("fr-FR") + " j");
+    el("text", { x: x(b.d) + 8, y: y + 15, class: "t-val" }, g, (b.partial ? "≥ " : b.real ? "~" : "") + b.d.toLocaleString("fr-FR") + " j");
     const hit = el("rect", { x: L - 220, y: y - 8, width: R - L + 260, height: rowH - 4, class: "hit" }, g);
-    bindTip(hit, `<b>${b.name}</b>${b.d.toLocaleString("fr-FR")} jours de base${b.partial ? " (partiel)" : ""}<br>${b.note}<br><i>Fiabilité : ${b.fiab}</i>`);
+    bindTip(hit, `<b>${b.name}</b>${b.d.toLocaleString("fr-FR")} jours ${b.real ? "de jeu réel (témoignages)" : "de base"}${b.partial ? " (partiel)" : ""}<br>${b.note}<br><i>Fiabilité : ${b.fiab}</i>`);
   });
   const k = x(730);
   el("line", { x1: k, x2: k, y1: T - 8, y2: T + rowH * BUILD.length + 4, class: "ref" }, svg);
   el("text", { x: k + 6, y: T + 2, class: "t-acc" }, svg, "Cible Kalendrath ≈ 730 j (temps réel)");
-  $("#tb-build").innerHTML = "<tr><th>Jeu et périmètre</th><th>Jours de base</th><th>Note</th><th>Fiabilité</th></tr>" +
-    BUILD.map(b => `<tr><td>${b.name}</td><td class="num">${b.partial ? "≥ " : ""}${b.d.toLocaleString("fr-FR")}</td><td>${b.note}</td><td>${b.fiab}</td></tr>`).join("") +
+  $("#tb-build").innerHTML = "<tr><th>Jeu et périmètre</th><th>Jours (base ou réel)</th><th>Note</th><th>Fiabilité</th></tr>" +
+    BUILD.map(b => `<tr><td>${b.name}</td><td class="num">${b.partial ? "≥ " : b.real ? "~" : ""}${b.d.toLocaleString("fr-FR")}</td><td>${b.note}</td><td>${b.fiab}</td></tr>`).join("") +
     `<tr><td><b>Kalendrath · cible</b></td><td class="num">~730</td><td>Temps réel pour un gratuit actif, pas une durée de base.</td><td>Décision</td></tr>`;
 })();
 
@@ -594,10 +600,10 @@ $("#tb-files").innerHTML = "<tr><th>Jeu</th><th>2e file</th><th>Précision</th><
 const GAMES = [
   { n: "OGame", y: 2002, fam: "nav", f: "Faible", format: "Univers persistants sans fin, plus des univers spéciaux.", central: "Aucun pivot (planètes, mines). Fin pour un gratuit : non sourcée, les « 3 à 5 ans » d'origine sont introuvables.", files: "1 chantier par planète, file de 5 ordres ; les colonies font le parallélisme.", catch: "Nouveaux univers.", pay: "Fort au sommet : matière noire, officiers, marchand, réduction de chantier.", pve: "Expéditions, source de matière noire gratuite.", traj: "Toujours en ligne, applis en 2022.", les: "La base de Kalendrath : ses expéditions sont déjà réglables en base, un premier event ne coûte aucun code de domaine." },
   { n: "Travian Kingdoms", y: 2015, fam: "nav", f: "Bonne", format: "Monde à fin : la 1re Merveille niveau 100 termine le round. 5-6 mois probables en ×1. Un monde ×1 par langue environ toutes les 20 semaines.", central: "Aucun pivot : le royaume et la Merveille, ouverte vers J111.", files: "3 emplacements à 50, 75 et 100 or, valables tout le round.", catch: "Le monde suivant.", pay: "Travian Plus, +25 % de production, files ; « aucun avantage de combat » revendiqué.", pve: "Natars, brigands (non vérifié).", traj: "Réduit son nombre de mondes en 2026 pour garder la densité.", les: "Revend files et abonnement à chaque round : le format court rapporte, mais demande une grosse population." },
-  { n: "Last War", y: 2023, fam: "mob", f: "Moyenne", format: "Serveur persistant ; saisons de 8 semaines, mais cycle complet de 14 à 15 semaines avec pré-saison et intersaison.", central: "QG 1 à 35. QG 21-30 : ~187 jours de base ; vrai mur aux QG 26-30 (15 à 46 jours par niveau).", files: "2e ouvrier à 200 lingots.", catch: "Transfert une fois par saison, en partie payant.", pay: "Très fort (VIP sans plafond).", pve: "Non vérifié.", traj: "N° 1 mondial 2025 (~1,57 Md$), mais joueurs mensuels −41 % depuis le pic ; J30 à 4 %.", les: "Une saison coûte un cycle réel de 3,5 mois à produire, pas 2." },
-  { n: "Call of Dragons", y: 2023, fam: "mob", f: "Faible", format: "Serveur persistant ; saisons de ~5 mois (S1) à 40 jours. Héros et artefacts ne sont plus remis à zéro.", central: "Hall 1 à 25. « 9 à 12 mois » et records T5 (380 / 567 j) : non sourcés. Seul chiffre : « près d'un an » pour finir les dernières technologies.", files: "2e ouvrier à 5 000 gemmes ; 2e file de recherche au VIP 8.", catch: "Non trouvé.", pay: "Fort.", pve: "Béhémoths toutes les 48 h (disputés) ; forts qui remplissent le coffre d'alliance.", traj: "Revenus contradictoires selon les pages.", les: "Ne pas remettre à zéro ce qui est payé ou longuement construit : le jeu a reculé sur ce point." },
-  { n: "Rise of Kingdoms", y: 2018, fam: "mob", f: "Moyenne", format: "Royaumes persistants : préparation, 1re KvK vers J100, puis une Saison de Conquête (~50 j) qui se répète.", central: "Mairie 1 à 25 : 257 jours de base, dont 126 pour le seul niveau 25.", files: "2e file permanente au VIP 6 ou 7 (≈ 58 jours de connexion), pas de 3e.", catch: "Séparation : royaumes neufs, appariement par âge, migration payante selon la puissance.", pay: "Sans plafond, surtout sur les commandants (690 sculptures pour un légendaire).", pve: "Barbares et forts, sur le chemin critique du château.", traj: "> 3,5 Md$ (2024) ; vieux royaumes morts.", les: "L'écart payeur se joue sur les héros, pas sur les bâtiments : ton plafond doit les couvrir." },
-  { n: "Whiteout Survival", y: 2023, fam: "mob", f: "Moyenne", format: "States persistants ; contenu débloqué par l'âge du serveur (paliers FC à J60, J150, J315, J500-600 ; héros tous les 75-80 j).", central: "Fournaise 1-30 : 215 j de base, chantier plafonné à 40 j ; puis FC1-FC10 en 50 sous-marches (~695 j).", files: "2 files au plus ; la 2e louée 2 jours en diamants ou achetée à vie.", catch: "Serveurs neufs, transferts mensuels encadrés (≤ 180 j d'écart, plafond de puissance).", pay: "Le temps est plafonné par l'âge du serveur, la puissance non : 1re critique des joueurs.", pve: "Bear Hunt toutes les 47,5 h.", traj: "> 4 Md$ brut, 1er mondial certains mois de 2025 ; J30 à 8 %.", les: "Le modèle de courbe : multiplicateur qui retombe à ×1,15 en fin de course, jamais plus de 40 jours par chantier." },
+  { n: "Last War", y: 2023, fam: "mob", f: "Moyenne", format: "Serveur persistant ; saisons de 8 semaines, mais cycle complet de 14 à 15 semaines avec pré-saison et intersaison.", central: "QG 1 à 35. QG 21-30 : ~187 jours de base ; vrai mur aux QG 26-30 (15 à 46 jours par niveau). Réel (Reddit) : QG 30 en 120 à 150 jours pour un gratuit motivé, 210 à 315 pour un occasionnel.", files: "2e ouvrier à 200 lingots.", catch: "Transfert une fois par saison, en partie payant.", pay: "Très fort (VIP sans plafond).", pve: "Non vérifié.", traj: "N° 1 mondial 2025 (~1,57 Md$), mais joueurs mensuels −41 % depuis le pic ; J30 à 4 %.", les: "Une saison coûte un cycle réel de 3,5 mois à produire, pas 2." },
+  { n: "Call of Dragons", y: 2023, fam: "mob", f: "Faible", format: "Serveur persistant ; saisons de ~5 mois (S1) à 40 jours. Héros et artefacts ne sont plus remis à zéro.", central: "Hall 1 à 25. « 9 à 12 mois » et records T5 (380 / 567 j) : non sourcés. Seul chiffre : « près d'un an » pour finir les dernières technologies. Reddit : aucun gratuit n'avait le T5 en 2024 ; « environ 1 an » pour le plus rapide, 2 à 2,5 ans pour un gratuit ordinaire (déclaratif). Palier Hall 24 vers 25 : ~83 jours bruts.", files: "2e ouvrier à 5 000 gemmes ; 2e file de recherche au VIP 8.", catch: "Non trouvé.", pay: "Fort.", pve: "Béhémoths toutes les 48 h (disputés) ; forts qui remplissent le coffre d'alliance.", traj: "Revenus contradictoires selon les pages.", les: "Ne pas remettre à zéro ce qui est payé ou longuement construit : le jeu a reculé sur ce point." },
+  { n: "Rise of Kingdoms", y: 2018, fam: "mob", f: "Moyenne", format: "Royaumes persistants : préparation, 1re KvK vers J100, puis une Saison de Conquête (~50 j) qui se répète.", central: "Mairie 1 à 25 : 257 jours de base, dont 126 pour le seul niveau 25. Réel (Reddit) : ~100 jours pour un gratuit qui pousse, 132 sans pousser.", files: "2e file permanente au VIP 6 ou 7 (≈ 58 jours de connexion), pas de 3e.", catch: "Séparation : royaumes neufs, appariement par âge, migration payante selon la puissance.", pay: "Sans plafond, surtout sur les commandants (690 sculptures pour un légendaire).", pve: "Barbares et forts, sur le chemin critique du château.", traj: "> 3,5 Md$ (2024) ; vieux royaumes morts.", les: "L'écart payeur se joue sur les héros, pas sur les bâtiments : ton plafond doit les couvrir." },
+  { n: "Whiteout Survival", y: 2023, fam: "mob", f: "Moyenne", format: "States persistants ; contenu débloqué par l'âge du serveur (paliers FC à J60, J150, J315, J500-600 ; héros tous les 75-80 j).", central: "Fournaise 1-30 : 215 j de base, chantier plafonné à 40 j ; puis FC1-FC10 en 50 sous-marches (~695 j). Réel (Reddit) : Fournaise 30 en 100 à 180 jours pour un gratuit actif, FC5 vers un an, FC8 à FC10 au-delà d'un an.", files: "2 files au plus ; la 2e louée 2 jours en diamants ou achetée à vie.", catch: "Serveurs neufs, transferts mensuels encadrés (≤ 180 j d'écart, plafond de puissance).", pay: "Le temps est plafonné par l'âge du serveur, la puissance non : 1re critique des joueurs.", pve: "Bear Hunt toutes les 47,5 h.", traj: "> 4 Md$ brut, 1er mondial certains mois de 2025 ; J30 à 8 %.", les: "Le modèle de courbe : multiplicateur qui retombe à ×1,15 en fin de course, jamais plus de 40 jours par chantier." },
   { n: "State of Survival", y: 2019, fam: "mob", f: "Moyenne", format: "États persistants ; fusions devenues régulières en fin de saison.", central: "QG 1-30 (QG 30 : 39,5 j), puis 5 niveaux plasma ajoutés après coup.", files: "Non trouvé.", catch: "États neufs, fusions, transferts filtrés par génération de héros.", pay: "Très fort : générations de héros, aveu des développeurs en 2021.", pve: "Robinet à ressources.", traj: "Pic 51 M$/mois (2021), ~3 M$/mois en 2026 (−93 %).", les: "Des nouveautés latérales, jamais supérieures : sinon le plafond de +30 % devient intenable." },
   { n: "Evony", y: 2009, fam: "mob", f: "Moyenne", format: "Serveurs persistants ; 1 à 4 fusions par an ; migration seulement avant J3.", central: "Donjon passé de 35 à 50 niveaux ; durées nominales de 1 139 jours (D35) à 45 ans (D40).", files: "Ouvrier gratuit au VIP 17.", catch: "Aucun mécanisme individuel.", pay: "Extrême : VIP 20 ≈ 115 k$, packs rachetables jusqu'à 12 fois par jour.", pve: "Boss mondial hebdomadaire.", traj: "~223 M$ en 2021 ; publicité trompeuse sanctionnée (ASA, 2024).", les: "Un plafond journalier n'est pas un plafond : le tien doit porter sur la vie du compte ou de la saison." },
   { n: "Tribal Wars", y: 2003, fam: "nav", f: "Bonne", format: "Mondes de 4 à 9 mois, un neuf toutes les ~7 semaines, conditions de fin datées.", central: "QG, mais la progression se mesure en villages (137 en moyenne chez les survivants au J247).", files: "File plus longue en Premium ; gestionnaire de comptes payant.", catch: "Le monde suivant ; tribus verrouillées au J90.", pay: "Modéré : Premium ~5 $/mois, +20 % d'une ressource 7 jours.", pve: "Barbares, events.", traj: "180 M€ cumulés, 2024 meilleure année, 46 % des actifs depuis plus de 5 ans ; un monde perd ~94 % de sa population.", les: "L'absence ne doit pas être punie : garde de compte, bonus de nuit, mode vacances. Joueur moyen : 35 ans." },
@@ -631,7 +637,8 @@ renderGames();
 $("#cases").innerHTML = CASES.map(([n, y, t, s, f]) => `<article class="game"><div class="game-top"><h3>${n}</h3><span class="yr">${y}</span></div><p style="font-size:.92rem">${t}</p><div class="cites"><span class="cite">${s}</span><span class="pill ${FIAB[f]}">${f}</span></div></article>`).join("");
 const CORR = [
   "<b>Last War</b> : cycle complet de 14 à 15 semaines (pas 8). QG à 35 niveaux, pas 30. Le mur est aux QG 26-30, pas 16-25.",
-  "<b>Call of Dragons</b> : les records T5 (380 et 567 jours) et « Hall 25 en 9 à 12 mois » ne sont dans aucune source. À sourcer par tes propres captures ou classements.",
+  "<b>Call of Dragons</b> : les records T5 (380 et 567 jours) et « Hall 25 en 9 à 12 mois » ne sont dans aucune source, y compris après la lecture de Reddit le 30 octobre (qui donne « environ 1 an » pour le gratuit le plus rapide au T5 et 2 à 2,5 ans pour un gratuit ordinaire). À sourcer par tes propres captures ou classements.",
+  "<b>Temps réel d'un gratuit actif (30 octobre)</b> : le dernier niveau central se joue en 3 à 6 mois, pas en 2 ans, sur Whiteout, Last War et Rise of Kingdoms. Les durées de base du comparatif d'origine surestiment donc le temps réel d'environ un facteur deux.",
   "<b>Call of Dragons</b> : la saison ne remet plus à zéro les héros ni les artefacts. Durée des saisons : de 40 jours à 5 mois.",
   "<b>OGame</b> : « 3 à 5 ans pour un gratuit » et « viable dans le top 50-100 » sont introuvables.",
   "<b>Travian Kingdoms</b> : la fin n'est pas datée (Merveille 100) ; 5 à 6 mois reste probable, pas démontré.",
@@ -685,7 +692,7 @@ renderLessons();
 
 /* ---------- Décisions de Gregory ---------- */
 const DECS = [
-  ["Fin de cité vers 2 ans pour un gratuit actif", "p-warn", "Ajuster", "La somme Fournaise + paliers FC de Whiteout (~2,5 ans de base) est du même ordre. Ikariam montre qu'un marathon sans fin vieillit mal. Grepolis tient des mondes de 1 à 2 ans.", "Aucune source ne l'étaye. Aucun jeu ne fait attendre 2 ans son dernier niveau central. Le gratuit qui atteint le mois 24 est un survivant (4 à 8 % restent à J30). Le stock d'un an laisse les mois 13 à 24 sans contenu garanti.", "Garder 2 ans comme horizon, mais un grand jalon de cité vers 12 à 14 mois et un objectif de prestige ensuite.", "Contradiction entre fiches : selon l'étalon (Fourneau 30 seul ou Fournaise + FC), 2 ans est raisonnable ou trois fois trop long."],
+  ["Fin de cité vers 2 ans pour un gratuit actif", "p-warn", "Ajuster", "La somme Fournaise + paliers FC de Whiteout (~2,5 ans de base) est du même ordre. Ikariam montre qu'un marathon sans fin vieillit mal. Grepolis tient des mondes de 1 à 2 ans.", "Aucune source ne l'étaye. Aucun jeu ne fait attendre 2 ans son dernier niveau central. Le gratuit qui atteint le mois 24 est un survivant (4 à 8 % restent à J30). Le stock d'un an laisse les mois 13 à 24 sans contenu garanti.", "Garder 2 ans comme horizon, mais un grand jalon de cité vers 12 à 14 mois et un objectif de prestige ensuite.", "Contradiction entre fiches : selon l'étalon (Fourneau 30 seul ou Fournaise + FC), 2 ans est raisonnable ou trois fois trop long. Les témoignages Reddit du 30 octobre tranchent en partie : le dernier niveau central s'atteint en 3 à 6 mois en temps réel, les deux ans ne se trouvent qu'avec les couches ajoutées après (FC, QG 31-35)."],
   ["Écart payeur de +30 % au plus", "p-good", "Garder et mesurer", "Tribal Wars tient 23 ans avec un écart modéré. Refuser le bonus de combat payant répond à la critique n° 1 de Grepolis et d'Age of Empires Mobile. C'est l'argument de communication le plus fort.", "La grandeur mesurée n'est pas dite ; l'écart se compose dans le temps ; il coupe la montée de la dépense, donc le revenu ; le payeur l'atteint en quelques semaines puis n'a plus rien à acheter.", "Mesurer en temps cumulé pour le palier N, 0 % sur le combat, viser 20 % mesurés pour annoncer 30 %, simulateur en test bloquant.", "Le plafond est plus serré que le marché, pas « honnête par rapport au marché »."],
   ["2e et 3e ouvrier (~5 € et ~20 €), la 2e facile en gratuit", "p-warn", "Ajuster", "Tout le genre vend la 2e file ; une 2e vraiment facile en gratuit est un différenciateur ; la progression de prix ressemble à Clash of Clans et Travian.", "« Facile » n'est pas chiffré (RoK : ~58 jours). La 3e n'existe qu'à Travian (pour un round). Une file parallèle peut valoir plus que 30 % de débit. Le GDD vend à vie, le juridique raisonne sur 30 jours de location.", "2e file gratuite en 3 à 4 semaines. La 3e louée par saison, ou offerte tard (palier 6 ou 7). Des produits d'appel, pas un revenu.", "Erreur repérée : ~0,18 € par joueur sur sa vie, pas ~3,50 €."],
   ["Packs limités en durée et en quantité", "p-good", "Garder et préciser", "Une limite vraie est licite et c'est le seul mécanisme qui fait tenir un plafond. Evony montre par l'absurde qu'un plafond journalier n'en est pas un.", "Un retardataire ne pourra jamais acheter les packs passés. « Limité en quantité » : par compte ou en stock global ? Last War a retiré ses packs surgissants en 2026.", "Plafond par compte, sur la saison ; calendrier des packs publié ; aucun pack poussé aux mineurs.", ""],
@@ -770,19 +777,19 @@ $("#errors").innerHTML = ERR.map(e => `<li>${e}</li>`).join("");
 
 /* ---------- Trous ---------- */
 const GAPS = [
-  "<b>Temps réel d'un joueur gratuit actif</b> jusqu'au dernier niveau central de Whiteout, Rise of Kingdoms, Last War et Call of Dragons. Pistes : r/whiteoutsurvival, Discords de joueurs, classements de serveurs.",
-  "<b>Sourcer les records T5 de Call of Dragons</b> (380 et 567 jours) et les temps du Hall 20 à 25.",
-  "<b>Rétention à J90, J365 et J730</b> d'un 4X ou d'un jeu navigateur.",
-  "<b>Taux de payeurs et ARPPU d'un jeu navigateur à abonnement</b> (Travian, Tribal Wars, Torn), et ce que perd un jeu qui plafonne l'avance payante.",
-  "<b>Prix en euros</b> des monnaies et des files (lingots, gemmes, pack de 2e file de Whiteout, officiers d'OGame, Conseillers de Grepolis).",
-  "<b>Critiques des joueurs et motifs de départ</b> (Reddit, forums) pour Last War, Call of Dragons, Tribal Wars, Grepolis, Ikariam.",
-  "<b>Règles des communautés sur l'IA générative</b> avant de publier un visuel Midjourney.",
-  "<b>Un vrai 4X lancé en 2024-2026 qui a échoué</b>, et un 4X PvE-first qui a échoué.",
-  "<b>Durée moyenne d'un monde Travian Kingdoms ×1</b> et cadence d'ouverture des serveurs de Last War et Whiteout.",
-  "<b>Notifications push</b> : taux d'acceptation, effet sur la rétention, statut des web apps iOS dans l'UE.",
-  "<b>Fusions</b> d'univers OGame, d'Ikariam et d'Elvenar ; rétention après une fusion.",
-  "<b>Coûts manquants</b> : médiateur de la consommation, relecture juridique, marchand officiel, cotisations, licence commerciale de Midjourney et statut des images générées.",
-  "<b>Fiches non couvertes</b> : Total Battle, Lords Mobile, Kingdom Guard, PvE de Last War, brigands de Travian, détail de Kingshot.",
+  "<b>Temps réel d'un joueur gratuit actif</b> <span class=\"pill p-good\">En grande partie comblé</span> Reddit : Fournaise 30 de Whiteout en 100 à 180 jours, QG 30 de Last War en 120 à 150, Mairie 25 de Rise of Kingdoms en 100 à 132. Toujours manquant pour Call of Dragons (Hall 25). Tout est déclaratif.",
+  "<b>Sourcer les records T5 de Call of Dragons</b> (380 et 567 jours) <span class=\"pill p-bad\">Toujours ouvert</span> Introuvables. Reddit donne « environ 1 an » pour le gratuit le plus rapide et 2 à 2,5 ans pour un gratuit ordinaire.",
+  "<b>Rétention à J90, J365 et J730</b> <span class=\"pill p-bad\">Ouvert</span> Seul repère : stratégie mobile à 25,4 % J1, 8,1 % J7, 3,1 % J30. Indices indirects : Torn est passé de ~48 500 à plus de 100 000 joueurs actifs par jour (2024 à 2026).",
+  "<b>Taux de payeurs et ARPPU d'un jeu navigateur à abonnement</b> <span class=\"pill p-warn\">Presque ouvert</span> Un seul chiffre sourcé : Fallen London, ~10 % de l'audience a déjà payé (2015). Non confirmé : ~9 % de payeurs pour Forge of Empires (PDF InnoGames, à lire à la main). Témoignages Tribal Wars et Travian sur Reddit.",
+  "<b>Prix en euros</b> des monnaies et des files <span class=\"pill p-warn\">Presque ouvert</span> Paliers en dollars de Last War (4,99 à 99,99 $) et de Call of Dragons, 5 000 gemmes ≈ 15 à 20 € (estimation). Lingots, officiers d'OGame et Conseillers de Grepolis : non trouvés.",
+  "<b>Critiques des joueurs et motifs de départ</b> <span class=\"pill p-good\">Comblé</span> Pay-to-win et progression qui s'allonge, bots tolérés, support, pression d'alliance, toxicité, surcharge de minuteurs. Notes Trustpilot : InnoGames 1,3/5, Ikariam 1,9/5, Last War 2,6/5.",
+  "<b>Règles des communautés sur l'IA générative</b> <span class=\"pill p-good\">Comblé en partie</span> r/indiegames l'interdit (règle 12) ; r/4Xgaming n'a pas de règle écrite ; r/WebGames n'en parle pas. Midjourney : propriété des images sous 1 M$ de revenu avec les formules Basic ou Standard, images purement générées probablement non protégeables en France (conditions officielles non lues).",
+  "<b>Un 4X lancé en 2024-2026 qui a échoué</b> <span class=\"pill p-warn\">En partie</span> Millennia (abandonné en octobre 2025) et Ara, mais ce sont des 4X solo. Aucun 4X PvE-first échoué trouvé.",
+  "<b>Durée d'un monde Travian Kingdoms ×1</b> <span class=\"pill p-good\">Comblé</span> ~20 semaines par round, un nouveau monde local ×1 environ toutes les 20 semaines depuis juillet 2026. Cadence de Last War : non trouvée ; Whiteout : un nouvel État tous les 1 à 2 jours (estimation de sites tiers).",
+  "<b>Notifications push</b> <span class=\"pill p-warn\">En partie</span> Acceptation ~49 à 53 % dans une appli, 3 à 6 % sur le web ; effet sur la rétention seulement corrélationnel. Statut des web apps iOS dans l'UE : sources contradictoires, à tester.",
+  "<b>Fusions</b> d'univers OGame, Ikariam, Elvenar <span class=\"pill p-bad\">Ouvert</span> Mécanique décrite pour Kingshot et Whiteout ; aucun chiffre de départs après fusion. r/OGame est inaccessible.",
+  "<b>Coûts manquants du projet</b> <span class=\"pill p-good\">Comblé en partie</span> Médiateur ~30 à 80 €/an ; relecture des CGV 500 € HT et plus ; paiement : Stripe 1,5 % + 0,25 € (EEE), Paddle et Lemon Squeezy 5 % + 0,50 $ ; micro-entreprise 2026 : 12,3 / 21,2 / 25,6 % selon la catégorie (celle du jeu n'est pas tranchée). Pas un avis juridique.",
+  "<b>Fiches non couvertes</b> <span class=\"pill p-bad\">Ouvert</span> Total Battle, Lords Mobile, Kingdom Guard, PvE de Last War, Kingshot : la recherche n'a presque rien donné sur les niveaux, files et prix.",
 ];
 $("#gaps").innerHTML = GAPS.map(g => `<li><span>${g}</span></li>`).join("");
 
@@ -790,6 +797,7 @@ $("#gaps").innerHTML = GAPS.map(g => `<li><span>${g}</span></li>`).join("");
 const FILESIDX = [
   ["Jeux", [["evony", "Donjon à 50 niveaux, durées nominales devenues un prix, paiement extrême."], ["forge-of-empires", "Cité unique, 24 ères, PvE-first de fait, 10 events par an."], ["grepolis", "Mondes finis, progression par nombre de villes, Conseillers au-delà de +30 %."], ["ikariam", "Mur de population, île partagée, cités jamais prises."], ["rise-of-kingdoms", "Mairie 25, rattrapage par séparation, écart payeur sur les commandants."], ["state-of-survival", "Générations de héros, plasma ajouté après coup, −93 %."], ["tribal-wars", "Mondes de 4 à 9 mois, paiement modéré, garde de compte."], ["whiteout-survival", "Contenu verrouillé par l'âge du serveur, Fournaise à 80 marches."], ["verification-des-4-jeux", "Vérification du comparatif d'origine et files de construction."]]],
   ["Thèmes transverses", [["cadre-legal-ue", "Monnaies virtuelles, fausse urgence, mineurs, rétractation, TVA, stores."], ["formats-serveur-et-rattrapage", "Formats, fusions, migrations, précédents de la ligne accélérée."], ["jeux-fermes-ou-echoues", "Lord of Ultima, Game of War, Everdale, Crowfall et leurs causes de mort."], ["lancement-indie-et-communaute", "Lancer seul : Discord, vitrine, devlog, communautés, alpha par vagues."], ["monetisation-et-boutiques", "Ce que vend le genre, scénarios de revenus (corrigés par la critique)."], ["navigateur-vs-mobile", "Marché, PWA puis Capacitor, commissions des stores, acquisition."], ["nouveaux-venus-2024-2026", "Kingshot, Age of Empires Mobile : concentration, publicités IA."], ["pve-dans-le-genre", "Formes de PvE, Elvenar, contenu par gabarits."], ["retention-et-design-du-temps", "Rétention J1-J30, courbes de chantier, sessions, alliance."], ["triche-multicomptes-bots", "Triche, API publique, détection à la portée d'une personne."]]],
+  ["Compléments du 30 octobre", [["complements/temps-reel-gratuit-actif", "Durées de base des derniers niveaux, cadence des mondes Travian."], ["complements/retention-longue-et-payeurs", "Rétention au-delà de J30, payeurs navigateur, fusions."], ["complements/prix-et-avis-joueurs", "Paliers de prix, motifs de départ avec citations."], ["complements/ia-echecs-push-couts-jeux", "IA générative et Midjourney, 4X échoués, push, coûts du projet."], ["complements/temps-reel-whiteout-reddit", "Temps réel d'un gratuit actif sur Whiteout (Reddit)."], ["complements/reddit-vague-2", "Last War, Rise of Kingdoms, motifs de départ, payeurs, règles d'IA."], ["complements/reddit-vague-3", "T5 de Call of Dragons, OGame, fusions de serveurs, règles IA."]]],
   ["Critiques", [["critiques/angle-economie-solo", "Coûts, revenus recalculés, seuils de joueurs."], ["critiques/angle-faisabilite", "Charge de travail, domaine à ne pas toucher, V0 / V1 / V1.5."], ["critiques/angle-joueur-gratuit", "Où décroche le gratuit, ce que le +30 % lui coûte."], ["critiques/angle-payeur", "Que reste-t-il à acheter, le +30 % est-il mesurable."]]],
 ];
 $("#files").innerHTML = FILESIDX.map(([g, list]) => `<div style="display:grid;gap:4px;align-content:start"><span class="eyebrow" style="margin-bottom:4px">${g}</span>${list.map(([f, d]) => `<div class="file"><span class="mono">${f}.md</span><span class="muted" style="font-size:.9rem">${d}</span></div>`).join("")}</div>`).join("");
