@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property int $hero_id
  * @property int $equipment_item_id
  * @property bool $equipped
+ * @property string|null $slot
  */
 class HeroEquipment extends Model
 {
@@ -23,6 +24,7 @@ class HeroEquipment extends Model
         'hero_id',
         'equipment_item_id',
         'equipped',
+        'slot',
     ];
 
     /**
@@ -36,7 +38,7 @@ class HeroEquipment extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<Hero, $this>
      */
     public function hero(): BelongsTo
     {
@@ -44,7 +46,7 @@ class HeroEquipment extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<EquipmentItem, $this>
      */
     public function equipmentItem(): BelongsTo
     {

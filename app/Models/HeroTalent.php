@@ -33,7 +33,7 @@ class HeroTalent extends Model
     ];
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<Hero, $this>
      */
     public function hero(): BelongsTo
     {
@@ -41,7 +41,7 @@ class HeroTalent extends Model
     }
 
     /**
-     * @return BelongsTo
+     * @return BelongsTo<TalentNode, $this>
      */
     public function talentNode(): BelongsTo
     {

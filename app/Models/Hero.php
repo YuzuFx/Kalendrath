@@ -5,6 +5,7 @@ namespace OGame\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use OGame\Enums\HeroRole;
 
 /**
  * Pilot model for the hero/governor system (GDD section 5.5).
@@ -16,6 +17,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property string $name
  * @property string|null $avatar
  * @property string $archetype
+ * @property HeroRole $role
+ * @property int|null $main_marker
  * @property int $level
  * @property int $xp
  * @property int $talent_points_spent
@@ -39,6 +42,8 @@ class Hero extends Model
         'name',
         'avatar',
         'archetype',
+        'role',
+        'main_marker',
         'level',
         'xp',
         'talent_points_spent',
@@ -53,9 +58,19 @@ class Hero extends Model
     ];
 
     /**
+     * @return array<string, string>
+     */
+    protected function casts(): array
+    {
+        return [
+            'role' => HeroRole::class,
+        ];
+    }
+
+    /**
      * The user (player) that recruited this hero.
      *
-     * @return BelongsTo
+     * @return BelongsTo<User, $this>
      */
     public function user(): BelongsTo
     {
@@ -65,7 +80,7 @@ class Hero extends Model
     /**
      * The planet this hero governs, if assigned.
      *
-     * @return BelongsTo
+     * @return BelongsTo<Planet, $this>
      */
     public function planet(): BelongsTo
     {
@@ -75,7 +90,7 @@ class Hero extends Model
     /**
      * This hero's talent point allocations.
      *
-     * @return HasMany
+     * @return HasMany<HeroTalent, $this>
      */
     public function talents(): HasMany
     {
@@ -85,7 +100,7 @@ class Hero extends Model
     /**
      * This hero's owned equipment (equipped + inventory).
      *
-     * @return HasMany
+     * @return HasMany<HeroEquipment, $this>
      */
     public function equipment(): HasMany
     {

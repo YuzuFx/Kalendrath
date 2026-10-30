@@ -29,7 +29,7 @@ use OGame\Models\User;
 #[Signature('ogamex:dev:seed-demo-hero {--username=Legor : Username of the player that owns the demo hero}')]
 class SeedDemoHero extends Command
 {
-    private const string ARCHETYPE = 'Guerrier';
+    private const string ARCHETYPE = 'warrior';
 
     /**
      * Execute the console command.
@@ -56,6 +56,8 @@ class SeedDemoHero extends Command
             'name' => 'John Doe',
             'avatar' => null,
             'archetype' => self::ARCHETYPE,
+            'role' => 'main',
+            'main_marker' => 1,
             'level' => 12,
             'xp' => 1200,
             'talent_points_spent' => 12,
@@ -105,6 +107,7 @@ class SeedDemoHero extends Command
                 'hero_id' => $hero->id,
                 'equipment_item_id' => $item->id,
                 'equipped' => in_array($item->slot, $equippedSlots, true),
+                'slot' => in_array($item->slot, $equippedSlots, true) ? $item->slot : null,
             ]);
         }
 
