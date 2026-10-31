@@ -57,6 +57,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Entrepôt de bois | 3 (niv. 30+) | `batiment-entrepot-de-bois-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/75038ee1-2898-4aff-9e73-59185749f2fe/0_0.png |
 | Entrepôt de fer | 1 (niv. 1-14) | `batiment-entrepot-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/85249949-1edd-4023-8dfd-33f238f48517/0_0.png |
 | Entrepôt de fer | 2 (niv. 15-29) | `batiment-entrepot-de-fer-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/a7ee2d45-78c8-4077-b4c0-1cb08180dd40/0_0.png |
+| Entrepôt de fer | 3 (niv. 30+) | `batiment-entrepot-de-fer-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/aaa5dcec-03e7-40a0-bf5a-7da32daeda89/0_0.png |
 | Réservoir de mana | 1 (niv. 1-14) | `batiment-reservoir-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/88ee6dbc-6f60-40cc-b412-b8d4de8da1d8/0_0.png |
 | Réservoir de mana | 2 (niv. 15-29) | `batiment-reservoir-de-mana-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/2ed6daa5-5553-4ccf-a2a8-393192c27c9a/0_0.png |
 | Silo de nourriture | 1 (niv. 1-14) | `batiment-silo-de-nourriture-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/107608a4-45fd-4316-a6cb-fd60823d52ac/0_0.png |
