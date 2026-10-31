@@ -89,6 +89,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Atelier des Remparts | 3 (niv. 30+) | `batiment-atelier-des-remparts-palier3.png` (2688 × 1792, **retouchée** en Quick Edit : filet violet-bleu sur le rempart) | https://cdn.midjourney.com/55a3c275-2d80-4238-8bd4-50bbf57763d1/0_0.png *(upscale avant retouche : https://cdn.midjourney.com/b885a672-1243-47ee-ae92-c7e12f0bfc26/0_0.png)* |
 | Hôpital | 1 (niv. 1-14) | `batiment-hopital-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/1e98feb8-a60c-4616-87e5-99ca2407d6ad/0_0.png |
 | Hôpital | 2 (niv. 15-29) | `batiment-hopital-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/7e1bb9c2-5988-4faa-94fc-6302edde07c5/0_0.png |
+| Hôpital | 3 (niv. 30+) | `batiment-hopital-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/c3fd7624-d686-4f7f-96d9-3d4c1c71b63f/0_0.png |
 | Tour de guet arcanique | 1 (niv. 1-14) | `batiment-tour-de-guet-arcanique-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/32c3f13a-223b-44b9-bd1d-49942b6d2f8e/0_0.png |
 | Tour de guet arcanique | 2 (niv. 15-29) | `batiment-tour-de-guet-arcanique-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/3d20a0fa-4044-42fa-8791-95171a9ace1e/0_0.png |
 | Portail des Sphères | 1 (niv. 1-14) | `batiment-portail-des-spheres-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/9a8e3765-6c26-4c46-a4b1-ee1b62e6fc73/0_0.png |
