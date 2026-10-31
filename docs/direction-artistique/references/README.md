@@ -130,3 +130,4 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | 6 Citadelle | `cite-palier06-citadelle.png` (3360 × 1440) | https://cdn.midjourney.com/23c21518-4ae8-4d3a-9635-c39f51c9cd1c/0_0.png |
 | 7 Cité-Obélisque | `cite-palier07-cite-obelisque.png` (3360 × 1440) | https://cdn.midjourney.com/a068b569-a568-4810-90e5-b86d04c5e413/0_0.png |
 | 8 Cité palatine | `cite-palier08-cite-palatine.png` (3360 × 1440) | https://cdn.midjourney.com/c7f9859f-2c3a-406f-b01b-a226211e287c/0_0.png |
+| 9 Métropole | `cite-palier09-metropole.png` (3360 × 1440) | https://cdn.midjourney.com/90a21a0c-5847-4e94-a502-16f0793d5d62/0_0.png |
