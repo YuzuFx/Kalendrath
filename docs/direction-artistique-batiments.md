@@ -838,41 +838,36 @@ The same embassy transformed into a grand embassy standing at the end of a vast 
 
 ## 🏙️ Paliers de cité
 
-> **Proposition du 2026-10-22 : 10 paliers de cité au lieu de 6** (un tous les 3 niveaux d'Hôtel de ville, sur 30 niveaux ; cf. GDD 4.2). Aucune image de cité n'est encore produite : la série est à réécrire à 10 avant de lancer Midjourney. Les 3 images d'Hôtel de ville validées restent valables, la série de l'Hôtel de ville passerait de 5 à 10 images.
+> **Série refaite le 2026-10-31 sur 10 paliers** (GDD 4.2, validés le 2026-10-28), avec la méthode des bâtiments. **Aucune image de cité n'est encore produite** ; l'image d'ambiance `cite.png` (forteresse sur un éperon rocheux, ville dense, flèche d'église, foudre violet-bleu au sommet) sert **d'ancrage de style** (`--sref`), pas de modèle de composition : elle est bien plus avancée que le palier 1.
 
-Une image par palier, même lieu, **même cadrage et même heure** pour qu'on lise la progression. Format `--ar 7:3`. L'Obélisque (runes violet-bleu) est toujours visible au centre : c'est le fil rouge de la série. **Ces prompts n'ont pas encore été testés** avec la nouvelle méthode ; appliquer la même logique que pour les bâtiments (sujet d'abord, `--sw` à ajuster).
+**Règles de la série :**
+- **Même lieu, même caméra, même heure** pour que la progression se lise : vallée d'une rivière, vue plongeante depuis un versant, Obélisque au centre du cadre, crépuscule (`deep dusk light with a low warm sun and no bright clouds`). Format `--ar 7:3`.
+- **L'Obélisque ne grandit pas** (lore, cf. Hôtel de ville) : même taille, même place au centre, runes violet-bleu, **toujours entier avec de la marge de ciel**. Ce qui change, c'est la ville autour (et les dispositifs à sa base, voir Hôtel de ville).
+- **Chaque palier part de l'image du précédent** dans **Image Prompts** (jamais d'URL dans le texte), `--iw` autour de 0.3 à tester. Le palier 1 se lance sans image.
+- **Paramètres de départ :** `--ar 7:3 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80`. L'ancienne valeur `--sw 250` est abandonnée : à cette force, l'ancrage `cite.png` impose sa forteresse et sa flèche dès le palier 1.
+- **Leçons des bâtiments à appliquer :** compter explicitement (« exactly twelve »), jamais « several » (douze à vingt) ; écrire la matière et le décor d'abord ; exclure les dérives (`castle, church, steeple, cross, asian architecture, hobbit, cottage, thatched roof, fairytale, ivy, moss`) ; pas de runes gravées (elles sortent en texte lisible) ; flamme `violet-blue` écrite ; lumières franches seulement (l'upscale éteint les fines) ; surveiller les filigranes dans les coins ; ne retirer aucune exclusion d'un brief à l'autre sans raison.
+- **Piège propre aux cités :** le mot « city » ou une enceinte font basculer vers le château de `cite.png` ; chaque palier ne décrit que ce qui est **nouveau** par rapport au précédent.
 
-Préambule des villes :
-```
-Dark heroic fantasy wide establishing shot of a human settlement in a river valley, three-quarter view from a hillside above, a tall ancient obelisk with glowing violet-blue runes at the center, muted earthy palette (iron grey, aged bronze, oxblood red) with violet-blue arcane accents, painterly digital illustration, dramatic dusk lighting, atmospheric mist, highly detailed
-```
+| Palier | Nom | Ce qui change (d'après le GDD 4.2) |
+|---|---|---|
+| 1 | Hameau | Une douzaine de maisons basses, pas de rempart, l'Obélisque et son cercle de pierres brutes |
+| 2 | Village | Une place, une palissade de bois |
+| 3 | Bourg | Un marché, des murs de pierre partiels |
+| 4 | Ville franche | Une charte, un beffroi, une première enceinte basse |
+| 5 | Place forte | Remparts complets, porte monumentale |
+| 6 | Citadelle | Forteresse intérieure, quartiers spécialisés |
+| 7 | Cité-Obélisque | L'Obélisque domine, la lumière de mana devient l'éclairage principal |
+| 8 | Cité palatine | Un palais, siège du pouvoir et de la cour |
+| 9 | Métropole | Une ville-monde à plusieurs enceintes |
+| 10 | Cité des Sphères | Le Portail, la ville ouverte sur les autres plans |
 
-Paramètres : `--ar 7:3 --stylize 250 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 250`
-
-### 1. Hameau
+### 1. Hameau — *brief à tester (2026-10-31)*
+Se lance **sans** image de référence. Le brief tient l'Obélisque comme sujet central avec son cercle de pierres brutes (comme l'Hôtel de ville palier 1), douze maisons exactement, un seul feu de signal, aucune enceinte. Contrôles sur la grille : Obélisque entier, noir, runes violet-bleu, centré ; douze maisons environ, aucune tour ni rempart ; une rivière ; pas de chaumière de conte ni de moulin ; coins propres.
 ```
-[PRÉAMBULE VILLE] a tiny hamlet of a dozen thatched cottages, dirt paths, a single small obelisk stone on a mound, a few fields, a well, no walls, no towers, a lone watch fire
+A tiny hamlet in a river valley seen from a hillside above, exactly twelve low houses of fieldstone and weathered timber with dark plank-shingle roofs scattered along a dirt track, in the middle of the hamlet a small packed-earth square with one tall slim ancient obelisk of a far more advanced lost civilization from Kaelhelm, polished black stone with perfectly cut sharp edges and a small pyramid tip, unweathered and flawless, with fine inlaid bands of bronze and silver runes glowing deep violet-blue running up all its sides as the main light accent, the whole obelisk fully visible with a generous band of open sky above its tip, a ring of rough standing stones braced with crude timber beams around its base, a stone well, a few small fenced fields and a hay cart, a river winding through the valley floor below, dark pine hillsides rising on both sides, no walls, no towers, exactly one lone signal fire burning on a small rise at the edge of the hamlet, a few thin threads of chimney smoke, a few tiny lanterns with a pale violet-blue flame, a quiet humble place, empty countryside around it, very small and modest. Dark heroic fantasy concept art, weathered stone and timber, muted earthy palette (iron grey, aged bronze, oxblood red) with violet-blue arcane accents, painterly digital illustration, deep dusk light with a low warm sun and no bright clouds, a thin mist in the valley, three-quarter view from a hillside high above, centered wide establishing shot, strong simple silhouette readable at small size --ar 7:3 --stylize 150 --sref https://cdn.midjourney.com/2b763d55-1e2c-4be5-b47e-161de8bf16f6/0_0.png --sw 80 --no text, letters, watermark, logo, signature, modern, photography, black borders, animals, black background, castle, fortress, walls, ramparts, palisade, towers, turrets, battlements, keep, church, chapel, cathedral, monastery, cross, steeple, bell tower, dome, temple, palace, city, large town, crowd, army, hobbit, cottage, thatched roof, fairytale, whimsical, ivy, moss, overgrown, windmill, mill, factory, chimney stack, asian architecture, pagoda, chinese, japanese, curved roof, cyan, neon, electric blue, white glow, runes on the ground, sign, signboard, lettering, inscription, menhir, cropped, cut off
 ```
-### 2. Village
-```
-[PRÉAMBULE VILLE] a village of timber-framed houses around a market square, a wooden palisade with a gate, a small chapel, a mill by the river, the obelisk standing taller in the square, smoke from chimneys
-```
-### 3. Bourg
-```
-[PRÉAMBULE VILLE] a market town with cobbled streets and stone houses, partial stone walls with a watchtower, a bridge over the river, a large town hall near the obelisk, merchants' stalls, more lanterns
-```
-### 4. Cité fortifiée
-```
-[PRÉAMBULE VILLE] a fortified city enclosed by complete stone ramparts with towers, a monumental gate with portcullis, dense roofs of slate tiles, banners on the walls, the obelisk rising above a central plaza
-```
-### 5. Citadelle
-```
-[PRÉAMBULE VILLE] a citadel city on a hill, a massive keep at the summit, tiered districts for crafts and military, double walls, aqueducts, workshops with glowing windows, the obelisk crowned by a violet-blue beam toward the sky
-```
-### 6. Métropole
-```
-[PRÉAMBULE VILLE] a monumental capital metropolis, soaring towers and domes, grand avenues, bridges and aqueducts, a vast citadel at the center, many lights across the city, a majestic obelisk emitting a bright violet-blue column of light, awe-inspiring scale
-```
+### 2 à 10
+*À écrire un par un, chacun à partir de l'image validée du palier précédent ; on ne décrit que ce qui est nouveau (voir le tableau ci-dessus). Les anciens briefs de l'ancienne série à 6 paliers (chaumières, chapelle, porte à herse, aqueducs, dômes) sont abandonnés : ils contenaient les pièges connus.*
 
 ### Capitale et calques
 - Pour la capitale, mêmes 6 paliers avec le **Donjon** à la place de l'Hôtel de ville (ajouter « a fortified keep at the center instead of a town hall »).
