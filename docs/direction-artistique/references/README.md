@@ -80,6 +80,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Forge | 3 (niv. 30+) | `batiment-forge-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/7e0b5d67-ebe6-458b-a17b-b03db5d951e1/0_0.png |
 | Atelier des Maîtres d'œuvre | 1 (niv. 1-14) | `batiment-atelier-des-maitres-d-oeuvre-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/07dc4396-fbfe-423c-9fb2-54bac294e286/0_0.png |
 | Atelier des Maîtres d'œuvre | 2 (niv. 15-29) | `batiment-atelier-des-maitres-d-oeuvre-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/473b61d0-68be-4405-b2b5-762a62761fb4/0_0.png |
+| Atelier des Maîtres d'œuvre | 3 (niv. 30+) | `batiment-atelier-des-maitres-d-oeuvre-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/1e01facc-3c95-4553-a5c1-2131a2646655/0_0.png |
 | Atelier des Automates Arcaniques | 1 (niv. 1-14) | `batiment-atelier-des-automates-arcaniques-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/ba64ce4d-697b-4712-b26b-5b6488f7d39d/0_0.png |
 | Atelier des Automates Arcaniques | 2 (niv. 15-29) | `batiment-atelier-des-automates-arcaniques-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/fc9b18ae-d237-4ca2-87be-a4988b9206ec/0_0.png |
 | Atelier des Remparts | 1 (niv. 1-14) | `batiment-atelier-des-remparts-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/713afdf1-1060-4139-99cc-2030119ce30e/0_0.png |
