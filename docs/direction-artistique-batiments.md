@@ -1054,6 +1054,8 @@ Total : 3 images retenues par bâtiment, soit une soixantaine, plus les villes. 
 
 ## Points ouverts
 
+- **Cohérence des 10 paliers de cité avec les bâtiments validés (remarque de Gregory, 2026-10-31) :** il n'est pas sûr que chaque palier de cité soit cohérent avec les images de bâtiments déjà validées (matériaux, architecture, éclairage, niveau de développement, par exemple le palier 8 en palais classique ou le ciel de jour du Donjon). **À vérifier plus tard**, en confrontant chaque palier de cité aux bâtiments qui apparaissent à ce palier (GDD 4.2) ; les paliers 6 à 10 sont les plus exposés.
+
 - [x] Valider le `--sw` de départ pour les bâtiments : **80**, validé sur la Scierie puis confirmé sur la Mine de fer (2026-10-13). Donjon p1 validé à 80 (2026-10-15) ; reste à confirmer sur le Portail et l'Académie.
 - [ ] Vérifier que le choix de la cité validée comme `--sref` ne teinte pas tout en violet (à surveiller sur les paliers 2 et 3 avec plus de mana).
 - [x] Tester le maintien du cadrage entre paliers d'un même bâtiment : **validé sur la Scierie palier 2** (image de palier 1 en référence, `--iw 0.5`) **et palier 3** (image de palier 2 en référence, `--iw 0.25`).
