@@ -77,6 +77,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Académie Militaire | 3 (niv. 30+) | `batiment-academie-militaire-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/3adf460e-a143-4f8a-ab11-6f5c1dd1b6f7/0_0.png *(repli, v2 non archivée : https://cdn.midjourney.com/8ed59418-3e43-4b9d-92ce-dceee40d2467/0_0.png)* |
 | Forge | 1 (niv. 1-14) | `batiment-forge-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6ec44b4f-30cc-4363-96b7-a291d5bebd94/0_0.png |
 | Forge | 2 (niv. 15-29) | `batiment-forge-palier2.png` (2688 × 1792, **retouchée** : texte parasite effacé) | https://cdn.midjourney.com/2bae74df-f85f-4755-b72c-2cb3c0b8e42a/0_0.png *(original, avec texte)* |
+| Forge | 3 (niv. 30+) | `batiment-forge-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/7e0b5d67-ebe6-458b-a17b-b03db5d951e1/0_0.png |
 | Atelier des Maîtres d'œuvre | 1 (niv. 1-14) | `batiment-atelier-des-maitres-d-oeuvre-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/07dc4396-fbfe-423c-9fb2-54bac294e286/0_0.png |
 | Atelier des Maîtres d'œuvre | 2 (niv. 15-29) | `batiment-atelier-des-maitres-d-oeuvre-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/473b61d0-68be-4405-b2b5-762a62761fb4/0_0.png |
 | Atelier des Automates Arcaniques | 1 (niv. 1-14) | `batiment-atelier-des-automates-arcaniques-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/ba64ce4d-697b-4712-b26b-5b6488f7d39d/0_0.png |
