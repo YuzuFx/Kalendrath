@@ -95,6 +95,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Tour de guet arcanique | 3 (niv. 30+) | `batiment-tour-de-guet-arcanique-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/7254e5e3-1fd2-45f1-9503-a370be6e5a04/0_0.png |
 | Portail des Sphères | 1 (niv. 1-14) | `batiment-portail-des-spheres-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/9a8e3765-6c26-4c46-a4b1-ee1b62e6fc73/0_0.png |
 | Portail des Sphères | 2 (niv. 15-29) | `batiment-portail-des-spheres-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/605c5b0e-8bf2-4108-9ba0-4935485d9f71/0_0.png |
+| Portail des Sphères | 3 (niv. 30+) | `batiment-portail-des-spheres-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/011420cc-dbbd-46a1-8177-8422e2ab8eaa/0_0.png |
 | Ambassade | 1 (niv. 1-14) | `batiment-ambassade-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6a5be9da-2144-4d51-8856-6535f3ce2122/0_0.png |
 | Ambassade | 2 (niv. 15-29) | `batiment-ambassade-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/1bcf533b-1b74-4aac-aa37-28494a0484a1/0_0.png |
 
