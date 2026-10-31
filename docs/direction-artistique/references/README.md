@@ -60,6 +60,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Entrepôt de fer | 3 (niv. 30+) | `batiment-entrepot-de-fer-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/aaa5dcec-03e7-40a0-bf5a-7da32daeda89/0_0.png |
 | Réservoir de mana | 1 (niv. 1-14) | `batiment-reservoir-de-mana-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/88ee6dbc-6f60-40cc-b412-b8d4de8da1d8/0_0.png |
 | Réservoir de mana | 2 (niv. 15-29) | `batiment-reservoir-de-mana-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/2ed6daa5-5553-4ccf-a2a8-393192c27c9a/0_0.png |
+| Réservoir de mana | 3 (niv. 30+) | `batiment-reservoir-de-mana-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/e83d0115-79fd-48a3-95ca-26c6e0bfde57/0_0.png |
 | Silo de nourriture | 1 (niv. 1-14) | `batiment-silo-de-nourriture-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/107608a4-45fd-4316-a6cb-fd60823d52ac/0_0.png |
 | Silo de nourriture | 2 (niv. 15-29) | `batiment-silo-de-nourriture-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/42acc406-6d1f-4d13-98f3-f8a4146ff905/0_0.png |
 | Hôtel de ville | 1 (niv. 1-3) | `batiment-hotel-de-ville-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/def74ef2-b75c-4412-a161-af26155211b8/0_0.png |
