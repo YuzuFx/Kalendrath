@@ -60,7 +60,7 @@ La version anglaise s'adapte, elle ne se traduit pas mot à mot (skill `voix-kal
 
 ### Les arguments, dans l'ordre
 
-1. **Le PvP n'est jamais injuste.** Formulation d'attente : la forme exacte (Mode de Guerre individuel, ou guerre d'alliances avec casus belli) dépend de l'étude en cours. Ce qui ne changera pas : un joueur pacifique ou sans alliance ne se fait pas écraser par plus fort que lui.
+1. **Le PvP n'est jamais injuste.** Formulation d'attente : la forme exacte (Mode de Guerre individuel, ou guerre d'alliances avec casus belli) dépend de l'étude en cours. Ce qui ne changera pas : un joueur pacifique ou sans alliance ne se fait pas écraser par plus fort que lui. *[Revue] Tranché le 2026-10-30 : guerre d'alliances par bannière dès le chapitre 1, tous les membres d'une alliance en guerre attaquables ([étude PvP](etude-pvp.md)). La promesse ne tient plus que pour un joueur dont l'alliance n'a pas levé sa bannière : reformulation en attente (R13).*
 2. **Un monde neuf à chaque chapitre.** Un nouveau serveur à chaque chapitre, sur un calendrier fixe ; on peut toujours rejoindre un ami sur un serveur plus ancien.
 3. **Un héros qui gouverne votre cité.** Archétypes, talents, équipement de la Forge. Un échec coûte du temps, jamais le héros.
 4. **Du défi pour chacun.** Un contenu PvE exigeant, des events, et des ligues de niveaux pour que chacun affronte des joueurs de sa force.
@@ -376,7 +376,7 @@ Une partie des petites extensions de confort fera partie d'un **pack inclus dans
 | Nom de domaine | 2 € |
 | **Total** | **environ 40 €** pour 1 000 joueurs, capacité visée 2 500 |
 
-**Postes à ajouter le moment venu**, tous petits : sauvegarde hors site, e-mails transactionnels au-delà de l'offre gratuite de Brevo, frais de paiement de la boutique (un pourcentage, pas un coût fixe). Midjourney tant que la production d'images continue. Aucun ne change l'ordre de grandeur.
+**Postes à ajouter le moment venu**, tous petits : sauvegarde hors site, e-mails transactionnels au-delà de l'offre gratuite de Brevo, frais de paiement de la boutique (un pourcentage **et** un frais fixe par transaction : 0,25 € chez Stripe, 0,50 $ chez Paddle, 0,30 $ chez Patreon, d'où pas de paquet sous 4,99 € ; [Revue] revue comptable I7). Midjourney tant que la production d'images continue. Aucun ne change l'ordre de grandeur.
 
 ### Ce que rapporte une base de 1 000 joueurs (**hypothèse**)
 

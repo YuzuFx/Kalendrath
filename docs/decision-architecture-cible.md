@@ -56,7 +56,7 @@ Le repo est déjà sur **PHP 8.5, Laravel 13, Vite 8, avec Laravel Reverb instal
 | Couche | Choix | Justification |
 |---|---|---|
 | Domaine | PHP 8.5 / Laravel 13 *(conservé)* | 30 000 lignes de moteur, 40 779 lignes de tests, upstream activement maintenu. |
-| Base de données | MySQL 8 *(conservé)* | Pas le goulot d'étranglement. Migrer vers PostgreSQL = risque sans gain, et casserait l'alignement avec l'upstream. |
+| Base de données | MariaDB 11.3, compatible MySQL *(conservé)* *[Revue : le texte disait « MySQL 8 » ; les deux `docker-compose` utilisent `mariadb:11.3.2`, constat du plan de déploiement vérifié le 2026-10-30]* | Pas le goulot d'étranglement. Migrer vers PostgreSQL = risque sans gain, et casserait l'alignement avec l'upstream. |
 | Runtime | **FrankenPHP + Laravel Octane** (mode worker) | Application bootée en mémoire : démarrage par requête de ~50-80 ms ramené à ~2-5 ms. Meilleur rapport gain/effort du lot. |
 | Cache / sessions / file | **Redis** (remplace `database`) + **Horizon** | Prérequis de la résolution planifiée (§5). |
 | Temps réel | **Reverb + Laravel Echo** *(déjà installés)* | Serveur WebSocket first-party, aucun service Node à maintenir — avantage net sur l'architecture d'Aleryos. |
