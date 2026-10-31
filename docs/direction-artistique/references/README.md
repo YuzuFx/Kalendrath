@@ -98,6 +98,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Portail des Sphères | 3 (niv. 30+) | `batiment-portail-des-spheres-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/011420cc-dbbd-46a1-8177-8422e2ab8eaa/0_0.png |
 | Ambassade | 1 (niv. 1-14) | `batiment-ambassade-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6a5be9da-2144-4d51-8856-6535f3ce2122/0_0.png |
 | Ambassade | 2 (niv. 15-29) | `batiment-ambassade-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/1bcf533b-1b74-4aac-aa37-28494a0484a1/0_0.png |
+| Ambassade | 3 (niv. 30+) | `batiment-ambassade-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/48d4ab80-c95d-4007-8e7b-c27361d1e060/0_0.png |
 
 *Scierie : retenu par Gregory le 2026-10-13, puis **remplacé le même jour par une version régénérée** : la première (`3fd86834-e08d-4577-afdf-7eda20636a39`) avait une zone noire en haut à gauche et un cadrage trop serré, qui se propageaient aux paliers suivants. La version actuelle a un ciel et un décor de forêt propres. Convention de nommage : `batiment-<nom>-palier<N>.png`. Le CDN Midjourney refuse les téléchargements automatiques (403) : la copie locale vient d'un envoi manuel.*
 
