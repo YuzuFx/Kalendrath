@@ -123,3 +123,4 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Palier | Fichier | URL Midjourney |
 |---|---|---|
 | 1 Hameau | `cite-palier01-hameau.png` (3360 × 1440) | https://cdn.midjourney.com/2f7a62bd-258a-4f98-8969-f82121a13a4e/0_0.png |
+| 2 Village | `cite-palier02-village.png` (3360 × 1440) | https://cdn.midjourney.com/d57d223a-672b-4ba6-a040-779c12645355/0_0.png |
