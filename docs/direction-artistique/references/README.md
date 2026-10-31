@@ -51,6 +51,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Puits de mana | 3 (niv. 30+) | `batiment-puits-de-mana-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/b78c67e3-dc0c-447e-abc2-0e9e1583b9b1/0_0.png |
 | Champ de blé | 1 (niv. 1-14) | `batiment-champ-de-ble-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/b1dd8d79-ee47-4882-8bbd-cc110670802e/0_0.png |
 | Champ de blé | 2 (niv. 15-29) | `batiment-champ-de-ble-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/acdf6b38-7569-465c-9ba7-71eac0cf676d/0_0.png |
+| Champ de blé | 3 (niv. 30+) | `batiment-champ-de-ble-palier3.png` (2688 × 1792, **retouchée** en Quick Edit : canal teinté de mana) | https://cdn.midjourney.com/277c2b90-0230-4f98-8f08-f70c227c0dd3/0_0.png *(upscale avant retouche : https://cdn.midjourney.com/98653c5b-a72b-40d3-a749-c4d286df85d5/0_0.png)* |
 | Entrepôt de bois | 1 (niv. 1-14) | `batiment-entrepot-de-bois-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/91d7d4c1-e0dc-440d-8d2a-acbf887ccec8/0_0.png |
 | Entrepôt de bois | 2 (niv. 15-29) | `batiment-entrepot-de-bois-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/ed14e681-0e4d-45d7-aaa0-7267ffe499f9/0_0.png |
 | Entrepôt de fer | 1 (niv. 1-14) | `batiment-entrepot-de-fer-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/85249949-1edd-4023-8dfd-33f238f48517/0_0.png |
