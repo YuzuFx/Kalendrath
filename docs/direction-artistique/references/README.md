@@ -127,3 +127,4 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | 3 Bourg | `cite-palier03-bourg.png` (3360 × 1440) | https://cdn.midjourney.com/f80ad976-1fe9-421a-9f52-c5ea86cfd229/0_0.png |
 | 4 Ville franche | `cite-palier04-ville-franche.png` (3360 × 1440) | https://cdn.midjourney.com/8081cc66-0706-4208-8c4e-79b842673776/0_0.png |
 | 5 Place forte | `cite-palier05-place-forte.png` (3360 × 1440) | https://cdn.midjourney.com/6c87d965-46cf-47aa-8095-c793bd68ede8/0_0.png |
+| 6 Citadelle | `cite-palier06-citadelle.png` (3360 × 1440) | https://cdn.midjourney.com/23c21518-4ae8-4d3a-9635-c39f51c9cd1c/0_0.png |
