@@ -83,6 +83,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Atelier des Maîtres d'œuvre | 3 (niv. 30+) | `batiment-atelier-des-maitres-d-oeuvre-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/1e01facc-3c95-4553-a5c1-2131a2646655/0_0.png |
 | Atelier des Automates Arcaniques | 1 (niv. 1-14) | `batiment-atelier-des-automates-arcaniques-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/ba64ce4d-697b-4712-b26b-5b6488f7d39d/0_0.png |
 | Atelier des Automates Arcaniques | 2 (niv. 15-29) | `batiment-atelier-des-automates-arcaniques-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/fc9b18ae-d237-4ca2-87be-a4988b9206ec/0_0.png |
+| Atelier des Automates Arcaniques | 3 (niv. 30+) | `batiment-atelier-des-automates-arcaniques-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/17c74658-54b5-47da-b13a-c1c5df13d9fd/0_0.png |
 | Atelier des Remparts | 1 (niv. 1-14) | `batiment-atelier-des-remparts-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/713afdf1-1060-4139-99cc-2030119ce30e/0_0.png |
 | Atelier des Remparts | 2 (niv. 15-29) | `batiment-atelier-des-remparts-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/7d27c8a5-c09a-4a7c-a651-e79b02f4a528/0_0.png |
 | Hôpital | 1 (niv. 1-14) | `batiment-hopital-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/1e98feb8-a60c-4616-87e5-99ca2407d6ad/0_0.png |
