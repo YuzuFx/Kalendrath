@@ -71,6 +71,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Donjon | 2 (niv. 15-29) | `batiment-donjon-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/02d08075-9d9b-439b-ad91-0be02a5ca761/0_0.png |
 | Institut Arcanique | 1 (niv. 1-14) | `batiment-institut-arcanique-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/2b21be6f-2405-4a9f-ba27-ae476e2e8dd6/0_0.png |
 | Institut Arcanique | 2 (niv. 15-29) | `batiment-institut-arcanique-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/713a2986-3df8-400e-974d-5cf0d11bbaa4/0_0.png |
+| Institut Arcanique | 3 (niv. 30+) | `batiment-institut-arcanique-palier3.png` (2688 × 1792, **retouchée** en Quick Edit : lunette de la coupole) | https://cdn.midjourney.com/6e53ba6c-2064-4b82-86bf-455965d80031/0_0.png |
 | Académie Militaire | 1 (niv. 1-14) | `batiment-academie-militaire-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/a5eced10-3ee5-4d3b-b58e-46b0a06bfc16/0_0.png |
 | Académie Militaire | 2 (niv. 15-29) | `batiment-academie-militaire-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/d0c53e12-de7b-4250-839c-c9088cbe2dd2/0_0.png |
 | Forge | 1 (niv. 1-14) | `batiment-forge-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/6ec44b4f-30cc-4363-96b7-a291d5bebd94/0_0.png |
