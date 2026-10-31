@@ -117,3 +117,9 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Rôdeur des ombres | `rodeur-mise-en-situation.png` | Bas-droite (variation 4) |
 | Mage de Combat | `mage-combat-essai2-baton.png` | Haut-droite (variation 2, variante bâton) |
 | Piquier des Marches | `piquier-vary-subtle.png` | Image unique (variation 2 du lot "Vary Subtle" sur la base retenue) |
+
+## Paliers de cité (10 images, format 7:3)
+
+| Palier | Fichier | URL Midjourney |
+|---|---|---|
+| 1 Hameau | `cite-palier01-hameau.png` (3360 × 1440) | https://cdn.midjourney.com/2f7a62bd-258a-4f98-8969-f82121a13a4e/0_0.png |
