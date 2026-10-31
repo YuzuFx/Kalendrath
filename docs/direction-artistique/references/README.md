@@ -69,6 +69,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Hôtel de ville | 3 (niv. 7-9) | `batiment-hotel-de-ville-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/d5ec2391-df8e-463d-9584-f80641bae0f7/0_0.png |
 | Donjon | 1 (niv. 1-14) | `batiment-donjon-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/4a086288-caf5-4be6-8767-eb5ae315d113/0_0.png |
 | Donjon | 2 (niv. 15-29) | `batiment-donjon-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/02d08075-9d9b-439b-ad91-0be02a5ca761/0_0.png |
+| Donjon | 3 (niv. 30+) | `batiment-donjon-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/3634382c-9d33-420b-a3d2-8a1a98fb6ecd/0_0.png |
 | Institut Arcanique | 1 (niv. 1-14) | `batiment-institut-arcanique-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/2b21be6f-2405-4a9f-ba27-ae476e2e8dd6/0_0.png |
 | Institut Arcanique | 2 (niv. 15-29) | `batiment-institut-arcanique-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/713a2986-3df8-400e-974d-5cf0d11bbaa4/0_0.png |
 | Institut Arcanique | 3 (niv. 30+) | `batiment-institut-arcanique-palier3.png` (2688 × 1792, **retouchée** en Quick Edit : lunette de la coupole) | https://cdn.midjourney.com/6e53ba6c-2064-4b82-86bf-455965d80031/0_0.png |
