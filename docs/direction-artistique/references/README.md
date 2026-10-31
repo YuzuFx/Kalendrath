@@ -125,3 +125,4 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | 1 Hameau | `cite-palier01-hameau.png` (3360 × 1440) | https://cdn.midjourney.com/2f7a62bd-258a-4f98-8969-f82121a13a4e/0_0.png |
 | 2 Village | `cite-palier02-village.png` (3360 × 1440) | https://cdn.midjourney.com/d57d223a-672b-4ba6-a040-779c12645355/0_0.png |
 | 3 Bourg | `cite-palier03-bourg.png` (3360 × 1440) | https://cdn.midjourney.com/f80ad976-1fe9-421a-9f52-c5ea86cfd229/0_0.png |
+| 4 Ville franche | `cite-palier04-ville-franche.png` (3360 × 1440) | https://cdn.midjourney.com/8081cc66-0706-4208-8c4e-79b842673776/0_0.png |
