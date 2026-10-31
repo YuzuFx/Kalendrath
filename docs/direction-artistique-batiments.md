@@ -931,6 +931,22 @@ Planche de contact des 20 paliers 2 réduits à 300 px de large : [planche-palie
 
 **À retenir pour les paliers 3 :** donner à chaque bâtiment **un élément signature de grande taille** qui se lit à 300 px (roue, cristal, portail, tour), éviter les deux chantiers de charpente et les deux halls de bois côte à côte, et préférer la **pierre de taille** ou le **bronze** au bois (comme déjà décidé pour les Remparts et l'Hôtel de ville).
 
+## Test de lisibilité à 300 px — paliers 3 (2026-10-31)
+
+Planche de contact des 20 paliers 3 réduits à 300 px de large : [planche-paliers3-300px.png](direction-artistique/references/planche-paliers3-300px.png) (5 colonnes, 300 × 200 px, nom sous chaque vignette ; générée avec la bibliothèque Node sharp, script non conservé).
+
+**Lisibles du premier coup :** Tour de guet (tour sur crête), Portail des Sphères (ovale lumineux entre neuf stèles), Réservoir de mana (cristal), Puits de mana (colonne de lumière et anneau), Donjon et Hôtel de ville (Obélisque), Silo (trois tours rondes), Institut (coupole et lunette), Champ de blé, Mine de fer (chevalement), Forge (feux et cheminées), Remparts (baliste et catapulte), Maîtres d'œuvre (tour d'échafaudage), Scierie (rondins et machine à roues).
+
+**À surveiller :**
+- **Hôpital :** reste le moins lisible. Longue maison claire à galerie autour d'un jardin, elle se lit comme une **auberge ou une hacienda**, sans signe de soin visible, et reste proche du palier 2.
+- **Académie militaire et Ambassade :** deux halles de pierre grise à pignons, bannières, parvis et crépuscule. À 300 px elles se ressemblent (collège gothique contre grande halle à porche), c'est la **confusion la plus probable**. Les signes distinctifs sont les mannequins d'entraînement (invisibles à cette taille) pour l'une et le grand emblème de bronze au sol pour l'autre.
+- **Entrepôt de fer et Automates arcaniques :** deux grands bâtiments sombres à **grande roue ou portail circulaire de bronze** ; seule la pile de barres et l'ouverture arquée les distinguent.
+- **Entrepôt de bois et Scierie :** nettement mieux séparés qu'au palier 2 (grue et piles de rondins à l'air libre contre bâtiment à roues), à surveiller seulement.
+
+**Équilibre d'exposition :** le **Donjon** (ciel bleu de plein jour), le Champ de blé, le Silo, la Tour de guet et les Remparts sont les plus clairs ; la majorité de la série est nocturne ou crépusculaire. Le Donjon est celui qui détonne le plus ; à homogénéiser au moment de l'intégration (courbe de niveaux par image) ou à régénérer en crépuscule si la capitale doit s'accorder aux autres vues.
+
+**Distinctions voulues :** Hôtel de ville et Donjon partagent l'Obélisque, l'escalier et le socle, et se séparent par la forteresse à tours crénelées (Donjon) contre le hall gothique (Hôtel de ville).
+
 ## Ordre de production proposé
 
 1. **Palier 1 des 8 bâtiments de production et de stockage** (Scierie déjà validée). Ils valident le `--sw 80` et le format de carte.
