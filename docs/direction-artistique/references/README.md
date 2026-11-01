@@ -12,6 +12,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Rôdeur des ombres | https://cdn.midjourney.com/5a96c5a9-c84d-45d6-931a-dfd9b7b952fb/0_0.png |
 | Mage de Combat | https://cdn.midjourney.com/3522340b-7feb-4cca-b5f2-ba6e4c92a309/0_0.png |
 | Piquier des Marches | https://cdn.midjourney.com/98fb3e53-2c25-4907-a864-e1b77fa12b44/0_0.png |
+| Cavalier | https://cdn.midjourney.com/5317952c-5acb-41aa-8711-bc2de06943b5/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -124,6 +125,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Rôdeur des ombres | `rodeur-mise-en-situation.png` | Bas-droite (variation 4) |
 | Mage de Combat | `mage-combat-essai2-baton.png` | Haut-droite (variation 2, variante bâton) |
 | Piquier des Marches | `piquier-vary-subtle.png` | Image unique (variation 2 du lot "Vary Subtle" sur la base retenue) |
+| Cavalier | `cavalier-mise-en-situation.png` | Image unique upscalée (case 4 de la grille, U4 Subtle, 2688 × 1792) |
 
 ## Paliers de cité (10 images, format 7:3)
 
