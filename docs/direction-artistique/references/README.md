@@ -146,3 +146,4 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | 4 Ingénierie de Siège | `recherche-ingenierie-siege.png` (2688 × 1792) | https://cdn.midjourney.com/98e4a73c-94cd-40e4-a02d-b82aec8182b2/0_0.png |
 | 5 Espionnage | `recherche-espionnage.png` (2688 × 1792) | https://cdn.midjourney.com/91682913-a5c5-423d-949e-28ea4db39209/0_0.png |
 | 6 Chaîne de Ravitaillement | `recherche-chaine-ravitaillement.png` (2688 × 1792) | https://cdn.midjourney.com/d8242915-b7a5-4614-9b98-6b87d43739eb/0_0.png |
+| 7 Découverte Tellurique (v2) | `recherche-decouverte-tellurique.png` (2688 × 1792) | https://cdn.midjourney.com/dec25bb7-c569-4eed-973d-495fcb765705/0_0.png |
