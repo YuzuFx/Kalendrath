@@ -67,7 +67,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Hôtel de ville | 1 (niv. 1-3) | `batiment-hotel-de-ville-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/def74ef2-b75c-4412-a161-af26155211b8/0_0.png |
 | Hôtel de ville | 2 (niv. 4-6) | `batiment-hotel-de-ville-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/31dc5662-a2b9-47eb-be33-5851b3176d6f/0_0.png |
 | Hôtel de ville | 3 (niv. 7-9) | `batiment-hotel-de-ville-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/d5ec2391-df8e-463d-9584-f80641bae0f7/0_0.png |
-| Hôtel de ville | 4 (niv. 10-12) | `batiment-hotel-de-ville-palier4.png` (2688 × 1792) | https://cdn.midjourney.com/d8363001-51ec-4352-b882-73e41526f504/0_0.png |
+| Hôtel de ville | 4 (niv. 10-12) | `batiment-hotel-de-ville-palier4.png` (2688 × 1792) | https://cdn.midjourney.com/fb1c5191-f83d-431b-9bc2-3443dd4a05c3/0_0.png |
 | Donjon | 1 (niv. 1-14) | `batiment-donjon-palier1.png` (2688 × 1792) | https://cdn.midjourney.com/4a086288-caf5-4be6-8767-eb5ae315d113/0_0.png |
 | Donjon | 2 (niv. 15-29) | `batiment-donjon-palier2.png` (2688 × 1792) | https://cdn.midjourney.com/02d08075-9d9b-439b-ad91-0be02a5ca761/0_0.png |
 | Donjon | 3 (niv. 30+) | `batiment-donjon-palier3.png` (2688 × 1792) | https://cdn.midjourney.com/3634382c-9d33-420b-a3d2-8a1a98fb6ecd/0_0.png |
