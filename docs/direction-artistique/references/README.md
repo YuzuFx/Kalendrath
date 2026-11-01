@@ -148,3 +148,4 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | 6 Chaîne de Ravitaillement | `recherche-chaine-ravitaillement.png` (2688 × 1792) | https://cdn.midjourney.com/d8242915-b7a5-4614-9b98-6b87d43739eb/0_0.png |
 | 7 Découverte Tellurique (v2) | `recherche-decouverte-tellurique.png` (2688 × 1792) | https://cdn.midjourney.com/dec25bb7-c569-4eed-973d-495fcb765705/0_0.png |
 | 8 Rite d'Ancrage Tellurique | `recherche-rite-ancrage.png` (2688 × 1792) | https://cdn.midjourney.com/a25b28fc-3b80-4bed-ad28-91ede9576299/0_0.png |
+| 10 Alliage de Guerre | `recherche-alliage-guerre.png` (2688 × 1792) | https://cdn.midjourney.com/045463f0-9305-4d9e-aa0f-c0e8c6012e98/0_0.png |
