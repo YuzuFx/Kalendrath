@@ -151,3 +151,4 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | 10 Alliage de Guerre | `recherche-alliage-guerre.png` (2688 × 1792) | https://cdn.midjourney.com/045463f0-9305-4d9e-aa0f-c0e8c6012e98/0_0.png |
 | 11 Runes de Combat | `recherche-runes-combat.png` (2688 × 1792) | https://cdn.midjourney.com/50f3c9b7-c2f8-48e0-8f43-259f5e67fbc4/0_0.png |
 | 12 Bénédiction des Armes | `recherche-benediction-armes.png` (2688 × 1792) | https://cdn.midjourney.com/c6eff189-2221-4e3c-8fdb-848b97abaf7c/0_0.png |
+| 13 Forge des Armures | `recherche-forge-armures.png` (2688 × 1792) | https://cdn.midjourney.com/423f0729-73e7-4718-9867-6aad31031257/0_0.png |
