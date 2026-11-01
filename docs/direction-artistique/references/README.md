@@ -152,3 +152,6 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | 11 Runes de Combat | `recherche-runes-combat.png` (2688 × 1792) | https://cdn.midjourney.com/50f3c9b7-c2f8-48e0-8f43-259f5e67fbc4/0_0.png |
 | 12 Bénédiction des Armes | `recherche-benediction-armes.png` (2688 × 1792) | https://cdn.midjourney.com/c6eff189-2221-4e3c-8fdb-848b97abaf7c/0_0.png |
 | 13 Forge des Armures | `recherche-forge-armures.png` (2688 × 1792) | https://cdn.midjourney.com/423f0729-73e7-4718-9867-6aad31031257/0_0.png |
+| 14 Infusion Arcanique | `recherche-infusion-arcanique.png` (2688 × 1792) | https://cdn.midjourney.com/c7649e60-3b4b-4aae-a231-0860287b5e68/0_0.png |
+
+Planche de contact des 14 vignettes à 300 px : `planche-recherches-300px.png`.
