@@ -134,3 +134,9 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | 10 Cité des Sphères | `cite-palier10-cite-des-spheres.png` (3360 × 1440) | https://cdn.midjourney.com/ebb8d630-0075-403b-9a71-30f55e736743/0_0.png |
 
 Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
+
+## Vignettes de recherche
+
+| Recherche | Fichier | URL Midjourney |
+|---|---|---|
+| 9 Affûtage | `recherche-affutage.png` (2688 × 1792) | https://cdn.midjourney.com/4f7e8527-9474-45c0-93a4-34bed5cdcf24/0_0.png |
