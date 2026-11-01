@@ -144,3 +144,4 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | 2 Endurance du Fantassin | `recherche-endurance-fantassin.png` (2688 × 1792) | https://cdn.midjourney.com/a9d4e517-f457-46ba-998e-cb79fa0a0234/0_0.png |
 | 3 Art Équestre | `recherche-art-equestre.png` (2688 × 1792) | https://cdn.midjourney.com/552064a3-f6af-4df3-a054-1cf2edd37449/0_0.png |
 | 4 Ingénierie de Siège | `recherche-ingenierie-siege.png` (2688 × 1792) | https://cdn.midjourney.com/98e4a73c-94cd-40e4-a02d-b82aec8182b2/0_0.png |
+| 5 Espionnage | `recherche-espionnage.png` (2688 × 1792) | https://cdn.midjourney.com/91682913-a5c5-423d-949e-28ea4db39209/0_0.png |
