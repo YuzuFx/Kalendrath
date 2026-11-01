@@ -177,6 +177,8 @@ Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle 
 
 **Chevaucheur v1 : résultat (grille).** Meilleure grille des unités montées : cheval sable entier, arc tendu vers l'avant, cavaliers légers derrière, trois corps percés de flèches. **Case 1 écartée** (cheval vers la droite et tir en arrière : tir parthe, pas la pose demandée). **Case 4 retenue pour l'upscale, case 3 en repli, case 2 écartée** (plus sombre, orcs confondus avec les corps). À contrôler en plein format : tenue claire (torse presque nu sur plusieurs cases), corde et flèche encochée, main à la joue, oreilles humaines, sabots, trois corps, coins.
 
+**Décision de Gregory (2026-11-01) : case 1 retenue, avec le tir parthe.** Le cheval va vers la droite et le cavalier, tourné sur sa selle, **tire en arrière** vers les orcs qui le poursuivent. C'est un meilleur concept que la pose du brief (arc vers l'avant) : le harceleur **tourne autour des légions ennemies et tire en arrière pendant le combat**, geste emblématique des archers à cheval, plus spectaculaire, et conforme à son rôle (frappe-et-fuite). *Ma lecture initiale (case 1 écartée parce que « pas la pose demandée ») était erronée.* **À reporter dans le brief si on regénère :** remplacer la pose « arc vers l'avant, flèche dans le sens du cheval » par « the horse gallops to the right of the frame, the rider twisted around in the saddle shooting backward over the horse's croup toward the orc pursuers on the left, the arrow pointing back toward the orcs on the left, a clear unobstructed line of sight » et **retirer** `bow pointing backward` des exclusions.
+
 ---
 
 ## 🏰 Engins de siège
