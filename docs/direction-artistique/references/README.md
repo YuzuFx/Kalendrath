@@ -140,3 +140,4 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | Recherche | Fichier | URL Midjourney |
 |---|---|---|
 | 9 Affûtage | `recherche-affutage.png` (2688 × 1792) | https://cdn.midjourney.com/4f7e8527-9474-45c0-93a4-34bed5cdcf24/0_0.png |
+| 1 Abondance | `recherche-abondance.png` (2688 × 1792) | https://cdn.midjourney.com/9c2c414c-5e00-4559-9732-bc9a4f97d561/0_0.png |
