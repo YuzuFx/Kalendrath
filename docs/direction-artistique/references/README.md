@@ -162,3 +162,5 @@ Planche de contact des 10 paliers à 300 px : `planche-cites-300px.png`.
 | 14 Infusion Arcanique | `recherche-infusion-arcanique.png` (2688 × 1792) | https://cdn.midjourney.com/c7649e60-3b4b-4aae-a231-0860287b5e68/0_0.png |
 
 Planche de contact des 14 vignettes à 300 px : `planche-recherches-300px.png`.
+
+Planche de contact des 10 paliers de l'Hôtel de ville à 300 px : `planche-hotel-de-ville-300px.png`.
