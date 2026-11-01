@@ -27,6 +27,7 @@ Ces documents dans `docs/` définissent la vision, les mécaniques, l'univers et
 - **[docs/references-jeux-du-genre.md](docs/references-jeux-du-genre.md)** — Comparatif d'OGame, Travian Kingdoms, Last War et Call of Dragons (format de serveur, rythme, place du joueur gratuit, poids du paiement) et leçons pour Kalendrath. À consulter pour tout travail de rythme, de theorycrafting ou de monétisation.
 - **[docs/direction-artistique-unites.md](docs/direction-artistique-unites.md)** — Briefs visuels (prompts IA générative, en anglais) pour les unités militaires du lexique, avec un préambule de style commun. Document de travail pour la Phase 3a de la roadmap (DA Midjourney).
 - **[docs/direction-artistique-batiments.md](docs/direction-artistique-batiments.md)** — Briefs visuels (prompts Midjourney) pour les 19 bâtiments, les 6 paliers de cité et la capitale.
+- **[docs/direction-artistique-recherches.md](docs/direction-artistique-recherches.md)** — Vignettes de mise en situation pour les 14 recherches (études arcaniques) : principes, scène et élément signature de chacune, risques, ordre de production (décidé le 2026-11-01).
 - **[docs/direction-artistique-planche-de-style.md](docs/direction-artistique-planche-de-style.md)** — Outil retenu (Midjourney, `--sref`) et méthode pour la planche de style de la Phase 3a, avec les prompts d'amorçage (personnage, architecture, icône, cadre d'interface).
 
 Ces documents sont vivants et évolueront au fil du projet — s'y référer plutôt que de supposer des mécaniques ou noms non confirmés.
