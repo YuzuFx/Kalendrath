@@ -14,6 +14,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Piquier des Marches | https://cdn.midjourney.com/98fb3e53-2c25-4907-a864-e1b77fa12b44/0_0.png |
 | Cavalier | https://cdn.midjourney.com/5317952c-5acb-41aa-8711-bc2de06943b5/0_0.png |
 | Paladin | https://cdn.midjourney.com/068d6fc1-1f52-46e6-b9d9-a3bcd6d630d9/0_0.png |
+| Pourfendeur | https://cdn.midjourney.com/53607c7f-ee90-443e-8eeb-64959650baae/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -128,6 +129,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Piquier des Marches | `piquier-vary-subtle.png` | Image unique (variation 2 du lot "Vary Subtle" sur la base retenue) |
 | Cavalier | `cavalier-mise-en-situation.png` | Image unique upscalée (case 4 de la grille, U4 Subtle, 2688 × 1792) |
 | Paladin | `paladin-mise-en-situation.png` | Image unique upscalée (case 4 de la grille v8, U4 Subtle, 2688 × 1792) |
+| Pourfendeur | `pourfendeur-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792) |
 
 ## Paliers de cité (10 images, format 7:3)
 
