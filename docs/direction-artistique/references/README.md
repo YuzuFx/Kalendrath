@@ -23,6 +23,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Éclaireur | https://cdn.midjourney.com/58778723-096b-4314-9c07-7aa6794c04ff/0_0.png |
 | Récupérateur | https://cdn.midjourney.com/a26937c5-5b89-4797-9bd3-1a80e1a15b8c/0_0.png |
 | Pionnier | https://cdn.midjourney.com/638e3356-bbcf-4f82-b59e-80dfb366aaa6/0_0.png |
+| Baliste (v2, repli) | https://cdn.midjourney.com/b3ae0150-8128-45a0-adf1-da807f485537/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -146,6 +147,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Éclaireur | `eclaireur-mise-en-situation.png` | Image unique upscalée (case 4 de la grille v1, U4 Subtle, 2688 × 1792) |
 | Récupérateur | `recuperateur-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792) |
 | Pionnier | `pionnier-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v1, U1 Subtle, 2688 × 1792) |
+| Baliste | `baliste-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). **Repli** : pointe peu arcanique, à remplacer si la v3 est meilleure |
 
 ## Paliers de cité (10 images, format 7:3)
 
