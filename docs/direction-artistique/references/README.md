@@ -20,6 +20,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Catapulte de Rupture | https://cdn.midjourney.com/07238322-0a1f-4e97-b6bb-5dc155bce4e5/0_0.png |
 | Caravane | https://cdn.midjourney.com/3322073e-b4f7-4629-b1ad-d7ff5ab8f6b0/0_0.png |
 | Convoi | https://cdn.midjourney.com/02d50586-fe3f-47de-aca3-b750c5867fa7/0_0.png |
+| Éclaireur | https://cdn.midjourney.com/58778723-096b-4314-9c07-7aa6794c04ff/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -140,6 +141,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Catapulte de Rupture | `catapulte-rupture-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v3, U1 Subtle, 2688 × 1792) |
 | Caravane | `caravane-mise-en-situation.png` | Image unique upscalée (case 3 de la grille v1, U3 Subtle, 2688 × 1792) |
 | Convoi | `convoi-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). Signature discrète en bas à droite, acceptée par Gregory |
+| Éclaireur | `eclaireur-mise-en-situation.png` | Image unique upscalée (case 4 de la grille v1, U4 Subtle, 2688 × 1792) |
 
 ## Paliers de cité (10 images, format 7:3)
 
