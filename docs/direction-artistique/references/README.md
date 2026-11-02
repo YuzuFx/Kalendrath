@@ -22,6 +22,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Convoi | https://cdn.midjourney.com/02d50586-fe3f-47de-aca3-b750c5867fa7/0_0.png |
 | Éclaireur | https://cdn.midjourney.com/58778723-096b-4314-9c07-7aa6794c04ff/0_0.png |
 | Récupérateur | https://cdn.midjourney.com/a26937c5-5b89-4797-9bd3-1a80e1a15b8c/0_0.png |
+| Pionnier | https://cdn.midjourney.com/638e3356-bbcf-4f82-b59e-80dfb366aaa6/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -144,6 +145,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Convoi | `convoi-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). Signature discrète en bas à droite, acceptée par Gregory |
 | Éclaireur | `eclaireur-mise-en-situation.png` | Image unique upscalée (case 4 de la grille v1, U4 Subtle, 2688 × 1792) |
 | Récupérateur | `recuperateur-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792) |
+| Pionnier | `pionnier-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v1, U1 Subtle, 2688 × 1792) |
 
 ## Paliers de cité (10 images, format 7:3)
 
