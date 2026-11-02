@@ -230,8 +230,19 @@ Dark heroic fantasy full-body character/vehicle concept art in a dynamic battle 
 
 ---
 
+## 🧺 Unités civiles
+
+*Méthode (2026-11-02) :* mêmes règles que le roster militaire (préambule commun, `--sref` d'unités à `--sw 275`, `--ar 3:2`, `--stylize 250`, vue d'ensemble large, exclusions de texte). **Pas de combat** : le décor dit le danger (fumée, village incendié au loin) sans orc au premier plan. Ordre : Caravane, Convoi, Éclaireur, Récupérateur, Pionnier. Chacune se définit par opposition aux autres : la Caravane est **légère et rapide** (une voiture), le Convoi **lourd et nombreux**.
+
+### Caravane *(petit transport)*
+
+**Mise en situation v1 de la Caravane (2026-11-02), à tester.** *Choix :* **une seule voiture** couverte à bâche cirée tirée par **deux chevaux**, en marche vers la gauche sur une route de terre, vue de trois quarts avant (les chevaux mènent) ; **lanterne de mana violet-bleu** à l'avant et moyeux de roues à runes (accent arcanique) ; **caisses et sacs frappés du sceau du royaume** ; **trois personnes** : cocher, garde armé d'une épée à côté de lui, marchand à l'arrière sous la bâche ; **fumée d'un village incendié au loin** pour le danger. Pas d'orcs.
+```
+Dark heroic fantasy full-body character/vehicle concept art in a dynamic travel scene, human kingdom at war with resurgent orc hordes, weathered practical plate and leather gear with hand-forged imperfections, muted earthy palette (iron grey, oxblood red, aged bronze) accented by a clearly visible violet-blue arcane mana glow on runes and lanterns, painterly digital illustration, dramatic single-source lighting consistent with the scene, atmospheric environment supporting the action without overwhelming the subject, sharp readable silhouette with the vehicle as the clear focal point, highly detailed, Pulled back wide full-length shot showing the entire scene with generous empty space around the wagon: a single light covered merchant wagon of the human kingdom on a dirt road, a tilted waxed canvas cover over a sturdy wooden frame, two large wooden wheels with iron rims and rune-carved hubs glowing violet-blue, drawn by exactly two strong brown draft horses in leather harness, the whole wagon and both horses fully visible with all hooves and wheels on the ground, moving fast toward the left, a hanging lantern at the front of the wagon filled with glowing violet-blue mana, wooden crates and grain sacks stamped with the royal seal tied under the cover, exactly three people: a driver in a dark-green hooded cloak holding the reins, a guard in leather and a steel cap with a sword at his belt sitting beside him, and a merchant in a travelling coat peering out from the back under the canvas, a rutted road across a wide empty plain, black smoke from a burning village on the far horizon, hurried and tense bearing, light and swift, three-quarter front view --ar 3:2 --stylize 250 --sref https://cdn.midjourney.com/8c4d6ce1-2b39-4487-b1c7-c83ed8ed7ce2/0_0.png --sw 275 --no text, letters, writing, caption, title, watermark, logo, orcs, soldiers fighting, battle, large convoy, many wagons, modern, tank, steampunk, gears, cropped, cut off, close-up, white armor, golden light, gold sun, rainbow, colorful cloth, women
+```
+
 ## Points encore ouverts
 
 - [ ] Palette de couleurs définitive (royaume du joueur vs factions ennemies) — à figer une fois les premiers essais Midjourney validés
 - [ ] Reaper (classe héros General, cf. GDD 5.5) — pas encore de nom/description, à traiter avec le reste du système héros
-- [ ] Unités civiles (Récupérateur, Caravane, Convoi, Éclaireur, Pionnier) et défenses statiques — pas encore de brief visuel
+- [ ] Unités civiles (Caravane en cours ; Convoi, Éclaireur, Récupérateur, Pionnier à venir) et défenses statiques — pas encore de brief visuel pour la plupart
