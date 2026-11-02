@@ -21,6 +21,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Caravane | https://cdn.midjourney.com/3322073e-b4f7-4629-b1ad-d7ff5ab8f6b0/0_0.png |
 | Convoi | https://cdn.midjourney.com/02d50586-fe3f-47de-aca3-b750c5867fa7/0_0.png |
 | Éclaireur | https://cdn.midjourney.com/58778723-096b-4314-9c07-7aa6794c04ff/0_0.png |
+| Récupérateur | https://cdn.midjourney.com/a26937c5-5b89-4797-9bd3-1a80e1a15b8c/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -142,6 +143,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Caravane | `caravane-mise-en-situation.png` | Image unique upscalée (case 3 de la grille v1, U3 Subtle, 2688 × 1792) |
 | Convoi | `convoi-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). Signature discrète en bas à droite, acceptée par Gregory |
 | Éclaireur | `eclaireur-mise-en-situation.png` | Image unique upscalée (case 4 de la grille v1, U4 Subtle, 2688 × 1792) |
+| Récupérateur | `recuperateur-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792) |
 
 ## Paliers de cité (10 images, format 7:3)
 
