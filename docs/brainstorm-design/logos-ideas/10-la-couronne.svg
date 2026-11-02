@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Croquis de logo Kalendrath, piste La Couronne de la cité">
+  <title>Kalendrath, piste 10 : La Couronne de la cité (croquis)</title>
+  <desc>La silhouette d'une cité vue de face : un rempart continu, quatre tours, et l'obélisque au centre, plus haut que tout, fendu d'une fenêtre de mana. C'est l'argument des images de l'Hôtel de ville (l'obélisque ne bouge pas, la ville grandit autour) réduit à un pictogramme. Le nombre de tours peut varier pour marquer les paliers ou les chapitres.</desc>
+  <defs>
+    <g id="couronne">
+      <!-- Rempart et tours d'un seul tenant -->
+      <path fill="#B58A45" d="M8 92 V62 H14 V44 L19 36 L24 44 V62 H30 V30 L35 21 L40 30 V62 H60 V30 L65 21 L70 30 V62 H76 V44 L81 36 L86 44 V62 H92 V92 Z"/>
+      <!-- L'obélisque central, plus clair, dépasse tout -->
+      <path fill="#E9BE74" d="M50 4 L56 18 L58 92 L42 92 L44 18 Z"/>
+      <!-- Fenêtre de mana -->
+      <path fill="#A3A1FF" d="M48.6 30 H51.4 V74 H48.6 Z"/>
+      <!-- Porte -->
+      <path fill="#0A0A14" d="M45 92 V84 Q50 78 55 84 V92 Z"/>
+    </g>
+    <g id="couronne-mono">
+      <path fill-rule="evenodd" d="M8 92 V62 H14 V44 L19 36 L24 44 V62 H30 V30 L35 21 L40 30 V62 H43.5 L44 18 L50 4 L56 18 L56.5 62 H60 V30 L65 21 L70 30 V62 H76 V44 L81 36 L86 44 V62 H92 V92 H55 V84 Q50 78 45 84 V92 Z M48.6 30 H51.4 V74 H48.6 Z"/>
+    </g>
+  </defs>
+  <rect width="720" height="360" fill="#0A0A14"/>
+  <use href="#couronne" transform="translate(40 50) scale(2.2)"/>
+  <use href="#couronne" transform="translate(300 62) scale(0.62)"/>
+  <text x="372" y="108" fill="#E6E2D8" font-family="Cinzel, Marcellus, 'Times New Roman', serif" font-size="34" letter-spacing="7">KALENDRATH</text>
+  <rect x="300" y="200" width="64" height="64" rx="12" fill="#141B24"/>
+  <use href="#couronne" transform="translate(306 206) scale(0.52)"/>
+  <rect x="384" y="216" width="32" height="32" rx="6" fill="#141B24"/>
+  <use href="#couronne" transform="translate(386 218) scale(0.28)"/>
+  <rect x="436" y="224" width="16" height="16" rx="3" fill="#141B24"/>
+  <use href="#couronne" transform="translate(436.5 224.5) scale(0.15)"/>
+  <rect x="480" y="190" width="200" height="84" fill="#F2EDE3"/>
+  <use href="#couronne-mono" fill="#141B24" transform="translate(498 202) scale(0.6)"/>
+  <text x="560" y="240" fill="#141B24" font-family="Cinzel, Marcellus, serif" font-size="12" letter-spacing="2">KALENDRATH</text>
+  <text x="40" y="340" fill="#A8B0B9" font-family="sans-serif" font-size="12">10 · La Couronne de la cité — croquis : rempart, tours, obélisque central fendu de mana. Lettrage provisoire.</text>
+</svg>

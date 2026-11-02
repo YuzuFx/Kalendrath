@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" width="720" height="360" role="img" aria-label="Croquis de logo Kalendrath, piste Le Nœud">
+  <title>Kalendrath, piste 9 : Le Nœud (croquis)</title>
+  <desc>Un K dont la haste est un obélisque et dont les deux branches naissent d'un nœud de mana en losange : le point de convergence des Straumar. Le nœud soude la haste aux branches, ce qui supprime la lecture « i&lt; » de la piste 3, et il n'y a plus d'étincelle au-dessus de la pointe.</desc>
+  <defs>
+    <g id="noeud">
+      <!-- Haste-obélisque : face éclairée et face d'ombre -->
+      <path fill="#E9BE74" d="M26 6 L26 92 L14 92 L18 22 Z"/>
+      <path fill="#B58A45" d="M26 6 L34 22 L37 92 L26 92 Z"/>
+      <!-- Branches, coupes horizontales comme des pierres taillées -->
+      <path fill="#E9BE74" d="M47 41 L77 8 L95 8 L56 50 Z"/>
+      <path fill="#B58A45" d="M56 50 L95 92 L77 92 L47 59 Z"/>
+      <!-- Le nœud de convergence, posé contre la haste -->
+      <path fill="#A3A1FF" d="M36 50 L46 39 L57 50 L46 61 Z"/>
+    </g>
+    <g id="noeud-mono">
+      <path d="M26 6 L34 22 L37 92 L14 92 L18 22 Z"/>
+      <path d="M47 41 L77 8 L95 8 L56 50 Z M56 50 L95 92 L77 92 L47 59 Z"/>
+      <path d="M36 50 L46 39 L57 50 L46 61 Z"/>
+    </g>
+  </defs>
+  <rect width="720" height="360" fill="#0A0A14"/>
+  <use href="#noeud" transform="translate(40 50) scale(2.2)"/>
+  <use href="#noeud" transform="translate(300 62) scale(0.62)"/>
+  <text x="372" y="108" fill="#E6E2D8" font-family="Cinzel, Marcellus, 'Times New Roman', serif" font-size="34" letter-spacing="7">KALENDRATH</text>
+  <rect x="300" y="200" width="64" height="64" rx="12" fill="#141B24"/>
+  <use href="#noeud" transform="translate(306 206) scale(0.52)"/>
+  <rect x="384" y="216" width="32" height="32" rx="6" fill="#141B24"/>
+  <use href="#noeud" transform="translate(386 218) scale(0.28)"/>
+  <rect x="436" y="224" width="16" height="16" rx="3" fill="#141B24"/>
+  <use href="#noeud" transform="translate(436.5 224.5) scale(0.15)"/>
+  <rect x="480" y="190" width="200" height="84" fill="#F2EDE3"/>
+  <use href="#noeud-mono" fill="#141B24" transform="translate(498 202) scale(0.6)"/>
+  <text x="560" y="240" fill="#141B24" font-family="Cinzel, Marcellus, serif" font-size="12" letter-spacing="2">KALENDRATH</text>
+  <text x="40" y="340" fill="#A8B0B9" font-family="sans-serif" font-size="12">9 · Le Nœud — croquis : K-obélisque soudé par un nœud de mana (convergence des Straumar). Lettrage provisoire.</text>
+</svg>
