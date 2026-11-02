@@ -18,6 +18,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Chevaucheur des Plaines | https://cdn.midjourney.com/67325ae9-8190-486e-8344-c9904eaa3ce1/0_0.png |
 | Brise-Rempart | https://cdn.midjourney.com/0da64095-4787-4931-b089-26bb98537873/0_0.png |
 | Catapulte de Rupture | https://cdn.midjourney.com/07238322-0a1f-4e97-b6bb-5dc155bce4e5/0_0.png |
+| Caravane | https://cdn.midjourney.com/3322073e-b4f7-4629-b1ad-d7ff5ab8f6b0/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -136,6 +137,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Chevaucheur des Plaines | `chevaucheur-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v1, U1 Subtle, 2688 × 1792) |
 | Brise-Rempart | `brise-rempart-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v5, U1 Subtle, 2688 × 1792) |
 | Catapulte de Rupture | `catapulte-rupture-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v3, U1 Subtle, 2688 × 1792) |
+| Caravane | `caravane-mise-en-situation.png` | Image unique upscalée (case 3 de la grille v1, U3 Subtle, 2688 × 1792) |
 
 ## Paliers de cité (10 images, format 7:3)
 
