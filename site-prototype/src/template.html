@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<meta name="theme-color" content="#141B24">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="{{url_self}}">
+<link rel="alternate" hreflang="fr" href="https://kalendrath.com/fr/">
+<link rel="alternate" hreflang="en" href="https://kalendrath.com/en/">
+<link rel="alternate" hreflang="x-default" href="https://kalendrath.com/en/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kalendrath">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{url_self}}">
+<meta property="og:locale" content="{{og_locale}}">
+<meta property="og:locale:alternate" content="{{og_locale_alt}}">
+<meta property="og:image" content="https://kalendrath.com/img/og-kalendrath.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="{{alt_hero}}">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23141B24'/%3E%3Cpath d='M16 3l4 6v18H12V9z' fill='%23C59B5E'/%3E%3Cpath d='M15.25 10h1.5v15h-1.5z' fill='%23A3A1FF'/%3E%3C/svg%3E">
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/alegreya-sans-latin-400-normal.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="../assets/fonts/grenze-gotisch-latin-700-normal.woff2" crossorigin>
+<link rel="preload" as="image" href="../img/cite-1200.webp" imagesrcset="../img/cite-720.webp 720w, ../img/cite-1200.webp 1200w, ../img/cite-2400.webp 2400w" imagesizes="100vw" fetchpriority="high">
+<link rel="stylesheet" href="../assets/fonts.css">
+<link rel="stylesheet" href="../assets/site.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Kalendrath","url":"{{url_self}}","inLanguage":"{{lang}}"}</script>
+</head>
+<body class="home">
+<a class="skip" href="#contenu">{{skip}}</a>
+
+<header class="head">
+  <div class="wrap head__in">
+    <a class="brand" href="/{{lang}}/" aria-label="{{brand_label}}">
+      <svg class="brand__mark" viewBox="0 0 14 30" aria-hidden="true"><path d="M7 0l5 7v23H2V7z" fill="#C59B5E"/><path d="M6.25 9h1.5v18h-1.5z" fill="#A3A1FF"/></svg>
+      <span class="brand__name">Kalendrath</span>
+    </a>
+    <nav class="nav" aria-label="{{nav_label}}">
+      <ul class="nav__list">
+        <li><a href="{{p_world}}">{{n_world}}</a></li>
+        <li><a href="{{p_game}}">{{n_game}}</a></li>
+        <li><a href="{{p_roadmap}}">{{n_roadmap}}</a></li>
+        <li><a href="{{p_gallery}}">{{n_gallery}}</a></li>
+        <li><a href="{{p_news}}">{{n_news}}</a></li>
+        <li><a href="{{p_community}}">{{n_community}}</a></li>
+      </ul>
+    </nav>
+    <div class="lang" aria-label="{{lang_label}}">
+      {{lang_switch}}
+    </div>
+    <details class="menu">
+      <summary>{{menu}}</summary>
+      <nav class="menu__panel" aria-label="{{nav_label}}">
+        <a href="{{p_world}}">{{n_world}}</a>
+        <a href="{{p_game}}">{{n_game}}</a>
+        <a href="{{p_roadmap}}">{{n_roadmap}}</a>
+        <a href="{{p_gallery}}">{{n_gallery}}</a>
+        <a href="{{p_news}}">{{n_news}}</a>
+        <a href="{{p_community}}">{{n_community}}</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="contenu">
+  <section class="hero" aria-labelledby="titre">
+    <div class="hero__seam">
+      <div class="hero__media">
+        <img src="../img/cite-1200.webp"
+             srcset="../img/cite-720.webp 720w, ../img/cite-1200.webp 1200w, ../img/cite-2400.webp 2400w"
+             sizes="100vw" width="2400" height="1029" fetchpriority="high"
+             alt="{{alt_hero}}">
+      </div>
+    </div>
+    <div class="hero__title">
+      <div class="wrap"><h1 class="wordmark" id="titre">Kalendrath</h1></div>
+    </div>
+  </section>
+
+  <section class="pitch" aria-label="{{pitch_label}}">
+    <div class="wrap pitch__grid">
+      <p class="pitch__lead">{{pitch_lead}}</p>
+      <div class="pitch__side">
+        <p class="pitch__genre">{{pitch_genre}}</p>
+        <div class="pitch__actions">
+          <a class="btn btn--bronze" href="#inscription">{{cta}}</a>
+          <a class="btn btn--line" href="{{p_world}}">{{cta_world}}</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="attente">
+    <div class="wrap">
+      <h2 class="h2 vows__head" id="attente">{{vows_title}}</h2>
+      <div class="vows">
+        <article class="vow vow--major">
+          <div class="vow__window">
+            <img src="../img/donjon-2-1200.webp" srcset="../img/donjon-2-640.webp 640w, ../img/donjon-2-1200.webp 1200w" sizes="(min-width: 48rem) 55vw, 100vw" width="1200" height="800" loading="lazy" decoding="async"
+                 alt="{{alt_keep}}">
+          </div>
+          <h3 class="h3">{{vow1_title}}</h3>
+          <p class="vow__text">{{vow1_text}}</p>
+        </article>
+        <article class="vow vow--minor">
+          <div class="vow__window">
+            <img src="../img/chapitre-640.webp" srcset="../img/chapitre-640.webp 640w, ../img/chapitre-1080.webp 1080w" sizes="(min-width: 62rem) 13rem, (min-width: 48rem) 11rem, 7.5rem" width="640" height="427" loading="lazy" decoding="async"
+                 alt="{{alt_chapter}}">
+          </div>
+          <div class="vow__body">
+            <h3 class="h3">{{vow2_title}}</h3>
+            <p class="vow__text">{{vow2_text}}</p>
+          </div>
+        </article>
+        <article class="vow vow--minor">
+          <div class="vow__window">
+            <img src="../img/guet-2-640.webp" srcset="../img/guet-2-640.webp 640w, ../img/guet-2-1200.webp 1200w" sizes="(min-width: 62rem) 13rem, (min-width: 48rem) 11rem, 7.5rem" width="640" height="427" loading="lazy" decoding="async"
+                 alt="{{alt_watch}}">
+          </div>
+          <div class="vow__body">
+            <!-- [Revue 2026-10-30] Carte PvP : décision de Gregory en attente (R13 de l'étude PvP, depuis le 2026-10-30 un membre d'une alliance à bannière peut être attaqué). Texte conservé tel quel, ne pas publier en l'état. -->
+            <h3 class="h3">{{vow3_title}}</h3>
+            <p class="vow__text">{{vow3_text}}</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section ages" aria-labelledby="cite">
+    <div class="wrap ages__grid">
+      <div class="ages__intro">
+        <h2 class="h2" id="cite">{{ages_title}}</h2>
+        <div class="prose" style="margin-top: var(--s-6)">
+          <p>{{ages_text}}</p>
+        </div>
+      </div>
+      <div class="ages__body">
+        <input class="ages__radio" type="radio" name="age" id="age1" checked>
+        <input class="ages__radio" type="radio" name="age" id="age2">
+        <input class="ages__radio" type="radio" name="age" id="age3">
+        <figure class="ages__figure">
+          <div class="ages__stage">
+            <img class="ages__img--1" src="../img/hdv-1-1400.webp" srcset="../img/hdv-1-700.webp 700w, ../img/hdv-1-1400.webp 1400w" sizes="(min-width: 62rem) 60vw, 100vw" width="1400" height="933" loading="lazy" decoding="async"
+                 alt="{{alt_age1}}">
+            <img class="ages__img--2" src="../img/hdv-2-1400.webp" srcset="../img/hdv-2-700.webp 700w, ../img/hdv-2-1400.webp 1400w" sizes="(min-width: 62rem) 60vw, 100vw" width="1400" height="933" loading="lazy" decoding="async"
+                 alt="{{alt_age2}}">
+            <img class="ages__img--3" src="../img/hdv-3-1400.webp" srcset="../img/hdv-3-700.webp 700w, ../img/hdv-3-1400.webp 1400w" sizes="(min-width: 62rem) 60vw, 100vw" width="1400" height="933" loading="lazy" decoding="async"
+                 alt="{{alt_age3}}">
+          </div>
+        </figure>
+        <fieldset class="ages__rod">
+          <legend class="visually-hidden">{{ages_legend}}</legend>
+          <label class="ages__step" for="age1">{{age1}}</label>
+          <label class="ages__step" for="age2">{{age2}}</label>
+          <label class="ages__step" for="age3">{{age3}}</label>
+        </fieldset>
+        <p class="ages__caption">{{ages_caption}}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="monde">
+    <div class="wrap world__grid">
+      <div class="world__img">
+        <img src="../img/puits-3-1200.webp" srcset="../img/puits-3-640.webp 640w, ../img/puits-3-1200.webp 1200w" sizes="(min-width: 48rem) 45vw, 100vw" width="1200" height="800" loading="lazy" decoding="async"
+             alt="{{alt_well}}">
+      </div>
+      <div class="world__text">
+        <h2 class="h2" id="monde">{{world_title}}</h2>
+        <div class="prose">
+          <p>{{world_p1}}</p>
+          <p>{{world_p2}}</p>
+          <p>{{world_p3}}</p>
+        </div>
+        <p><a class="world__link" href="{{p_world}}">{{world_link}}</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="standard" id="inscription" aria-labelledby="suivre">
+    <div class="wrap">
+      <div class="standard__rod" aria-hidden="true"></div>
+      <div class="standard__cloth">
+        <h2 class="standard__title" id="suivre">{{form_title}}</h2>
+        <p class="standard__text">{{form_text}}</p>
+        <form class="form" action="#" method="post" novalidate data-err-email="{{err_email}}" data-err-consent="{{err_consent}}">
+          <div class="form__fields">
+            <label class="form__label" for="email">{{form_label}}</label>
+            <input class="form__input" id="email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="{{form_placeholder}}" aria-describedby="email-err">
+            <p id="email-err" class="form__legal" role="alert" hidden></p>
+            <input type="hidden" name="langue" value="{{lang}}">
+            <label class="form__hp" aria-hidden="true">{{form_hp}} <input type="text" name="site" tabindex="-1" autocomplete="off"></label>
+            <label class="form__check">
+              <input type="checkbox" name="consentement" required>
+              <span>{{form_consent}}</span>
+            </label>
+            <div class="form__send"><button class="btn btn--bronze" type="submit">{{cta}}</button></div>
+            <p class="form__legal">{{form_legal}} <a href="{{p_privacy}}">{{form_privacy}}</a>.</p>
+          </div>
+          <p class="form__done" role="status" tabindex="-1">{{form_done}}</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section marks" aria-labelledby="jalons" style="padding-top: 0">
+    <div class="wrap">
+      <div class="marks__head">
+        <h2 class="h2" id="jalons">{{marks_title}}</h2>
+        <p class="marks__intro">{{marks_intro}}</p>
+      </div>
+      <ol class="marks__list">
+        {{marks}}
+      </ol>
+      <p class="marks__more"><a class="world__link" href="{{p_roadmap}}">{{marks_link}}</a></p>
+    </div>
+  </section>
+
+  <aside class="note" aria-label="{{note_label}}">
+    <div class="wrap">
+      <p class="note__text">{{note}}</p>
+    </div>
+  </aside>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot__grid">
+      <div class="foot__id">
+        <p class="foot__brand">Kalendrath</p>
+        <p class="foot__ai">{{foot_ai}}</p>
+      </div>
+      <nav class="foot__links" aria-label="{{foot_comm_label}}">
+        <a href="{{p_community}}">Discord</a>
+        <a href="https://www.reddit.com/r/Kalendrath/" lang="en">Reddit</a>
+        <a href="{{p_community}}">X</a>
+        <a href="/{{lang}}/news/rss.xml">{{foot_rss}}</a>
+      </nav>
+      <nav class="foot__links" aria-label="{{foot_info_label}}">
+        <a href="{{p_contact}}">{{foot_contact}}</a>
+        <a href="{{p_legal}}">{{foot_legal}}</a>
+        <a href="{{p_privacy}}">{{foot_privacy}}</a>
+      </nav>
+    </div>
+    <div class="foot__base">
+      <span>© 2026 Kalendrath</span>
+      <a href="{{other_url}}" hreflang="{{other_lang}}" lang="{{other_lang}}">{{other_label}}</a>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/form.js" defer></script>
+</body>
+</html>

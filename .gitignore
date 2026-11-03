@@ -19,3 +19,7 @@ yarn-error.log
 rust/*/target
 # Compiled rust apps (rust modules are recompiled during container start)
 storage/rust-libs/*.so
+# Prototype de la vitrine
+/site-prototype/node_modules
+/site-prototype/captures
+/site-prototype/package-lock.json
