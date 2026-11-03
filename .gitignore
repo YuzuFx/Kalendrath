@@ -21,3 +21,8 @@ rust/*/target
 storage/rust-libs/*.so
 # Captures du navigateur Playwright MCP
 .playwright-mcp/
+
+# Prototype de la vitrine
+/site-prototype/node_modules
+/site-prototype/captures
+/site-prototype/package-lock.json
