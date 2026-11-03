@@ -173,6 +173,25 @@ Pour chaque traitement : finalité, base légale (article 6), personnes concern�
 | Destinataires | Éditeur |
 | Conservation | Clé jusqu'à révocation ; journaux 12 mois |
 
+### T12. Parrainage *[Revue : MI-17]*
+
+| | |
+|---|---|
+| Statut | **Prévu, pas en service** : mécanique à l'étude ([étude du parrainage](../etude-parrainage.md)), rien de codé au 03/11/2026. Fiche créée d'avance pour combler la lacune MI-17 ; à confirmer ou à ajuster au codage *[Màj 03/11]* |
+| Finalités | Attribuer une récompense en Kaelite gagnée au parrain et au filleul quand le filleul franchit des paliers de progression ; détecter les abus (auto-parrainage, comptes liés) |
+| Base légale | Récompense : exécution du contrat (6.1.b), le parrainage étant une fonction du service décrite dans les CGU ; lutte contre la fraude : intérêt légitime (6.1.f), avec mise en balance à rédiger dans l'AIPD de T4 (D19) |
+| Personnes | Joueurs parrains ; joueurs filleuls (inscrits par un lien ou un code de parrainage). **Aucune donnée sur des tiers non inscrits** : aucune adresse électronique d'ami saisie, aucun import de contacts, aucun message d'invitation envoyé par Kalendrath |
+| Données | Code de parrainage (identifiant aléatoire par compte) ; lien parrain-filleul (deux identifiants de compte, date de rattachement) ; paliers atteints (palier, date, serveur) ; récompenses versées ou en attente. Pour la détection des abus : seuls les signaux déjà collectés par T4 (IP, horodatages, agent utilisateur), **sans nouvelle collecte et sans empreinte d'appareil** |
+| Ce que voit le parrain | Le pseudonyme de jeu du filleul et le palier atteint, jamais l'adresse électronique, l'IP ni l'âge déclaré ; le filleul peut masquer son pseudonyme (« Un joueur invité ») |
+| Destinataires | Éditeur ; modérateurs, pour les seuls cas de versement bloqué (accès limité au dossier du cas) ; le parrain et le filleul, pour les éléments ci-dessus. Aucun sous-traitant nouveau |
+| Transferts hors UE | Ceux de T2 et T4 (hébergement OVH ; Cloudflare, États-Unis), sans transfert propre au parrainage |
+| Conservation | Lien et paliers : jusqu'à la clôture du parrainage (180 à 365 jours, selon la fenêtre de palier), puis 12 mois pour la défense en cas de litige sur la récompense, puis suppression ou anonymisation. Dossier d'un versement bloqué : régime de T5 (limité au cas). **Durées proposées, à arrêter avec l'avocat** |
+| Décision automatisée | Non au sens de l'article 22 : un recoupement de signaux **suspend** un versement et déclenche une revue humaine ; aucune sanction, aucun refus définitif ni aucune fermeture de compte sans décision humaine. Profilage au sens de l'article 4.4 : à couvrir dans l'AIPD de T4 |
+| Mineurs | Pas de mise en avant du parrainage à l'inscription, pas de message invitant à recruter des camarades ; plafonds de gain par serveur ; règle d'âge des CGU applicable aux deux côtés du lien |
+| Droits | Accès et portabilité : lien et paliers du compte. Effacement du compte du filleul : le lien nominatif est supprimé, la récompense déjà versée au parrain reste acquise. Opposition à l'intérêt légitime : examinée au cas par cas, sans effet sur la revue des versements en cours. Les deux côtés du lien sont traités dans la [procédure 08](08-procedure-droits-et-violations.md) |
+| Point de collecte | Inscription par un lien ou un code : phrase d'information au filleul (articles 13 et 14 du RGPD) et renvoi à la politique de confidentialité |
+| Analyse d'impact | Couverte par celle de T4 si elle est étendue aux versements bloqués ; à confirmer |
+
 ## 2. Sous-traitants (article 28 du RGPD)
 
 | Sous-traitant | Traitements | Localisation | Garanties | Contrat de sous-traitance signé |
@@ -205,3 +224,4 @@ Responsables distincts (pas de contrat de sous-traitance) : Patreon, Inc. (T7), 
 | 2026-10-30 | Création du brouillon | Claude Code, à valider par l'Éditeur |
 | 2026-10-30 | Reprise des corrections non controversées de la revue juridique et de la revue comptable (T2 à T5, T11, sous-traitants, règle IA) | Claude Code, revue générale |
 | 2026-10-31 | Décisions de Gregory : OVH (hébergement, domaines), Stripe classique (T6), T1 prévu mais pas en service (Brevo retiré, exigences ajoutées), T5 bis rapports d'enquête publics | Claude Code, à valider par l'Éditeur |
+| 2026-11-03 | Fiche T12 (parrainage, MI-17), prévue et non en service | Claude Code, à valider par l'Éditeur |
