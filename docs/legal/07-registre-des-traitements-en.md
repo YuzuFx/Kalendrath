@@ -173,6 +173,25 @@ For each operation: purpose, legal basis (Article 6), data subjects, data catego
 | Recipients | Publisher |
 | Retention | Key until revoked; logs 12 months |
 
+### T12. Referral *[Revue: MI-17]*
+
+| | |
+|---|---|
+| Status | **Planned, not live**: mechanic under study ([referral study](../etude-parrainage.md), in French), nothing coded as of 2026-11-03. Sheet created in advance to close gap MI-17; to be confirmed or adjusted when coded *[Update 03/11]* |
+| Purposes | Grant an earned Kaelite reward to the sponsor and the referred player when the referred player reaches progression milestones; detect abuse (self-referral, linked accounts) |
+| Legal basis | Reward: performance of the contract (6.1.b), referral being a service feature described in the Terms of Service; fraud prevention: legitimate interest (6.1.f), with a balancing test to be written in the DPIA for T4 (D19) |
+| Data subjects | Sponsoring players; referred players (registered through a referral link or code). **No data about unregistered third parties**: no friend email address entered, no contact import, no invitation message sent by Kalendrath |
+| Data | Referral code (random identifier per account); sponsor-referred link (two account identifiers, link date); milestones reached (milestone, date, server); rewards granted or pending. For abuse detection: only the signals already collected under T4 (IP, timestamps, user agent), **no new collection and no device fingerprint** |
+| What the sponsor sees | The referred player's in-game nickname and the milestone reached, never the email address, IP or declared age; the referred player may hide their nickname ("An invited player") |
+| Recipients | Publisher; moderators, for blocked payouts only (access limited to the case file); the sponsor and the referred player, for the items above. No new processor |
+| Transfers outside the EU | Those of T2 and T4 (OVH hosting; Cloudflare, United States), none specific to referral |
+| Retention | Link and milestones: until the referral closes (180 to 365 days, depending on the milestone window), then 12 months to defend against a reward dispute, then deletion or anonymisation. Blocked-payout file: T5 regime (limited to the case). **Proposed durations, to be settled with the lawyer** |
+| Automated decision | No within the meaning of Article 22: a cross-check of signals **suspends** a payout and triggers human review; no sanction, final refusal or account closure without a human decision. Profiling within the meaning of Article 4.4: to be covered in the T4 DPIA |
+| Minors | Referral not promoted at sign-up, no message urging players to recruit classmates; per-server reward caps; the Terms of Service age rule applies to both sides of the link |
+| Rights | Access and portability: the account's link and milestones. Erasure of the referred player's account: the named link is deleted, the reward already granted to the sponsor stays acquired. Objection to legitimate interest: examined case by case, with no effect on the review of payouts in progress. Both sides of the link are handled in [procedure 08](08-procedure-droits-et-violations-en.md) |
+| Collection point | Sign-up through a link or code: information sentence to the referred player (Articles 13 and 14 GDPR) and link to the privacy policy |
+| DPIA | Covered by the T4 one if extended to blocked payouts; to be confirmed |
+
 ## 2. Processors (Article 28 GDPR)
 
 | Processor | Operations | Location | Safeguards | Data processing agreement signed |
@@ -205,3 +224,4 @@ Separate controllers (no processing agreement): Patreon, Inc. (T7), Discord (T8)
 | 2026-10-30 | Draft created | Claude Code, to be validated by the Publisher |
 | 2026-10-30 | Uncontroversial corrections from the legal and accounting reviews carried over (T2 to T5, T11, processors, AI rule) | Claude Code, general review |
 | 2026-10-31 | Gregory's decisions: OVH (hosting, domains), standard Stripe (T6), T1 planned but not live (Brevo removed, requirements added), T5a public investigation reports | Claude Code, to be validated by the Publisher |
+| 2026-11-03 | Sheet T12 (referral, MI-17), planned and not live | Claude Code, to be validated by the Publisher |
