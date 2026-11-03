@@ -12,7 +12,7 @@ Documents transverses utiles pour toute tâche : [game-design-document.md](game-
 Retours d'agents : [archives/retours-agents-2026-10-31.md](archives/retours-agents-2026-10-31.md) § 1. Décisions déjà prises : [etude-pvp.md](etude-pvp.md) § 9.1 et mémoire du 30-31/10.
 - ☐ Relire l'étude réécrite (568 lignes) et le bloc 5.4 du GDD modifié par un agent (non relu).
   **Docs :** [etude-pvp.md](etude-pvp.md) (§ 0 « en une page », § 1 à 8) ; [game-design-document.md](game-design-document.md) § 5.4 ; proposition de marquage du GDD : [etude-pvp.md](etude-pvp.md) § 10.
-- ☐ Corriger la règle R9, qui contredit la décision sur le mode vacances.
+- ☑ Corriger la règle R9, qui contredit la décision sur le mode vacances.
   **Docs :** [etude-pvp.md](etude-pvp.md) § 9.2 (R9) ; décision de Gregory dans la mémoire « décisions PvP/Discord/site » (mode vacances : 48 h, pas d'enchaînement, 72 h d'attente).
 - ☐ Trancher R4 : élargir « action hostile » (transport, déploiement, défense groupée, récolte de débris) pour casser le boosting.
   **Docs :** [etude-pvp.md](etude-pvp.md) § 4.3 (définition de « hostile »), § 4.7 (risques), § 9.2 (R4) ; code concerné cité au § 7 (`AttackMission`, `TransportMission`, `DeploymentMission`, `AcsDefendMission`, `RecycleMission`).
@@ -24,7 +24,7 @@ Retours d'agents : [archives/retours-agents-2026-10-31.md](archives/retours-agen
   **Docs :** [etude-pvp.md](etude-pvp.md) § 4.3 et § 9.2 (R9) ; § 7 « plan de mise en œuvre » ; suites de tests : `tests/` (missions de flotte, voir [decision-architecture-cible.md](decision-architecture-cible.md) § 4 sur la règle « toute règle manquante s'ajoute dans `app/Services` ou `app/GameMissions` avec son test Pest »).
 - ☐ Passer S13 (débris) et S14 (vacances/boucliers) au simulateur avant tout code.
   **Docs :** [etude-pvp.md](etude-pvp.md) § 8 « ce que le simulateur doit apprendre » ; [../tools/theorycrafting/README.md](../tools/theorycrafting/README.md) ; principe « cornerstone » dans [../CLAUDE.md](../CLAUDE.md).
-- ☐ Reformuler la promesse marketing « le joueur pacifique ne se fait pas écraser » (R13) dans le plan marketing, le brief et le site.
+- ☐ Reformuler la promesse marketing « le joueur pacifique ne se fait pas écraser » (R13) dans le plan marketing, le brief et le site. *Proposition de formulation ajoutée le 3/11 dans le plan marketing § 2, le brief § 2.1 et l'étude § 6.5 : reste à la valider ; le site (`site-prototype/`) n'est pas touché.*
   **Docs :** [etude-pvp.md](etude-pvp.md) § 6.5 et § 9.2 (R13) ; [plan-marketing.md](plan-marketing.md) § 2 (« pitch », « ce qu'on ne promet pas ») ; [brief-site-vitrine.md](brief-site-vitrine.md) § 2.1 ; mockups : section « Site vitrine » ci-dessous.
 - ☐ Confirmer le délai d'ouverture des guerres au chapitre 1 (proposition : J21).
   **Docs :** [etude-pvp.md](etude-pvp.md) § 5 « le délai minimal de la guerre : J21 » ; [etude-serveurs-en-continu.md](etude-serveurs-en-continu.md) (rythme par chapitre) ; [game-design-document.md](game-design-document.md) § 5.4 et § 5.9.
@@ -220,7 +220,7 @@ Retours d'agents : [archives/retours-agents-2026-10-30.md](archives/retours-agen
   **Docs :** archive 30/10 § 2 ; [game-design-document.md](game-design-document.md) § 4.1 (ressources) et § 5.1 ; [feuille-de-route-projet-jeu.md](feuille-de-route-projet-jeu.md) Phases 3c et 4 ; [decision-architecture-cible.md](decision-architecture-cible.md) § 5 (résolution temporelle).
 - ☐ Ville courante : choisie par le client (conseillé) ou conservée côté serveur ; ne pas exposer le « socle de 100 à 150 emplacements » avant d'avoir acté la règle.
   **Docs :** archive 30/10 § 2 (« Réorientation vers Kalendrath ») ; [game-design-document.md](game-design-document.md) § 4.5 (concepts de structure) et § 5.10.
-- ☐ GDD 5.10 : retirer les lunes de l'exemple de téléportation ; clarifier la « Salle » du Portail (pas de bâtiment « Salle » au lexique).
+- ☐ GDD 5.10 (le texte est en réalité au § 4.2, ligne du Portail des Sphères) : retirer les lunes de l'exemple de téléportation ; clarifier la « Salle » du Portail (pas de bâtiment « Salle » au lexique). *Fait le 3/11 : lunes retirées ; « Salle » signalée **[TBD]** dans le GDD sans nom inventé. Reste à décider ce que la Salle devient.*
   **Docs :** [game-design-document.md](game-design-document.md) § 5.10 et § 4.2 ; skill `lexique-kalendrath`.
 - ☐ Textes d'interface : où vivent les traductions (front typé ou `resources/lang/` via l'API) ; messages d'erreur de l'API à traduire avant l'alpha publique.
   **Docs :** archive 30/10 § 3 ; [../CLAUDE.md](../CLAUDE.md) (« contenu de jeu conçu en français en premier », anglais avant l'alpha publique) ; [game-design-document.md](game-design-document.md) § 4.6 (noms anglais validés) ; skill `lexique-kalendrath`.
