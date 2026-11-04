@@ -21,3 +21,6 @@ rust/*/target
 storage/rust-libs/*.so
 # Captures du navigateur Playwright MCP
 .playwright-mcp/
+
+# Archives de transcriptions : dépôt Git séparé (docs/archives/transcriptions/.git)
+docs/archives/transcriptions/
