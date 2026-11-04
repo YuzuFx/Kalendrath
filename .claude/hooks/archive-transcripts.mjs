@@ -11,11 +11,14 @@ const projectDir = process.env.CLAUDE_PROJECT_DIR ?? process.cwd();
 const archiveRoot = join(projectDir, 'docs', 'archives', 'transcriptions');
 
 try {
+  // Le dossier source passé en argument évite de lire l'entrée standard (qui bloquerait à la main).
   let input = {};
-  try {
-    input = JSON.parse(readFileSync(0, 'utf8'));
-  } catch {
-    // appelé à la main : on retombe sur --source
+  if (!process.argv[2]) {
+    try {
+      input = JSON.parse(readFileSync(0, 'utf8'));
+    } catch {
+      // entrée vide ou invalide
+    }
   }
 
   const source = process.argv[2] ?? (input.transcript_path ? dirname(input.transcript_path) : null);
