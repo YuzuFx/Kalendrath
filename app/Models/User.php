@@ -17,6 +17,7 @@ use Illuminate\Notifications\DatabaseNotificationCollection;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Carbon;
 use Lab404\Impersonate\Models\Impersonate;
+use Laravel\Sanctum\HasApiTokens;
 use OGame\Enums\CharacterClass;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -93,6 +94,7 @@ use Spatie\Permission\Traits\HasRoles;
 ])]
 class User extends Authenticatable
 {
+    use HasApiTokens;
     use HasFactory;
     use HasRoles;
     use Impersonate;
