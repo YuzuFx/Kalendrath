@@ -14,12 +14,20 @@ const N = [
     why: "Premier passage : il oblige à ouvrir l'Institut pour étudier le Rite, et à poser l'Atelier des Maîtres d'œuvre. Cible : le 2ᵉ ou 3ᵉ jour, pour que l'armée arrive vite." },
   { id: 'hdv3', k: 'gate', p: 3, n: 'Bourg', sub: 'Palier 3 · HdV niv. 7', hdv: 7, o: 'palier', og: null, req: [['hdv2', 6], ['rite', 2], ['maitres', 4]], cible: [5, 10],
     why: "Murs de pierre partiels et tour de guet : la ville s'ouvre au soin, à la diplomatie et à la surveillance. Cible : fin de la première semaine." },
-  { id: 'hdv4', k: 'gate', p: 4, n: 'Cité fortifiée', sub: 'Palier 4 · HdV niv. 10', hdv: 10, o: 'palier', og: null, req: [['hdv3', 9], ['rite', 4], ['maitres', 6]], cible: [14, 30],
+  { id: 'hdv4', k: 'gate', p: 4, n: 'Ville franche', sub: 'Palier 4 · HdV niv. 10', hdv: 10, o: 'palier', og: null, req: [['hdv3', 9], ['rite', 4], ['maitres', 6]], cible: [14, 30],
     why: "Remparts complets : l'Atelier des Remparts apparaît. Cible : entre la 2ᵉ et la 4ᵉ semaine." },
-  { id: 'hdv5', k: 'gate', p: 5, n: 'Citadelle', sub: 'Palier 5 · HdV niv. 13', hdv: 13, o: 'palier', og: null, req: [['hdv4', 12], ['rite', 6], ['maitres', 8]], cible: [60, 120],
+  { id: 'hdv5', k: 'gate', p: 5, n: 'Place forte', sub: 'Palier 5 · HdV niv. 13', hdv: 13, o: 'palier', og: null, req: [['hdv4', 12], ['rite', 6], ['maitres', 8]], cible: [60, 120],
     why: "Donjon et quartiers spécialisés : l'Atelier des Automates Arcaniques apparaît. Cible : entre 2 et 4 mois." },
-  { id: 'hdv6', k: 'gate', p: 6, n: 'Métropole', sub: 'Palier 6 · HdV niv. 16', hdv: 16, o: 'palier', og: null, req: [['hdv5', 15], ['rite', 8], ['maitres', 10]], cible: [540, 730],
-    why: "Cité monumentale : le Portail des Sphères apparaît. Cible : 18 à 24 mois pour un joueur gratuit actif, l'équivalent des unités T5 de Call of Dragons (1,5 à 2 ans en parcours standard). Niveau 16 au-delà du plafond provisoire de 15 (point 1)." },
+  { id: 'hdv6', k: 'gate', p: 6, n: 'Citadelle', sub: 'Palier 6 · HdV niv. 16', hdv: 16, o: 'palier', og: null, req: [['hdv5', 15], ['rite', 8], ['maitres', 10]], cible: [540, 730],
+    why: "Ville de défense achevée. Cible reprise de l'ancien palier de niveau 16 (ex-Métropole) : à reconfirmer, voir le rapport." },
+  { id: 'hdv7', k: 'gate', p: 7, n: 'Cité-Obélisque', sub: 'Palier 7 · HdV niv. 19', hdv: 19, o: 'palier', og: null, req: [['hdv6', 18], ['rite', 10], ['maitres', 12]], cible: null,
+    why: "Extrapolé (non validé) : l'Obélisque domine la ville. Aucun bâtiment propre à ce stade, les emplacements et plafonds restent à définir." },
+  { id: 'hdv8', k: 'gate', p: 8, n: 'Cité palatine', sub: 'Palier 8 · HdV niv. 22', hdv: 22, o: 'palier', og: null, req: [['hdv7', 21], ['rite', 12], ['maitres', 14]], cible: null,
+    why: "Extrapolé (non validé) : siège du pouvoir et de la cour. Aucun bâtiment propre à ce stade." },
+  { id: 'hdv9', k: 'gate', p: 9, n: 'Métropole', sub: 'Palier 9 · HdV niv. 25', hdv: 25, o: 'palier', og: null, req: [['hdv8', 24], ['rite', 14], ['maitres', 16]], cible: null,
+    why: "Extrapolé (non validé) : ville-monde à plusieurs enceintes. Aucun bâtiment propre à ce stade." },
+  { id: 'hdv10', k: 'gate', p: 10, n: 'Cité des Sphères', sub: 'Palier 10 · HdV niv. 28', hdv: 28, o: 'palier', og: null, req: [['hdv9', 27], ['rite', 16], ['maitres', 18]], cible: null,
+    why: "Extrapolé (non validé) : la ville ouvre sur les autres Sphères. Le Portail des Sphères apparaît ici (déplacé du palier 6)." },
 
   { id: 'scierie', k: 'b', p: 1, n: 'Scierie', o: 'herite', og: 'metal_mine', was: 'aucun', req: [], why: 'Production de base, disponible dès la fondation.' },
   { id: 'minefer', k: 'b', p: 1, n: 'Mine de fer', o: 'herite', og: 'crystal_mine', was: 'aucun', req: [], why: 'Production de base.' },
@@ -47,7 +55,7 @@ const N = [
     why: "Les défenses demandent des bâtisseurs (Maîtres d'œuvre 5) et une doctrine militaire (Académie 4). Les recherches entrent en jeu au niveau des défenses elles-mêmes." },
   { id: 'automates', k: 'b', p: 5, n: 'Atelier des Automates Arcaniques', o: 'adapte', og: 'nano_factory', was: 'robot_factory 10, computer_technology 10', req: [['maitres', 10], ['resonance', 5]], cible: [60, 150],
     why: "Garde l'Atelier des Maîtres d'œuvre 10. La Chaîne de Ravitaillement 10 (ex-informatique) n'a pas de lien avec des automates : remplacée par la Résonance du Mana 5." },
-  { id: 'portail', k: 'b', p: 6, n: 'Portail des Sphères', o: 'adapte', og: 'jump_gate', was: 'lunar_base 1, hyperspace_technology 7', req: [['institut', 12], ['arcanes', 8], ['decouverte', 6]], cible: [540, 800],
+  { id: 'portail', k: 'b', p: 10, n: 'Portail des Sphères', o: 'adapte', og: 'jump_gate', was: 'lunar_base 1, hyperspace_technology 7', req: [['institut', 12], ['arcanes', 8], ['decouverte', 6]], cible: null,
     why: "Né de l'étude des obélisques : Arcanes des Obélisques 8 et Institut 12. La Découverte Tellurique 6 fait connaître les nœuds que le Portail relie." },
 
   { id: 'abondance', k: 'r', n: 'Abondance', o: 'herite', og: 'energy_technology', was: 'research_lab 1', req: [['institut', 1]],
@@ -101,7 +109,7 @@ const COST = {
   alliage: [4000, 2000, 0, 2], runescombat: [8000, 8000, 4000, 2], benediction: [20000, 20000, 20000, 2],
 };
 const PROPOSED = [
-  ['hdv', "Hôtel de ville", 16, "Règle le rythme des paliers avec la courbe de durées. Chantier brut d'environ 35 jours au niveau 16."],
+  ['hdv', "Hôtel de ville", 30, "Règle le rythme des paliers avec la courbe de durées, jusqu'au niveau 30 (fin de la Cité des Sphères)."],
   ['forge', 'Forge', 1, "Un peu plus chère que l'Académie Militaire, surtout en bois."],
   ['silo', 'Silo de nourriture', 1, "Aligné sur l'Entrepôt de fer."],
   ['remparts', 'Atelier des Remparts', 1, "Investissement net au palier 4, sans bloquer."],
@@ -124,8 +132,11 @@ function reqsFor(obj, lv) {
   if (x.k === 'b' && x.p > 1) r.push(['hdv', byId['hdv' + x.p].hdv]);
   return r;
 }
-function makeCost(hdvF) {
+// courbe (facultative, étude de l'Hôtel de ville) : { cout: { obj: niveau => [bois, fer, mana] }, duree: { obj: niveau => multiplicateur } }.
+// Sans elle, le modèle de référence est inchangé (voir courbes-hdv.js et docs/etude-courbe-hotel-de-ville.md).
+function makeCost(hdvF, courbe) {
   return (obj, lv) => {
+    if (courbe?.cout?.[obj]) return courbe.cout[obj](lv).map(Math.floor);
     const b = COST[obj]; const f = obj === 'hdv' ? (hdvF ?? b[3]) : b[3]; const k = f ** (lv - 1);
     return [Math.floor(b[0] * k), Math.floor(b[1] * k), Math.floor(b[2] * k)];
   };
@@ -167,14 +178,14 @@ const PROFILS = {
   pass: { nom: 'Pass payant', prod: 0.15, vitesse: 0.15, accel: 4 },
   payeur: { nom: 'Gros payeur', prod: 0.20, vitesse: 0.20, accel: 8 },
 };
-const dureeMult = (o, nl) => { const d = o === 'hdv' ? DUREES.hdv : DUREES.batiments; return d.croissance ** Math.max(0, nl - d.seuil); };
+const dureeMult = (o, nl, courbe) => { if (courbe?.duree?.[o]) return courbe.duree[o](nl); const d = o === 'hdv' ? DUREES.hdv : DUREES.batiments; return d.croissance ** Math.max(0, nl - d.seuil); };
 
 // Temps (heures) pour réunir toutes les cibles [obj, niveau].
 // P : speed (vitesse économique), empire (colonies ou non), hdvF (facteur de coût de l'Hôtel de ville),
 // profil (clé de PROFILS, « gratuit » par défaut), buildMult / researchMult / prodMult (multiplicateurs libres).
 // P.journal (tableau, facultatif) reçoit chaque chantier terminé : { file, o, niv, debut, fin } en heures.
 function simulate(targets, P) {
-  const speed = P.speed, cost = makeCost(P.hdvF);
+  const speed = P.speed, cost = makeCost(P.hdvF, P.courbe);
   const prof = PROFILS[P.profil || 'gratuit'];
   const buildMult = (P.buildMult ?? 1) / (1 + prof.vitesse), researchMult = P.researchMult ?? 1, prodMult = (P.prodMult ?? 1) * (1 + prof.prod);
   let banque = 0;
@@ -202,7 +213,7 @@ function simulate(targets, P) {
   // Durée OGameX (sans le ×2 par niveau d'Automates), allongée par DUREES, réduite par les Automates et les bonus.
   const bTime = (o, nl, c) => {
     const auto = Math.min(DUREES.automates.max, DUREES.automates.parNiveau * lv.automates);
-    return buildMult * dureeMult(o, nl) * (1 - auto) * (c[0] + c[1]) / (2500 * Math.max(4 - nl / 2, 1) * (1 + lv.maitres) * speed);
+    return buildMult * dureeMult(o, nl, P.courbe) * (1 - auto) * (c[0] + c[1]) / (2500 * Math.max(4 - nl / 2, 1) * (1 + lv.maitres) * speed);
   };
   while (t < H) {
     if (done()) return t;

@@ -51,6 +51,7 @@ if (comparer) {
 
 if (args.includes('--profils')) {
   const ids = ['hdv2', 'hdv3', 'hdv4', 'hdv5', 'hdv6', 'portail'];
+  // Le palier 6 (Citadelle) porte la fenêtre de l'ancienne Métropole ; le palier 9 n'en a pas encore.
   const nom = id => N.find(x => x.id === id).n.split(' ')[0];
   console.log(entete(params) + '\n');
   console.log(pad('Profil', 40) + ids.map(id => pad(nom(id), 20)).join(''));
@@ -61,7 +62,7 @@ if (args.includes('--profils')) {
   }
   const i = ids.indexOf('hdv6');
   const gain = k => Math.round(100 * (1 - t[k][i] / t.gratuit[i]));
-  console.log(`\nMétropole : le gros payeur va ${gain('payeur')} % plus vite que le gratuit actif, le pass payant ${gain('pass')} %.`);
+  console.log(`\nCitadelle (palier 6) : le gros payeur va ${gain('payeur')} % plus vite que le gratuit actif, le pass payant ${gain('pass')} %.`);
   process.exit(0);
 }
 

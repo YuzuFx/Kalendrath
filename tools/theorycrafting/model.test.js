@@ -34,10 +34,29 @@ test('un bâtiment exige le niveau d\'Hôtel de ville de son palier', () => {
   }
 });
 
-test('les paliers arrivent dans l\'ordre', () => {
+test('dix paliers, un tous les 3 niveaux d\'Hôtel de ville', () => {
+  const paliers = N.filter(x => x.k === 'gate');
+  assert.equal(paliers.length, 10);
+  paliers.forEach((g, i) => {
+    assert.equal(g.p, i + 1, `${g.id} : numéro de palier`);
+    assert.equal(g.hdv, 3 * i + 1, `${g.id} : niveau d'Hôtel de ville`);
+  });
+});
+
+test('le Portail des Sphères appartient au palier 10', () => {
+  const hdv = reqsFor('portail', 1).find(([a]) => a === 'hdv');
+  assert.deepEqual(hdv, ['hdv', 28]);
+});
+
+test('les paliers 2 à 6 arrivent dans l\'ordre, et tous finissent', () => {
   const t = [2, 3, 4, 5, 6].map(p => simulate(unlockTargets('hdv' + p), DEFAUT));
   for (let i = 1; i < t.length; i++) assert.ok(t[i] > t[i - 1], `palier ${i + 2} avant palier ${i + 1}`);
   assert.ok(t.every(Number.isFinite), 'un palier ne finit jamais');
+});
+
+test('les paliers 7 à 10 ne reviennent jamais avant le palier précédent', () => {
+  const t = [6, 7, 8, 9, 10].map(p => simulate(unlockTargets('hdv' + p), DEFAUT));
+  for (let i = 1; i < t.length; i++) assert.ok(t[i] >= t[i - 1], `palier ${i + 6} avant palier ${i + 5}`);
 });
 
 test('une vitesse plus haute raccourcit le rythme', () => {
@@ -52,7 +71,7 @@ test('les colonies accélèrent le long terme', () => {
   assert.ok(empire < capitale);
 });
 
-test('un Hôtel de ville plus cher retarde la Métropole', () => {
+test('un Hôtel de ville plus cher retarde la Citadelle (palier 6)', () => {
   const a = simulate(unlockTargets('hdv6'), DEFAUT);
   const b = simulate(unlockTargets('hdv6'), { ...DEFAUT, hdvF: COST.hdv[3] + 0.05 });
   assert.ok(b > a);
