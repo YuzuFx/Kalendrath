@@ -1,5 +1,17 @@
 # AGENTS.md
 
+## Kalendrath (read this first)
+
+This repository is the **Kalendrath** fork of OGameX (heroic fantasy, PvE-first browser game). **[CLAUDE.md](CLAUDE.md) is the project's source of truth for every agent, Codex included**: read it before any task. It defines the project context, the design documents to read in `docs/`, and the working principles (the domain in `app/Services`, `app/GameMissions`, `app/GameObjects` and `app/Models` is only touched with good reason; no game logic in API controllers; nothing durable in Blade; the interface is rebuilt in React). Where this file and CLAUDE.md disagree, CLAUDE.md wins. The upstream rules below apply to code changes in the domain.
+
+- **Answer the user in French.** Player-facing content is designed in French first, with an English version before the public alpha.
+- **Skills** live in `.claude/skills/` (single source) and are copied to `.agents/skills/` for Codex: edit `.claude/skills/`, then run `node tools/sync-agents-skills.mjs` (`--check` verifies the copy).
+- **Hooks** are shared: `.claude/hooks/post-edit.mjs` (pint, phpstan, project reminders) and `.claude/hooks/archive-transcripts.mjs` (transcript archive). `.codex/hooks.json` calls the same scripts. Their behaviour under Codex has not been verified.
+- **Agent reports are written to `docs/archives/`** before a task ends, and "do the push" means pushing both the game repository and the `docs/archives/transcriptions/` repository (see CLAUDE.md).
+- **Challenge, don't just follow.** Codex and Claude Code review each other's work; give an independent opinion on design decisions (website, logos) before reading the other agent's verdict.
+
+---
+
 OGameX is an open-source PHP/Laravel recreation of OGame, a browser-based space strategy MMO. It runs in Docker with MariaDB.
 
 ## Agent rules

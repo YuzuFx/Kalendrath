@@ -67,7 +67,7 @@ Source de vérité : section 3 de [docs/plan-marketing.md](../../../docs/plan-ma
 
 ## Procédure
 
-1. Identifier le registre dans le tableau, puis écrire en FR et en EN (Claude rédige les deux, Gregory valide).
+1. Identifier le registre dans le tableau, puis écrire en FR et en EN (l'agent rédige les deux, Gregory valide).
 2. Vérifier les noms dans `lexique-kalendrath`.
 3. Relire : une seule touche de légèreté, aucun emoji-blague, vouvoiement tenu, chiffres exacts.
 4. Avant publication, passer par le skill `checklist-publication`.
