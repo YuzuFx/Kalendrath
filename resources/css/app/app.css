@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+/* Thème Kalendrath (provisoire, jetons shadcn/ui). Le mode sombre est le défaut. */
+@theme inline {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-card: var(--card);
+    --color-card-foreground: var(--card-foreground);
+    --color-primary: var(--primary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-muted: var(--muted);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-border: var(--border);
+    --color-input: var(--input);
+    --color-ring: var(--ring);
+    --color-destructive: var(--destructive);
+}
+
+:root {
+    --background: #14110f;
+    --foreground: #efe7da;
+    --card: #1e1a17;
+    --card-foreground: #efe7da;
+    --primary: #c9a24b;
+    --primary-foreground: #14110f;
+    --muted: #2a2420;
+    --muted-foreground: #a99d8c;
+    --border: #3a322b;
+    --input: #3a322b;
+    --ring: #c9a24b;
+    --destructive: #d65a4a;
+}
+
+body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: system-ui, sans-serif;
+}

@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 import laravel from 'laravel-vite-plugin'
+import react from '@vitejs/plugin-react'
+import tailwindcss from '@tailwindcss/vite'
 import { readFileSync, writeFileSync, mkdirSync } from 'node:fs'
 import { resolve } from 'node:path'
 import { createHash } from 'node:crypto'
@@ -114,17 +116,23 @@ function concatLegacyBundles(bundles, outDir = 'public/build') {
 }
 
 export default defineConfig({
+    resolve: {
+        alias: { '@': resolve('resources/js/app') },
+    },
     plugins: [
         laravel({
             input: [
                 'resources/css/ingame.css',
                 'resources/css/outgame.css',
+                'resources/js/app/main.tsx',
             ],
             refresh: [
                 'resources/js/**',
                 'resources/views/**',
             ],
         }),
+        react(),
+        tailwindcss(),
         concatLegacyBundles([
             { src: 'resources/js/ingame.js', files: ingameScripts, name: 'ingame' },
             { src: 'resources/js/outgame.js', files: outgameScripts, name: 'outgame' },

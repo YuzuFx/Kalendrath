@@ -1,0 +1,11 @@
+import { useTranslation } from 'react-i18next'
+
+export function HomePage() {
+    const { t } = useTranslation()
+    return (
+        <div className="space-y-2">
+            <h1 className="text-2xl font-semibold">{t('home.welcome')}</h1>
+            <p className="text-muted-foreground">{t('home.placeholder')}</p>
+        </div>
+    )
+}

@@ -239,3 +239,108 @@ Par priorité :
 11. **Fusions** d'univers OGame, d'Ikariam et d'Elvenar ; rétention après une fusion.
 12. **Coûts manquants** de l'économie du projet : médiateur de la consommation, relecture juridique, prestataire « marchand officiel », cotisations de micro-entreprise, licence commerciale de Midjourney et statut des images générées.
 13. **Fiches non couvertes** : Total Battle, Lords Mobile, Kingdom Guard, PvE de Last War, brigands de Travian, détail de Kingshot (niveaux, files, prix).
+
+## 7. Kalendrath face au genre
+
+*Section ajoutée le **2026-10-30** (complément de recherche). Elle confronte les positions de Kalendrath (GDD, [étude des serveurs en continu](etude-serveurs-en-continu.md), [plan marketing](plan-marketing.md)) à ce que font les jeux du comparatif, puis propose des préconisations. **Ce sont des recommandations, aucune n'est une décision** : seule Gregory tranche, et la réponse va dans le GDD.*
+
+**Marquage.** *Fait* = lu dans une source citée en fin de section (renvois **[S1]**, **[S2]**…). *Existant* = déjà établi dans les parties 1 à 6 de ce document, donc dans les fiches de [references-jeux/](references-jeux/README.md). *Inférence* = raisonnement de cette section, à ne pas citer comme un fait.
+
+**Limites de la recherche complémentaire.** Un passage de recherche web standard, sans extended. Les prix de files viennent surtout de guides de joueurs et de revendeurs de recharges ; seuls Travian, InnoGames (Tribal Wars) et le wiki d'Ikariam sont officiels ou proches. **Rien de fiable n'a été trouvé** sur : le ressenti des joueurs en fin de serveur, une ligue de nouveaux au sens strict, un temps réel de joueur gratuit, la file de construction de Forge of Empires. Les réactions au pay-to-win se limitent à des avis isolés et à une pétition ; elles ne mesurent aucune ampleur.
+
+### 7.1 Tableau de confrontation
+
+| Sujet | Position de Kalendrath aujourd'hui | Ce que fait le genre | Écart ou risque |
+|---|---|---|---|
+| **Format de serveur** | Serveurs **persistants**, un neuf à chaque chapitre (~4 mois, calendrier fixe), anciens serveurs ouverts, fusion par ligues de puissance plus tard (étude du 26/10) | *Fait* : Travian Kingdoms ouvre un monde ×1 par langue environ toutes les 20 semaines et le ferme à la Merveille 100 **[S1]**. *Existant* : Last War, Whiteout, RoK sont persistants avec saisons et serveurs neufs ; Travian a **réduit** ses mondes en 2026 pour garder la densité | La cadence de Kalendrath ressemble à celle de Travian, mais sans fin de partie. *Inférence* : avec une cité visée à ~2 ans, 24 / 4 = **6 serveurs vivants en même temps** pour quelques milliers de joueurs : c'est la dilution que Travian vient de corriger |
+| **Rattrapage des nouveaux** | Piste d'une ligne accélérée (rejeu des events) ; le serveur neuf à chaque chapitre fait déjà une partie du travail | *Existant* : le genre rattrape **par séparation** (serveur neuf), verrouille le contenu par l'âge du serveur (Whiteout) et encadre les transferts (Last War : une fois par saison ; Whiteout : tous les 4 à 7 semaines environ, plafond de puissance **[S9]**). *Fait* : RoK donne des bonus aux royaumes qui entrent pour la première fois en Saison de Conquête (coffres légendaires à partir du jour 7) **[S8]** | Le serveur neuf tous les 4 mois rend la ligne accélérée **redondante** pour 90 % des cas. Le cas restant : rejoindre un ami sur un serveur âgé. Aucune **ligue de nouveaux** n'a été trouvée dans le genre |
+| **Files de construction** | Une seule file aujourd'hui (OGameX). Piste : 2e file facile en gratuit via la Kaelite gagnée, 3e en boutique | *Fait* : voir 7.2. Tout le genre vend la 2e file ; seul Travian en vend une 3e | La Kaelite gagnée est liée au **serveur** (décision du 28/10) : cohérent avec une file valable pour un serveur, comme Travian |
+| **Boutique et plafond** | Pas de plafond chiffré écrit ni annoncé (27/10) ; la boutique doit tenter, sans pay-to-win ; Kaelite achetée au compte, gagnée au serveur | *Fait* : les bonus loués du genre sont modestes en pourcentage (Travian Plus +25 % de production **[S1 existant]**, Ikariam 10 ambroisie pour 7 jours **[S6]**). *Existant* : Grepolis au-delà de +30 %, Tribal Wars plafonne un flux, Whiteout plafonne le temps mais pas la puissance | Les critiques portent sur le **cumul** et sur la puissance (héros, troupes), pas sur les files. Voir 7.3 |
+| **Palier max de la capitale** | 10 paliers, Hôtel de ville de 25 à 30 niveaux, cible ~2 ans (révisable à 12-14 mois) ; les dates du simulateur ne sont pas fiables | *Existant* : durées de **base** du bâtiment central : Whiteout 215 j, RoK 257 j, Last War (QG 21-30) 187 j ; Travian ~20 semaines de monde ; Tribal Wars 4 à 9 mois ; Grepolis 180 à 365 j de phase de fin. Aucun temps réel de gratuit | 2 ans = environ 3 fois la durée de base du bâtiment central des jeux mobiles. Seules les couches ajoutées (FC, plasma, QG 31-35) font 2 ans et plus |
+| **Rythme des events** | Boss à seuils rare (mensuel ?) et score cumulé hebdomadaire (GDD 5.9, **[TBD]**) | *Existant* : Bear Hunt toutes les 47,5 h (Whiteout), béhémoths toutes les 48 h (Call of Dragons), Grepolis 4 à 6 events par an, Elvenar un contenu toutes les deux semaines. *Fait* : Forge of Empires fait revenir ses grands events chaque année, par exemple l'event de guilde d'octobre en 2024 et 2025 **[S10]** | Kalendrath n'a que les deux rythmes extrêmes (rare, hebdomadaire). Il manque le rythme **2 à 3 jours** qui crée l'habitude |
+| **PvP et diplomatie** | Mode Paix par défaut ; étude du 28/10 : remplacer le PvP sauvage par l'AvA avec casus belli, pactes, ligues | *Existant* : RoK, Whiteout (SvS dès J80) ouvrent le PvP de masse à un âge de serveur fixe ; Tribal Wars verrouille les tribus au J90 ; Forge of Empires a fermé son GvG en 2024 au profit d'un raid de guilde ; Elvenar n'a aucun PvP | L'AvA avec casus belli n'a pas de précédent complet. Le genre l'ouvre **par fenêtres bornées**, pas en guerre permanente |
+| **Grades d'unités** | Piste : grades débloqués par la recherche, qui changent les valeurs de base ; rien décidé | *Existant* : tiers T1-T5 de Call of Dragons, générations de héros de Whiteout et de State of Survival (celles-ci critiquées comme dévaluant l'ancien). *Inférence* : aucun jeu du panel ne fait monter des unités individuelles en grade par l'expérience | Le grade par recherche ressemble au tiers, sans la dévaluation s'il est lié au chapitre et pas vendu |
+
+### 7.2 Files de construction : ce que le genre vend
+
+| Jeu | Fait relevé | Source |
+|---|---|---|
+| **Travian Kingdoms** | Emplacements supplémentaires à **50, 75 et 100 or**, actifs pour **tout le round** et dans **tous les villages** ; la file est séquentielle (le 3e n'avance pas avant le 2e). Les pages d'aide se contredisent sur le lien avec Travian Plus | [S1], [S2] |
+| **Rise of Kingdoms** | 2e file : **150 gemmes pour 2 jours**, ou permanente au **VIP 6** (11 500 points de VIP selon un guide ; 1 gemme = 1 point selon un revendeur, donc chiffre à vérifier) | [S3] |
+| **Call of Dragons** | Une file gratuite, plus une 2e offerte **2 jours au départ** ; ensuite **150 gemmes pour 2 jours** ou **5 000 gemmes** à vie ; les guides la classent première priorité du gratuit, qui peut la gagner sans payer | [S4] |
+| **Last War** | 2e ouvrier à **200 lingots** (guide) ou au VIP 6 (guides) ; **aucune 3e file trouvée** ; les totaux de lingots gratuits divergent (12 000 ou 18 000 selon les guides) | [S5] |
+| **Tribal Wars** | Le compte Premium (~5 $ pour 30 jours) agrandit la file ; aucun chiffre officiel de longueur ni de coût en points ; un script tiers dit « 2 sans Premium, illimité avec, coût majoré au-delà de 5 » (non vérifié) | [S7] |
+| **Ikariam** | Compte Premium : **10 ambroisie pour 7 jours**, jusqu'à **4 ordres** en liste (wiki) | [S6] |
+| **Grepolis** | *Existant* : 2 ordres, 7 avec l'Administrateur loué 14 jours | fiche *grepolis* |
+| **Forge of Empires** | Aucune limite de file trouvée (le facteur limitant est la place) ; rien de plus | recherche vaine |
+
+*Lecture (inférence).* Trois modèles : la **location courte** (RoK, Call of Dragons : 150 gemmes pour 2 jours), l'**achat à durée du monde** (Travian : valable un round, de 50 à 100 or) et l'**achat à vie** (5 000 gemmes, VIP 6). Seul Travian vend une 3e file, et c'est parce que son monde dure 5 à 6 mois : l'achat « pour la vie du monde » y reste borné. Le seuil « facile en gratuit » du genre est **long** : VIP 6 de RoK ≈ 58 jours de connexion parfaite (existant), alors que Call of Dragons offre 2 jours de 2e file dès le départ pour faire goûter.
+
+### 7.3 Pay-to-win : ce que disent les joueurs
+
+- *Fait, anecdotique.* Les avis Trustpilot de Tribal Wars, Grepolis et Travian parlent de pay-to-win ; un commentateur de Tribal Wars le conteste (« un non-payeur peut rester haut dans le classement ») ; un avis de Travian note que les avantages en or s'obtiennent aussi en vendant le butin des aventures du héros ; une pétition demande de baisser d'un tiers le prix du gestionnaire de compte Premium **[S11]**. Une pétition de joueurs de Whiteout reproche aux déploiements simultanés de laisser les gratuits à la traîne **[S9]**. Rien de tout cela ne chiffre la fuite des joueurs.
+- *Existant.* Les critiques les plus nettes visent la puissance achetable (héros, troupes) et le cumul des bonus, pas la 2e file.
+- *Inférence.* Une file en plus, achetée une fois, est moins mal reçue qu'un bonus de combat : elle ne s'exerce contre personne. Son danger est de créer un écart de débit qui se **compose** sur les chantiers longs.
+
+### 7.4 Préconisations
+
+*Chacune est une recommandation, pas une décision. « Appui » indique ce qui la fonde ; les inférences sont dites.*
+
+1. **Format : garder le calendrier fixe, mais raccourcir l'horizon d'un serveur et fixer à l'avance un seuil de fusion.** *Recommandation.* Le serveur par chapitre rejoint la logique de Travian (un monde neuf toutes les ~20 semaines), mais sans fin de partie, il empile les serveurs. Si la cité dure 2 ans, six serveurs coexistent. Avec une cité à 12-14 mois (préconisation 6), on en a trois ou quatre. Rédiger dès maintenant : population minimale d'un serveur pour que le suivant s'ouvre, préavis de fusion, et la règle « un serveur qui passe sous un seuil de joueurs actifs est fusionné avant l'ouverture suivante ». *Appui :* Travian 2026 [S1], leçon 10, arithmétique (inférence).
+
+2. **Rattrapage : ne pas construire la ligne accélérée en V1 ; laisser le serveur neuf faire le travail.** *Recommandation.* Le genre rattrape par séparation, et le calendrier de Kalendrath le fait déjà. Pour le seul cas « rejoindre un ami sur un serveur âgé » : démarrage normal, Mode Paix par défaut (déjà acquis), et un **coffre de départ** donné à l'arrivée sur un serveur d'au moins un chapitre (modeste, en ressources et en Kaelite gagnée, sans puissance). *Appui :* RoK donne des coffres aux royaumes de première saison [S8], WoW Season of Discovery des bonus d'expérience (existant) ; la ligne accélérée n'a pas de précédent complet (partie 4).
+
+3. **Pas de transfert entre serveurs en V1 ; si on l'ouvre, le calquer sur Last War et Whiteout.** *Recommandation.* Une fois par chapitre, plafond de puissance à l'entrée, coût en monnaie. Les jeux qui ont ouvert les transferts ont eu des abus (RoK : retours dans les royaumes neufs pour écraser les débutants, source incertaine). Cohérent avec la fermeture du transport de ressources (question 12). *Appui :* [S9], formats-serveur-et-rattrapage.
+
+4. **Files : donner une 2e file à l'essai au départ, la vendre à la durée du serveur, jamais en location de 2 jours.** *Recommandation.*
+   - Offrir **3 jours de 2e file** à la fin du tutoriel (calque de Call of Dragons : 2 jours offerts [S4]).
+   - Permanente pour le serveur, achetable en **Kaelite gagnée en 3 à 4 semaines** de jeu normal (le prix en Kaelite se règle par le simulateur ; le repère du genre est « 5 000 gemmes » à Call of Dragons, pas transposable tel quel).
+   - Les emplacements s'appliquent au **compte et à tous les villages** (comme Travian [S1]) plutôt qu'à chaque ville, pour que le prix ne se multiplie pas avec les colonies (point 15 du GDD).
+   - La location de 2 jours des jeux mobiles crée une corvée de reconnexion : à ne pas importer (inférence).
+   *Appui :* [S1] [S3] [S4] [S5].
+
+5. **3e file : ne pas la vendre à vie ; la réserver à la durée d'un serveur ou au palier 6-7.** *Recommandation.* Aucune 3e file trouvée à Last War, RoK, Call of Dragons ni Whiteout (existant : plafond de 2) ; seul Travian en vend une, pour un round. Comme la file multiplie le débit, elle entre dans l'écart payeur (préconisation 7). Option (inférence) : la débloquer gratuitement à un palier tardif et la vendre plus tôt. Question 5 de la partie 5 inchangée.
+
+6. **Palier max de la capitale : viser 12 à 14 mois pour le gratuit actif, et mettre le long terme dans une couche suivante.** *Recommandation.* Les durées de base du bâtiment central du genre vont de 6 à 8,5 mois (existant) sans temps réel de gratuit ; 2 ans correspond aux jeux qui ont **ajouté** des couches. Le simulateur donne aujourd'hui des dates non fiables : ne rien annoncer avant correction. Avec un serveur neuf tous les 4 mois, 12-14 mois donne aussi le bon moment de fusion (point 1). *Appui :* partie 3 (leçons 5 et 6), partie 4 ; **point faible :** aucune donnée de joueur gratuit.
+
+7. **Boutique : mesurer l'écart payeur en interne même sans l'annoncer, et l'étendre aux files.** *Recommandation, dans le respect de la décision du 27/10 (aucune communication sur un plafond).* Un test du simulateur (temps cumulé au palier N pour « tout acheté » contre « gratuit actif ») avant d'ouvrir chaque produit ; héros, équipement et troupes à 0 % d'écart payant. Tous les bonus loués du genre sont des pourcentages modestes et temporaires (Travian Plus +25 %, Ikariam 10 ambroisie / 7 jours [S6]) : ils tiennent, parce que les critiques viennent du cumul et de la puissance. *Appui :* partie 3, leçons 2 et 3 ; [S6] [S11].
+
+8. **Une seule monnaie gagnée par serveur est un bon choix : la rendre lisible.** *Recommandation.* Le prix des files en Kaelite gagnée suit la logique de Travian (valable pour un monde). Afficher au joueur « gagnée sur ce serveur / achetée au compte » avec détail au survol (déjà prévu), et interdire qu'une file achetée sur un serveur se transfère sur un autre. *Appui :* [S1] ; décision du 28/10.
+
+9. **Rythme des events : trois cadences, toutes en configuration relative à `t0`.** *Recommandation (inférence, à passer au simulateur).*
+   - **Tous les 2 à 3 jours** : un boss PvE ou camp à seuils, de courte fenêtre, qui rejoue le même gabarit (repère : 47,5 à 48 h à Whiteout et Call of Dragons, existant). Gratuit, avec un coût d'entrée faible.
+   - **Chaque semaine** : score cumulé d'alliance (déjà au GDD).
+   - **Chaque mois** : grand boss à seuils d'alliance ; **chaque chapitre** : l'event de chapitre.
+   - Les events annuels qui reviennent (Forge of Empires [S10], Grepolis 4 à 6 par an) servent de **cosmétiques et titres saisonniers** pour les serveurs jeunes.
+   Le rythme de 48 h est exigeant pour un solo : l'alléger à 72 h plutôt que de supprimer la cadence. Tout event doit rester une ligne de configuration (question 7).
+
+10. **PvP : repousser l'AvA, l'ouvrir à un âge de serveur et par fenêtres.** *Recommandation.* Le genre ouvre le PvP de masse vers J80-J100 du serveur (SvS de Whiteout, KvK de RoK, existant), et jamais en V1 d'un projet solo. Proposer : Mode Paix pendant tout le chapitre 1 ; à partir de J90, une **guerre d'alliance par fenêtre** (casus belli né d'un frottement PvE, durée bornée, ligue de puissance, bouclier accordé aux alliances engagées perdantes). Ne pas verrouiller les alliances (Tribal Wars J90 : à ne pas imiter, leçon 9). Garder le Mode de Guerre individuel jusqu'au verdict de l'étude du 28/10.
+
+11. **Diplomatie : trois pactes au départ, pas plus.** *Recommandation (inférence).* Non-agression, défensif, commercial (déjà portés par l'Ambassade). Le pacte commercial est le levier anti-boosting du GDD ; l'étude de l'AvA ne devrait pas faire dépendre le reste d'un système de casus belli complexe.
+
+12. **Grades d'unités : par recherche et par branche de l'Académie, 3 grades au plus, jamais en boutique.** *Recommandation.* Les tiers de Call of Dragons sont l'objectif de long terme du genre ; les générations de héros ont été critiquées parce qu'elles dévaluent l'ancien (State of Survival, Whiteout). Un grade qui change des valeurs de base, débloqué par la recherche ou un bâtiment, garde le moteur de combat intact (GDD). Les verrouiller **par chapitre** étale la production et donne une raison de revenir ; ne pas les acheter ; et vérifier qu'un grade ne rend pas le grade précédent inutile (sinon c'est une génération). L'expérience au combat par unité individuelle n'a pas de précédent dans le panel et alourdit le moteur : l'écarter ou la limiter à l'armée (inférence).
+
+13. **Fin de serveur : planifier la fin de vie de s1 avant d'ouvrir s2.** *Recommandation.* Les mondes du genre meurent par la population : un monde de Tribal Wars perd ~94 % de ses joueurs (existant). Aucune source sur le ressenti en fin de serveur n'a été trouvée. Prévoir un jalon de fin visible (palier max, finale de chapitre) et une charte de fin de service (partie 3, leçon 17).
+
+### 7.5 Points faibles du sourcing
+
+- **Files de construction :** guides de joueurs et revendeurs de recharges (RoK, Call of Dragons, Last War), prix et paliers susceptibles d'avoir changé ; seul Travian est officiel, et ses pages se contredisent sur le lien avec Travian Plus. Tribal Wars : aucun chiffre officiel de longueur de file.
+- **Forge of Empires :** aucune donnée de file ; le calendrier d'events est une estimation (3 à 4 grands events par an, d'après les listes de wiki).
+- **Ressenti des joueurs (fin de serveur, pay-to-win) :** une recherche, des avis Trustpilot et une pétition ; Reddit n'a pas pu être lu. Ces éléments donnent des **thèmes**, pas des **mesures**.
+- **Ligues et rattrapage :** rien de nouveau par rapport à *formats-serveur-et-rattrapage* ; aucune ligue de nouveaux n'existe dans le panel.
+- **Durée d'un monde Travian ×1 :** page d'aide officielle citée par la recherche (~20 semaines, Merveille activée à J111), mais lue par résumé de moteur de recherche, pas par lecture de la page.
+- **Toutes les préconisations 4 à 13 sont des inférences** appuyées sur ces faits : aucune n'a été éprouvée sur de vrais joueurs.
+
+### Sources de la section 7
+
+- **[S1]** Travian Kingdoms, aide : file de construction, 50/75/100 or, valables tout le round : https://support.kingdoms.com/en/articles/60-building-queue ; Travian Plus et bonus : https://support.kingdoms.com/en/support/solutions/articles/7000078806-travian-plus-a-bonusy-produkce ; versions et vitesses (×1 ~20 semaines, Merveille à J111) : https://support.kingdoms.com/en/articles/11-game-versions-speed-special
+- **[S2]** Travian Kingdoms, fonctions instantanées : https://support.kingdoms.com/en/articles/166-instant-gold-features
+- **[S3]** Rise of Kingdoms, 2e file : https://www.appgamer.com/rise-of-kingdoms/strategy-guide/unlocking-the-2nd-builder-queue ; VIP : https://riseofkingdoms.fandom.com/wiki/VIP?oldid=9219 ; guide VIP : https://heaven-guardian.com/rise-of-kingdoms-vip-guide-level-up-fast-get-rewards/
+- **[S4]** Call of Dragons, guide du joueur gratuit : https://cod.guide/free-to-play/ ; guide du débutant : https://cod.guide/beginners
+- **[S5]** Last War, meilleurs achats de lingots : https://cpt-hedge.com/guides/gold-bricks-best-buys ; lingots gratuits : https://cpt-hedge.com/guides/free-gold-bricks ; VIP : https://www.ldshop.gg/blog/last-war-survival/last-war-vip-guide.html
+- **[S6]** Ikariam, compte Premium : https://ikariam.fandom.com/wiki/Ikariam_Plus
+- **[S7]** Tribal Wars, points Premium et forfaits : https://support.innogames.com/kb/TribalWars/en_DK/1296 ; script Auto Builder (tiers, non vérifié) : https://greasyfork.org/he/scripts/387424-auto-builder
+- **[S8]** Rise of Kingdoms, notes de version (Saison de Conquête, coffres au jour 7, Place de recrutement) : https://riseofkingdomsguides.com/rise-of-kingdoms-1-0-90-return-of-the-king-update/ et https://riseofkingdomsguides.com/rise-of-kingdoms-1-0-60-chorus-of-tides-update/
+- **[S9]** Whiteout Survival, transferts : https://www.topuplive.com/pl/news/whiteout-survival-june-2026-state-transfer-complete-guide.html ; pétition sur les déploiements simultanés : https://www.change.org/p/stop-unbalanced-updates-restore-phased-rollouts-in-whiteout-survival
+- **[S10]** Forge of Empires, events récurrents : https://forgeofempires.fandom.com/wiki/2024_Fellowship_Event ; https://forgeofempires.fandom.com/wiki/2025_Fellowship_Event ; https://support.innogames.com/kb/ForgeOfEmpires/en_DK/1723
+- **[S11]** Avis de joueurs : https://se.trustpilot.com/review/www.tribalwars.net ; https://www.petitiononline.ie/tribalwars ; https://www.rpg.net/reviews/archive/18/18719.phtml

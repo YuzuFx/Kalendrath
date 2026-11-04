@@ -297,3 +297,6 @@ Route::middleware(['auth', 'globalgame', 'locale', 'admin'])->group(function () 
     Route::post('/admin/developershortcuts/create-debris', [DeveloperShortcutsController::class, 'createDebris'])->name('admin.developershortcuts.create-debris');
     Route::post('/admin/developershortcuts/update-dark-matter', [DeveloperShortcutsController::class, 'updateDarkMatter'])->name('admin.developershortcuts.update-dark-matter');
 });
+
+// Nouvelle interface React (SPA) : une seule vue d'entrée, le routage est côté client.
+Route::view('/app/{any?}', 'app')->where('any', '.*')->name('app.spa');
