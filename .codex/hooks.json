@@ -6,21 +6,9 @@
         "hooks": [
           {
             "type": "command",
-            "command": "node .claude/hooks/post-edit.mjs",
+            "command": "node .codex/post-edit.mjs",
             "timeout": 120,
             "statusMessage": "Contrôles Kalendrath (pint, phpstan, règles du projet)"
-          }
-        ]
-      }
-    ],
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "node .claude/hooks/archive-transcripts.mjs",
-            "timeout": 60,
-            "statusMessage": "Archivage des transcriptions"
           }
         ]
       }

@@ -6,7 +6,7 @@ This repository is the **Kalendrath** fork of OGameX (heroic fantasy, PvE-first 
 
 - **Answer the user in French.** Player-facing content is designed in French first, with an English version before the public alpha.
 - **Skills** live in `.claude/skills/` (single source) and are copied to `.agents/skills/` for Codex: edit `.claude/skills/`, then run `node tools/sync-agents-skills.mjs` (`--check` verifies the copy).
-- **Hooks** are shared: `.claude/hooks/post-edit.mjs` (pint, phpstan, project reminders) and `.claude/hooks/archive-transcripts.mjs` (transcript archive). `.codex/hooks.json` calls the same scripts. Their behaviour under Codex has not been verified.
+- **Hooks**: `.codex/post-edit.mjs` adapts Codex patch events to the shared `.claude/hooks/post-edit.mjs` (pint, phpstan, project reminders). Protocol compatibility was tested on 2026-11-04; automatic execution after a hook change still requires Codex's hook trust review. The Codex `SessionEnd` archive hook is disabled: the shared Claude archiver commits/pushes automatically and copies the transcript's entire parent directory, which is unsafe for Codex's date-grouped sessions. See [.codex/README.md](.codex/README.md). Never run the archiver on real archives without explicit commit/push authorization.
 - **Agent reports are written to `docs/archives/`** before a task ends, and "do the push" means pushing both the game repository and the `docs/archives/transcriptions/` repository (see CLAUDE.md).
 - **Challenge, don't just follow.** Codex and Claude Code review each other's work; give an independent opinion on design decisions (website, logos) before reading the other agent's verdict.
 

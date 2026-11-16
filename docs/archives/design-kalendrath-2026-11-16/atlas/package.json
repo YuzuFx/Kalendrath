@@ -1,0 +1,1 @@
+{"name":"kalendrath-atlas-design","private":true,"scripts":{"build":"node build.mjs"},"type":"module"}

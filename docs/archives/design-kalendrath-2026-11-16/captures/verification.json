@@ -1,0 +1,164 @@
+[
+  {
+    "name": "obelisque",
+    "pageName": "index",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Le monde s’est brisé.\nVotre cité\nse relèvera.",
+    "errors": []
+  },
+  {
+    "name": "obelisque",
+    "pageName": "index",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Le monde s’est brisé.\nVotre cité\nse relèvera.",
+    "errors": []
+  },
+  {
+    "name": "obelisque",
+    "pageName": "jeu",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Votre capitale",
+    "errors": []
+  },
+  {
+    "name": "obelisque",
+    "pageName": "jeu",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Votre capitale",
+    "errors": []
+  },
+  {
+    "name": "obelisque",
+    "pageName": "logo",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "La pierre.\nLa faille. Le souffle.",
+    "errors": []
+  },
+  {
+    "name": "obelisque",
+    "pageName": "logo",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "La pierre.\nLa faille. Le souffle.",
+    "errors": []
+  },
+  {
+    "name": "atlas",
+    "pageName": "index",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Le monde\nest brisé.\nVotre histoire\ncommence.",
+    "errors": []
+  },
+  {
+    "name": "atlas",
+    "pageName": "index",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Le monde\nest brisé.\nVotre histoire\ncommence.",
+    "errors": []
+  },
+  {
+    "name": "atlas",
+    "pageName": "jeu",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Votre capitale",
+    "errors": []
+  },
+  {
+    "name": "atlas",
+    "pageName": "jeu",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Votre capitale",
+    "errors": []
+  },
+  {
+    "name": "atlas",
+    "pageName": "logo",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "L’Atlas des Éclats.",
+    "errors": []
+  },
+  {
+    "name": "atlas",
+    "pageName": "logo",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "L’Atlas des Éclats.",
+    "errors": []
+  },
+  {
+    "name": "fondations",
+    "pageName": "index",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Le monde est\nbrisé.\nBâtissez\nla suite.",
+    "errors": []
+  },
+  {
+    "name": "fondations",
+    "pageName": "index",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Le monde est\nbrisé.\nBâtissez\nla suite.",
+    "errors": []
+  },
+  {
+    "name": "fondations",
+    "pageName": "jeu",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Votre cité s’éveille.",
+    "errors": []
+  },
+  {
+    "name": "fondations",
+    "pageName": "jeu",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Votre cité s’éveille.",
+    "errors": []
+  },
+  {
+    "name": "fondations",
+    "pageName": "logo",
+    "width": 1440,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Un foyer dans\nun monde fracturé.",
+    "errors": []
+  },
+  {
+    "name": "fondations",
+    "pageName": "logo",
+    "width": 390,
+    "overflow": false,
+    "brokenImages": [],
+    "h1": "Un foyer dans\nun monde fracturé.",
+    "errors": []
+  }
+]

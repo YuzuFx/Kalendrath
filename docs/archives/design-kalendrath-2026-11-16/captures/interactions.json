@@ -1,0 +1,23 @@
+[
+  {
+    "name": "obelisque",
+    "formValidation": true,
+    "formDemo": true,
+    "gameInteraction": true,
+    "externalRequests": 0
+  },
+  {
+    "name": "atlas",
+    "formValidation": true,
+    "formDemo": true,
+    "gameInteraction": true,
+    "externalRequests": 0
+  },
+  {
+    "name": "fondations",
+    "formValidation": true,
+    "formDemo": true,
+    "gameInteraction": true,
+    "externalRequests": 0
+  }
+]
