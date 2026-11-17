@@ -1,0 +1,394 @@
+[
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 305,
+        "bottom": 794
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 728,
+        "bottom": 1225
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 190,
+        "bottom": 638
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 180,
+        "bottom": 649
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 3194,
+        "bottom": 3455
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 4532,
+        "bottom": 4874
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 3059,
+        "bottom": 3320
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 3777,
+        "bottom": 4043
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 546,
+        "bottom": 701
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 588,
+        "bottom": 822
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 445,
+        "bottom": 595
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 499,
+        "bottom": 663
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  }
+]

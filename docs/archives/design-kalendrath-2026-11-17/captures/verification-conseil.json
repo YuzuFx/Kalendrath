@@ -1,0 +1,134 @@
+[
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [
+      ""
+    ],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 548,
+        "bottom": 699
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [
+      ""
+    ],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 497,
+        "bottom": 728
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [
+      ""
+    ],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 447,
+        "bottom": 593
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "index",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [
+      ""
+    ],
+    "title": "Un monde brisé.\nUn royaume\nentre vos mains.",
+    "forms": [
+      {
+        "top": 499,
+        "bottom": 658
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "f": "jeu",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  }
+]

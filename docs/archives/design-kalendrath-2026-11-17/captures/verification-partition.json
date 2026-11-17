@@ -1,0 +1,146 @@
+[
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 305,
+        "bottom": 794
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 728,
+        "bottom": 1225
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 190,
+        "bottom": 638
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "index",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre empreinte\ndans la pierre.",
+    "forms": [
+      {
+        "top": 180,
+        "bottom": 649
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "partition",
+    "f": "jeu",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre capitale",
+    "forms": [
+      {
+        "top": 0,
+        "bottom": 0
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  }
+]

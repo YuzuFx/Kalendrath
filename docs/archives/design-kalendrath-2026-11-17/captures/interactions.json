@@ -1,0 +1,29 @@
+[
+  {
+    "name": "partition",
+    "form": true,
+    "progression": true,
+    "noLateCityAssetsOnLanding": true,
+    "gameActions": true,
+    "noExternalRequests": true,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "form": true,
+    "progression": true,
+    "noLateCityAssetsOnLanding": true,
+    "gameActions": true,
+    "noExternalRequests": true,
+    "errors": []
+  },
+  {
+    "name": "conseil",
+    "form": true,
+    "progression": true,
+    "noLateCityAssetsOnLanding": true,
+    "gameActions": true,
+    "noExternalRequests": true,
+    "errors": []
+  }
+]

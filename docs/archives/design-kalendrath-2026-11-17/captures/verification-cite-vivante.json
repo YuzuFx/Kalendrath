@@ -1,0 +1,126 @@
+[
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 3194,
+        "bottom": 3455
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 4530,
+        "bottom": 4872
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 3059,
+        "bottom": 3320
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "index",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Un monde brisé.\nVotre royaume\nà bâtir.",
+    "forms": [
+      {
+        "top": 3777,
+        "bottom": 4043
+      }
+    ],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 1440,
+    "height": 1000,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 390,
+    "height": 844,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 1280,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  },
+  {
+    "name": "cite-vivante",
+    "f": "jeu",
+    "width": 2560,
+    "height": 720,
+    "overflow": false,
+    "broken": [],
+    "title": "Votre cité veille.",
+    "forms": [],
+    "fonts": true,
+    "infiniteAnimationsReduced": 0,
+    "errors": []
+  }
+]
