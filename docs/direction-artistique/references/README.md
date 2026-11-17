@@ -25,6 +25,7 @@ Rendus validés pour chaque unité (cf. [direction-artistique-unites.md](../dire
 | Pionnier | https://cdn.midjourney.com/638e3356-bbcf-4f82-b59e-80dfb366aaa6/0_0.png |
 | Baliste | https://cdn.midjourney.com/b3ae0150-8128-45a0-adf1-da807f485537/0_0.png |
 | Tour d'archers runiques | https://cdn.midjourney.com/f82d2e32-55f9-403d-b9f5-052a6d294cbc/0_0.png |
+| Tour de mages | https://cdn.midjourney.com/d2263f22-907f-495c-893e-51bf802cd43f/0_0.png |
 
 *URLs upscalées fournies par Gregory le 2026-10-04 — remplacent les captures brutes ci-dessous comme référence principale.*
 
@@ -150,6 +151,7 @@ Gardées en complément le temps que les URLs ci-dessus soient vérifiées utili
 | Pionnier | `pionnier-mise-en-situation.png` | Image unique upscalée (case 1 de la grille v1, U1 Subtle, 2688 × 1792) |
 | Baliste | `baliste-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). v3 testée et non retenue : on garde cet upscale. Pointe de bronze à simple étincelle violet-bleu, acceptée par Gregory |
 | Tour d'archers runiques | `tour-archers-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). Choisie par Gregory après v3, v4 et v5 non retenues |
+| Tour de mages | `tour-mages-mise-en-situation.png` | Image unique upscalée (case 2 de la grille v2, U2 Subtle, 2688 × 1792). Validée « pour avancer » par Gregory le 2026-11-17, à reprendre éventuellement pendant l'alpha |
 
 ## Paliers de cité (10 images, format 7:3)
 
